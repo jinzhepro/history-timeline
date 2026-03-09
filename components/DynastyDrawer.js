@@ -1,0 +1,199 @@
+import React, { useState, useEffect } from 'react';
+
+/**
+ * 朝代详情抽屉组件 - 侧边滑出式
+ * 功能：
+ * - 从右侧滑出
+ * - 显示详细信息
+ * - 支持上一个/下一个导航
+ */
+const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevious }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const formatYear = (year) => {
+    if (year < 0) {
+      return `${Math.abs(year)}年（公元前）`;
+    }
+    return `${year}年（公元）`;
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 10);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleCloseClick = (e) => {
+    e.stopPropagation();
+    setIsVisible(false);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      handleCloseClick(e);
+    }
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleCloseClick(e);
+    }
+  };
+
+  if (!dynasty) {
+    return null;
+  }
+
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex justify-end"
+      onKeyDown={handleKeyDown}
+      onClick={handleBackdropClick}
+    >
+      {/* 背景遮罩 */}
+      <div className="absolute inset-0 bg-black bg-opacity-30 transition-opacity"></div>
+      
+      {/* 抽屉面板 */}
+      <div 
+        className={`
+          relative w-full max-w-2xl bg-gradient-to-b from-white to-xuan-paper
+          shadow-2xl overflow-y-auto h-full
+          transform transition-transform duration-300 ease-out
+          ${isVisible ? 'translate-x-0' : 'translate-x-full'}
+        `}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={`drawer-title-${dynasty.id}`}
+      >
+        {/* 顶部装饰条 */}
+        <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-700 via-china-red to-amber-900"></div>
+        
+        {/* 关闭按钮 */}
+        <button
+          className="absolute top-4 right-4 w-10 h-10 ink-button rounded-full text-2xl z-10 flex items-center justify-center pb-1"
+          onClick={handleCloseClick}
+          aria-label="关闭详情"
+        >
+          ×
+        </button>
+        
+        {/* 内容区域 */}
+        <div className="p-8 pt-12">
+          {/* 标题 */}
+          <h2 
+            className="text-4xl ink-title text-center mb-2"
+            id={`drawer-title-${dynasty.id}`}
+            style={{ fontFamily: 'KaiTi, STKaiti, serif' }}
+          >
+            {dynasty.name}
+          </h2>
+          
+          {/* 时间范围 */}
+          <p className="text-center text-lg text-gray-600 mb-6 font-chinese">
+            {formatYear(dynasty.startYear)} - {formatYear(dynasty.endYear)}
+          </p>
+          
+          <div className="ink-divider mb-6"></div>
+
+          <div className="space-y-8">
+            {/* 基本信息 */}
+            <section className="ink-card p-6">
+              <h3 className="text-xl font-bold mb-4 font-chinese">基本信息</h3>
+              <div className="space-y-3 font-chinese">
+                <p className="text-gray-700">
+                  <span className="font-bold text-gray-800">开国君主：</span>
+                  {dynasty.founder}
+                </p>
+                <p className="text-gray-700">
+                  <span className="font-bold text-gray-800">代表君主：</span>
+                  {dynasty.representativeRulers.join('、')}
+                </p>
+                <p className="text-gray-700">
+                  <span className="font-bold text-gray-800">持续时间：</span>
+                  {Math.abs(dynasty.endYear - dynasty.startYear)}年
+                </p>
+              </div>
+            </section>
+
+            {/* 重要历史事件 */}
+            <section>
+              <h3 className="text-xl font-bold mb-4 font-chinese">重要历史事件</h3>
+              <div className="space-y-4">
+                {dynasty.events.map((event, index) => (
+                  <div key={index} className="ink-card p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 text-sm text-gray-600 font-chinese pt-1 whitespace-nowrap">
+                        {formatYear(event.year)}
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-bold text-gray-800 font-chinese mb-1">{event.name}</p>
+                        <p className="text-gray-700 text-sm font-chinese leading-relaxed">{event.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* 文化成就 */}
+            <section>
+              <h3 className="text-xl font-bold mb-4 font-chinese">文化成就</h3>
+              <div className="space-y-4">
+                {dynasty.culturalAchievements.map((achievement, index) => (
+                  <div key={index} className="ink-card p-4">
+                    <p className="font-bold text-gray-800 font-chinese mb-2">{achievement.name}</p>
+                    <p className="text-gray-700 text-sm font-chinese leading-relaxed mb-2">{achievement.description}</p>
+                    {achievement.figure && (
+                      <p className="text-gray-600 text-sm font-chinese italic">
+                        代表人物：{achievement.figure}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+          
+          {/* 导航按钮 */}
+          <div className="mt-8 flex justify-between gap-4">
+            <button
+              onClick={onPrevious}
+              disabled={!hasPrevious}
+              className={`
+                flex-1 py-3 px-6 rounded-lg font-chinese
+                transition-all duration-300
+                ${hasPrevious 
+                  ? 'ink-button hover:translate-x-1' 
+                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                }
+              `}
+            >
+              ← 上一个朝代
+            </button>
+            <button
+              onClick={onNext}
+              disabled={!hasNext}
+              className={`
+                flex-1 py-3 px-6 rounded-lg font-chinese
+                transition-all duration-300
+                ${hasNext 
+                  ? 'ink-button hover:translate-x-1' 
+                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                }
+              `}
+            >
+              下一个朝代 →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DynastyDrawer;

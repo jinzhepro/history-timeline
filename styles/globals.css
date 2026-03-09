@@ -1,27 +1,37 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --china-red: #C41E3A;
+  --glazed-yellow: #FFD700;
+  --qinghua-blue: #1E3A8A;
+  --ink-black: #2C2C2C;
+  --ink-light: #555555;
+  --ink-lighter: #888888;
+  --xuan-paper: #F5F5F0;
+  --antique-bronze: #8B4513;
+  --jade-green: #00A862;
+  --water-light: rgba(0, 0, 0, 0.05);
+  --water-medium: rgba(0, 0, 0, 0.1);
+  --water-dark: rgba(0, 0, 0, 0.2);
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink-black);
+  background: var(--xuan-paper);
+  font-family: 'KaiTi', 'STKaiti', 'SimSun', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
 }
 
 * {
@@ -30,13 +40,219 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* 水墨风格卡片 */
+.ink-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 245, 240, 0.8) 100%);
+  border: 2px solid var(--ink-lighter);
+  border-radius: 8px;
+  box-shadow: 
+    0 4px 16px var(--water-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.ink-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ink-black) 0%, var(--ink-light) 50%, var(--ink-black) 100%);
+  opacity: 0.6;
+}
+
+.ink-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 32px var(--water-dark),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: var(--ink-black);
+}
+
+/* 水墨标题 */
+.ink-title {
+  font-family: 'KaiTi', 'STKaiti', serif;
+  font-weight: bold;
+  color: var(--ink-black);
+  text-shadow: 1px 1px 2px var(--water-light);
+  position: relative;
+  display: inline-block;
+}
+
+.ink-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ink-black), transparent);
+  opacity: 0.4;
+}
+
+/* 水墨按钮 */
+.ink-button {
+  background: linear-gradient(135deg, var(--ink-black) 0%, var(--ink-light) 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--water-medium);
+}
+
+.ink-button:hover {
+  background: linear-gradient(135deg, var(--ink-light) 0%, var(--ink-lighter) 100%);
+  box-shadow: 0 4px 16px var(--water-dark);
+  transform: translateY(-2px);
+}
+
+/* 水墨详情面板 */
+.ink-detail-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 240, 1) 100%);
+  border: 2px solid var(--ink-black);
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ink-detail-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ink-black), var(--ink-light), var(--ink-black));
+}
+
+/* 水墨列表项 */
+.ink-list-item {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.ink-list-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ink-black);
+  font-size: 1.2em;
+  opacity: 0.6;
+}
+
+/* 水墨分隔线 */
+.ink-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ink-lighter), transparent);
+  margin: 16px 0;
+  opacity: 0.3;
+}
+
+/* 水墨背景装饰 */
+.ink-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: 
+    radial-gradient(circle at 20% 30%, var(--ink-black) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, var(--ink-black) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, var(--ink-black) 0%, transparent 30%);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--xuan-paper);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ink-light), var(--ink-lighter));
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--ink-lighter), var(--ink-black));
+}
+
+/* 选择文本样式 */
+::selection {
+  background-color: var(--ink-lighter);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--ink-lighter);
+  color: white;
+}
+
+/* 动画 */
+@keyframes inkFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inkSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inkSlideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.ink-animate-in {
+  animation: inkFadeIn 0.6s ease-out forwards;
+}
+
+.ink-animate-down {
+  animation: inkSlideDown 0.5s ease-out forwards;
+}
+
+.ink-animate-slide-in {
+  animation: inkSlideInRight 0.3s ease-out forwards;
+}
+
+/* 字体工具类 */
+.font-chinese {
+  font-family: 'KaiTi', 'STKaiti', 'SimSun', serif;
 }
