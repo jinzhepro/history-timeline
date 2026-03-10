@@ -63,7 +63,7 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
 
   return (
     <div
-      className="fixed inset-0 z-50 flex justify-end"
+      className="fixed inset-0 z-[60] flex justify-end"
       onKeyDown={handleKeyDown}
       onClick={handleBackdropClick}
     >
@@ -83,10 +83,10 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
         aria-labelledby={`drawer-title-${dynasty.id}`}
       >
         {/* 顶部装饰条 */}
-        <div className="sticky top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-700 via-china-red to-amber-900 z-50"></div>
+        <div className="sticky top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-700 via-china-red to-amber-900 z-[60]"></div>
 
         {/* 关闭按钮区域 - 粘性定位 */}
-        <div className="sticky top-2 right-0 z-50 flex justify-end px-4 py-2 bg-gradient-to-b from-white to-transparent pointer-events-none">
+        <div className="sticky top-2 right-0 z-[60] flex justify-end px-4 py-2 bg-gradient-to-b from-white to-transparent pointer-events-none">
           <button
             className="w-10 h-10 ink-button rounded-full text-2xl flex items-center justify-center pb-1 pointer-events-auto shadow-lg"
             onClick={handleCloseClick}

@@ -55,7 +55,7 @@ const Timeline = () => {
       {/* 水墨背景装饰 */}
       <div className="ink-background"></div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 py-12 relative">
         {/* 标题区域 */}
         <div className="text-center mb-16 ink-animate-in">
           <h1 className="text-5xl md:text-6xl ink-title mb-4" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
@@ -82,7 +82,7 @@ const Timeline = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 opacity-40 hidden md:block"></div>
 
           {/* 朝代卡片 */}
-          <div className="relative z-10">
+          <div className="relative">
             {filteredDynasties.map((dynasty, index) => (
               <div
                 key={dynasty.id}
@@ -103,7 +103,7 @@ const Timeline = () => {
                 <div className="hidden md:flex items-center relative">
                   {/* 时间轴节点 - 统一放在中间 */}
                   <div
-                    className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-white shadow-lg z-20"
+                    className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-white shadow-lg"
                     style={{
                       backgroundColor: periodOptions.find(p => p.value === dynasty.period)?.color || '#8B4513',
                     }}
@@ -111,7 +111,7 @@ const Timeline = () => {
 
                   {index % 2 === 0 ? (
                     <>
-                      <div className="w-1/2 pr-12 flex justify-end relative z-10">
+                      <div className="w-1/2 pr-12 flex justify-end relative">
                         <DynastyCard
                           dynasty={dynasty}
                           isSelected={selectedDynastyId === dynasty.id}
@@ -128,7 +128,7 @@ const Timeline = () => {
                     <>
                       <div className="w-1/2 pr-12"></div>
                       <div className="w-0"></div>
-                      <div className="w-1/2 pl-12 flex justify-start relative z-10">
+                      <div className="w-1/2 pl-12 flex justify-start relative">
                         <DynastyCard
                           dynasty={dynasty}
                           isSelected={selectedDynastyId === dynasty.id}
