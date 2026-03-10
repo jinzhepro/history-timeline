@@ -1121,6 +1121,139 @@ const dynasties = [
         figure: null
       }
     ]
+  },
+  {
+    id: 'republic-of-china',
+    name: '中华民国',
+    startYear: 1912,
+    endYear: 1949,
+    period: 'modern',
+    founder: '孙中山',
+    representativeRulers: ['孙中山', '袁世凯', '蒋介石', '李宗仁'],
+    events: [
+      {
+        name: '中华民国成立',
+        description: '孙中山就任临时大总统，中华民国正式成立，结束了两千多年的封建帝制',
+        year: 1912
+      },
+      {
+        name: '清帝退位',
+        description: '清宣统帝溥仪颁布退位诏书，清朝正式灭亡',
+        year: 1912
+      },
+      {
+        name: '二次革命',
+        description: '孙中山发动二次革命，反对袁世凯独裁统治',
+        year: 1913
+      },
+      {
+        name: '袁世凯称帝',
+        description: '袁世凯复辟帝制，改国号为"中华帝国"',
+        year: 1915
+      },
+      {
+        name: '护国运动',
+        description: '蔡锷等发动护国运动，反对袁世凯称帝',
+        year: 1915
+      },
+      {
+        name: '五四运动',
+        description: '北京学生发起五四运动，标志着中国新民主主义革命的开端',
+        year: 1919
+      },
+      {
+        name: '中国共产党成立',
+        description: '中国共产党第一次全国代表大会在上海召开',
+        year: 1921
+      },
+      {
+        name: '黄埔军校创办',
+        description: '孙中山创办黄埔军校，培养革命军事人才',
+        year: 1924
+      },
+      {
+        name: '北伐战争',
+        description: '国民革命军出师北伐，统一中国',
+        year: 1926
+      },
+      {
+        name: '南京国民政府成立',
+        description: '蒋介石建立南京国民政府',
+        year: 1927
+      },
+      {
+        name: '九一八事变',
+        description: '日本发动九一八事变，侵占中国东北',
+        year: 1931
+      },
+      {
+        name: '长征',
+        description: '中国工农红军进行二万五千里长征',
+        year: 1934
+      },
+      {
+        name: '西安事变',
+        description: '张学良、杨虎城发动西安事变，促成国共合作抗日',
+        year: 1936
+      },
+      {
+        name: '七七事变',
+        description: '卢沟桥事变爆发，中国全面抗日战争开始',
+        year: 1937
+      },
+      {
+        name: '南京大屠杀',
+        description: '日军攻占南京，进行惨绝人寰的大屠杀',
+        year: 1937
+      },
+      {
+        name: '抗战胜利',
+        description: '日本宣布无条件投降，中国抗日战争取得伟大胜利',
+        year: 1945
+      },
+      {
+        name: '国共内战',
+        description: '国共两党爆发全面内战',
+        year: 1946
+      },
+      {
+        name: '中华人民共和国成立',
+        description: '毛泽东在天安门宣布中华人民共和国成立，中华民国政府迁往台湾',
+        year: 1949
+      }
+    ],
+    culturalAchievements: [
+      {
+        name: '新文化运动',
+        description: '提倡民主与科学，推动白话文运动，是中国近代思想启蒙运动',
+        figure: '陈独秀、胡适、鲁迅'
+      },
+      {
+        name: '白话文运动',
+        description: '胡适倡导白话文，推动文学革命',
+        figure: '胡适、鲁迅'
+      },
+      {
+        name: '《狂人日记》',
+        description: '鲁迅发表《狂人日记》，是中国现代文学史上第一篇白话小说',
+        figure: '鲁迅'
+      },
+      {
+        name: '西南联大',
+        description: '抗战时期北大、清华、南开三校南迁昆明，组成西南联合大学',
+        figure: '梅贻琦、张伯苓、蒋梦麟'
+      },
+      {
+        name: '电影艺术发展',
+        description: '中国电影业蓬勃发展，出现《渔光曲》《马路天使》等经典作品',
+        figure: '蔡楚生、阮玲玉'
+      },
+      {
+        name: '京剧改良',
+        description: '梅兰芳等推动京剧艺术革新，走向国际舞台',
+        figure: '梅兰芳'
+      }
+    ]
   }
 ];
 
@@ -1795,6 +1928,74 @@ export const historicalFigures = [
       { type: 'grandfather', target: 'kangxi', label: '祖父' },
       { type: 'father', target: 'yongzheng', label: '父亲' }
     ]
+  },
+
+  // 中华民国人物
+  {
+    id: 'sun-yat-sen',
+    name: '孙中山',
+    formalName: '孙文',
+    dynasty: 'republic-of-china',
+    title: '中华民国临时大总统',
+    reign: '1912',
+    description: '中国民主革命的伟大先驱，中华民国的缔造者，提出三民主义',
+    relations: [
+      { type: 'successor', target: 'yuan-shikai', label: '让位于' }
+    ]
+  },
+  {
+    id: 'yuan-shikai',
+    name: '袁世凯',
+    formalName: null,
+    dynasty: 'republic-of-china',
+    title: '中华民国大总统',
+    reign: '1912 至 1916',
+    description: '北洋军阀首领，曾任中华民国临时大总统和大总统，后复辟帝制',
+    relations: [
+      { type: 'predecessor', target: 'sun-yat-sen', label: '继任' }
+    ]
+  },
+  {
+    id: 'chiang-kai-shek',
+    name: '蒋介石',
+    formalName: '蒋中正',
+    dynasty: 'republic-of-china',
+    title: '国民政府军事委员会委员长',
+    reign: '1925 至 1949',
+    description: '国民党领袖，曾任黄埔军校校长，领导北伐战争和抗日战争',
+    relations: [
+      { type: 'predecessor', target: 'sun-yat-sen', label: '继承遗志' }
+    ]
+  },
+  {
+    id: 'lu-xun',
+    name: '鲁迅',
+    formalName: '周树人',
+    dynasty: 'republic-of-china',
+    title: '文学家、思想家',
+    reign: null,
+    description: '中国现代文学奠基人，新文化运动的重要参与者',
+    relations: []
+  },
+  {
+    id: 'hu-shi',
+    name: '胡适',
+    formalName: null,
+    dynasty: 'republic-of-china',
+    title: '学者、思想家',
+    reign: null,
+    description: '新文化运动领袖，提倡白话文和文学改良',
+    relations: []
+  },
+  {
+    id: 'mei-lanfang',
+    name: '梅兰芳',
+    formalName: null,
+    dynasty: 'republic-of-china',
+    title: '京剧表演艺术家',
+    reign: null,
+    description: '京剧大师，四大名旦之首，推动京剧艺术走向世界',
+    relations: []
   }
 ];
 

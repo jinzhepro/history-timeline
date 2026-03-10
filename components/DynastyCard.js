@@ -25,9 +25,10 @@ const DynastyCard = ({ dynasty, isSelected, onClick, index, period }) => {
   // 时期颜色映射
   const periodColors = {
     'ancient': '#8B4513',
-    'classical': '#C41E3A',
-    'medieval': '#1E3A8A',
-    'late-imperial': '#00A862'
+  'classical': '#C41E3A',
+  'medieval': '#1E3A8A',
+  'late-imperial': '#00A862',
+  'modern': '#6B7280'
   };
 
   const periodColor = periodColors[dynasty.period] || '#8B4513';

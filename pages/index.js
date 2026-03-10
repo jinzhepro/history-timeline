@@ -40,15 +40,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>中华历史长河 - 中国历史朝代时间线</title>
-        <meta name="description" content="探索中国五千年历史，从夏朝到清朝的完整朝代时间线，包含重要历史事件和文化成就" />
-        <meta name="keywords" content="中国历史，朝代，时间线，历史文化，夏商周，秦汉，唐宋，元明清" />
+        <title>朝代纪 - 中国历史朝代时间线</title>
+        <meta name="description" content="探索中国五千年历史，从夏朝到中华民国的完整朝代时间线，包含重要历史事件和文化成就" />
+        <meta name="keywords" content="中国历史，朝代，时间线，历史文化，夏商周，秦汉，唐宋，元明清，中华民国" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
 
         {/* Open Graph 元数据 */}
-        <meta property="og:title" content="中华历史长河 - 中国历史朝代时间线" />
-        <meta property="og:description" content="探索中国五千年历史，从夏朝到清朝的完整朝代时间线" />
+        <meta property="og:title" content="朝代纪 - 中国历史朝代时间线" />
+        <meta property="og:description" content="探索中国五千年历史，从夏朝到中华民国的完整朝代时间线" />
         <meta property="og:type" content="website" />
       </Head>
 
@@ -56,7 +56,7 @@ export default function Home() {
         {/* 导航栏 - 粘性定位，滚动时透明 */}
         <nav className={navClassName}>
           <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold ink-title">中华历史长河</h1>
+            <h1 className="text-2xl font-bold ink-title">朝代纪</h1>
             <div className="flex gap-4">
               <Link
                 href="/quiz"

@@ -1,6 +1,6 @@
 /**
- * 测验演示页面
- * 使用新的 Quiz 组件展示功能
+ * 朝代纪 - 测验页面
+ * 使用 Quiz 组件展示历史知识测验功能
  */
 
 import React, { useState, useEffect } from 'react';
@@ -17,7 +17,7 @@ import {
 } from '../utils/quizGenerator';
 
 /**
- * 测验演示页面组件
+ * 朝代纪测验页面组件
  */
 const QuizPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -80,7 +80,7 @@ const QuizPage = () => {
       <div className="max-w-4xl mx-auto px-4">
         {/* 标题 */}
         <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2 ink-title">
-          中国历史朝代测验
+          朝代纪 · 历史测验
         </h1>
         <p className="text-center text-gray-600 mb-8">
           测试你对中国历史朝代的了解程度
@@ -132,7 +132,7 @@ const QuizPage = () => {
           <Quiz
             questions={questions}
             onComplete={handleQuizComplete}
-            title="中国历史朝代测验"
+            title="朝代纪历史测验"
           />
         )}
 

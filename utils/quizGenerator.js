@@ -370,7 +370,8 @@ const generateSortQuestions = (limit = 3) => {
     ancient: dynasties.filter(d => d.period === 'ancient'),
     classical: dynasties.filter(d => d.period === 'classical'),
     medieval: dynasties.filter(d => d.period === 'medieval'),
-    'late-imperial': dynasties.filter(d => d.period === 'late-imperial')
+    'late-imperial': dynasties.filter(d => d.period === 'late-imperial'),
+    modern: dynasties.filter(d => d.period === 'modern')
   };
 
   Object.values(periodGroups).forEach(periodDynasties => {

@@ -21,9 +21,10 @@ const Timeline = () => {
   const periodOptions = [
     { value: 'all', label: '全部', color: 'var(--ink-black)' },
     { value: 'ancient', label: '上古', color: '#8B4513' },
-    { value: 'classical', label: '中古', color: '#C41E3A' },
-    { value: 'medieval', label: '近古', color: '#1E3A8A' },
-    { value: 'late-imperial', label: '帝国晚期', color: '#00A862' }
+  { value: 'classical', label: '中古', color: '#C41E3A' },
+  { value: 'medieval', label: '近古', color: '#1E3A8A' },
+  { value: 'late-imperial', label: '帝国晚期', color: '#00A862' },
+  { value: 'modern', label: '近代', color: '#6B7280' }
   ];
 
   /**
