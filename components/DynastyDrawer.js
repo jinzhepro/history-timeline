@@ -66,6 +66,8 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
       className="fixed inset-0 z-[60] flex justify-end"
       onKeyDown={handleKeyDown}
       onClick={handleBackdropClick}
+      tabIndex={-1}
+      autoFocus
     >
       {/* 背景遮罩 */}
       <div className="absolute inset-0 bg-black bg-opacity-30 transition-opacity"></div>
