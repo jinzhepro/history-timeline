@@ -225,6 +225,16 @@ const dynasties = [
         name: '焚书坑儒',
         description: '秦始皇焚烧百家书籍，活埋儒生，加强思想控制',
         year: -213
+      },
+      {
+        name: '陈胜吴广起义',
+        description: '陈胜吴广在大泽乡起义，揭开秦末农民战争序幕',
+        year: -209
+      },
+      {
+        name: '巨鹿之战',
+        description: '项羽在巨鹿之战中大败秦军，摧毁秦朝主力',
+        year: -207
       }
     ],
     culturalAchievements: [
@@ -242,6 +252,16 @@ const dynasties = [
         name: '郡县制',
         description: '废除分封制，实行郡县制，奠定中国行政区划基础',
         figure: '李斯'
+      },
+      {
+        name: '秦直道',
+        description: '修建秦直道，是中国古代重要军事交通要道',
+        figure: null
+      },
+      {
+        name: '灵渠',
+        description: '开凿灵渠，连接长江和珠江水系',
+        figure: null
       }
     ]
   },
@@ -260,9 +280,19 @@ const dynasties = [
         year: -202
       },
       {
+        name: '白登之围',
+        description: '刘邦被匈奴围困于白登山，后采用陈平计策脱险',
+        year: -200
+      },
+      {
         name: '文景之治',
         description: '汉文帝、汉景帝时期，轻徭薄赋，与民休息，社会经济恢复发展',
         year: -180
+      },
+      {
+        name: '七国之乱',
+        description: '吴王刘濞等七国诸侯发动叛乱，被周亚夫平定',
+        year: -154
       },
       {
         name: '汉武帝北击匈奴',
@@ -273,6 +303,11 @@ const dynasties = [
         name: '张骞通西域',
         description: '张骞两次出使西域，开辟丝绸之路',
         year: -138
+      },
+      {
+        name: '巫蛊之祸',
+        description: '汉武帝晚年发生巫蛊之祸，太子刘据被迫自杀',
+        year: -91
       },
       {
         name: '王莽篡汉',
@@ -295,6 +330,16 @@ const dynasties = [
         name: '丝绸之路',
         description: '张骞出使西域，开辟丝绸之路',
         figure: '张骞'
+      },
+      {
+        name: '汉赋',
+        description: '汉赋兴盛，成为汉代代表性文学体裁',
+        figure: '司马相如、扬雄'
+      },
+      {
+        name: '太初历',
+        description: '汉武帝时期制定太初历，是中国第一部比较完整的历法',
+        figure: '司马迁、公孙卿'
       }
     ]
   },
@@ -323,9 +368,19 @@ const dynasties = [
         year: 73
       },
       {
+        name: '党锢之祸',
+        description: '宦官迫害士人，禁锢党人，东汉政治日益腐败',
+        year: 166
+      },
+      {
         name: '黄巾起义',
         description: '张角领导黄巾起义，动摇了东汉统治基础',
         year: 184
+      },
+      {
+        name: '董卓之乱',
+        description: '董卓进京专权，各地诸侯起兵讨伐，东汉名存实亡',
+        year: 189
       }
     ],
     culturalAchievements: [
@@ -343,6 +398,16 @@ const dynasties = [
         name: '佛教传入',
         description: '佛教通过丝绸之路传入中国',
         figure: null
+      },
+      {
+        name: '《说文解字》',
+        description: '许慎著《说文解字》，是中国第一部系统分析汉字字形和考究字源的专著',
+        figure: '许慎'
+      },
+      {
+        name: '浑天仪',
+        description: '张衡发明浑天仪和地动仪，是世界最早的地震仪器',
+        figure: '张衡'
       }
     ]
   },
@@ -586,6 +651,11 @@ const dynasties = [
         year: 618
       },
       {
+        name: '玄武门之变',
+        description: '李世民在玄武门发动政变，杀死太子李建成，后即位为唐太宗',
+        year: 626
+      },
+      {
         name: '贞观之治',
         description: '唐太宗励精图治，开创贞观盛世',
         year: 627
@@ -604,6 +674,11 @@ const dynasties = [
         name: '安史之乱',
         description: '安禄山、史思明发动叛乱，唐朝由盛转衰',
         year: 755
+      },
+      {
+        name: '黄巢起义',
+        description: '黄巢领导农民起义，攻入长安，唐朝统治崩溃',
+        year: 875
       }
     ],
     culturalAchievements: [
@@ -631,6 +706,16 @@ const dynasties = [
         name: '唐传奇',
         description: '唐代传奇小说兴起，标志着中国小说的成熟',
         figure: '元稹、白行简等'
+      },
+      {
+        name: '楷书四大家',
+        description: '颜真卿、柳公权等书法家创立颜体、柳体，影响深远',
+        figure: '颜真卿、柳公权、欧阳询、赵孟頫'
+      },
+      {
+        name: '《千金方》',
+        description: '孙思邈著《千金方》，是中国最早的临床医学百科全书',
+        figure: '孙思邈'
       }
     ]
   },
@@ -692,9 +777,19 @@ const dynasties = [
         year: 960
       },
       {
+        name: '杯酒释兵权',
+        description: '宋太祖通过酒宴解除将领兵权，加强中央集权',
+        year: 961
+      },
+      {
         name: '澶渊之盟',
         description: '北宋与辽国订立澶渊之盟，维持百年和平',
         year: 1005
+      },
+      {
+        name: '庆历新政',
+        description: '范仲淹推行庆历新政，试图改革吏治',
+        year: 1043
       },
       {
         name: '王安石变法',
@@ -719,6 +814,11 @@ const dynasties = [
         figure: null
       },
       {
+        name: '火药武器',
+        description: '火药开始用于军事，发明突火枪等武器',
+        figure: null
+      },
+      {
         name: '《资治通鉴》',
         description: '司马光主编《资治通鉴》，是中国最大的编年体通史',
         figure: '司马光'
@@ -727,6 +827,16 @@ const dynasties = [
         name: '宋词',
         description: '宋词达到艺术高峰',
         figure: '苏轼、辛弃疾、李清照等'
+      },
+      {
+        name: '理学兴起',
+        description: '程颢、程颐创立理学，对后世影响深远',
+        figure: '程颢、程颐'
+      },
+      {
+        name: '《清明上河图》',
+        description: '张择端绘《清明上河图》，展现北宋繁华景象',
+        figure: '张择端'
       }
     ]
   },
@@ -841,9 +951,19 @@ const dynasties = [
         year: 1405
       },
       {
+        name: '土木堡之变',
+        description: '明英宗被瓦剌俘虏，明朝由盛转衰',
+        year: 1449
+      },
+      {
         name: '戚继光抗倭',
         description: '戚继光率领戚家军抗击倭寇，保卫东南沿海',
         year: 1560
+      },
+      {
+        name: '张居正改革',
+        description: '张居正推行一条鞭法等改革，使明朝中兴',
+        year: 1572
       },
       {
         name: '李自成起义',
@@ -881,6 +1001,16 @@ const dynasties = [
         name: '《徐霞客游记》',
         description: '徐霞客著《徐霞客游记》，是地理学名著',
         figure: '徐霞客'
+      },
+      {
+        name: '阳明心学',
+        description: '王阳明创立心学，提出"知行合一"',
+        figure: '王阳明'
+      },
+      {
+        name: '景泰蓝工艺',
+        description: '景泰蓝工艺达到高峰，成为明代特色工艺品',
+        figure: null
       }
     ]
   },
@@ -899,9 +1029,24 @@ const dynasties = [
         year: 1644
       },
       {
+        name: '康熙擒鳌拜',
+        description: '康熙帝智擒权臣鳌拜，开始亲政',
+        year: 1669
+      },
+      {
+        name: '三藩之乱',
+        description: '吴三桂等发动三藩之乱，被康熙平定',
+        year: 1673
+      },
+      {
         name: '康乾盛世',
         description: '康熙、雍正、乾隆三朝，清朝达到鼎盛',
         year: 1661
+      },
+      {
+        name: '文字狱',
+        description: '清朝大兴文字狱，禁锢思想',
+        year: 1750
       },
       {
         name: '鸦片战争',
@@ -914,9 +1059,24 @@ const dynasties = [
         year: 1851
       },
       {
+        name: '洋务运动',
+        description: '曾国藩、李鸿章等推动洋务运动，学习西方技术',
+        year: 1861
+      },
+      {
+        name: '甲午战争',
+        description: '中日甲午战争，清朝战败，签订《马关条约》',
+        year: 1894
+      },
+      {
         name: '戊戌变法',
         description: '康有为、梁启超等推动戊戌变法，试图挽救民族危机',
         year: 1898
+      },
+      {
+        name: '义和团运动',
+        description: '义和团运动爆发，八国联军侵华',
+        year: 1900
       },
       {
         name: '辛亥革命',
@@ -949,6 +1109,16 @@ const dynasties = [
         name: '《聊斋志异》',
         description: '蒲松龄著《聊斋志异》，是文言短篇小说集',
         figure: '蒲松龄'
+      },
+      {
+        name: '考据学',
+        description: '乾嘉学派发展考据学，对中国古籍进行系统整理',
+        figure: '戴震、钱大昕'
+      },
+      {
+        name: '圆明园',
+        description: '修建圆明园，被誉为"万园之园"',
+        figure: null
       }
     ]
   }
