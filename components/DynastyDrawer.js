@@ -26,7 +26,7 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 10);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -55,16 +55,16 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
   }
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex justify-end"
       onKeyDown={handleKeyDown}
       onClick={handleBackdropClick}
     >
       {/* 背景遮罩 */}
       <div className="absolute inset-0 bg-black bg-opacity-30 transition-opacity"></div>
-      
+
       {/* 抽屉面板 */}
-      <div 
+      <div
         className={`
           relative w-full max-w-2xl bg-gradient-to-b from-white to-xuan-paper
           shadow-2xl overflow-y-auto h-full
@@ -76,33 +76,39 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
         aria-labelledby={`drawer-title-${dynasty.id}`}
       >
         {/* 顶部装饰条 */}
-        <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-700 via-china-red to-amber-900"></div>
-        
-        {/* 关闭按钮 */}
-        <button
-          className="absolute top-4 right-4 w-10 h-10 ink-button rounded-full text-2xl z-10 flex items-center justify-center pb-1"
-          onClick={handleCloseClick}
-          aria-label="关闭详情"
-        >
-          ×
-        </button>
-        
+        <div className="sticky top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-700 via-china-red to-amber-900 z-50"></div>
+
+        {/* 关闭按钮区域 - 粘性定位 */}
+        <div className="sticky top-2 right-0 z-50 flex justify-end px-4 py-2 bg-gradient-to-b from-white to-transparent pointer-events-none">
+          <button
+            className="w-10 h-10 ink-button rounded-full text-2xl flex items-center justify-center pb-1 pointer-events-auto shadow-lg"
+            onClick={handleCloseClick}
+            aria-label="关闭详情"
+            style={{
+              background: 'linear-gradient(135deg, var(--ink-black) 0%, var(--ink-light) 100%)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+            }}
+          >
+            ×
+          </button>
+        </div>
+
         {/* 内容区域 */}
-        <div className="p-8 pt-12">
+        <div className="p-8 pt-4">
           {/* 标题 */}
-          <h2 
+          <h2
             className="text-4xl ink-title text-center mb-2"
             id={`drawer-title-${dynasty.id}`}
             style={{ fontFamily: 'KaiTi, STKaiti, serif' }}
           >
             {dynasty.name}
           </h2>
-          
+
           {/* 时间范围 */}
           <p className="text-center text-lg text-gray-600 mb-6 font-chinese">
             {formatYear(dynasty.startYear)} - {formatYear(dynasty.endYear)}
           </p>
-          
+
           <div className="ink-divider mb-6"></div>
 
           {/* 人物关系图谱按钮 */}
@@ -130,7 +136,7 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
                 selectedPersonId={selectedPersonId}
                 onPersonSelect={setSelectedPersonId}
               />
-              
+
               {/* 选中人物详情 */}
               {selectedPersonId && (
                 <PersonCard
@@ -199,7 +205,7 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
               </div>
             </section>
           </div>
-          
+
           {/* 导航按钮 */}
           <div className="mt-8 flex justify-between gap-4">
             <button
@@ -208,8 +214,8 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
               className={`
                 flex-1 py-3 px-6 rounded-lg font-chinese
                 transition-all duration-300
-                ${hasPrevious 
-                  ? 'ink-button hover:translate-x-1' 
+                ${hasPrevious
+                  ? 'ink-button hover:translate-x-1'
                   : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 }
               `}
@@ -222,8 +228,8 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
               className={`
                 flex-1 py-3 px-6 rounded-lg font-chinese
                 transition-all duration-300
-                ${hasNext 
-                  ? 'ink-button hover:translate-x-1' 
+                ${hasNext
+                  ? 'ink-button hover:translate-x-1'
                   : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 }
               `}
