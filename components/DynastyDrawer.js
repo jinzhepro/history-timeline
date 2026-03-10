@@ -45,6 +45,32 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
     }, 300);
   };
 
+  /**
+   * 处理下一个朝代按钮点击
+   * 切换朝代后将抽屉滚动到顶部
+   */
+  const handleNext = (e) => {
+    onNext();
+    // 将抽屉内容区域滚动到顶部
+    const drawerContent = document.querySelector('.overflow-y-auto.h-full');
+    if (drawerContent) {
+      drawerContent.scrollTop = 0;
+    }
+  };
+
+  /**
+   * 处理上一个朝代按钮点击
+   * 切换朝代后将抽屉滚动到顶部
+   */
+  const handlePrevious = (e) => {
+    onPrevious();
+    // 将抽屉内容区域滚动到顶部
+    const drawerContent = document.querySelector('.overflow-y-auto.h-full');
+    if (drawerContent) {
+      drawerContent.scrollTop = 0;
+    }
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === 'Escape') {
       handleCloseClick(e);
@@ -218,7 +244,7 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
           {/* 导航按钮 */}
           <div className="mt-8 flex justify-between gap-4">
             <button
-              onClick={onPrevious}
+              onClick={handlePrevious}
               disabled={!hasPrevious}
               className={`
                 flex-1 py-3 px-6 rounded-lg font-chinese
@@ -232,7 +258,7 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
               ← 上一个朝代
             </button>
             <button
-              onClick={onNext}
+              onClick={handleNext}
               disabled={!hasNext}
               className={`
                 flex-1 py-3 px-6 rounded-lg font-chinese
