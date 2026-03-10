@@ -26,14 +26,60 @@ const Timeline = () => {
     { value: 'late-imperial', label: '帝国晚期', color: '#00A862' }
   ];
 
+  /**
+   * 检查文本是否包含搜索关键词（模糊查询）
+   * @param {string} text - 要检查的文本
+   * @param {string} query - 搜索关键词
+   * @returns {boolean} 是否匹配
+   */
+  const fuzzyMatch = (text, query) => {
+    if (!text || !query) return false;
+    const textLower = text.toLowerCase();
+    const queryLower = query.toLowerCase();
+    // 支持多关键词搜索，用空格分隔
+    const keywords = queryLower.split(/\s+/).filter(k => k.length > 0);
+    if (keywords.length === 0) return true;
+    // 所有关键词都必须在文本中出现
+    return keywords.every(keyword => textLower.includes(keyword));
+  };
+
   // 过滤朝代
   const filteredDynasties = useMemo(() => {
     return dynasties.filter(dynasty => {
       const matchesPeriod = selectedPeriod === 'all' || dynasty.period === selectedPeriod;
-      const matchesSearch = searchQuery === '' ||
-        dynasty.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        dynasty.founder.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesPeriod && matchesSearch;
+      
+      if (searchQuery === '') {
+        return matchesPeriod;
+      }
+
+      // 搜索朝代名称
+      if (fuzzyMatch(dynasty.name, searchQuery)) return matchesPeriod;
+      
+      // 搜索开国君主
+      if (fuzzyMatch(dynasty.founder, searchQuery)) return matchesPeriod;
+      
+      // 搜索代表君主
+      if (dynasty.representativeRulers.some(ruler => fuzzyMatch(ruler, searchQuery))) {
+        return matchesPeriod;
+      }
+      
+      // 搜索历史事件（名称和描述）
+      if (dynasty.events.some(event => 
+        fuzzyMatch(event.name, searchQuery) || fuzzyMatch(event.description, searchQuery)
+      )) {
+        return matchesPeriod;
+      }
+      
+      // 搜索文化成就（名称、描述和代表人物）
+      if (dynasty.culturalAchievements.some(achievement => 
+        fuzzyMatch(achievement.name, searchQuery) || 
+        fuzzyMatch(achievement.description, searchQuery) ||
+        fuzzyMatch(achievement.figure, searchQuery)
+      )) {
+        return matchesPeriod;
+      }
+
+      return false;
     });
   }, [selectedPeriod, searchQuery]);
 
