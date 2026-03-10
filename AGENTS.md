@@ -221,6 +221,55 @@ const DynastyDrawer = ({ dynasty, onClose }) => {
    - classical: 秦汉魏晋南北朝
    - medieval: 隋唐宋
    - late-imperial: 元明清
+6. **人物关系数据**: 在 `/data/dynasties.js` 的 `historicalFigures` 数组中添加或修改
+7. **图谱配置**: 修改 `/components/FamilyTree.js` 中的 ECharts 配置项
+
+## 人物关系图谱功能
+
+### 数据结构
+```javascript
+// 历史人物对象结构
+{
+  id: 'yu-xia',                    // 唯一标识
+  name: '禹',                      // 姓名
+  formalName: null,                // 字号/本名（可选）
+  dynasty: 'xia',                  // 所属朝代 ID
+  title: '夏朝开国君主',           // 头衔
+  reign: '-2070 至 -2020',         // 在位时间（可选）
+  description: '夏朝的建立者...',  // 人物描述
+  relations: [                     // 关系数组
+    {
+      type: 'successor',           // 关系类型
+      target: 'qi',                // 目标人物 ID
+      label: '传位于'              // 关系标签
+    }
+  ]
+}
+```
+
+### 关系类型
+- `father/mother`: 父母
+- `son/daughter`: 子女
+- `brother/sister`: 兄弟姐妹
+- `spouse/husband/wife`: 配偶
+- `successor/predecessor`: 继承/前任
+- `teacher/student`: 师生
+- `monarch/general/advisor`: 君臣
+- `friend/sworn_brother`: 朋友/结拜
+- `envoy/concubine`: 使者/妃嫔
+- `grandfather/grandson`: 祖孙
+- `uncle/nephew`: 叔侄
+
+### 组件说明
+- **FamilyTree.js**: 人物关系图谱主组件，使用 ECharts 力导向图
+- **PersonCard.js**: 人物详情卡片组件
+- **DynastyDrawer.js**: 朝代详情抽屉（已集成图谱入口）
+
+### 调试日志
+打开浏览器控制台查看 `[FamilyTree]` 开头的日志:
+- 数据加载情况
+- 节点和关系创建过程
+- 图表初始化状态
 
 ## 项目特色
 
@@ -231,3 +280,5 @@ const DynastyDrawer = ({ dynasty, onClose }) => {
 - ✅ 时间轴可视化（彩色节点）
 - ✅ 响应式设计（移动端适配）
 - ✅ 无障碍访问支持
+- ✅ **人物关系图谱** - ECharts 可视化展示历史人物关系网络
+- ✅ **人物详情卡片** - 点击图谱节点查看人物详细信息

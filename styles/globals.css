@@ -256,3 +256,129 @@ body {
 .font-chinese {
   font-family: 'KaiTi', 'STKaiti', 'SimSun', serif;
 }
+
+/* 人物关系图谱容器 */
+.family-tree-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 240, 0.9) 100%);
+  border-radius: 8px;
+  padding: 16px;
+  border: 2px solid var(--ink-lighter);
+  box-shadow: 
+    0 4px 16px var(--water-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.family-tree-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--china-red) 0%, var(--ink-black) 50%, var(--china-red) 100%);
+  opacity: 0.6;
+}
+
+.family-tree-container:hover {
+  box-shadow: 
+    0 8px 32px var(--water-dark),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: var(--ink-black);
+}
+
+/* 人物卡片样式 */
+.person-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 245, 240, 0.95) 100%);
+  border: 2px solid var(--ink-lighter);
+  border-radius: 8px;
+  box-shadow: 
+    0 4px 16px var(--water-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.person-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--china-red) 0%, var(--glazed-yellow) 50%, var(--china-red) 100%);
+  opacity: 0.8;
+}
+
+.person-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px var(--water-dark),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: var(--china-red);
+}
+
+/* 关系图标动画 */
+@keyframes relationPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.person-card .relation-icon {
+  animation: relationPulse 2s ease-in-out infinite;
+}
+
+/* ECharts 工具类自定义样式 */
+.ec-extension {
+  font-family: 'KaiTi', 'STKaiti', serif !important;
+}
+
+/* 人物关系图谱加载动画 */
+@keyframes treeLoading {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.family-tree-loading {
+  animation: treeLoading 1.5s ease-in-out infinite;
+}
+
+/* 关系连线样式优化 */
+.relation-link {
+  stroke: var(--china-red) !important;
+  stroke-width: 2px !important;
+  stroke-opacity: 0.6 !important;
+}
+
+/* 节点高亮效果 */
+.relation-node-highlight {
+  filter: drop-shadow(0 0 8px var(--china-red));
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .family-tree-container {
+    padding: 8px;
+    min-height: 300px;
+  }
+  
+  .person-card {
+    padding: 12px !important;
+  }
+}

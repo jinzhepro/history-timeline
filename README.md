@@ -1,40 +1,184 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 中华历史长河 - 中国历史时间线应用
 
-## Getting Started
+一个展示中国从夏朝到清朝完整历史朝代信息的交互式时间线应用，采用优雅的水墨风格设计。
 
-First, run the development server:
+## ✨ 功能特色
 
+### 核心功能
+- 📜 **历史朝代展示** - 从夏朝到清朝的完整历史时间线
+- 🎨 **水墨风格 UI** - 中国传统配色，宣纸背景，典雅设计
+- 🔍 **时期筛选** - 按上古、中古、近古、帝国晚期分类浏览
+- 🔎 **实时搜索** - 快速查找特定朝代或君主
+- 📱 **响应式设计** - 完美适配桌面和移动设备
+- ♿ **无障碍访问** - 支持键盘导航和屏幕阅读器
+
+### 🆕 新增功能
+- 🌐 **人物关系图谱** - ECharts 可视化展示历史人物关系网络
+  - 力导向图布局，节点可拖拽
+  - 支持缩放（0.3x - 3x）和漫游
+  - 点击节点查看人物详情
+  - 悬停显示人物简介
+- 👤 **人物详情卡片** - 完整的人物信息和社交关系展示
+  - 基本信息（姓名、字号、头衔、在位时间）
+  - 人物描述和历史贡献
+  - 社会关系网络（父子、兄弟、师徒、君臣等）
+
+## 🛠️ 技术栈
+
+- **框架**: Next.js 16 (Pages Router)
+- **UI 库**: React 19
+- **样式**: Tailwind CSS 3
+- **图表**: ECharts 6 + echarts-for-react
+- **包管理**: npm
+
+## 🚀 快速开始
+
+### 安装依赖
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 开发模式
+```bash
+npm run dev
+```
+访问 [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### 生产构建
+```bash
+npm run build
+npm run start
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 📁 项目结构
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```
+nextjs-app/
+├── components/           # React 组件
+│   ├── DynastyCard.js   # 朝代卡片
+│   ├── DynastyDrawer.js # 朝代详情抽屉
+│   ├── DynastyDetail.js # 朝代详情
+│   ├── Timeline.js      # 时间线主组件
+│   ├── TimelineFilter.js # 筛选组件
+│   ├── FamilyTree.js    # 人物关系图谱 🆕
+│   └── PersonCard.js    # 人物详情卡片 🆕
+├── data/
+│   └── dynasties.js     # 朝代和人物数据
+├── pages/
+│   ├── index.js         # 首页
+│   ├── _app.js          # 应用入口
+│   ├── _document.js     # 文档结构
+│   └── api/             # API 路由
+├── styles/
+│   └── globals.css      # 全局样式
+├── AGENTS.md            # 开发指南
+└── FEATURES.md          # 功能说明文档
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 使用方法
 
-## Learn More
+### 查看朝代信息
+1. 浏览时间线，点击任意朝代卡片
+2. 右侧滑出详情抽屉，查看:
+   - 基本信息（开国君主、代表君主、持续时间）
+   - 重要历史事件
+   - 文化成就
 
-To learn more about Next.js, take a look at the following resources:
+### 使用人物关系图谱 🆕
+1. 在朝代详情抽屉中，点击"查看人物关系图谱"按钮
+2. 图谱将显示该朝代的人物关系网络
+3. **交互操作**:
+   - 🖱️ **拖拽节点** - 调整人物位置
+   - 🔍 **滚轮缩放** - 放大/缩小（限制：0.3x - 3x）
+   - 👆 **点击节点** - 查看人物详情
+   - 💬 **悬停** - 显示人物简介
+4. 点击人物节点，显示详细信息卡片
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### 筛选和搜索
+- 使用顶部的时期筛选器选择特定历史时期
+- 在搜索框输入朝代名或君主名快速查找
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📊 已录入数据
 
-## Deploy on Vercel
+### 朝代数据
+- ✅ 夏朝、商朝、西周、东周
+- ✅ 秦朝、西汉、东汉
+- ✅ 三国、西晋、东晋、南北朝
+- ✅ 隋朝、唐朝、五代十国
+- ✅ 北宋、南宋、元朝
+- ✅ 明朝、清朝
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 人物数据 (70+ 位)
+- 👑 **帝王系列**: 禹、秦始皇、汉武帝、唐太宗、康熙、乾隆等
+- 👨‍👩‍👦 **家族关系**: 周武王家族、曹操家族、康熙家族等
+- ⚔️ **名将系列**: 卫青、霍去病、关羽、张飞、周瑜等
+- 📚 **文人系列**: 孔子、老子、李白、杜甫、苏轼等
+- 💡 **政治家系列**: 周公旦、诸葛亮、王安石、李斯等
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## 🎨 设计特色
+
+### 水墨风格
+- 中国传统配色（中国红、琉璃黄、青花蓝）
+- 宣纸纹理背景
+- 优雅的动画过渡效果
+- 书法字体（楷体）
+
+### 响应式布局
+- 桌面端：左右交替的时间轴布局
+- 移动端：单列垂直布局
+- 自适应字体和间距
+
+## 🔧 开发指南
+
+### 添加新人物
+在 `/data/dynasties.js` 的 `historicalFigures` 数组中添加:
+
+```javascript
+{
+  id: 'unique-id',
+  name: '人物姓名',
+  formalName: '字号（可选）',
+  dynasty: '朝代 ID',
+  title: '头衔',
+  reign: '在位时间',
+  description: '人物描述',
+  relations: [
+    {
+      type: 'father',
+      target: '相关人物 ID',
+      label: '父亲'
+    }
+  ]
+}
+```
+
+### 修改图谱样式
+编辑 `/components/FamilyTree.js`:
+- 节点颜色：`itemStyle.color`
+- 节点大小：`symbolSize`
+- 关系线样式：`lineStyle`
+- 力导向布局：`force` 配置
+
+### 调试
+打开浏览器控制台查看 `[FamilyTree]` 日志:
+- 数据加载情况
+- 节点和关系创建
+- 图表初始化状态
+
+## 📖 资源链接
+
+- [Next.js 文档](https://nextjs.org/docs)
+- [ECharts 文档](https://echarts.apache.org/zh/index.html)
+- [Tailwind CSS 文档](https://tailwindcss.com/docs)
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+## 📄 许可证
+
+MIT License
+
+---
+
+**中华文明 · 源远流长** 🇨🇳

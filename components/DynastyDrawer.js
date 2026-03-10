@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import FamilyTree from './FamilyTree';
+// import FamilyTreeNative from './FamilyTreeNative'; // 备用版本
+import PersonCard from './PersonCard';
 
 /**
  * 朝代详情抽屉组件 - 侧边滑出式
@@ -9,6 +12,8 @@ import React, { useState, useEffect } from 'react';
  */
 const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevious }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedPersonId, setSelectedPersonId] = useState(null);
+  const [showFamilyTree, setShowFamilyTree] = useState(false);
 
   const formatYear = (year) => {
     if (year < 0) {
@@ -99,6 +104,42 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
           </p>
           
           <div className="ink-divider mb-6"></div>
+
+          {/* 人物关系图谱按钮 */}
+          <div className="mb-6">
+            <button
+              onClick={() => setShowFamilyTree(!showFamilyTree)}
+              className="w-full py-3 px-6 ink-button rounded-lg font-chinese flex items-center justify-center gap-2"
+            >
+              <span className="text-xl">👥</span>
+              {showFamilyTree ? '隐藏人物关系图谱' : '查看人物关系图谱'}
+            </button>
+          </div>
+
+          {/* 人物关系图谱区域 */}
+          {showFamilyTree && (
+            <section className="ink-card p-4 mb-6">
+              <h3 className="text-xl font-bold mb-4 font-chinese text-center">
+                {dynasty.name}人物关系图谱
+              </h3>
+              <p className="text-sm text-gray-600 font-chinese text-center mb-4">
+                💡 提示：拖拽节点可调整位置，滚轮可缩放，点击节点查看详情
+              </p>
+              <FamilyTree
+                dynastyId={dynasty.id}
+                selectedPersonId={selectedPersonId}
+                onPersonSelect={setSelectedPersonId}
+              />
+              
+              {/* 选中人物详情 */}
+              {selectedPersonId && (
+                <PersonCard
+                  personId={selectedPersonId}
+                  onClose={() => setSelectedPersonId(null)}
+                />
+              )}
+            </section>
+          )}
 
           <div className="space-y-8">
             {/* 基本信息 */}

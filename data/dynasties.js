@@ -954,4 +954,678 @@ const dynasties = [
   }
 ];
 
+/**
+ * 历史人物关系数据
+ * 包含重要历史人物的详细信息和关系网络
+ */
+export const historicalFigures = [
+  // 夏朝人物
+  {
+    id: 'yu-xia',
+    name: '禹',
+    dynasty: 'xia',
+    title: '夏朝开国君主',
+    reign: '-2070 至 -2020',
+    description: '夏朝的建立者，治水英雄，采用疏导法治水，三过家门而不入',
+    relations: [
+      { type: 'successor', target: 'qi', label: '传位于' }
+    ]
+  },
+  {
+    id: 'qi',
+    name: '启',
+    dynasty: 'xia',
+    title: '夏朝第二代君主',
+    reign: '-2020 至 -1990',
+    description: '禹之子，继承王位，确立了世袭制，结束了禅让制',
+    relations: [
+      { type: 'predecessor', target: 'yu-xia', label: '继承自' },
+      { type: 'successor', target: 'tai-kang', label: '传位于' }
+    ]
+  },
+  
+  // 商朝人物
+  {
+    id: 'tang-shang',
+    name: '汤',
+    dynasty: 'shang',
+    title: '商朝开国君主',
+    reign: '-1600 至 -1580',
+    description: '商朝建立者，推翻夏桀统治，建立商朝',
+    relations: [
+      { type: 'successor', target: 'wai-bing', label: '传位于' }
+    ]
+  },
+  {
+    id: 'wu-ding',
+    name: '武丁',
+    dynasty: 'shang',
+    title: '商朝第 23 代君主',
+    reign: '-1250 至 -1192',
+    description: '商朝鼎盛时期的君主，在位 59 年，史称"武丁中兴"',
+    relations: [
+      { type: 'spouse', target: 'fu-hao', label: '配偶' }
+    ]
+  },
+  {
+    id: 'fu-hao',
+    name: '妇好',
+    dynasty: 'shang',
+    title: '商王武丁配偶',
+    reign: null,
+    description: '中国历史上有据可查的第一位女性军事统帅和政治家',
+    relations: [
+      { type: 'spouse', target: 'wu-ding', label: '配偶' }
+    ]
+  },
+  
+  // 西周人物
+  {
+    id: 'ji-fa',
+    name: '周武王',
+    formalName: '姬发',
+    dynasty: 'western-zhou',
+    title: '西周开国君主',
+    reign: '-1046 至 -1043',
+    description: '西周建立者，在牧野之战中击败商纣王，建立周朝',
+    relations: [
+      { type: 'father', target: 'ji-chang', label: '父亲' },
+      { type: 'brother', target: 'ji-dan', label: '弟弟' },
+      { type: 'successor', target: 'ji-song', label: '传位于' }
+    ]
+  },
+  {
+    id: 'ji-chang',
+    name: '周文王',
+    formalName: '姬昌',
+    dynasty: 'western-zhou',
+    title: '周朝奠基者',
+    reign: null,
+    description: '周武王之父，为周朝建立奠定基础，演《周易》',
+    relations: [
+      { type: 'son', target: 'ji-fa', label: '儿子' },
+      { type: 'son', target: 'ji-dan', label: '儿子' }
+    ]
+  },
+  {
+    id: 'ji-dan',
+    name: '周公旦',
+    formalName: '姬旦',
+    dynasty: 'western-zhou',
+    title: '西周政治家',
+    reign: null,
+    description: '周武王之弟，辅佐成王，制礼作乐，建立周朝典章制度',
+    relations: [
+      { type: 'father', target: 'ji-chang', label: '父亲' },
+      { type: 'brother', target: 'ji-fa', label: '哥哥' },
+      { type: 'nephew', target: 'ji-song', label: '辅佐' }
+    ]
+  },
+  {
+    id: 'ji-song',
+    name: '周成王',
+    formalName: '姬诵',
+    dynasty: 'western-zhou',
+    title: '西周第二代君主',
+    reign: '-1042 至 -1021',
+    description: '周武王之子，周公旦辅佐，开创"成康之治"',
+    relations: [
+      { type: 'father', target: 'ji-fa', label: '父亲' },
+      { type: 'uncle', target: 'ji-dan', label: '叔父' }
+    ]
+  },
+  
+  // 东周/春秋战国人物
+  {
+    id: 'kong-zi',
+    name: '孔子',
+    formalName: '孔丘',
+    dynasty: 'eastern-zhou',
+    title: '儒家学派创始人',
+    reign: null,
+    description: '春秋末期思想家、教育家，儒家学派创始人，被尊为"至圣先师"',
+    relations: [
+      { type: 'student', target: 'yan-hui', label: '得意弟子' },
+      { type: 'student', target: 'zi-lu', label: '弟子' }
+    ]
+  },
+  {
+    id: 'yan-hui',
+    name: '颜回',
+    formalName: '颜渊',
+    dynasty: 'eastern-zhou',
+    title: '孔子弟子',
+    reign: null,
+    description: '孔子最得意的弟子，以德行著称',
+    relations: [
+      { type: 'teacher', target: 'kong-zi', label: '老师' }
+    ]
+  },
+  {
+    id: 'lao-zi',
+    name: '老子',
+    formalName: '李耳',
+    dynasty: 'eastern-zhou',
+    title: '道家学派创始人',
+    reign: null,
+    description: '春秋时期思想家，著《道德经》，道家学派创始人',
+    relations: []
+  },
+  {
+    id: 'sun-wu',
+    name: '孙子',
+    formalName: '孙武',
+    dynasty: 'eastern-zhou',
+    title: '军事家',
+    reign: null,
+    description: '春秋末期军事家，著《孙子兵法》，被尊为"兵圣"',
+    relations: []
+  },
+  {
+    id: 'ying-zheng',
+    name: '秦始皇',
+    formalName: '嬴政',
+    dynasty: 'qin',
+    title: '秦朝开国皇帝',
+    reign: '-221 至 -210',
+    description: '中国历史上第一位皇帝，统一六国，建立中央集权制度',
+    relations: [
+      { type: 'father', target: 'ying-yiren', label: '父亲' },
+      { type: 'successor', target: 'ying-huhai', label: '继承人' }
+    ]
+  },
+  {
+    id: 'ying-yiren',
+    name: '秦庄襄王',
+    formalName: '嬴异人',
+    dynasty: 'qin',
+    title: '秦国君主',
+    reign: '-250 至 -247',
+    description: '秦始皇之父，在位 3 年',
+    relations: [
+      { type: 'son', target: 'ying-zheng', label: '儿子' }
+    ]
+  },
+  {
+    id: 'ying-huhai',
+    name: '秦二世',
+    formalName: '嬴胡亥',
+    dynasty: 'qin',
+    title: '秦朝第二代皇帝',
+    reign: '-210 至 -207',
+    description: '秦始皇第十八子，秦朝第二位皇帝',
+    relations: [
+      { type: 'father', target: 'ying-zheng', label: '父亲' }
+    ]
+  },
+  {
+    id: 'li-si',
+    name: '李斯',
+    formalName: null,
+    dynasty: 'qin',
+    title: '秦朝丞相',
+    reign: null,
+    description: '秦朝著名政治家，协助秦始皇统一天下，创制小篆',
+    relations: [
+      { type: 'monarch', target: 'ying-zheng', label: '效忠' }
+    ]
+  },
+  
+  // 西汉人物
+  {
+    id: 'liu-bang',
+    name: '汉高祖',
+    formalName: '刘邦',
+    dynasty: 'western-han',
+    title: '西汉开国皇帝',
+    reign: '-202 至 -195',
+    description: '西汉建立者，中国历史上第一位平民出身的皇帝',
+    relations: [
+      { type: 'successor', target: 'liu-heng', label: '继承人' }
+    ]
+  },
+  {
+    id: 'liu-che',
+    name: '汉武帝',
+    formalName: '刘彻',
+    dynasty: 'western-han',
+    title: '西汉第七位皇帝',
+    reign: '-141 至 -87',
+    description: '西汉鼎盛时期皇帝，北击匈奴，开辟丝绸之路',
+    relations: [
+      { type: 'general', target: 'wei-qing', label: '大将' },
+      { type: 'general', target: 'huo-qubing', label: '大将' },
+      { type: 'envoy', target: 'zhang-qian', label: '使者' }
+    ]
+  },
+  {
+    id: 'wei-qing',
+    name: '卫青',
+    formalName: null,
+    dynasty: 'western-han',
+    title: '西汉名将',
+    reign: null,
+    description: '汉武帝时期名将，多次北击匈奴，战功卓著',
+    relations: [
+      { type: 'monarch', target: 'liu-che', label: '效忠' },
+      { type: 'nephew', target: 'huo-qubing', label: '外甥' }
+    ]
+  },
+  {
+    id: 'huo-qubing',
+    name: '霍去病',
+    formalName: null,
+    dynasty: 'western-han',
+    title: '西汉名将',
+    reign: null,
+    description: '汉武帝时期名将，封狼居胥，英年早逝',
+    relations: [
+      { type: 'monarch', target: 'liu-che', label: '效忠' },
+      { type: 'uncle', target: 'wei-qing', label: '舅舅' }
+    ]
+  },
+  {
+    id: 'zhang-qian',
+    name: '张骞',
+    formalName: null,
+    dynasty: 'western-han',
+    title: '西汉外交家',
+    reign: null,
+    description: '丝绸之路开拓者，两次出使西域',
+    relations: [
+      { type: 'monarch', target: 'liu-che', label: '效忠' }
+    ]
+  },
+  {
+    id: 'si-ma-qian',
+    name: '司马迁',
+    formalName: null,
+    dynasty: 'western-han',
+    title: '西汉史学家',
+    reign: null,
+    description: '著《史记》，中国第一部纪传体通史',
+    relations: []
+  },
+  
+  // 东汉人物
+  {
+    id: 'liu-xiu',
+    name: '汉光武帝',
+    formalName: '刘秀',
+    dynasty: 'eastern-han',
+    title: '东汉开国皇帝',
+    reign: '25 至 57',
+    description: '东汉建立者，开创"光武中兴"',
+    relations: []
+  },
+  {
+    id: 'cai-lun',
+    name: '蔡伦',
+    formalName: null,
+    dynasty: 'eastern-han',
+    title: '东汉发明家',
+    reign: null,
+    description: '改进造纸术，对人类文明发展产生深远影响',
+    relations: []
+  },
+  
+  // 三国人物
+  {
+    id: 'cao-cao',
+    name: '曹操',
+    formalName: '孟德',
+    dynasty: 'three-kingdoms',
+    title: '魏国奠基者',
+    reign: null,
+    description: '东汉末年政治家、军事家、诗人，魏国实际建立者',
+    relations: [
+      { type: 'son', target: 'cao-pi', label: '儿子' },
+      { type: 'son', target: 'cao-zhi', label: '儿子' },
+      { type: 'advisor', target: 'guo-jia', label: '谋士' }
+    ]
+  },
+  {
+    id: 'cao-pi',
+    name: '魏文帝',
+    formalName: '曹丕',
+    dynasty: 'three-kingdoms',
+    title: '魏国开国皇帝',
+    reign: '220 至 226',
+    description: '曹操之子，魏国建立者，建安文学代表人物',
+    relations: [
+      { type: 'father', target: 'cao-cao', label: '父亲' },
+      { type: 'brother', target: 'cao-zhi', label: '弟弟' }
+    ]
+  },
+  {
+    id: 'cao-zhi',
+    name: '曹植',
+    formalName: '子建',
+    dynasty: 'three-kingdoms',
+    title: '魏国文学家',
+    reign: null,
+    description: '曹操之子，建安文学集大成者，《七步诗》作者',
+    relations: [
+      { type: 'father', target: 'cao-cao', label: '父亲' },
+      { type: 'brother', target: 'cao-pi', label: '哥哥' }
+    ]
+  },
+  {
+    id: 'liu-bei',
+    name: '刘备',
+    formalName: '玄德',
+    dynasty: 'three-kingdoms',
+    title: '蜀汉开国皇帝',
+    reign: '221 至 223',
+    description: '蜀汉建立者，三国时期蜀汉政权开国皇帝',
+    relations: [
+      { type: 'advisor', target: 'zhuge-liang', label: '军师' },
+      { type: 'general', target: 'guan-yu', label: '大将' },
+      { type: 'general', target: 'zhang-fei', label: '大将' }
+    ]
+  },
+  {
+    id: 'zhuge-liang',
+    name: '诸葛亮',
+    formalName: '孔明',
+    dynasty: 'three-kingdoms',
+    title: '蜀汉丞相',
+    reign: null,
+    description: '三国时期蜀汉丞相，杰出政治家、军事家',
+    relations: [
+      { type: 'monarch', target: 'liu-bei', label: '效忠' },
+      { type: 'monarch', target: 'liu-shan', label: '辅佐' }
+    ]
+  },
+  {
+    id: 'guan-yu',
+    name: '关羽',
+    formalName: '云长',
+    dynasty: 'three-kingdoms',
+    title: '蜀汉名将',
+    reign: null,
+    description: '蜀汉名将，被后世尊为"武圣"',
+    relations: [
+      { type: 'monarch', target: 'liu-bei', label: '效忠' },
+      { type: 'sworn_brother', target: 'zhang-fei', label: '义弟' },
+      { type: 'sworn_brother', target: 'liu-bei', label: '义兄' }
+    ]
+  },
+  {
+    id: 'zhang-fei',
+    name: '张飞',
+    formalName: '翼德',
+    dynasty: 'three-kingdoms',
+    title: '蜀汉名将',
+    reign: null,
+    description: '蜀汉名将，与关羽并称"关张"',
+    relations: [
+      { type: 'monarch', target: 'liu-bei', label: '效忠' },
+      { type: 'sworn_brother', target: 'guan-yu', label: '义兄' },
+      { type: 'sworn_brother', target: 'liu-bei', label: '义兄' }
+    ]
+  },
+  {
+    id: 'sun-quan',
+    name: '孙权',
+    formalName: '仲谋',
+    dynasty: 'three-kingdoms',
+    title: '吴国开国皇帝',
+    reign: '229 至 252',
+    description: '吴国建立者，三国时期吴国开国皇帝',
+    relations: [
+      { type: 'general', target: 'zhou-yu', label: '大将' }
+    ]
+  },
+  {
+    id: 'zhou-yu',
+    name: '周瑜',
+    formalName: '公瑾',
+    dynasty: 'three-kingdoms',
+    title: '吴国名将',
+    reign: null,
+    description: '吴国名将，赤壁之战指挥者',
+    relations: [
+      { type: 'monarch', target: 'sun-quan', label: '效忠' }
+    ]
+  },
+  
+  // 唐朝人物
+  {
+    id: 'li-shimin',
+    name: '唐太宗',
+    formalName: '李世民',
+    dynasty: 'tang',
+    title: '唐朝第二位皇帝',
+    reign: '627 至 649',
+    description: '唐朝第二位皇帝，开创"贞观之治"',
+    relations: [
+      { type: 'father', target: 'li-yuan', label: '父亲' },
+      { type: 'successor', target: 'li-zhi', label: '继承人' }
+    ]
+  },
+  {
+    id: 'li-yuan',
+    name: '唐高祖',
+    formalName: '李渊',
+    dynasty: 'tang',
+    title: '唐朝开国皇帝',
+    reign: '618 至 626',
+    description: '唐朝建立者',
+    relations: [
+      { type: 'son', target: 'li-shimin', label: '儿子' }
+    ]
+  },
+  {
+    id: 'wu-ze-tian',
+    name: '武则天',
+    formalName: '武曌',
+    dynasty: 'tang',
+    title: '周朝皇帝',
+    reign: '690 至 705',
+    description: '中国历史上唯一的女皇帝',
+    relations: [
+      { type: 'husband', target: 'li-zhi', label: '丈夫' }
+    ]
+  },
+  {
+    id: 'li-longji',
+    name: '唐玄宗',
+    formalName: '李隆基',
+    dynasty: 'tang',
+    title: '唐朝第七位皇帝',
+    reign: '712 至 756',
+    description: '开创"开元盛世"，后期爆发安史之乱',
+    relations: [
+      { type: 'concubine', target: 'yang-gui-fei', label: '宠妃' }
+    ]
+  },
+  {
+    id: 'yang-gui-fei',
+    name: '杨贵妃',
+    formalName: '杨玉环',
+    dynasty: 'tang',
+    title: '唐玄宗宠妃',
+    reign: null,
+    description: '中国古代四大美女之一，唐玄宗宠妃',
+    relations: [
+      { type: 'monarch', target: 'li-longji', label: '宠幸' }
+    ]
+  },
+  {
+    id: 'li-bai',
+    name: '李白',
+    formalName: '太白',
+    dynasty: 'tang',
+    title: '唐代诗人',
+    reign: null,
+    description: '唐代伟大浪漫主义诗人，被尊为"诗仙"',
+    relations: [
+      { type: 'friend', target: 'du-fu', label: '好友' }
+    ]
+  },
+  {
+    id: 'du-fu',
+    name: '杜甫',
+    formalName: '子美',
+    dynasty: 'tang',
+    title: '唐代诗人',
+    reign: null,
+    description: '唐代伟大现实主义诗人，被尊为"诗圣"',
+    relations: [
+      { type: 'friend', target: 'li-bai', label: '好友' }
+    ]
+  },
+  
+  // 宋朝人物
+  {
+    id: 'zhao-kuang-yin',
+    name: '宋太祖',
+    formalName: '赵匡胤',
+    dynasty: 'northern-song',
+    title: '北宋开国皇帝',
+    reign: '960 至 976',
+    description: '北宋建立者，"陈桥兵变"黄袍加身',
+    relations: []
+  },
+  {
+    id: 'wang-an-shi',
+    name: '王安石',
+    formalName: '介甫',
+    dynasty: 'northern-song',
+    title: '北宋政治家',
+    reign: null,
+    description: '北宋著名政治家、文学家，主持"王安石变法"',
+    relations: [
+      { type: 'monarch', target: 'zhao-xu', label: '效忠' }
+    ]
+  },
+  {
+    id: 'su-shi',
+    name: '苏轼',
+    formalName: '子瞻',
+    dynasty: 'northern-song',
+    title: '北宋文学家',
+    reign: null,
+    description: '北宋文学家、书画家，"唐宋八大家"之一',
+    relations: []
+  },
+  
+  // 元朝人物
+  {
+    id: 'hubilie',
+    name: '元世祖',
+    formalName: '孛儿只斤·忽必烈',
+    dynasty: 'yuan',
+    title: '元朝开国皇帝',
+    reign: '1260 至 1294',
+    description: '元朝建立者，成吉思汗之孙',
+    relations: [
+      { type: 'grandfather', target: 'tie-mu-zhen', label: '祖父' }
+    ]
+  },
+  {
+    id: 'tie-mu-zhen',
+    name: '成吉思汗',
+    formalName: '孛儿只斤·铁木真',
+    dynasty: 'yuan',
+    title: '蒙古帝国大汗',
+    reign: '1206 至 1227',
+    description: '蒙古帝国建立者，被尊为"成吉思汗"',
+    relations: [
+      { type: 'grandson', target: 'hubilie', label: '孙子' }
+    ]
+  },
+  
+  // 明朝人物
+  {
+    id: 'zhu-yuan-zhang',
+    name: '明太祖',
+    formalName: '朱元璋',
+    dynasty: 'ming',
+    title: '明朝开国皇帝',
+    reign: '1368 至 1398',
+    description: '明朝建立者，出身贫寒，开创大明基业',
+    relations: [
+      { type: 'successor', target: 'zhu-di', label: '继承人' }
+    ]
+  },
+  {
+    id: 'zhu-di',
+    name: '明成祖',
+    formalName: '朱棣',
+    dynasty: 'ming',
+    title: '明朝第三位皇帝',
+    reign: '1402 至 1424',
+    description: '发动"靖难之役"夺取皇位，迁都北京，派郑和下西洋',
+    relations: [
+      { type: 'father', target: 'zhu-yuan-zhang', label: '父亲' },
+      { type: 'envoy', target: 'zheng-he', label: '派遣' }
+    ]
+  },
+  {
+    id: 'zheng-he',
+    name: '郑和',
+    formalName: null,
+    dynasty: 'ming',
+    title: '明代航海家',
+    reign: null,
+    description: '明代著名航海家、外交家，七下西洋',
+    relations: [
+      { type: 'monarch', target: 'zhu-di', label: '效忠' }
+    ]
+  },
+  {
+    id: 'li-shi-zhen',
+    name: '李时珍',
+    formalName: '东璧',
+    dynasty: 'ming',
+    title: '明代医学家',
+    reign: null,
+    description: '著《本草纲目》，是中国药物学巨著',
+    relations: []
+  },
+  
+  // 清朝人物
+  {
+    id: 'kangxi',
+    name: '康熙帝',
+    formalName: '爱新觉罗·玄烨',
+    dynasty: 'qing',
+    title: '清朝第四位皇帝',
+    reign: '1661 至 1722',
+    description: '清朝在位时间最长的皇帝，开创"康乾盛世"',
+    relations: [
+      { type: 'father', target: 'yongzheng', label: '儿子' },
+      { type: 'grandfather', target: 'qianlong', label: '孙子' }
+    ]
+  },
+  {
+    id: 'yongzheng',
+    name: '雍正帝',
+    formalName: '爱新觉罗·胤禛',
+    dynasty: 'qing',
+    title: '清朝第五位皇帝',
+    reign: '1722 至 1735',
+    description: '康熙帝第四子，在位期间励精图治',
+    relations: [
+      { type: 'father', target: 'kangxi', label: '父亲' },
+      { type: 'son', target: 'qianlong', label: '儿子' }
+    ]
+  },
+  {
+    id: 'qianlong',
+    name: '乾隆帝',
+    formalName: '爱新觉罗·弘历',
+    dynasty: 'qing',
+    title: '清朝第六位皇帝',
+    reign: '1735 至 1796',
+    description: '清朝鼎盛时期皇帝，在位 60 年',
+    relations: [
+      { type: 'grandfather', target: 'kangxi', label: '祖父' },
+      { type: 'father', target: 'yongzheng', label: '父亲' }
+    ]
+  }
+];
+
 export default dynasties;
