@@ -382,3 +382,8 @@ body {
     padding: 12px !important;
   }
 }
+
+body.scroll-locked,
+html.scroll-locked {
+  overflow: hidden !important;
+}

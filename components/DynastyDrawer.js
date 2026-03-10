@@ -27,7 +27,14 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
       setIsVisible(true);
     }, 10);
 
-    return () => clearTimeout(timer);
+    document.documentElement.classList.add('scroll-locked');
+    document.body.classList.add('scroll-locked');
+
+    return () => {
+      clearTimeout(timer);
+      document.documentElement.classList.remove('scroll-locked');
+      document.body.classList.remove('scroll-locked');
+    };
   }, []);
 
   const handleCloseClick = (e) => {
