@@ -77,8 +77,13 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
     }
   };
 
+  /**
+   * 处理背景遮罩点击事件
+   * 点击黑色半透明背景时关闭抽屉
+   */
   const handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) {
+    // 确保点击的是背景遮罩本身，而不是抽屉内容
+    if (e.target === e.currentTarget || e.target.classList.contains('backdrop-overlay')) {
       handleCloseClick(e);
     }
   };
@@ -91,12 +96,14 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
     <div
       className="fixed inset-0 z-[60] flex justify-end"
       onKeyDown={handleKeyDown}
-      onClick={handleBackdropClick}
       tabIndex={-1}
       autoFocus
     >
-      {/* 背景遮罩 */}
-      <div className="absolute inset-0 bg-black bg-opacity-30 transition-opacity"></div>
+      {/* 背景遮罩 - 点击可关闭抽屉 */}
+      <div
+        className="backdrop-overlay absolute inset-0 bg-black bg-opacity-30 transition-opacity cursor-pointer"
+        onClick={handleBackdropClick}
+      ></div>
 
       {/* 抽屉面板 */}
       <div
