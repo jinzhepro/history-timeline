@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FamilyTree from './FamilyTree';
 // import FamilyTreeNative from './FamilyTreeNative'; // 备用版本
 import PersonCard from './PersonCard';
+import DynastyMap from './DynastyMap';
 
 /**
  * 朝代详情抽屉组件 - 侧边滑出式
@@ -14,6 +15,7 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
   const [isVisible, setIsVisible] = useState(false);
   const [selectedPersonId, setSelectedPersonId] = useState(null);
   const [showFamilyTree, setShowFamilyTree] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
   const formatYear = (year) => {
     if (year < 0) {
@@ -153,8 +155,18 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
 
           <div className="ink-divider mb-6"></div>
 
-          {/* 人物关系图谱按钮 */}
-          <div className="mb-6">
+          {/* 功能按钮组 */}
+          <div className="mb-6 space-y-3">
+            {/* 疆域地图按钮 */}
+            <button
+              onClick={() => setShowMap(!showMap)}
+              className="w-full py-3 px-6 ink-button rounded-lg font-chinese flex items-center justify-center gap-2"
+            >
+              <span className="text-xl">🗺️</span>
+              {showMap ? '隐藏疆域地图' : '查看疆域地图'}
+            </button>
+
+            {/* 人物关系图谱按钮 */}
             <button
               onClick={() => setShowFamilyTree(!showFamilyTree)}
               className="w-full py-3 px-6 ink-button rounded-lg font-chinese flex items-center justify-center gap-2"
@@ -163,6 +175,17 @@ const DynastyDrawer = ({ dynasty, onClose, onNext, onPrevious, hasNext, hasPrevi
               {showFamilyTree ? '隐藏人物关系图谱' : '查看人物关系图谱'}
             </button>
           </div>
+
+          {/* 疆域地图区域 */}
+          {showMap && (
+            <section className="ink-card p-4 mb-6">
+              <DynastyMap
+                territory={dynasty.territory}
+                dynastyName={dynasty.name}
+                dynastyId={dynasty.id}
+              />
+            </section>
+          )}
 
           {/* 人物关系图谱区域 */}
           {showFamilyTree && (

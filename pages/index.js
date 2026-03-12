@@ -56,7 +56,7 @@ export default function Home() {
         {/* 导航栏 - 粘性定位，滚动时透明 */}
         <nav className={navClassName}>
           <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold ink-title">朝代纪</h1>
+            <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>朝代纪</h1>
             <div className="flex gap-4">
               <Link
                 href="/quiz"

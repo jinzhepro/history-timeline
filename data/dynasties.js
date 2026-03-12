@@ -13,6 +13,19 @@ const dynasties = [
     period: 'ancient', // ancient, classical, medieval, late-imperial
     founder: '禹',
     representativeRulers: ['禹', '启', '太康', '少康', '桀'],
+    territory: {
+      center: [113.6, 34.5],
+      zoom: 4,
+      area: 50,
+      description: '主要位于今河南西部、山西南部一带，以伊洛河流域为中心',
+      capital: '阳城（今河南登封）',
+      borders: {
+        east: '河南东部',
+        west: '陕西东部',
+        north: '山西南部',
+        south: '河南南部'
+      }
+    },
     events: [
       {
         name: '夏朝建立',
@@ -56,6 +69,19 @@ const dynasties = [
     period: 'ancient',
     founder: '汤',
     representativeRulers: ['汤', '盘庚', '武丁', '帝乙', '帝辛（纣）'],
+    territory: {
+      center: [114.3, 36.1],
+      zoom: 4,
+      area: 80,
+      description: '以河南为中心，扩展至河北、山东、山西、陕西等地，盘庚迁殷后稳定',
+      capital: '殷（今河南安阳）',
+      borders: {
+        east: '山东半岛',
+        west: '陕西东部',
+        north: '河北南部',
+        south: '湖北北部'
+      }
+    },
     events: [
       {
         name: '商汤灭夏',
@@ -99,6 +125,19 @@ const dynasties = [
     period: 'ancient',
     founder: '周武王（姬发）',
     representativeRulers: ['周武王（姬发）', '周公旦（姬旦）', '周成王（姬诵）', '周康王（姬钊）', '周穆王（姬满）'],
+    territory: {
+      center: [108.9, 34.3],
+      zoom: 4,
+      area: 100,
+      description: '以关中平原为中心，通过分封制扩展至黄河中下游地区',
+      capital: '镐京（今陕西西安）',
+      borders: {
+        east: '山东半岛',
+        west: '甘肃东部',
+        north: '河北北部',
+        south: '长江中游'
+      }
+    },
     events: [
       {
         name: '牧野之战',
@@ -142,6 +181,19 @@ const dynasties = [
     period: 'ancient',
     founder: '周平王（姬宜臼）',
     representativeRulers: ['周平王（姬宜臼）', '齐桓公（姜小白）', '晋文公（姬重耳）', '楚庄王（熊旅）', '秦始皇（嬴政）'],
+    territory: {
+      center: [112.4, 34.6],
+      zoom: 4,
+      area: 150,
+      description: '周王室衰微，诸侯争霸，各诸侯国疆域此消彼长，文化上百家争鸣',
+      capital: '洛邑（今河南洛阳）',
+      borders: {
+        east: '齐鲁之地',
+        west: '秦地',
+        north: '燕赵',
+        south: '楚越'
+      }
+    },
     events: [
       {
         name: '平王东迁',
@@ -205,6 +257,19 @@ const dynasties = [
     period: 'classical',
     founder: '秦始皇（嬴政）',
     representativeRulers: ['秦始皇（嬴政）', '秦二世（嬴胡亥）'],
+    territory: {
+      center: [108.7, 34.3],
+      zoom: 4,
+      area: 340,
+      description: '中国历史上第一个统一的多民族国家，东到辽东，西到陇西，北抵长城，南达南海',
+      capital: '咸阳（今陕西咸阳）',
+      borders: {
+        east: '辽东',
+        west: '陇西',
+        north: '长城',
+        south: '南海'
+      }
+    },
     events: [
       {
         name: '秦朝建立',
@@ -273,6 +338,19 @@ const dynasties = [
     period: 'classical',
     founder: '汉高祖（刘邦）',
     representativeRulers: ['汉高祖（刘邦）', '汉文帝（刘恒）', '汉景帝（刘启）', '汉武帝（刘彻）', '汉宣帝（刘询）'],
+    territory: {
+      center: [108.9, 34.3],
+      zoom: 4,
+      area: 609,
+      description: '汉武帝时期疆域达到极盛，开拓西域，北击匈奴，东并朝鲜，南拓交趾',
+      capital: '长安（今陕西西安）',
+      borders: {
+        east: '朝鲜半岛',
+        west: '西域（今新疆）',
+        north: '大漠',
+        south: '交趾（今越南北部）'
+      }
+    },
     events: [
       {
         name: '西汉建立',
@@ -351,6 +429,19 @@ const dynasties = [
     period: 'classical',
     founder: '汉光武帝（刘秀）',
     representativeRulers: ['汉光武帝（刘秀）', '汉明帝（刘庄）', '汉章帝（刘炟）', '汉和帝（刘肇）', '汉献帝（刘协）'],
+    territory: {
+      center: [112.4, 34.6],
+      zoom: 4,
+      area: 580,
+      description: '定都洛阳，疆域基本继承西汉，西域都护府继续存在，与罗马帝国并列为世界两大强国',
+      capital: '洛阳（今河南洛阳）',
+      borders: {
+        east: '朝鲜半岛',
+        west: '西域',
+        north: '大漠',
+        south: '交趾'
+      }
+    },
     events: [
       {
         name: '东汉建立',
@@ -419,6 +510,19 @@ const dynasties = [
     period: 'classical',
     founder: '魏文帝（曹丕）',
     representativeRulers: ['魏文帝（曹丕）', '蜀汉昭烈帝（刘备）', '吴大帝（孙权）', '诸葛亮（孔明）', '司马懿'],
+    territory: {
+      center: [112.4, 34.6],
+      zoom: 4,
+      area: 540,
+      description: '魏蜀吴三国鼎立，曹魏据中原，蜀汉据益州，东吴据江东',
+      capital: '洛阳（魏）、成都（蜀）、建业（吴）',
+      borders: {
+        east: '东海',
+        west: '益州',
+        north: '大漠',
+        south: '交州'
+      }
+    },
     events: [
       {
         name: '官渡之战',
@@ -472,6 +576,19 @@ const dynasties = [
     period: 'classical',
     founder: '晋武帝（司马炎）',
     representativeRulers: ['晋武帝（司马炎）', '晋惠帝（司马衷）', '晋怀帝（司马炽）'],
+    territory: {
+      center: [112.4, 34.6],
+      zoom: 4,
+      area: 543,
+      description: '短暂统一全国，疆域继承三国，但八王之乱后迅速衰落',
+      capital: '洛阳（今河南洛阳）',
+      borders: {
+        east: '东海',
+        west: '西域',
+        north: '大漠',
+        south: '交州'
+      }
+    },
     events: [
       {
         name: '西晋建立',
@@ -515,6 +632,19 @@ const dynasties = [
     period: 'classical',
     founder: '晋元帝（司马睿）',
     representativeRulers: ['晋元帝（司马睿）', '晋明帝（司马绍）', '晋孝武帝（司马曜）'],
+    territory: {
+      center: [118.8, 32.1],
+      zoom: 4,
+      area: 280,
+      description: '偏安江南，与北方十六国对峙，文化上玄学、书法、绘画达到高峰',
+      capital: '建康（今江苏南京）',
+      borders: {
+        east: '东海',
+        west: '益州',
+        north: '淮河',
+        south: '交州'
+      }
+    },
     events: [
       {
         name: '东晋建立',
@@ -558,6 +688,19 @@ const dynasties = [
     period: 'classical',
     founder: '宋武帝（刘裕）',
     representativeRulers: ['宋武帝（刘裕）', '北魏孝文帝（元宏）', '梁武帝（萧衍）'],
+    territory: {
+      center: [112.4, 34.6],
+      zoom: 4,
+      area: 400,
+      description: '南北分裂，南朝据江南，北朝据中原，北魏孝文帝改革促进民族融合',
+      capital: '建康（南朝）、洛阳（北朝）',
+      borders: {
+        east: '东海',
+        west: '西域',
+        north: '大漠',
+        south: '交州'
+      }
+    },
     events: [
       {
         name: '刘宋建立',
@@ -601,6 +744,19 @@ const dynasties = [
     period: 'medieval',
     founder: '隋文帝（杨坚）',
     representativeRulers: ['隋文帝（杨坚）', '隋炀帝（杨广）'],
+    territory: {
+      center: [108.9, 34.3],
+      zoom: 4,
+      area: 470,
+      description: '结束近四百年分裂，重新统一全国，开凿大运河连接南北',
+      capital: '大兴（今陕西西安）',
+      borders: {
+        east: '东海',
+        west: '西域',
+        north: '大漠',
+        south: '交州'
+      }
+    },
     events: [
       {
         name: '隋朝建立',
@@ -644,6 +800,19 @@ const dynasties = [
     period: 'medieval',
     founder: '唐高祖（李渊）',
     representativeRulers: ['唐高祖（李渊）', '唐太宗（李世民）', '武则天（武曌）', '唐玄宗（李隆基）'],
+    territory: {
+      center: [108.9, 34.3],
+      zoom: 4,
+      area: 1237,
+      description: '唐朝极盛时期疆域空前辽阔，东起朝鲜半岛，西达咸海，北包贝加尔湖，南至越南中部',
+      capital: '长安（今陕西西安）',
+      borders: {
+        east: '朝鲜半岛',
+        west: '咸海',
+        north: '贝加尔湖',
+        south: '越南中部'
+      }
+    },
     events: [
       {
         name: '唐朝建立',
@@ -727,6 +896,19 @@ const dynasties = [
     period: 'medieval',
     founder: '后梁太祖（朱温）',
     representativeRulers: ['后梁太祖（朱温）', '后唐庄宗（李存勖）', '后周世宗（柴荣）'],
+    territory: {
+      center: [114.3, 34.8],
+      zoom: 4,
+      area: 200,
+      description: '政权更迭频繁，北方五代相继，南方十国并立，战乱不断',
+      capital: '开封、洛阳',
+      borders: {
+        east: '东海',
+        west: '关中',
+        north: '契丹',
+        south: '南唐、吴越'
+      }
+    },
     events: [
       {
         name: '后梁建立',
@@ -770,6 +952,19 @@ const dynasties = [
     period: 'medieval',
     founder: '宋太祖（赵匡胤）',
     representativeRulers: ['宋太祖（赵匡胤）', '宋太宗（赵光义）', '宋仁宗（赵祯）', '宋神宗（赵顼）'],
+    territory: {
+      center: [114.3, 34.8],
+      zoom: 4,
+      area: 280,
+      description: '结束五代十国分裂，与辽、西夏并立，经济文化高度繁荣',
+      capital: '开封（今河南开封）',
+      borders: {
+        east: '东海',
+        west: '西夏',
+        north: '辽国',
+        south: '大理'
+      }
+    },
     events: [
       {
         name: '北宋建立',
@@ -848,6 +1043,19 @@ const dynasties = [
     period: 'medieval',
     founder: '宋高宗（赵构）',
     representativeRulers: ['宋高宗（赵构）', '宋孝宗（赵昚）', '宋理宗（赵昀）'],
+    territory: {
+      center: [120.2, 30.3],
+      zoom: 5,
+      area: 200,
+      description: '偏安江南，与金朝对峙，经济重心南移完成，海上贸易繁荣',
+      capital: '临安（今浙江杭州）',
+      borders: {
+        east: '东海',
+        west: '四川',
+        north: '淮河',
+        south: '南海'
+      }
+    },
     events: [
       {
         name: '南宋建立',
@@ -891,6 +1099,19 @@ const dynasties = [
     period: 'late-imperial',
     founder: '元世祖（忽必烈）',
     representativeRulers: ['元世祖（孛儿只斤·忽必烈）', '元成宗（孛儿只斤·铁穆耳）', '元武宗（孛儿只斤·海山）'],
+    territory: {
+      center: [116.4, 39.9],
+      zoom: 3,
+      area: 1372,
+      description: '中国历史上疆域最大的朝代，东起日本海，西至天山，北包贝加尔湖，南抵南海',
+      capital: '大都（今北京）',
+      borders: {
+        east: '日本海',
+        west: '天山',
+        north: '北冰洋',
+        south: '南海'
+      }
+    },
     events: [
       {
         name: '元朝建立',
@@ -934,6 +1155,19 @@ const dynasties = [
     period: 'late-imperial',
     founder: '明太祖（朱元璋）',
     representativeRulers: ['明太祖（朱元璋）', '明成祖（朱棣）', '明仁宗（朱高炽）', '明宣宗（朱瞻基）', '明神宗（朱翊钧）'],
+    territory: {
+      center: [116.4, 39.9],
+      zoom: 4,
+      area: 900,
+      description: '推翻元朝统治，疆域包括内地十八省及东北部分地区，郑和下西洋宣扬国威',
+      capital: '北京（明成祖后）、南京',
+      borders: {
+        east: '东海',
+        west: '哈密',
+        north: '长城',
+        south: '南海'
+      }
+    },
     events: [
       {
         name: '明朝建立',
@@ -1022,6 +1256,19 @@ const dynasties = [
     period: 'late-imperial',
     founder: '清世祖（福临）',
     representativeRulers: ['清世祖（爱新觉罗·福临）', '清圣祖（爱新觉罗·玄烨）', '清世宗（爱新觉罗·胤禛）', '清高宗（爱新觉罗·弘历）', '清德宗（爱新觉罗·载湉）'],
+    territory: {
+      center: [116.4, 39.9],
+      zoom: 3,
+      area: 1316,
+      description: '中国历史上最后一个封建王朝，疆域辽阔，奠定了现代中国版图的基础',
+      capital: '北京',
+      borders: {
+        east: '太平洋',
+        west: '帕米尔高原',
+        north: '外兴安岭',
+        south: '南海'
+      }
+    },
     events: [
       {
         name: '清军入关',
@@ -1130,6 +1377,19 @@ const dynasties = [
     period: 'modern',
     founder: '孙中山',
     representativeRulers: ['孙中山', '袁世凯', '蒋介石', '李宗仁'],
+    territory: {
+      center: [116.4, 39.9],
+      zoom: 4,
+      area: 1141,
+      description: '结束两千多年封建帝制，建立共和政体，经历军阀混战、抗日战争和国共内战',
+      capital: '南京（1927-1937, 1946-1949）、重庆（战时陪都）',
+      borders: {
+        east: '太平洋',
+        west: '帕米尔高原',
+        north: '蒙古',
+        south: '南海'
+      }
+    },
     events: [
       {
         name: '中华民国成立',
