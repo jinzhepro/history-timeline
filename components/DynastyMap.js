@@ -131,9 +131,6 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
           throw new Error('地图数据加载失败');
         }
         const chinaJson = await response.json();
-        console.log('[DynastyMap] GeoJSON loaded:', chinaJson);
-        console.log('[DynastyMap] Features:', chinaJson.features.map(f => f.properties.name));
-        
         echarts.registerMap('china', chinaJson);
         setGeoJsonData(chinaJson);
         setMapLoaded(true);
@@ -167,9 +164,6 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
     const cities = getMajorCities();
     const area = getArea();
 
-    console.log('[DynastyMap] dynastyId:', dynastyId);
-    console.log('[DynastyMap] provinces:', provinces);
-
     // 构建省份数据 - 使用带"省"字的名称
     const provinceData = provinces.map(name => ({
       name: name,
@@ -190,7 +184,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       backgroundColor: 'transparent',
       tooltip: {
         trigger: 'item',
-        formatter: function(params) {
+        formatter: function (params) {
           if (params.value === 1) {
             return `<div style="font-family: KaiTi, STKaiti, serif;">
               <strong>${params.name}</strong><br/>
@@ -317,7 +311,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
           style={{ width: '100%', height: '100%' }}
           opts={{ renderer: 'canvas' }}
         />
-        
+
         {/* 重置按钮 */}
         <button
           onClick={handleReset}

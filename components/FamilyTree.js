@@ -24,8 +24,6 @@ const FamilyTree = ({ dynastyId, selectedPersonId, onPersonSelect }) => {
 
   // 初始化图表
   useEffect(() => {
-    console.log('[FamilyTree] useEffect triggered, dynasty:', dynastyId, 'figures:', dynastyFigures.length);
-    
     if (!chartContainerRef.current || dynastyFigures.length === 0) {
       setIsLoading(false);
       return;
@@ -43,8 +41,6 @@ const FamilyTree = ({ dynastyId, selectedPersonId, onPersonSelect }) => {
         renderer: 'svg',
         devicePixelRatio: window.devicePixelRatio || 1
       });
-
-      console.log('[FamilyTree] Chart instance created');
 
       // 创建人物 ID 映射
       const figureMap = {};
@@ -106,8 +102,6 @@ const FamilyTree = ({ dynastyId, selectedPersonId, onPersonSelect }) => {
           });
         }
       });
-
-      console.log('[FamilyTree] Data prepared:', { nodes: nodes.length, links: links.length });
 
       // 配置项
       const option = {
@@ -214,12 +208,9 @@ const FamilyTree = ({ dynastyId, selectedPersonId, onPersonSelect }) => {
         lazyUpdate: false
       });
 
-      console.log('[FamilyTree] Chart option set');
-
       // 添加点击事件
       chartInstance.current.on('click', (params) => {
         if (params.dataType === 'node' && onPersonSelect) {
-          console.log('[FamilyTree] Node clicked:', params.data.id);
           onPersonSelect(params.data.id);
         }
       });
@@ -246,7 +237,6 @@ const FamilyTree = ({ dynastyId, selectedPersonId, onPersonSelect }) => {
       setTimeout(() => {
         handleResize();
         setIsLoading(false);
-        console.log('[FamilyTree] Chart initialized and resized');
       }, 100);
 
       // 清理

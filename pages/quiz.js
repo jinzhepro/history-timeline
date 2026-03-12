@@ -71,7 +71,6 @@ const QuizPage = () => {
 
   // 测验完成回调
   const handleQuizComplete = (result) => {
-    console.log('测验完成:', result);
     alert(`测验完成！得分：${result.score}/${result.total} (${Math.round((result.score/result.total)*100)}分)`);
   };
 
