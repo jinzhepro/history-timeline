@@ -1,7 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 
 /**
  * 朝代卡片组件 - 水墨风格
+ * 点击跳转到朝代详情页面
  */
 const DynastyCard = ({ dynasty, isSelected, onClick, index, period }) => {
   const formatYear = (year) => {
@@ -12,13 +14,17 @@ const DynastyCard = ({ dynasty, isSelected, onClick, index, period }) => {
   };
 
   const handleClick = () => {
-    onClick(dynasty.id);
+    if (onClick) {
+      onClick(dynasty.id);
+    }
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      onClick(dynasty.id);
+      if (onClick) {
+        onClick(dynasty.id);
+      }
     }
   };
 
@@ -33,41 +39,60 @@ const DynastyCard = ({ dynasty, isSelected, onClick, index, period }) => {
 
   const periodColor = periodColors[dynasty.period] || '#8B4513';
 
+  const cardContent = (
+    <div className="text-center">
+      <h3 className="text-2xl ink-title mb-3" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
+        {dynasty.name}
+      </h3>
+      
+      <p className="text-lg text-gray-600 mb-2" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
+        {formatYear(dynasty.startYear)} - {formatYear(dynasty.endYear)}
+      </p>
+      
+      <p className="text-base text-gray-700" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
+        <span className="font-bold text-gray-800">开国君主：</span>
+        {dynasty.founder}
+      </p>
+      
+      {dynasty.description && (
+        <p className="text-sm text-gray-600 mt-3 italic" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
+          {dynasty.description}
+        </p>
+      )}
+    </div>
+  );
+
+  // 如果有 onClick，使用 div，否则使用 Link
+  if (onClick) {
+    return (
+      <div
+        className={`ink-card cursor-pointer p-6 w-full max-w-md transition-all duration-300 ${isSelected ? 'shadow-lg' : ''}`}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+        aria-expanded={isSelected}
+        aria-label={`查看${dynasty.name}详情`}
+        style={{
+          borderTop: `3px solid ${periodColor}`,
+          borderColor: isSelected ? periodColor : undefined
+        }}
+      >
+        {cardContent}
+      </div>
+    );
+  }
+
   return (
-    <div
-      className={`ink-card cursor-pointer p-6 w-full max-w-md transition-all duration-300 ${isSelected ? 'shadow-lg' : ''}`}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-      role="button"
-      tabIndex={0}
-      aria-expanded={isSelected}
-      aria-label={`查看${dynasty.name}详情`}
+    <Link
+      href={`/dynasty/${dynasty.id}`}
+      className="ink-card block cursor-pointer p-6 w-full max-w-md transition-all duration-300 hover:shadow-lg"
       style={{
-        borderTop: `3px solid ${periodColor}`,
-        borderColor: isSelected ? periodColor : undefined
+        borderTop: `3px solid ${periodColor}`
       }}
     >
-      <div className="text-center">
-        <h3 className="text-2xl ink-title mb-3" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
-          {dynasty.name}
-        </h3>
-        
-        <p className="text-lg text-gray-600 mb-2" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
-          {formatYear(dynasty.startYear)} - {formatYear(dynasty.endYear)}
-        </p>
-        
-        <p className="text-base text-gray-700" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
-          <span className="font-bold text-gray-800">开国君主：</span>
-          {dynasty.founder}
-        </p>
-        
-        {dynasty.description && (
-          <p className="text-sm text-gray-600 mt-3 italic" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
-            {dynasty.description}
-          </p>
-        )}
-      </div>
-    </div>
+      {cardContent}
+    </Link>
   );
 };
 

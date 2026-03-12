@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import dynasties from '../data/dynasties';
 import DynastyCard from './DynastyCard';
-import DynastyDrawer from './DynastyDrawer';
 import TimelineFilter from './TimelineFilter';
 
 /**
@@ -9,11 +8,10 @@ import TimelineFilter from './TimelineFilter';
  * 功能：
  * - 时期筛选
  * - 搜索功能
- * - 侧边抽屉式详情
+ * - 点击跳转详情页面
  * - 时间轴节点和刻度
  */
 const Timeline = () => {
-  const [selectedDynastyId, setSelectedDynastyId] = useState(null);
   const [selectedPeriod, setSelectedPeriod] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -84,14 +82,6 @@ const Timeline = () => {
     });
   }, [selectedPeriod, searchQuery]);
 
-  const handleDynastyClick = (dynastyId) => {
-    setSelectedDynastyId(dynastyId === selectedDynastyId ? null : dynastyId);
-  };
-
-  const handleCloseDrawer = () => {
-    setSelectedDynastyId(null);
-  };
-
   // 计算时间范围
   const minYear = Math.min(...dynasties.map(d => d.startYear));
   const maxYear = Math.max(...dynasties.map(d => d.endYear));
@@ -140,8 +130,6 @@ const Timeline = () => {
                 <div className="md:hidden">
                   <DynastyCard
                     dynasty={dynasty}
-                    isSelected={selectedDynastyId === dynasty.id}
-                    onClick={handleDynastyClick}
                     index={index}
                   />
                 </div>
@@ -161,8 +149,6 @@ const Timeline = () => {
                       <div className="w-1/2 pr-12 flex justify-end relative">
                         <DynastyCard
                           dynasty={dynasty}
-                          isSelected={selectedDynastyId === dynasty.id}
-                          onClick={handleDynastyClick}
                           index={index}
                           period={dynasty.period}
                           position="left"
@@ -178,8 +164,6 @@ const Timeline = () => {
                       <div className="w-1/2 pl-12 flex justify-start relative">
                         <DynastyCard
                           dynasty={dynasty}
-                          isSelected={selectedDynastyId === dynasty.id}
-                          onClick={handleDynastyClick}
                           index={index}
                           period={dynasty.period}
                           position="right"
@@ -192,26 +176,6 @@ const Timeline = () => {
             ))}
           </div>
         </div>
-
-        {/* 侧边抽屉式详情 */}
-        {selectedDynastyId && (
-          <DynastyDrawer
-            dynasty={dynasties.find(d => d.id === selectedDynastyId)}
-            onClose={handleCloseDrawer}
-            onNext={() => {
-              const currentIndex = filteredDynasties.findIndex(d => d.id === selectedDynastyId);
-              const nextIndex = (currentIndex + 1) % filteredDynasties.length;
-              setSelectedDynastyId(filteredDynasties[nextIndex].id);
-            }}
-            onPrevious={() => {
-              const currentIndex = filteredDynasties.findIndex(d => d.id === selectedDynastyId);
-              const prevIndex = (currentIndex - 1 + filteredDynasties.length) % filteredDynasties.length;
-              setSelectedDynastyId(filteredDynasties[prevIndex].id);
-            }}
-            hasNext={selectedDynastyId !== filteredDynasties[filteredDynasties.length - 1]?.id}
-            hasPrevious={selectedDynastyId !== filteredDynasties[0]?.id}
-          />
-        )}
 
         {/* 页脚 */}
         <footer className="text-center mt-20 ink-divider mb-8"></footer>

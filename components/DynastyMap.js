@@ -110,6 +110,16 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
   const [error, setError] = useState(null);
   const [geoJsonData, setGeoJsonData] = useState(null);
   const chartRef = useRef(null);
+  const chartInstanceRef = useRef(null);
+
+  // 重置地图视角
+  const handleReset = () => {
+    if (chartInstanceRef.current) {
+      chartInstanceRef.current.dispatchAction({
+        type: 'restore'
+      });
+    }
+  };
 
   useEffect(() => {
     // 加载中国地图 GeoJSON 数据
@@ -201,6 +211,11 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
         roam: true,
         zoom: territory?.zoom || 1.2,
         center: territory?.center || [105, 36],
+        // 设置缩放限制
+        scaleLimit: {
+          min: 1,
+          max: 8
+        },
         label: {
           show: false
         },
@@ -292,11 +307,25 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       {/* 地图容器 */}
       <div className="relative w-full h-96 bg-gradient-to-b from-xuan-paper to-white rounded-lg overflow-hidden border-2 border-ink-border shadow-inner">
         <ReactECharts
-          ref={chartRef}
+          ref={(e) => {
+            chartRef.current = e;
+            if (e) {
+              chartInstanceRef.current = e.getEchartsInstance();
+            }
+          }}
           option={getOption()}
           style={{ width: '100%', height: '100%' }}
           opts={{ renderer: 'canvas' }}
         />
+        
+        {/* 重置按钮 */}
+        <button
+          onClick={handleReset}
+          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white/90 hover:bg-white text-gray-700 rounded-lg shadow-md border border-gray-200 transition-all hover:shadow-lg"
+          title="重置视角"
+        >
+          🔄
+        </button>
       </div>
 
       {/* 图例说明 */}
@@ -319,16 +348,6 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       <p className="mt-3 text-center text-xs text-gray-500 font-chinese">
         💡 提示：鼠标滚轮可缩放，拖拽可平移地图
       </p>
-
-      {/* 疆域描述 */}
-      {territory?.description && (
-        <div className="mt-4 p-4 bg-gradient-to-r from-red-50 to-amber-50 rounded-lg border border-red-200">
-          <p className="text-gray-700 font-chinese text-sm leading-relaxed">
-            <span className="font-bold text-china-red">疆域范围：</span>
-            {territory.description}
-          </p>
-        </div>
-      )}
     </div>
   );
 };
