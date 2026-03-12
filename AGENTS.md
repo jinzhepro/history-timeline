@@ -36,6 +36,7 @@ nextjs-app/
 │   ├── DynastyCard.js   # 朝代卡片
 │   ├── DynastyDrawer.js # 朝代详情抽屉
 │   ├── DynastyDetail.js # 朝代详情
+│   ├── DynastyMap.js    # 朝代疆域地图 (ECharts)
 │   ├── Timeline.js      # 时间线主组件
 │   ├── TimelineFilter.js # 筛选组件
 │   ├── FamilyTree.js    # 人物关系图谱
@@ -47,11 +48,14 @@ nextjs-app/
 ├── pages/               # Next.js 页面
 │   ├── index.js         # 首页
 │   ├── quiz.js          # 测验页面
+│   ├── quiz-demo.js     # 测验演示页面
+│   ├── dynasty/[id].js  # 朝代详情动态路由
 │   ├── _app.js          # 应用入口
 │   ├── _document.js     # 文档结构
 │   └── api/             # API 路由
 ├── styles/
-│   └── globals.css      # 全局样式（水墨风格）
+│   ├── globals.css      # 全局样式（水墨风格）
+│   └── Home.module.css  # 首页模块样式
 ├── utils/
 │   └── quizGenerator.js # 测验生成器
 └── public/              # 静态资源
@@ -120,9 +124,54 @@ const DynastyCard = ({ dynasty, isSelected, onClick, index, period }) => {
 - 静态数据存储在 `/data/dynasties.js`
 - 组件状态使用 React Hooks (useState, useMemo)
 
+## 核心功能模块
+
+### 1. 时间线展示 (Timeline.js)
+- 展示从夏朝到中华民国的完整历史朝代
+- 支持按时期筛选（上古、中古、近古、近代）
+- 桌面端左右交替布局，移动端单列布局
+- 点击卡片打开详情抽屉
+
+### 2. 朝代详情抽屉 (DynastyDrawer.js)
+- 展示朝代完整信息：起止时间、都城、疆域面积
+- 包含 DynastyDetail 组件显示详细描述
+- **人物关系图谱**: 集成 FamilyTree 组件展示历史人物关系
+- **疆域地图**: 集成 DynastyMap 组件展示朝代疆域范围
+
+### 3. 人物关系图谱 (FamilyTree.js + PersonCard.js)
+- 使用 ECharts 力导向图展示人物关系网络
+- 支持的关系类型：父子、兄弟、配偶、君臣、师生等
+- 交互：拖拽节点、缩放、点击查看详情
+- 70+ 位历史人物数据
+
+### 4. 朝代疆域地图 (DynastyMap.js)
+- 使用 ECharts 地图展示各朝代疆域
+- 数据来源：阿里云 DataV GeoJSON
+- 显示疆域范围（红色高亮）和都城位置（黄色标记）
+- 支持缩放、平移、重置视角
+
+### 5. 历史知识测验 (Quiz.js + quizGenerator.js)
+- 8 种题型：时间选择、开国君主、历史事件、文化成就、排序、判断、填空、随机混合
+- 自动生成题目，基于朝代数据
+- 支持答题反馈和得分统计
+
+## 配置文件说明
+
+### tailwind.config.js
+- 扩展了中国传统配色（china-red, glazed-yellow 等）
+- 自定义字体 font-chinese
+- 自定义动画：fade-in, fade-in-up, slide-down
+
+### jsconfig.json
+- 配置 `@/*` 路径别名指向项目根目录
+
+### next.config.mjs
+- 启用 React StrictMode
+
 ## 开发注意事项
 
 1. **水墨风格**: 所有 UI 组件应遵循水墨风格设计，使用定义好的 CSS 变量
 2. **性能优化**: 使用 useMemo 过滤数据，避免不必要的重渲染
 3. **无障碍**: 确保所有交互元素支持键盘导航和屏幕阅读器
 4. **动画**: 使用 CSS 动画实现优雅的过渡效果
+5. **地图数据**: DynastyMap 依赖外部 GeoJSON 数据，需要网络连接
