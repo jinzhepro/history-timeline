@@ -21,7 +21,7 @@ import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 
 /**
- * 各朝代疆域对应的省份列表（使用中文省份名称，带"省"字）
+ * 各朝代疆域对应的省份列表
  */
 const DYNASTY_TERRITORIES = {
   'xia': ['河南省', '山西省', '陕西省', '河北省', '山东省'],
@@ -122,10 +122,50 @@ const DYNASTY_TERRITORY_NOTES = {
   'qing': '清朝鼎盛时期疆域西跨葱岭，西北达巴尔喀什湖，北接西伯利亚，东北至外兴安岭和库页岛，东临太平洋，南包南海诸岛，面积约1316万平方公里'
 };
 
+/**
+ * 大疆域朝代的世界地图配置
+ */
+const WORLD_MAP_CONFIG = {
+  'tang': {
+    zoom: 1.2,
+    center: [95, 35]
+  },
+  'yuan': {
+    zoom: 0.9,
+    center: [100, 45]
+  },
+  'qing': {
+    zoom: 1.0,
+    center: [105, 40]
+  }
+};
+
+/**
+ * 大疆域朝代的疆域边界坐标
+ */
+const TERRITORY_BOUNDARIES = {
+  'tang': [
+    [125, 40], [130, 45], [135, 42], [130, 50], [120, 53], [107, 53],
+    [90, 50], [75, 50], [60, 45], [65, 35], [72, 30], [80, 25],
+    [95, 20], [107, 16.5], [115, 15], [120, 20], [125, 30]
+  ],
+  'yuan': [
+    [135, 42], [145, 50], [140, 65], [120, 70], [100, 72], [80, 70],
+    [60, 65], [45, 55], [40, 45], [45, 35], [55, 25], [70, 20],
+    [90, 15], [110, 10], [125, 12], [135, 20], [140, 30]
+  ],
+  'qing': [
+    [130, 42], [135, 48], [142, 50], [145, 55], [140, 58], [130, 55],
+    [120, 53], [100, 55], [80, 52], [75, 50], [73, 45], [73, 38],
+    [75, 35], [80, 30], [90, 25], [100, 22], [110, 20], [120, 18],
+    [125, 20], [130, 25], [132, 35]
+  ]
+};
+
 const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [error, setError] = useState(null);
-  const [geoJsonData, setGeoJsonData] = useState(null);
+  const [mapType, setMapType] = useState('china');
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
 
@@ -141,16 +181,24 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
   };
 
   useEffect(() => {
-    // 加载中国地图 GeoJSON 数据
+    // 加载地图 GeoJSON 数据
     const loadMap = async () => {
       try {
-        const response = await fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json');
-        if (!response.ok) {
-          throw new Error('地图数据加载失败');
+        // 加载中国地图
+        const chinaResponse = await fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json');
+        if (!chinaResponse.ok) {
+          throw new Error('中国地图数据加载失败');
         }
-        const chinaJson = await response.json();
+        const chinaJson = await chinaResponse.json();
         echarts.registerMap('china', chinaJson);
-        setGeoJsonData(chinaJson);
+
+        // 加载世界地图
+        const worldResponse = await fetch('https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/json/world.json');
+        if (worldResponse.ok) {
+          const worldJson = await worldResponse.json();
+          echarts.registerMap('world', worldJson);
+        }
+
         setMapLoaded(true);
       } catch (err) {
         console.error('[DynastyMap] 地图加载失败:', err);
@@ -160,6 +208,15 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
 
     loadMap();
   }, []);
+
+  // 当朝代改变时，自动切换地图类型
+  useEffect(() => {
+    if (isLargeTerritory) {
+      setMapType('world');
+    } else {
+      setMapType('china');
+    }
+  }, [dynastyId, isLargeTerritory]);
 
   // 获取当前朝代的疆域省份
   const getTerritoryProvinces = () => {
@@ -176,8 +233,13 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
     return DYNASTY_AREAS[dynastyId] || 0;
   };
 
-  // 构建地图配置
-  const getOption = () => {
+  // 获取世界地图配置
+  const getWorldMapConfig = () => {
+    return WORLD_MAP_CONFIG[dynastyId] || { zoom: 1, center: [100, 35] };
+  };
+
+  // 构建中国地图配置
+  const getChinaOption = () => {
     const provinces = getTerritoryProvinces();
     const cities = getMajorCities();
 
@@ -202,6 +264,12 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       tooltip: {
         trigger: 'item',
         formatter: function (params) {
+          if (params.seriesName === '都城') {
+            return `<div style="font-family: KaiTi, STKaiti, serif;">
+              <strong>${params.name}</strong><br/>
+              <span style="color: #FFD700;">${dynastyName}都城</span>
+            </div>`;
+          }
           if (params.value === 1) {
             return `<div style="font-family: KaiTi, STKaiti, serif;">
               <strong>${params.name}</strong><br/>
@@ -220,7 +288,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       geo: {
         map: 'china',
         roam: true,
-        zoom: isLargeTerritory ? 1.0 : (territory?.zoom || 1.2),
+        zoom: territory?.zoom || 1.2,
         center: territory?.center || [105, 36],
         scaleLimit: {
           min: 0.5,
@@ -283,6 +351,200 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
     };
   };
 
+  // 构建世界地图配置
+  const getWorldOption = () => {
+    const cities = getMajorCities();
+    const worldConfig = getWorldMapConfig();
+
+    // 大疆域朝代的疆域范围边界点
+    const currentBoundary = TERRITORY_BOUNDARIES[dynastyId] || [];
+
+    // 构建边界线数据
+    const boundaryLines = [];
+    if (currentBoundary.length > 1) {
+      for (let i = 0; i < currentBoundary.length; i++) {
+        const start = currentBoundary[i];
+        const end = currentBoundary[(i + 1) % currentBoundary.length];
+        boundaryLines.push({
+          coords: [start, end]
+        });
+      }
+    }
+
+    // 构建边界标记点（只保留第一个点显示名称）
+    const boundaryPoints = [];
+    if (currentBoundary.length > 0) {
+      boundaryPoints.push({
+        name: `${dynastyName}疆域范围`,
+        value: [...currentBoundary[0], 1]
+      });
+    }
+
+    return {
+      backgroundColor: '#E8F4F8',
+      tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+          if (params.seriesName === '都城') {
+            return `<div style="font-family: KaiTi, STKaiti, serif;">
+              <strong>${params.name}</strong><br/>
+              <span style="color: #FFD700;">${dynastyName}都城</span>
+            </div>`;
+          }
+          if (params.seriesName === '疆域边界') {
+            return `<div style="font-family: KaiTi, STKaiti, serif;">
+              <strong>${dynastyName}疆域</strong><br/>
+              <span style="color: #C41E3A;">极盛时期疆域边界</span>
+            </div>`;
+          }
+          return params.name;
+        },
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        borderColor: '#8B4513',
+        borderWidth: 1,
+        textStyle: {
+          color: '#2C2C2C'
+        }
+      },
+      geo: {
+        map: 'world',
+        roam: true,
+        zoom: worldConfig.zoom,
+        center: worldConfig.center,
+        scaleLimit: {
+          min: 0.5,
+          max: 10
+        },
+        label: {
+          show: false
+        },
+        itemStyle: {
+          areaColor: '#F5F5F0',
+          borderColor: '#8B4513',
+          borderWidth: 0.5
+        },
+        emphasis: {
+          itemStyle: {
+            areaColor: '#E5E5E0'
+          }
+        }
+      },
+      series: [
+        // 疆域边界线
+        {
+          name: '疆域边界',
+          type: 'lines',
+          coordinateSystem: 'geo',
+          data: boundaryLines,
+          lineStyle: {
+            color: 'rgba(196, 30, 58, 0.9)',
+            width: 3,
+            type: 'solid',
+            curveness: 0.1
+          },
+          silent: false
+        },
+        // 疆域边界标记点
+        {
+          name: '疆域边界',
+          type: 'scatter',
+          coordinateSystem: 'geo',
+          data: boundaryPoints,
+          symbolSize: 8,
+          label: {
+            show: true,
+            formatter: '{b}',
+            position: 'top',
+            fontFamily: 'KaiTi, STKaiti, serif',
+            fontSize: 12,
+            color: '#C41E3A',
+            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+            padding: [4, 8],
+            borderRadius: 3,
+            borderColor: '#C41E3A',
+            borderWidth: 1
+          },
+          itemStyle: {
+            color: 'rgba(196, 30, 58, 0.8)',
+            borderColor: '#C41E3A',
+            borderWidth: 2
+          }
+        },
+        // 都城标记
+        {
+          name: '都城',
+          type: 'scatter',
+          coordinateSystem: 'geo',
+          data: cities.map(city => ({
+            name: city.name,
+            value: [...city.coord, 1]
+          })),
+          symbolSize: 25,
+          label: {
+            show: true,
+            formatter: '{b}',
+            position: 'top',
+            fontFamily: 'KaiTi, STKaiti, serif',
+            fontSize: 14,
+            fontWeight: 'bold',
+            color: '#2C2C2C',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            padding: [6, 10],
+            borderRadius: 4,
+            borderColor: '#8B4513',
+            borderWidth: 1
+          },
+          itemStyle: {
+            color: '#FFD700',
+            borderColor: '#8B4513',
+            borderWidth: 3,
+            shadowBlur: 15,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          },
+          emphasis: {
+            scale: 1.8,
+            itemStyle: {
+              color: '#FFA500'
+            }
+          }
+        },
+        // 中国核心区域高亮
+        {
+          name: '中国核心',
+          type: 'effectScatter',
+          coordinateSystem: 'geo',
+          data: [
+            { name: '中原', value: [110, 35, 1] },
+            { name: '关中', value: [108, 34, 1] },
+            { name: '洛阳', value: [112, 34, 1] }
+          ],
+          symbolSize: 15,
+          showEffectOn: 'render',
+          rippleEffect: {
+            brushType: 'stroke',
+            scale: 3
+          },
+          label: {
+            show: false
+          },
+          itemStyle: {
+            color: '#C41E3A',
+            shadowBlur: 10,
+            shadowColor: '#C41E3A'
+          }
+        }
+      ]
+    };
+  };
+
+  // 根据地图类型获取配置
+  const getOption = () => {
+    if (mapType === 'world' && isLargeTerritory) {
+      return getWorldOption();
+    }
+    return getChinaOption();
+  };
+
   if (error) {
     return (
       <div className="w-full h-96 flex items-center justify-center bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
@@ -328,13 +590,39 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
             {DYNASTY_TERRITORY_NOTES[dynastyId]}
           </p>
           <p className="text-xs text-amber-700 font-chinese mt-2">
-            * 地图显示范围为现代中国境内区域，历史上该朝代实际疆域更广
+            * 地图显示范围为该朝代极盛时期疆域，红色虚线表示疆域边界
           </p>
         </div>
       )}
 
+      {/* 地图类型切换按钮（仅大疆域朝代显示） */}
+      {isLargeTerritory && (
+        <div className="mb-4 flex justify-center">
+          <div className="inline-flex bg-gray-100 rounded-lg p-1">
+            <button
+              onClick={() => setMapType('china')}
+              className={`px-4 py-2 rounded-md text-sm font-chinese transition-all ${mapType === 'china'
+                ? 'bg-white text-gray-800 shadow-sm'
+                : 'text-gray-600 hover:text-gray-800'
+                }`}
+            >
+              中国地图
+            </button>
+            <button
+              onClick={() => setMapType('world')}
+              className={`px-4 py-2 rounded-md text-sm font-chinese transition-all ${mapType === 'world'
+                ? 'bg-white text-gray-800 shadow-sm'
+                : 'text-gray-600 hover:text-gray-800'
+                }`}
+            >
+              世界地图
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* 地图容器 */}
-      <div className="relative w-full h-96 bg-gradient-to-b from-xuan-paper to-white rounded-lg overflow-hidden border-2 border-ink-border shadow-inner">
+      <div className="relative w-full h-[500px] bg-gradient-to-b from-xuan-paper to-white rounded-lg overflow-hidden border-2 border-ink-border shadow-inner">
         <ReactECharts
           ref={(e) => {
             chartRef.current = e;
@@ -361,7 +649,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       <div className="mt-4 flex flex-wrap items-center justify-center gap-6 text-sm font-chinese">
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded" style={{ backgroundColor: '#C41E3A' }}></div>
-          <span className="text-gray-700">{dynastyName}疆域</span>
+          <span className="text-gray-700">{dynastyName}核心疆域</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-4 rounded" style={{ backgroundColor: '#F5F5F0', border: '1px solid #8B4513' }}></div>
@@ -371,11 +659,17 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
           <div className="w-4 h-4 rounded-full" style={{ backgroundColor: '#FFD700', border: '2px solid #8B4513' }}></div>
           <span className="text-gray-700">都城</span>
         </div>
+        {isLargeTerritory && mapType === 'world' && (
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded" style={{ backgroundColor: 'rgba(196, 30, 58, 0.5)', border: '2px dashed #C41E3A' }}></div>
+            <span className="text-gray-700">疆域边界</span>
+          </div>
+        )}
       </div>
 
       {/* 操作提示 */}
       <p className="mt-3 text-center text-xs text-gray-500 font-chinese">
-        💡 提示：鼠标滚轮可缩放，拖拽可平移地图
+        💡 提示：鼠标滚轮可缩放，拖拽可平移地图{isLargeTerritory && '，可切换中国地图/世界地图视图'}
       </p>
     </div>
   );

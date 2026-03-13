@@ -59,6 +59,24 @@ const dynasties = [
         description: '开始建造城墙和宫殿，二里头遗址展现了早期国家形态',
         figure: null
       }
+    ],
+    battles: [
+      {
+        name: '甘之战',
+        description: '夏启讨伐有扈氏，巩固世袭制',
+        year: -2040,
+        coord: [113.5, 34.5],
+        winner: '夏启',
+        loser: '有扈氏'
+      },
+      {
+        name: '少康复国之战',
+        description: '少康联合夏朝遗臣，打败寒浞，恢复夏朝统治',
+        year: -1950,
+        coord: [113.0, 34.0],
+        winner: '少康',
+        loser: '寒浞'
+      }
     ]
   },
   {
@@ -115,6 +133,24 @@ const dynasties = [
         description: '发展了系统的占卜文化，甲骨卜辞记录了当时的政治、军事、祭祀等活动',
         figure: null
       }
+    ],
+    battles: [
+      {
+        name: '商汤灭夏之战',
+        description: '商汤在鸣条之战中击败夏桀，灭亡夏朝',
+        year: -1600,
+        coord: [111.5, 35.0],
+        winner: '商汤',
+        loser: '夏桀'
+      },
+      {
+        name: '牧野之战',
+        description: '周武王联合诸侯在牧野击败商纣王，商朝灭亡',
+        year: -1046,
+        coord: [114.0, 35.5],
+        winner: '周武王',
+        loser: '商纣王'
+      }
     ]
   },
   {
@@ -170,6 +206,16 @@ const dynasties = [
         name: '宗法制度',
         description: '确立以嫡长子继承制为核心的宗法制度',
         figure: '周公旦（姬旦）'
+      }
+    ],
+    battles: [
+      {
+        name: '牧野之战',
+        description: '周武王伐纣，在牧野之战中击败商军，商朝灭亡',
+        year: -1046,
+        coord: [114.0, 35.5],
+        winner: '周武王',
+        loser: '商纣王'
       }
     ]
   },
@@ -327,6 +373,24 @@ const dynasties = [
         name: '灵渠',
         description: '开凿灵渠，连接长江和珠江水系',
         figure: null
+      }
+    ],
+    battles: [
+      {
+        name: '长平之战',
+        description: '秦将白起大败赵军，坑杀四十万赵卒，为秦统一奠定基础',
+        year: -260,
+        coord: [112.8, 35.5],
+        winner: '秦国（白起）',
+        loser: '赵国'
+      },
+      {
+        name: '巨鹿之战',
+        description: '项羽在巨鹿之战中大败秦军，摧毁秦朝主力',
+        year: -207,
+        coord: [115.0, 37.5],
+        winner: '项羽',
+        loser: '秦军'
       }
     ]
   },
@@ -565,6 +629,40 @@ const dynasties = [
         name: '九品中正制',
         description: '曹丕采纳陈群建议，实行九品中正制',
         figure: '陈群'
+      }
+    ],
+    battles: [
+      {
+        name: '官渡之战',
+        description: '曹操以少胜多击败袁绍，奠定统一北方的基础',
+        year: 200,
+        coord: [114.5, 34.8],
+        winner: '曹操',
+        loser: '袁绍'
+      },
+      {
+        name: '赤壁之战',
+        description: '孙刘联军火攻曹操水军，大败曹军，奠定三国鼎立',
+        year: 208,
+        coord: [112.5, 29.8],
+        winner: '孙权、刘备',
+        loser: '曹操'
+      },
+      {
+        name: '夷陵之战',
+        description: '陆逊火烧连营，大败刘备，三国鼎立局面最终形成',
+        year: 221,
+        coord: [111.0, 30.8],
+        winner: '陆逊（吴）',
+        loser: '刘备（蜀）'
+      },
+      {
+        name: '六出祁山',
+        description: '诸葛亮多次北伐曹魏，虽未成功但展现卓越军事才能',
+        year: 228,
+        coord: [105.5, 33.5],
+        winner: '曹魏',
+        loser: '蜀汉'
       }
     ]
   },
@@ -886,6 +984,32 @@ const dynasties = [
         description: '孙思邈著《千金方》，是中国最早的临床医学百科全书',
         figure: '孙思邈'
       }
+    ],
+    battles: [
+      {
+        name: '虎牢关之战',
+        description: '李世民以少胜多，击败窦建德和王世充，统一中原',
+        year: 621,
+        coord: [113.0, 34.7],
+        winner: '李世民',
+        loser: '窦建德、王世充'
+      },
+      {
+        name: '安史之乱',
+        description: '安禄山、史思明发动叛乱，唐朝由盛转衰',
+        year: 755,
+        coord: [114.0, 34.8],
+        winner: '安禄山（叛军）',
+        loser: '唐军'
+      },
+      {
+        name: '怛罗斯之战',
+        description: '唐朝与阿拉伯帝国在中亚的决战，虽败但促进了文化',
+        year: 751,
+        coord: [75.0, 40.0],
+        winner: '阿拉伯帝国',
+        loser: '唐朝'
+      }
     ]
   },
   {
@@ -1032,6 +1156,32 @@ const dynasties = [
         name: '《清明上河图》',
         description: '张择端绘《清明上河图》，展现北宋繁华景象',
         figure: '张择端'
+      }
+    ],
+    battles: [
+      {
+        name: '高粱河之战',
+        description: '宋太宗北伐辽国，高粱河之战惨败，宋军损失惨重',
+        year: 979,
+        coord: [116.2, 39.9],
+        winner: '辽国',
+        loser: '北宋'
+      },
+      {
+        name: '澶州之战',
+        description: '辽军南下攻宋，宋真宗亲征，最终签订澶渊之盟',
+        year: 1004,
+        coord: [114.8, 35.7],
+        winner: '宋辽平局',
+        loser: '无'
+      },
+      {
+        name: '靖康之变',
+        description: '金军攻破开封，俘虏徽钦二帝，北宋灭亡',
+        year: 1127,
+        coord: [114.3, 34.8],
+        winner: '金国',
+        loser: '北宋'
       }
     ]
   },
@@ -1245,6 +1395,40 @@ const dynasties = [
         name: '景泰蓝工艺',
         description: '景泰蓝工艺达到高峰，成为明代特色工艺品',
         figure: null
+      }
+    ],
+    battles: [
+      {
+        name: '鄱阳湖之战',
+        description: '朱元璋在鄱阳湖击败陈友谅，奠定统一基础',
+        year: 1363,
+        coord: [116.2, 29.5],
+        winner: '朱元璋',
+        loser: '陈友谅'
+      },
+      {
+        name: '靖难之役',
+        description: '朱棣发动靖难之役，从侄子建文帝手中夺取皇位',
+        year: 1399,
+        coord: [116.4, 39.9],
+        winner: '朱棣',
+        loser: '建文帝'
+      },
+      {
+        name: '土木堡之变',
+        description: '明英宗被瓦剌俘虏，五十万大军覆没',
+        year: 1449,
+        coord: [115.5, 40.5],
+        winner: '瓦剌',
+        loser: '明朝'
+      },
+      {
+        name: '萨尔浒之战',
+        description: '努尔哈赤以少胜多，大败明军，后金崛起',
+        year: 1619,
+        coord: [124.0, 42.0],
+        winner: '后金（努尔哈赤）',
+        loser: '明朝'
       }
     ]
   },
