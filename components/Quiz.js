@@ -74,10 +74,10 @@ const ProgressBar = ({ current, total }) => {
     <div className="w-full mb-6">
       {/* 进度条容器 */}
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-medium text-gray-700">
+        <span className="text-sm font-medium text-gray-700 font-chinese">
           第 {current} / {total} 题
         </span>
-        <span className="text-sm font-medium text-gray-700">
+        <span className="text-sm font-medium text-gray-700 font-chinese">
           {percentage}%
         </span>
       </div>
@@ -85,7 +85,7 @@ const ProgressBar = ({ current, total }) => {
       {/* 进度条 */}
       <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-red-600 to-red-400 transition-all duration-500 ease-out"
+          className="h-full bg-gradient-to-r from-[#C41E3A] to-[#A81830] transition-all duration-500 ease-out"
           style={{ width: `${percentage}%` }}
         />
       </div>
@@ -95,10 +95,10 @@ const ProgressBar = ({ current, total }) => {
         {Array.from({ length: total }, (_, i) => i + 1).map((num) => (
           <div
             key={num}
-            className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${num === current
-                ? 'bg-red-600 text-white scale-110'
+            className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold font-chinese transition-all ${num === current
+                ? 'bg-[#C41E3A] text-white scale-110 shadow-md'
                 : num < current
-                  ? 'bg-green-500 text-white'
+                  ? 'bg-[#00A862] text-white'
                   : 'bg-gray-200 text-gray-600'
               }`}
           >
@@ -123,22 +123,22 @@ const ProgressBar = ({ current, total }) => {
  * @param {Function} props.onSelect - 选择回调函数
  */
 const OptionButton = ({ option, index, isSelected, showResult, isCorrect, onSelect }) => {
-  const baseClasses = 'w-full text-left p-4 rounded-lg border-2 transition-all font-medium';
+  const baseClasses = 'w-full text-left p-4 rounded-xl border-2 transition-all font-medium font-chinese';
 
   let stateClasses = '';
 
   if (showResult) {
     if (isCorrect) {
-      stateClasses = 'border-green-500 bg-green-50 text-green-800';
+      stateClasses = 'border-[#00A862] bg-[#00A862]/10 text-[#00A862]';
     } else if (isSelected && !isCorrect) {
-      stateClasses = 'border-red-500 bg-red-50 text-red-800';
+      stateClasses = 'border-[#C41E3A] bg-[#C41E3A]/10 text-[#C41E3A]';
     } else {
       stateClasses = 'border-gray-200 bg-gray-50 text-gray-500 opacity-60';
     }
   } else if (isSelected) {
-    stateClasses = 'border-red-600 bg-red-50 text-red-800 shadow-md';
+    stateClasses = 'border-[#C41E3A] bg-[#C41E3A]/10 text-[#C41E3A] shadow-md';
   } else {
-    stateClasses = 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50';
+    stateClasses = 'border-gray-200 bg-white/50 backdrop-blur-sm hover:border-[#C41E3A]/50 hover:bg-[#C41E3A]/5';
   }
 
   return (
@@ -147,7 +147,7 @@ const OptionButton = ({ option, index, isSelected, showResult, isCorrect, onSele
       disabled={showResult}
       className={`${baseClasses} ${stateClasses}`}
     >
-      <span className="inline-block w-8 h-8 rounded-full bg-current opacity-20 text-center leading-8 mr-3 text-sm">
+      <span className="inline-block w-8 h-8 rounded-full bg-current opacity-20 text-center leading-8 mr-3 text-sm font-bold">
         {String.fromCharCode(65 + index)}
       </span>
       <span className="text-base">{option}</span>
@@ -192,24 +192,24 @@ const SortOptions = ({ items, currentOrder, showResult, correctOrder, onReorder 
 
   return (
     <div className="space-y-3">
-      <p className="text-sm text-gray-600 mb-3">
+      <p className="text-sm text-gray-600 mb-3 font-chinese">
         点击两个项目可以交换它们的位置
       </p>
 
       {items.map((item, index) => {
         const currentItemIndex = currentOrder.indexOf(index);
         const isItemSelected = selectedIndex === index;
-        let itemClasses = 'w-full p-4 rounded-lg border-2 transition-all cursor-pointer ';
+        let itemClasses = 'w-full p-4 rounded-xl border-2 transition-all cursor-pointer font-chinese ';
 
         if (showResult) {
           const isCorrect = correctOrder && currentOrder[currentItemIndex] === correctOrder.indexOf(index);
           itemClasses += isCorrect
-            ? 'border-green-500 bg-green-50'
-            : 'border-red-500 bg-red-50';
+            ? 'border-[#00A862] bg-[#00A862]/10'
+            : 'border-[#C41E3A] bg-[#C41E3A]/10';
         } else if (isItemSelected) {
-          itemClasses += 'border-red-600 bg-red-50 shadow-md';
+          itemClasses += 'border-[#C41E3A] bg-[#C41E3A]/10 shadow-md';
         } else {
-          itemClasses += 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50';
+          itemClasses += 'border-gray-200 bg-white/50 backdrop-blur-sm hover:border-[#C41E3A]/50 hover:bg-[#C41E3A]/5';
         }
 
         return (
@@ -219,12 +219,12 @@ const SortOptions = ({ items, currentOrder, showResult, correctOrder, onReorder 
             className={itemClasses}
           >
             <div className="flex items-center">
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold mr-3 text-sm">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-700 font-bold mr-3 text-sm font-chinese">
                 {String.fromCharCode(65 + currentItemIndex)}
               </span>
               <span className="text-base font-medium">{item}</span>
               {isItemSelected && (
-                <span className="ml-auto text-red-600 text-sm font-medium">
+                <span className="ml-auto text-[#C41E3A] text-sm font-medium font-chinese">
                   已选中（点击另一个交换）
                 </span>
               )}
@@ -248,17 +248,17 @@ const SortOptions = ({ items, currentOrder, showResult, correctOrder, onReorder 
  * @param {Function} props.onChange - 输入变化回调函数
  */
 const FillBlankInput = ({ value, disabled, showResult, correctAnswer, onChange }) => {
-  let inputClasses = 'w-full px-4 py-3 border-2 rounded-lg text-lg focus:outline-none transition-all';
+  let inputClasses = 'w-full px-4 py-3 border-2 rounded-xl text-lg focus:outline-none transition-all font-chinese';
 
   if (showResult) {
     const isCorrect = value === correctAnswer;
     inputClasses += isCorrect
-      ? ' border-green-500 bg-green-50 text-green-800'
-      : ' border-red-500 bg-red-50 text-red-800';
+      ? ' border-[#00A862] bg-[#00A862]/10 text-[#00A862]'
+      : ' border-[#C41E3A] bg-[#C41E3A]/10 text-[#C41E3A]';
   } else if (disabled) {
     inputClasses += ' border-gray-300 bg-gray-100 text-gray-500';
   } else {
-    inputClasses += ' border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200';
+    inputClasses += ' border-gray-300 focus:border-[#C41E3A] focus:ring-2 focus:ring-[#C41E3A]/20';
   }
 
   return (
@@ -272,7 +272,7 @@ const FillBlankInput = ({ value, disabled, showResult, correctAnswer, onChange }
         className={inputClasses}
       />
       {showResult && value !== correctAnswer && (
-        <p className="mt-2 text-sm text-red-600 font-medium">
+        <p className="mt-2 text-sm text-[#C41E3A] font-medium font-chinese">
           正确答案：{correctAnswer}
         </p>
       )}
@@ -293,11 +293,11 @@ const FillBlankInput = ({ value, disabled, showResult, correctAnswer, onChange }
  */
 const AnswerFeedback = ({ isCorrect, correctAnswer, userAnswer, explanation, dynastyName }) => {
   return (
-    <div className={`mt-6 p-5 rounded-lg border-2 ${isCorrect ? 'border-green-500 bg-green-50' : 'border-red-500 bg-red-50'
+    <div className={`mt-6 p-5 rounded-xl border-2 ${isCorrect ? 'border-[#00A862] bg-[#00A862]/10' : 'border-[#C41E3A] bg-[#C41E3A]/10'
       }`}>
       {/* 正确/错误标识 */}
       <div className="flex items-center mb-3">
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-3 ${isCorrect ? 'bg-green-500' : 'bg-red-500'
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-3 ${isCorrect ? 'bg-[#00A862]' : 'bg-[#C41E3A]'
           }`}>
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isCorrect ? (
@@ -307,7 +307,7 @@ const AnswerFeedback = ({ isCorrect, correctAnswer, userAnswer, explanation, dyn
             )}
           </svg>
         </div>
-        <span className={`text-lg font-bold ${isCorrect ? 'text-green-800' : 'text-red-800'
+        <span className={`text-lg font-bold font-chinese ${isCorrect ? 'text-[#00A862]' : 'text-[#C41E3A]'
           }`}>
           {isCorrect ? '回答正确！' : '回答错误'}
         </span>
@@ -315,20 +315,20 @@ const AnswerFeedback = ({ isCorrect, correctAnswer, userAnswer, explanation, dyn
 
       {/* 答案信息 */}
       {!isCorrect && (
-        <p className="text-red-700 mb-2">
+        <p className="text-[#C41E3A] mb-2 font-chinese">
           <span className="font-medium">你的答案：</span>{userAnswer}
         </p>
       )}
 
       {/* 题目解析 */}
       <div className="mt-3">
-        <p className="font-medium text-gray-800 mb-2">解析：</p>
-        <p className="text-gray-700 leading-relaxed">{explanation}</p>
+        <p className="font-medium text-gray-800 mb-2 font-chinese">解析：</p>
+        <p className="text-gray-700 leading-relaxed font-chinese">{explanation}</p>
       </div>
 
       {/* 相关朝代 */}
       {dynastyName && (
-        <p className="mt-3 text-sm text-gray-600">
+        <p className="mt-3 text-sm text-gray-600 font-chinese">
           <span className="font-medium">相关朝代：</span>{dynastyName}
         </p>
       )}
@@ -366,56 +366,56 @@ const QuizResult = ({ score, total, answers, questions, onRetry }) => {
    * @returns {string} 颜色类
    */
   const getGradeColor = () => {
-    if (percentage >= 90) return 'text-green-600';
-    if (percentage >= 70) return 'text-blue-600';
-    if (percentage >= 60) return 'text-yellow-600';
-    return 'text-red-600';
+    if (percentage >= 90) return 'text-[#00A862]';
+    if (percentage >= 70) return 'text-[#1E3A8A]';
+    if (percentage >= 60) return 'text-[#FFD700]';
+    return 'text-[#C41E3A]';
   };
 
   return (
     <div className="text-center py-8">
       {/* 得分显示 */}
       <div className="mb-6">
-        <div className="text-6xl font-bold text-red-600 mb-2">
+        <div className="text-6xl font-bold text-[#C41E3A] mb-2 font-chinese">
           {score} / {total}
         </div>
-        <div className={`text-2xl font-bold ${getGradeColor()}`}>
+        <div className={`text-2xl font-bold font-chinese ${getGradeColor()}`}>
           {getGrade()}（{percentage}分）
         </div>
       </div>
 
       {/* 统计信息 */}
       <div className="grid grid-cols-3 gap-4 mb-8">
-        <div className="bg-green-50 p-4 rounded-lg">
-          <div className="text-2xl font-bold text-green-600">{score}</div>
-          <div className="text-sm text-green-700">答对</div>
+        <div className="bg-[#00A862]/10 p-4 rounded-xl border border-[#00A862]/20">
+          <div className="text-2xl font-bold text-[#00A862] font-chinese">{score}</div>
+          <div className="text-sm text-[#00A862] font-chinese">答对</div>
         </div>
-        <div className="bg-red-50 p-4 rounded-lg">
-          <div className="text-2xl font-bold text-red-600">{total - score}</div>
-          <div className="text-sm text-red-700">答错</div>
+        <div className="bg-[#C41E3A]/10 p-4 rounded-xl border border-[#C41E3A]/20">
+          <div className="text-2xl font-bold text-[#C41E3A] font-chinese">{total - score}</div>
+          <div className="text-sm text-[#C41E3A] font-chinese">答错</div>
         </div>
-        <div className="bg-blue-50 p-4 rounded-lg">
-          <div className="text-2xl font-bold text-blue-600">{percentage}%</div>
-          <div className="text-sm text-blue-700">正确率</div>
+        <div className="bg-[#1E3A8A]/10 p-4 rounded-xl border border-[#1E3A8A]/20">
+          <div className="text-2xl font-bold text-[#1E3A8A] font-chinese">{percentage}%</div>
+          <div className="text-sm text-[#1E3A8A] font-chinese">正确率</div>
         </div>
       </div>
 
       {/* 答题详情 */}
       <div className="text-left mb-8">
-        <h3 className="text-lg font-bold text-gray-800 mb-4">答题详情</h3>
+        <h3 className="text-lg font-bold text-gray-800 mb-4 font-chinese">答题详情</h3>
         <div className="space-y-2 max-h-64 overflow-y-auto">
           {questions.map((q, index) => {
             const isCorrect = answers[index] === q.correctAnswer;
             return (
               <div
                 key={q.id}
-                className={`flex items-center justify-between p-3 rounded-lg ${isCorrect ? 'bg-green-50' : 'bg-red-50'
+                className={`flex items-center justify-between p-3 rounded-xl font-chinese ${isCorrect ? 'bg-[#00A862]/10' : 'bg-[#C41E3A]/10'
                   }`}
               >
-                <span className="text-sm text-gray-700">
+                <span className="text-sm text-gray-700 font-chinese">
                   第{index + 1}题：{QUESTION_TYPE_NAMES[q.type]}
                 </span>
-                <span className={`text-sm font-bold ${isCorrect ? 'text-green-600' : 'text-red-600'
+                <span className={`text-sm font-bold font-chinese ${isCorrect ? 'text-[#00A862]' : 'text-[#C41E3A]'
                   }`}>
                   {isCorrect ? '✓' : '✗'}
                 </span>
@@ -428,7 +428,7 @@ const QuizResult = ({ score, total, answers, questions, onRetry }) => {
       {/* 重试按钮 */}
       <button
         onClick={onRetry}
-        className="bg-gradient-to-r from-red-600 to-red-400 text-white px-8 py-3 rounded-lg font-medium hover:from-red-700 hover:to-red-500 transition-all shadow-md hover:shadow-lg"
+        className="bg-[#C41E3A] text-white px-8 py-3 rounded-xl font-bold font-chinese hover:bg-[#A81830] transition-all shadow-md hover:shadow-lg"
       >
         重新开始
       </button>
@@ -592,8 +592,8 @@ const Quiz = ({ questions, onComplete, title = '中国历史朝代测验' }) => 
   // 如果没有题目，显示提示
   if (!questions || questions.length === 0) {
     return (
-      <div className="ink-card p-8 text-center">
-        <p className="text-gray-600 text-lg">暂无测验题目</p>
+      <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-sm p-8 text-center">
+        <p className="text-gray-600 text-lg font-chinese">暂无测验题目</p>
       </div>
     );
   }
@@ -602,7 +602,7 @@ const Quiz = ({ questions, onComplete, title = '中国历史朝代测验' }) => 
   if (showFinalResult) {
     const score = answers.filter((answer, index) => answer === questions[index].correctAnswer).length;
     return (
-      <div className="ink-card p-8">
+      <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-sm p-8">
         <QuizResult
           score={score}
           total={questions.length}
@@ -618,9 +618,9 @@ const Quiz = ({ questions, onComplete, title = '中国历史朝代测验' }) => 
   const isCurrentAnswerCorrect = currentAnswer === currentQuestion.correctAnswer;
 
   return (
-    <div className="ink-card p-6 md:p-8">
+    <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-sm p-6 md:p-8">
       {/* 测验标题 */}
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 ink-title">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 font-chinese ink-title">
         {title}
       </h2>
 
@@ -631,21 +631,21 @@ const Quiz = ({ questions, onComplete, title = '中国历史朝代测验' }) => 
       <div className="mb-6">
         {/* 题型和难度标签 */}
         <div className="flex items-center gap-3 mb-4">
-          <span className="bg-red-600 text-white text-sm px-3 py-1 rounded-full font-medium">
+          <span className="bg-[#C41E3A] text-white text-sm px-3 py-1 rounded-full font-medium font-chinese">
             {QUESTION_TYPE_NAMES[currentQuestion.type]}
           </span>
-          <span className={`text-sm px-3 py-1 rounded-full font-medium ${getDifficultyColor(currentQuestion.difficulty)}`}>
+          <span className={`text-sm px-3 py-1 rounded-full font-medium font-chinese ${getDifficultyColor(currentQuestion.difficulty)}`}>
             {DIFFICULTY_NAMES[currentQuestion.difficulty]}
           </span>
           {currentQuestion.knowledgePoint && (
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-gray-600 font-chinese">
               知识点：{currentQuestion.knowledgePoint}
             </span>
           )}
         </div>
 
         {/* 题干 */}
-        <h3 className="text-xl font-medium text-gray-800 mb-6 leading-relaxed">
+        <h3 className="text-xl font-medium text-gray-800 mb-6 leading-relaxed font-chinese">
           {currentQuestion.question}
         </h3>
 
@@ -720,7 +720,7 @@ const Quiz = ({ questions, onComplete, title = '中国历史朝代测验' }) => 
             }
           }}
           disabled={currentIndex === 0 || showResult}
-          className={`px-6 py-3 rounded-lg font-medium transition-all ${currentIndex === 0 || showResult
+          className={`px-6 py-3 rounded-xl font-medium font-chinese transition-all ${currentIndex === 0 || showResult
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
               : 'bg-gray-600 text-white hover:bg-gray-700'
             }`}
@@ -733,21 +733,21 @@ const Quiz = ({ questions, onComplete, title = '中国历史朝代测验' }) => 
           <button
             onClick={handleSubmitAnswer}
             disabled={!currentAnswer}
-            className={`px-8 py-3 rounded-lg font-medium transition-all shadow-md ${!currentAnswer
+            className={`px-8 py-3 rounded-xl font-medium font-chinese transition-all shadow-md ${!currentAnswer
                 ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-red-600 to-red-400 text-white hover:from-red-700 hover:to-red-500 hover:shadow-lg'
+                : 'bg-[#C41E3A] text-white hover:bg-[#A81830] hover:shadow-lg'
               }`}
           >
             提交答案
           </button>
         ) : (
           <div className="flex items-center gap-4">
-            <span className="text-gray-600 text-sm">
+            <span className="text-gray-600 text-sm font-chinese">
               {countdown ? '自动跳转中...' : ''}
             </span>
             <button
               onClick={handleNextQuestion}
-              className="px-8 py-3 bg-gradient-to-r from-red-600 to-red-400 text-white rounded-lg font-medium hover:from-red-700 hover:to-red-500 transition-all shadow-md hover:shadow-lg"
+              className="px-8 py-3 bg-[#C41E3A] text-white rounded-xl font-bold font-chinese hover:bg-[#A81830] transition-all shadow-md hover:shadow-lg"
             >
               {currentIndex < questions.length - 1 ? '下一题' : '查看结果'}
             </button>

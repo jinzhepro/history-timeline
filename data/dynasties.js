@@ -77,7 +77,68 @@ const dynasties = [
         winner: '少康',
         loser: '寒浞'
       }
-    ]
+    ],
+    lineage: {
+      name: '夏朝',
+      isFounder: true,
+      reign: '约前2070-前1600',
+      years: '约470年',
+      description: '中国历史上第一个王朝，大禹治水有功，建立夏朝，开创家天下制度',
+      children: [
+        {
+          name: '夏启（启）',
+          isFounder: false,
+          reign: '',
+          years: '约前2040-前1990',
+          description: '禹之子，确立世袭制，结束了禅让制',
+          children: [
+            {
+              name: '太康',
+              reign: '',
+              years: '约前1990-前1950',
+              description: '启之子，沉迷打猎，失国于有穷氏',
+              children: []
+            },
+            {
+              name: '仲康',
+              reign: '',
+              years: '约前1950-前1940',
+              description: '太康之弟，短暂在位',
+              children: []
+            },
+            {
+              name: '相',
+              reign: '',
+              years: '约前1940-前1910',
+              description: '仲康之子，被寒浞杀害',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '少康',
+          reign: '',
+          years: '约前1910-前1870',
+          description: '相之遗腹子，中兴夏朝，恢复统治',
+          children: [
+            {
+              name: '杼',
+              reign: '',
+              years: '约前1870-前1840',
+              description: '少康之子，继续发展夏朝',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '桀（履癸）',
+          reign: '',
+          years: '约前1650-前1600',
+          description: '夏朝末代君主，暴虐无道，被商汤灭亡',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'shang',
@@ -151,7 +212,97 @@ const dynasties = [
         winner: '周武王',
         loser: '商纣王'
       }
-    ]
+    ],
+    lineage: {
+      name: '商朝',
+      isFounder: true,
+      reign: '约前1600-前1046',
+      years: '约554年',
+      description: '中国历史上第二个王朝，商汤灭夏建立商朝，青铜器文明达到高峰',
+      children: [
+        {
+          name: '商汤（汤）',
+          isFounder: true,
+          reign: '',
+          years: '约前1600-前1580',
+          description: '商朝开国君主，灭夏建商',
+          children: [
+            {
+              name: '外丙',
+              reign: '',
+              years: '约前1580-前1575',
+              description: '商汤之子，短暂在位',
+              children: []
+            },
+            {
+              name: '仲壬',
+              reign: '',
+              years: '约前1575-前1570',
+              description: '外丙之弟，短暂在位',
+              children: []
+            },
+            {
+              name: '太甲',
+              reign: '',
+              years: '约前1570-前1540',
+              description: '商汤之孙，伊尹辅政，商朝稳定发展',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '盘庚',
+          reign: '',
+          years: '约前1300-前1270',
+          description: '迁都于殷，商朝从此稳定发展',
+          children: [
+            {
+              name: '小辛',
+              reign: '',
+              years: '约前1270-前1250',
+              description: '盘庚之弟，商朝继续发展',
+              children: []
+            },
+            {
+              name: '小乙',
+              reign: '',
+              years: '约前1250-前1230',
+              description: '商朝君主，武丁之父',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '武丁',
+          reign: '',
+          years: '约前1230-前1180',
+          description: '商朝鼎盛时期，开创武丁中兴',
+          children: [
+            {
+              name: '祖庚',
+              reign: '',
+              years: '约前1180-前1160',
+              description: '武丁之子',
+              children: []
+            },
+            {
+              name: '祖甲',
+              reign: '',
+              years: '约前1160-前1140',
+              description: '武丁之子，商朝继续发展',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '纣（帝辛）',
+          reign: '',
+          years: '约前1075-前1046',
+          description: '商朝末代君主，暴虐无道，被周武王灭亡',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'western-zhou',
@@ -217,7 +368,76 @@ const dynasties = [
         winner: '周武王',
         loser: '商纣王'
       }
-    ]
+    ],
+    lineage: {
+      name: '西周',
+      isFounder: true,
+      reign: '前1046-前771',
+      years: '275年',
+      description: '周武王伐纣建立西周，实行分封制和礼乐制度，是中国历史上重要的王朝',
+      children: [
+        {
+          name: '周武王（姬发）',
+          isFounder: true,
+          reign: '',
+          years: '前1046-前1043',
+          description: '西周开国君主，伐纣灭商，建立周朝',
+          children: [
+            {
+              name: '周成王（姬诵）',
+              reign: '',
+              years: '前1042-前1021',
+              description: '周武王之子，周公旦辅政，开创成康之治',
+              children: [
+                {
+                  name: '周康王（姬钊）',
+                  reign: '',
+                  years: '前1020-前996',
+                  description: '周成王之子，继续成康之治',
+                  children: []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '周穆王（姬满）',
+          reign: '',
+          years: '前976-前922',
+          description: '西周中期君主，周游天下，记载于《穆天子传》',
+          children: [
+            {
+              name: '周共王（姬繄扈）',
+              reign: '',
+              years: '前922-前900',
+              description: '周穆王之子',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '周厉王（姬胡）',
+          reign: '',
+          years: '前877-前841',
+          description: '暴虐无道，引发国人暴动，被流放',
+          children: []
+        },
+        {
+          name: '周宣王（姬静）',
+          reign: '',
+          years: '前828-前782',
+          description: '周厉王之子，中兴西周',
+          children: []
+        },
+        {
+          name: '周幽王（姬宫湦）',
+          reign: '',
+          years: '前781-前771',
+          description: '西周末代君主，烽火戏诸侯，被犬戎灭亡',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'eastern-zhou',
@@ -293,7 +513,171 @@ const dynasties = [
         description: '李冰父子修建都江堰，是世界上最古老的水利工程之一',
         figure: '李冰'
       }
-    ]
+    ],
+    lineage: {
+      name: '东周（春秋战国）',
+      isFounder: true,
+      reign: '前770-前221年',
+      years: '549年',
+      description: '周王室东迁洛邑，进入春秋战国时期，诸侯争霸，百家争鸣',
+      children: [
+        {
+          name: '周平王（姬宜臼）',
+          isFounder: true,
+          reign: '',
+          years: '前770-前720年',
+          description: '东周开国君主，迁都洛邑',
+          children: [
+            {
+              name: '周桓王（姬林）',
+              reign: '',
+              years: '前719-前697年',
+              description: '周平王之孙',
+              children: []
+            },
+            {
+              name: '周庄王（姬佗）',
+              reign: '',
+              years: '前696-前682年',
+              description: '周桓王之子',
+              children: []
+            },
+            {
+              name: '周釐王（姬胡齐）',
+              reign: '',
+              years: '前681-前677年',
+              description: '周庄王之子',
+              children: []
+            },
+            {
+              name: '周惠王（姬阆）',
+              reign: '',
+              years: '前676-前652年',
+              description: '周釐王之子',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '周襄王（姬郑）',
+          reign: '',
+          years: '前651-前619年',
+          description: '周惠王之子',
+          children: [
+            {
+              name: '周顷王（姬壬臣）',
+              reign: '',
+              years: '前618-前613年',
+              description: '周襄王之子',
+              children: []
+            },
+            {
+              name: '周匡王（姬班）',
+              reign: '',
+              years: '前612-前607年',
+              description: '周顷王之子',
+              children: []
+            },
+            {
+              name: '周定王（姬瑜）',
+              reign: '',
+              years: '前606-前586年',
+              description: '周匡王之弟',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '周简王（姬夷）',
+          reign: '',
+          years: '前585-前572年',
+          description: '周定王之子',
+          children: [
+            {
+              name: '周灵王（姬泄心）',
+              reign: '',
+              years: '前571-前545年',
+              description: '周简王之子',
+              children: [
+                {
+                  name: '周景王（姬贵）',
+                  reign: '',
+                  years: '前544-前520年',
+                  description: '周灵王之子',
+                  children: []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '周敬王（姬匄）',
+          reign: '',
+          years: '前519-前476年',
+          description: '周景王之子，王子朝之乱后即位',
+          children: [
+            {
+              name: '周元王（姬仁）',
+              reign: '',
+              years: '前475-前469年',
+              description: '周敬王之子',
+              children: []
+            },
+            {
+              name: '周贞定王（姬介）',
+              reign: '',
+              years: '前468-前441年',
+              description: '周元王之子',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '周威烈王（姬午）',
+          reign: '',
+          years: '前425-前402年',
+          description: '战国时期周王室',
+          children: [
+            {
+              name: '周安王（姬骄）',
+              reign: '',
+              years: '前401-前376年',
+              description: '周威烈王之子',
+              children: []
+            },
+            {
+              name: '周烈王（姬喜）',
+              reign: '',
+              years: '前375-前369年',
+              description: '周安王之子',
+              children: []
+            },
+            {
+              name: '周显王（姬扁）',
+              reign: '',
+              years: '前368-前321年',
+              description: '周烈王之弟',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '周慎靓王（姬定）',
+          reign: '',
+          years: '前320-前315年',
+          description: '周显王之子',
+          children: [
+            {
+              name: '周赧王（姬延）',
+              reign: '',
+              years: '前314-前256年',
+              description: '周慎靓王之子，东周末代君主',
+              children: []
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'qin',
@@ -392,7 +776,32 @@ const dynasties = [
         winner: '项羽',
         loser: '秦军'
       }
-    ]
+    ],
+    lineage: {
+      name: '秦朝',
+      isFounder: true,
+      reign: '前221-前207',
+      years: '15年',
+      description: '中国历史上第一个统一的多民族中央集权国家，秦始皇统一六国，建立秦朝',
+      children: [
+        {
+          name: '秦始皇（嬴政）',
+          isFounder: true,
+          reign: '',
+          years: '前221-前210',
+          description: '中国历史上第一位皇帝，统一六国，建立中央集权制度',
+          children: [
+            {
+              name: '秦二世（嬴胡亥）',
+              reign: '',
+              years: '前210-前207',
+              description: '秦始皇之子，赵高专权，秦朝灭亡',
+              children: []
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'western-han',
@@ -483,7 +892,105 @@ const dynasties = [
         description: '汉武帝时期制定太初历，是中国第一部比较完整的历法',
         figure: '司马迁、公孙卿'
       }
-    ]
+    ],
+    lineage: {
+      name: '西汉',
+      isFounder: true,
+      reign: '前202-8年',
+      years: '210年',
+      description: '刘邦建立汉朝，史称西汉，是中国历史上强盛的王朝之一',
+      children: [
+        {
+          name: '汉高祖（刘邦）',
+          isFounder: true,
+          reign: '',
+          years: '前202-前195',
+          description: '西汉开国皇帝，建立汉朝',
+          children: [
+            {
+              name: '汉惠帝（刘盈）',
+              reign: '',
+              years: '前195-前188',
+              description: '刘邦之子，吕后专权',
+              children: []
+            },
+            {
+              name: '汉文帝（刘恒）',
+              reign: '',
+              years: '前180-前157',
+              description: '开创文景之治，轻徭薄赋',
+              children: [
+                {
+                  name: '汉景帝（刘启）',
+                  reign: '',
+                  years: '前157-前141',
+                  description: '继续文景之治，平定七国之乱',
+                  children: [
+                    {
+                      name: '汉武帝（刘彻）',
+                      reign: '',
+                      years: '前141-前87',
+                      description: '开创汉武盛世，北击匈奴，开辟丝绸之路',
+                      children: [
+                        {
+                          name: '汉昭帝（刘弗陵）',
+                          reign: '',
+                          years: '前87-前74',
+                          description: '霍光辅政',
+                          children: []
+                        },
+                        {
+                          name: '汉宣帝（刘询）',
+                          reign: '',
+                          years: '前74-前49',
+                          description: '开创孝宣之治，西汉达到鼎盛',
+                          children: []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '汉元帝（刘奭）',
+          reign: '',
+          years: '前48-前33',
+          description: '西汉中期君主',
+          children: []
+        },
+        {
+          name: '汉成帝（刘骜）',
+          reign: '',
+          years: '前33-前7',
+          description: '西汉后期君主，外戚专权',
+          children: []
+        },
+        {
+          name: '汉哀帝（刘欣）',
+          reign: '',
+          years: '前7-前1',
+          description: '西汉末期君主',
+          children: []
+        },
+        {
+          name: '汉平帝（刘衎）',
+          reign: '',
+          years: '1-5年',
+          description: '王莽专权',
+          children: []
+        },
+        {
+          name: '孺子婴（刘婴）',
+          reign: '',
+          years: '6-8年',
+          description: '王莽摄政，西汉灭亡',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'eastern-han',
@@ -564,7 +1071,90 @@ const dynasties = [
         description: '张衡发明浑天仪和地动仪，是世界最早的地震仪器',
         figure: '张衡'
       }
-    ]
+    ],
+    lineage: {
+      name: '东汉',
+      isFounder: true,
+      reign: '25-220年',
+      years: '195年',
+      description: '刘秀建立东汉，定都洛阳，史称东汉，光武中兴使国力恢复',
+      children: [
+        {
+          name: '汉光武帝（刘秀）',
+          isFounder: true,
+          reign: '',
+          years: '25-57年',
+          description: '东汉开国皇帝，光武中兴',
+          children: [
+            {
+              name: '汉明帝（刘庄）',
+              reign: '',
+              years: '57-75年',
+              description: '明章之治，东汉继续发展',
+              children: [
+                {
+                  name: '汉章帝（刘炟）',
+                  reign: '',
+                  years: '75-88年',
+                  description: '明章之治达到顶峰',
+                  children: [
+                    {
+                      name: '汉和帝（刘肇）',
+                      reign: '',
+                      years: '88-105年',
+                      description: '永元之隆，东汉鼎盛时期',
+                      children: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '汉殇帝（刘隆）',
+          reign: '',
+          years: '105-106年',
+          description: '在位仅1年，幼年即位',
+          children: []
+        },
+        {
+          name: '汉安帝（刘祜）',
+          reign: '',
+          years: '106-125年',
+          description: '东汉中期君主',
+          children: []
+        },
+        {
+          name: '汉顺帝（刘保）',
+          reign: '',
+          years: '125-144年',
+          description: '东汉后期君主',
+          children: []
+        },
+        {
+          name: '汉桓帝（刘志）',
+          reign: '',
+          years: '146-168年',
+          description: '党锢之祸发生',
+          children: []
+        },
+        {
+          name: '汉灵帝（刘宏）',
+          reign: '',
+          years: '168-189年',
+          description: '黄巾起义爆发',
+          children: []
+        },
+        {
+          name: '汉献帝（刘协）',
+          reign: '',
+          years: '189-220年',
+          description: '东汉末代君主，被曹丕废黜，东汉灭亡',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'three-kingdoms',
@@ -664,7 +1254,126 @@ const dynasties = [
         winner: '曹魏',
         loser: '蜀汉'
       }
-    ]
+    ],
+    lineage: {
+      name: '三国',
+      isFounder: true,
+      reign: '220-280年',
+      years: '60年',
+      description: '魏蜀吴三国鼎立，中国历史上重要的分裂时期',
+      children: [
+        {
+          name: '曹魏',
+          isFounder: true,
+          reign: '220-265年',
+          years: '45年',
+          description: '曹丕建立，占据中原地区',
+          children: [
+            {
+              name: '魏文帝（曹丕）',
+              isFounder: true,
+              reign: '',
+              years: '220-226年',
+              description: '曹魏开国皇帝，代汉建魏',
+              children: [
+                {
+                  name: '魏明帝（曹叡）',
+                  reign: '',
+                  years: '226-239年',
+                  description: '曹丕之子，诸葛亮北伐的主要对手',
+                  children: []
+                },
+                {
+                  name: '魏齐王（曹芳）',
+                  reign: '',
+                  years: '239-254年',
+                  description: '曹叡养子，司马懿专权',
+                  children: []
+                },
+                {
+                  name: '魏高贵乡公（曹髦）',
+                  reign: '',
+                  years: '254-260年',
+                  description: '反抗司马昭失败被杀',
+                  children: []
+                },
+                {
+                  name: '魏元帝（曹奂）',
+                  reign: '',
+                  years: '260-265年',
+                  description: '曹魏末代皇帝，被司马炎废黜',
+                  children: []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '蜀汉',
+          isFounder: false,
+          reign: '221-263年',
+          years: '42年',
+          description: '刘备建立，占据益州地区',
+          children: [
+            {
+              name: '汉昭烈帝（刘备）',
+              isFounder: true,
+              reign: '',
+              years: '221-223年',
+              description: '蜀汉开国皇帝，建立蜀汉',
+              children: [
+                {
+                  name: '汉后主（刘禅）',
+                  reign: '',
+                  years: '223-263年',
+                  description: '刘备之子，蜀汉末代皇帝',
+                  children: []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '东吴',
+          isFounder: false,
+          reign: '222-280年',
+          years: '58年',
+          description: '孙权建立，占据江东地区',
+          children: [
+            {
+              name: '吴大帝（孙权）',
+              isFounder: true,
+              reign: '',
+              years: '222-252年',
+              description: '东吴开国皇帝，建立东吴',
+              children: [
+                {
+                  name: '吴会稽王（孙亮）',
+                  reign: '',
+                  years: '252-258年',
+                  description: '孙权之子，幼年即位',
+                  children: []
+                },
+                {
+                  name: '吴景帝（孙休）',
+                  reign: '',
+                  years: '258-264年',
+                  description: '孙权之子',
+                  children: []
+                },
+                {
+                  name: '吴末帝（孙皓）',
+                  reign: '',
+                  years: '264-280年',
+                  description: '东吴末代皇帝，被西晋灭亡',
+                  children: []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'western-jin',
@@ -720,7 +1429,46 @@ const dynasties = [
         description: '书法艺术发展，出现钟繇等书法大家',
         figure: '钟繇'
       }
-    ]
+    ],
+    lineage: {
+      name: '西晋',
+      isFounder: true,
+      reign: '265-316年',
+      years: '51年',
+      description: '司马炎代魏建晋，短暂统一全国，八王之乱后迅速衰落',
+      children: [
+        {
+          name: '晋武帝（司马炎）',
+          isFounder: true,
+          reign: '',
+          years: '265-290年',
+          description: '西晋开国皇帝，代魏建晋，统一全国',
+          children: [
+            {
+              name: '晋惠帝（司马衷）',
+              reign: '',
+              years: '290-307年',
+              description: '晋武帝之子，八王之乱时期',
+              children: []
+            },
+            {
+              name: '晋怀帝（司马炽）',
+              reign: '',
+              years: '307-313年',
+              description: '晋武帝之子，被刘聪俘虏',
+              children: []
+            },
+            {
+              name: '晋愍帝（司马邺）',
+              reign: '',
+              years: '313-316年',
+              description: '西晋末代皇帝，被刘聪俘虏，西晋灭亡',
+              children: []
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'eastern-jin',
@@ -776,7 +1524,98 @@ const dynasties = [
         description: '陶渊明开创田园诗派',
         figure: '陶渊明'
       }
-    ]
+    ],
+    lineage: {
+      name: '东晋',
+      isFounder: true,
+      reign: '317-420年',
+      years: '103年',
+      description: '司马睿建立东晋，偏安江南，与北方十六国对峙',
+      children: [
+        {
+          name: '晋元帝（司马睿）',
+          isFounder: true,
+          reign: '',
+          years: '317-322年',
+          description: '东晋开国皇帝，建立东晋',
+          children: [
+            {
+              name: '晋明帝（司马绍）',
+              reign: '',
+              years: '322-325年',
+              description: '晋元帝之子',
+              children: [
+                {
+                  name: '晋成帝（司马衍）',
+                  reign: '',
+                  years: '325-342年',
+                  description: '晋明帝之子',
+                  children: []
+                },
+                {
+                  name: '晋康帝（司马岳）',
+                  reign: '',
+                  years: '342-344年',
+                  description: '晋成帝之弟',
+                  children: []
+                },
+                {
+                  name: '晋穆帝（司马聃）',
+                  reign: '',
+                  years: '344-361年',
+                  description: '晋康帝之子',
+                  children: []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '晋哀帝（司马丕）',
+          reign: '',
+          years: '361-365年',
+          description: '晋成帝之子',
+          children: []
+        },
+        {
+          name: '晋废帝（司马奕）',
+          reign: '',
+          years: '365-371年',
+          description: '晋哀帝之弟',
+          children: []
+        },
+        {
+          name: '晋简文帝（司马昱）',
+          reign: '',
+          years: '371-372年',
+          description: '晋元帝之子',
+          children: [
+            {
+              name: '晋孝武帝（司马曜）',
+              reign: '',
+              years: '372-396年',
+              description: '晋简文帝之子，淝水之战时期',
+              children: [
+                {
+                  name: '晋安帝（司马德宗）',
+                  reign: '',
+                  years: '396-418年',
+                  description: '晋孝武帝之子',
+                  children: []
+                },
+                {
+                  name: '晋恭帝（司马德文）',
+                  reign: '',
+                  years: '418-420年',
+                  description: '晋安帝之弟，东晋末代皇帝',
+                  children: []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'northern-southern-dynasties',
@@ -888,7 +1727,32 @@ const dynasties = [
         description: '李春设计建造赵州桥，是世界现存最古老的石拱桥',
         figure: '李春'
       }
-    ]
+    ],
+    lineage: {
+      name: '隋朝',
+      isFounder: true,
+      reign: '581-618年',
+      years: '37年',
+      description: '杨坚建立隋朝，结束南北朝分裂，重新统一全国',
+      children: [
+        {
+          name: '隋文帝（杨坚）',
+          isFounder: true,
+          reign: '',
+          years: '581-604年',
+          description: '隋朝开国皇帝，结束南北朝分裂',
+          children: [
+            {
+              name: '隋炀帝（杨广）',
+              reign: '',
+              years: '604-618年',
+              description: '隋文帝之子，开凿大运河，隋朝灭亡',
+              children: []
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'tang',
@@ -1010,7 +1874,120 @@ const dynasties = [
         winner: '阿拉伯帝国',
         loser: '唐朝'
       }
-    ]
+    ],
+    lineage: {
+      name: '唐朝',
+      isFounder: true,
+      reign: '618-907',
+      years: '289年',
+      description: '中国历史上最辉煌的朝代之一，国力强盛，文化繁荣',
+      children: [
+        {
+          name: '唐高祖（李渊）',
+          isFounder: true,
+          reign: '武德',
+          years: '618-626',
+          description: '唐朝开国皇帝，建立唐朝，定都长安',
+          children: [
+            {
+              name: '唐太宗（李世民）',
+              reign: '贞观',
+              years: '626-649',
+              description: '开创贞观之治，是中国历史上最著名的皇帝之一',
+              children: [
+                {
+                  name: '唐高宗（李治）',
+                  reign: '永徽等',
+                  years: '649-683',
+                  description: '在位期间国力强盛，版图达到极盛',
+                  children: [
+                    {
+                      name: '唐中宗（李显）',
+                      reign: '嗣圣、神龙等',
+                      years: '684, 705-710',
+                      description: '武则天之子，两度在位',
+                      children: []
+                    },
+                    {
+                      name: '唐睿宗（李旦）',
+                      reign: '文明、景云等',
+                      years: '684-690, 710-712',
+                      description: '武则天之子，两度在位',
+                      children: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '武则天（武曌）',
+          reign: '天授等',
+          years: '690-705',
+          description: '中国历史上唯一的女皇帝，建立武周',
+          children: [
+            {
+              name: '唐中宗（李显）',
+              reign: '神龙等',
+              years: '705-710',
+              description: '恢复唐朝，两度在位',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '唐玄宗（李隆基）',
+          reign: '先天、开元、天宝',
+          years: '712-756',
+          description: '开创开元盛世，唐朝达到鼎盛，晚年发生安史之乱',
+          children: [
+            {
+              name: '唐肃宗（李亨）',
+              reign: '至德、乾元等',
+              years: '756-762',
+              description: '在安史之乱中即位，平定叛乱',
+              children: []
+            },
+            {
+              name: '唐代宗（李豫）',
+              reign: '宝应、大历等',
+              years: '762-779',
+              description: '继续平定叛乱，恢复统治',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '唐宪宗（李纯）',
+          reign: '元和',
+          years: '805-820',
+          description: '元和中兴，削弱藩镇势力',
+          children: []
+        },
+        {
+          name: '唐文宗（李昂）',
+          reign: '太和、开成',
+          years: '826-840',
+          description: '甘露之变失败，宦官专权',
+          children: []
+        },
+        {
+          name: '唐昭宗（李晔）',
+          reign: '龙纪、大顺等',
+          years: '888-904',
+          description: '唐朝末期皇帝，无力挽救唐朝衰亡',
+          children: []
+        },
+        {
+          name: '唐哀帝（李柷）',
+          reign: '天祐',
+          years: '904-907',
+          description: '唐朝末代皇帝，被朱温废黜',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'five-dynasties',
@@ -1066,7 +2043,138 @@ const dynasties = [
         description: '中国最早的文人词总集',
         figure: '赵崇祚'
       }
-    ]
+    ],
+    lineage: {
+      name: '五代十国',
+      isFounder: true,
+      reign: '907-960年',
+      years: '53年',
+      description: '北方五代相继，南方十国并立，政权更迭频繁',
+      children: [
+        {
+          name: '后梁',
+          isFounder: true,
+          reign: '907-923年',
+          years: '16年',
+          description: '朱温建立，五代之首',
+          children: [
+            {
+              name: '后梁太祖（朱温）',
+              reign: '',
+              years: '907-912年',
+              description: '后梁开国皇帝',
+              children: []
+            },
+            {
+              name: '后梁末帝（朱友贞）',
+              reign: '',
+              years: '913-923年',
+              description: '后梁末代皇帝',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '后唐',
+          isFounder: false,
+          reign: '923-936年',
+          years: '13年',
+          description: '李存勖建立，灭后梁',
+          children: [
+            {
+              name: '后唐庄宗（李存勖）',
+              reign: '',
+              years: '923-926年',
+              description: '后唐开国皇帝',
+              children: []
+            },
+            {
+              name: '后唐明宗（李嗣源）',
+              reign: '',
+              years: '926-933年',
+              description: '后唐中期君主',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '后晋',
+          isFounder: false,
+          reign: '936-947年',
+          years: '11年',
+          description: '石敬瑭建立，割让燕云十六州',
+          children: [
+            {
+              name: '后晋高祖（石敬瑭）',
+              reign: '',
+              years: '936-942年',
+              description: '后晋开国皇帝',
+              children: []
+            },
+            {
+              name: '后晋出帝（石重贵）',
+              reign: '',
+              years: '942-947年',
+              description: '后晋末代皇帝',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '后汉',
+          isFounder: false,
+          reign: '947-950年',
+          years: '3年',
+          description: '刘知远建立，统治时间短暂',
+          children: [
+            {
+              name: '后汉高祖（刘知远）',
+              reign: '',
+              years: '947-948年',
+              description: '后汉开国皇帝',
+              children: []
+            },
+            {
+              name: '后汉隐帝（刘承祐）',
+              reign: '',
+              years: '948-950年',
+              description: '后汉末代皇帝',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '后周',
+          isFounder: false,
+          reign: '951-960年',
+          years: '9年',
+          description: '郭威建立，为北宋统一奠定基础',
+          children: [
+            {
+              name: '后周太祖（郭威）',
+              reign: '',
+              years: '951-954年',
+              description: '后周开国皇帝',
+              children: []
+            },
+            {
+              name: '后周世宗（柴荣）',
+              reign: '',
+              years: '954-959年',
+              description: '后周中期君主，改革图强',
+              children: []
+            },
+            {
+              name: '后周恭帝（柴宗训）',
+              reign: '',
+              years: '959-960年',
+              description: '后周末代皇帝，陈桥兵变',
+              children: []
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'northern-song',
@@ -1183,7 +2291,85 @@ const dynasties = [
         winner: '金国',
         loser: '北宋'
       }
-    ]
+    ],
+    lineage: {
+      name: '北宋',
+      isFounder: true,
+      reign: '960-1127年',
+      years: '167年',
+      description: '赵匡胤建立北宋，结束五代十国分裂，经济文化高度繁荣',
+      children: [
+        {
+          name: '宋太祖（赵匡胤）',
+          isFounder: true,
+          reign: '',
+          years: '960-976年',
+          description: '北宋开国皇帝，杯酒释兵权',
+          children: [
+            {
+              name: '宋太宗（赵光义）',
+              reign: '',
+              years: '976-997年',
+              description: '赵匡胤之弟，继续统一事业',
+              children: [
+                {
+                  name: '宋真宗（赵恒）',
+                  reign: '',
+                  years: '997-1022年',
+                  description: '签订澶渊之盟',
+                  children: [
+                    {
+                      name: '宋仁宗（赵祯）',
+                      reign: '',
+                      years: '1022-1063年',
+                      description: '庆历新政，北宋鼎盛时期',
+                      children: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '宋英宗（赵曙）',
+          reign: '',
+          years: '1063-1067年',
+          description: '宋仁宗之侄',
+          children: []
+        },
+        {
+          name: '宋神宗（赵顼）',
+          reign: '',
+          years: '1067-1085年',
+          description: '王安石变法',
+          children: [
+            {
+              name: '宋哲宗（赵煦）',
+              reign: '',
+              years: '1085-1100年',
+              description: '宋神宗之子',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '宋徽宗（赵佶）',
+          reign: '',
+          years: '1100-1125年',
+          description: '艺术成就高，但政治腐败',
+          children: [
+            {
+              name: '宋钦宗（赵桓）',
+              reign: '',
+              years: '1125-1127年',
+              description: '北宋末代皇帝，靖康之变被俘',
+              children: []
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     id: 'southern-song',
@@ -1239,7 +2425,82 @@ const dynasties = [
         description: '火药开始用于军事，出现突火枪等武器',
         figure: null
       }
-    ]
+    ],
+    lineage: {
+      name: '南宋',
+      isFounder: true,
+      reign: '1127-1279年',
+      years: '152年',
+      description: '赵构建立南宋，偏安江南，经济文化继续发展',
+      children: [
+        {
+          name: '宋高宗（赵构）',
+          isFounder: true,
+          reign: '',
+          years: '1127-1162年',
+          description: '南宋开国皇帝，定都临安',
+          children: [
+            {
+              name: '宋孝宗（赵昚）',
+              reign: '',
+              years: '1162-1189年',
+              description: '南宋中期君主，隆兴北伐',
+              children: [
+                {
+                  name: '宋光宗（赵惇）',
+                  reign: '',
+                  years: '1189-1194年',
+                  description: '南宋后期君主',
+                  children: []
+                },
+                {
+                  name: '宋宁宗（赵扩）',
+                  reign: '',
+                  years: '1194-1224年',
+                  description: '南宋君主',
+                  children: []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '宋理宗（赵昀）',
+          reign: '',
+          years: '1224-1264年',
+          description: '南宋后期君主',
+          children: []
+        },
+        {
+          name: '宋度宗（赵禥）',
+          reign: '',
+          years: '1264-1274年',
+          description: '南宋末期君主',
+          children: []
+        },
+        {
+          name: '宋恭帝（赵㬎）',
+          reign: '',
+          years: '1274-1276年',
+          description: '南宋幼主，被元军俘虏',
+          children: []
+        },
+        {
+          name: '宋端宗（赵昰）',
+          reign: '',
+          years: '1276-1278年',
+          description: '南宋流亡皇帝',
+          children: []
+        },
+        {
+          name: '宋末帝（赵昺）',
+          reign: '',
+          years: '1278-1279年',
+          description: '南宋末代皇帝，崖山海战失败，南宋灭亡',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'yuan',
@@ -1295,7 +2556,74 @@ const dynasties = [
         description: '元青花瓷达到很高艺术水平',
         figure: null
       }
-    ]
+    ],
+    lineage: {
+      name: '元朝',
+      isFounder: true,
+      reign: '1271-1368年',
+      years: '97年',
+      description: '忽必烈建立元朝，中国历史上疆域最大的朝代',
+      children: [
+        {
+          name: '元世祖（忽必烈）',
+          isFounder: true,
+          reign: '',
+          years: '1271-1294年',
+          description: '元朝开国皇帝，建立元朝，统一全国',
+          children: [
+            {
+              name: '元成宗（铁穆耳）',
+              reign: '',
+              years: '1294-1307年',
+              description: '忽必烈之孙',
+              children: []
+            },
+            {
+              name: '元武宗（海山）',
+              reign: '',
+              years: '1307-1311年',
+              description: '元成宗之侄',
+              children: []
+            },
+            {
+              name: '元仁宗（爱育黎拔力八达）',
+              reign: '',
+              years: '1311-1320年',
+              description: '元武宗之弟',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '元英宗（硕德八剌）',
+          reign: '',
+          years: '1320-1323年',
+          description: '元仁宗之子',
+          children: []
+        },
+        {
+          name: '元泰定帝（也孙铁木儿）',
+          reign: '',
+          years: '1323-1328年',
+          description: '元朝中期君主',
+          children: []
+        },
+        {
+          name: '元文宗（图帖睦尔）',
+          reign: '',
+          years: '1328-1332年',
+          description: '元朝后期君主',
+          children: []
+        },
+        {
+          name: '元顺帝（妥懽帖睦尔）',
+          reign: '',
+          years: '1333-1368年',
+          description: '元朝末代皇帝，红巾军起义后退位',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'ming',
@@ -1430,7 +2758,132 @@ const dynasties = [
         winner: '后金（努尔哈赤）',
         loser: '明朝'
       }
-    ]
+    ],
+    lineage: {
+      name: '明朝',
+      isFounder: true,
+      reign: '1368-1644',
+      years: '276年',
+      description: '推翻元朝统治，恢复汉人统治，是中国历史上最后一个由汉族建立的大一统王朝',
+      children: [
+        {
+          name: '明太祖（朱元璋）',
+          isFounder: true,
+          reign: '洪武',
+          years: '1368-1398',
+          description: '明朝开国皇帝，推翻元朝统治，建立明朝',
+          children: [
+            {
+              name: '明惠宗（朱允炆）',
+              reign: '建文',
+              years: '1398-1402',
+              description: '朱元璋之孙，在靖难之役中被朱棣推翻',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '明成祖（朱棣）',
+          reign: '永乐',
+          years: '1402-1424',
+          description: '发动靖难之役夺取皇位，迁都北京，郑和下西洋',
+          children: [
+            {
+              name: '明仁宗（朱高炽）',
+              reign: '洪熙',
+              years: '1424-1425',
+              description: '在位时间短，但仁政爱民',
+              children: [
+                {
+                  name: '明宣宗（朱瞻基）',
+                  reign: '宣德',
+                  years: '1425-1435',
+                  description: '仁宣之治，明朝达到鼎盛',
+                  children: []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '明英宗（朱祁镇）',
+          reign: '正统、天顺',
+          years: '1435-1449, 1457-1464',
+          description: '土木堡之变被俘，后复辟',
+          children: []
+        },
+        {
+          name: '明代宗（朱祁钰）',
+          reign: '景泰',
+          years: '1449-1457',
+          description: '土木堡之变后即位，领导北京保卫战',
+          children: []
+        },
+        {
+          name: '明宪宗（朱见深）',
+          reign: '成化',
+          years: '1464-1487',
+          description: '成化年间，社会相对稳定',
+          children: []
+        },
+        {
+          name: '明孝宗（朱祐樘）',
+          reign: '弘治',
+          years: '1487-1505',
+          description: '弘治中兴，励精图治',
+          children: []
+        },
+        {
+          name: '明武宗（朱厚照）',
+          reign: '正德',
+          years: '1505-1521',
+          description: '性格叛逆，喜欢游乐',
+          children: []
+        },
+        {
+          name: '明世宗（朱厚熜）',
+          reign: '嘉靖',
+          years: '1521-1567',
+          description: '在位时间长，前期励精图治，后期沉迷道教',
+          children: []
+        },
+        {
+          name: '明穆宗（朱载坖）',
+          reign: '隆庆',
+          years: '1567-1572',
+          description: '隆庆开关，开放海禁',
+          children: []
+        },
+        {
+          name: '明神宗（朱翊钧）',
+          reign: '万历',
+          years: '1572-1620',
+          description: '明朝在位时间最长的皇帝，万历中兴，后期怠政',
+          children: []
+        },
+        {
+          name: '明光宗（朱常洛）',
+          reign: '泰昌',
+          years: '1620',
+          description: '在位仅一个月，红丸案',
+          children: []
+        },
+        {
+          name: '明熹宗（朱由校）',
+          reign: '天启',
+          years: '1620-1627',
+          description: '沉迷木工，魏忠贤专权',
+          children: []
+        },
+        {
+          name: '明思宗（朱由检）',
+          reign: '崇祯',
+          years: '1627-1644',
+          description: '明朝末代皇帝，勤政但无力挽救明朝灭亡',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'qing',
@@ -1551,7 +3004,105 @@ const dynasties = [
         description: '修建圆明园，被誉为"万园之园"',
         figure: null
       }
-    ]
+    ],
+    lineage: {
+      name: '清朝',
+      isFounder: true,
+      reign: '1644-1912',
+      years: '268年',
+      description: '中国历史上最后一个封建王朝，由满族建立，历经康乾盛世，后期逐渐衰落',
+      children: [
+        {
+          name: '清太祖（努尔哈赤）',
+          isFounder: true,
+          reign: '天命',
+          years: '1616-1626',
+          description: '后金建立者，统一女真各部，为清朝建立奠定基础',
+          children: []
+        },
+        {
+          name: '清太宗（皇太极）',
+          reign: '天聪、崇德',
+          years: '1626-1643',
+          description: '改国号为清，奠定入关基础',
+          children: []
+        },
+        {
+          name: '清世祖（福临）',
+          reign: '顺治',
+          years: '1643-1661',
+          description: '清军入关，建立全国性政权',
+          children: [
+            {
+              name: '清圣祖（玄烨）',
+              reign: '康熙',
+              years: '1661-1722',
+              description: '在位61年，开创康乾盛世，平定三藩，收复台湾',
+              children: [
+                {
+                  name: '清世宗（胤禛）',
+                  reign: '雍正',
+                  years: '1722-1735',
+                  description: '勤政爱民，改革税制，为乾隆盛世奠定基础',
+                  children: [
+                    {
+                      name: '清高宗（弘历）',
+                      reign: '乾隆',
+                      years: '1735-1796',
+                      description: '在位60年，清朝达到鼎盛，后期开始衰落',
+                      children: [
+                        {
+                          name: '清仁宗（颙琰）',
+                          reign: '嘉庆',
+                          years: '1796-1820',
+                          description: '亲政后惩治和珅，但白莲教起义爆发',
+                          children: []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: '清宣宗（旻宁）',
+          reign: '道光',
+          years: '1820-1850',
+          description: '鸦片战争爆发，中国开始沦为半殖民地半封建社会',
+          children: []
+        },
+        {
+          name: '清文宗（奕詝）',
+          reign: '咸丰',
+          years: '1850-1861',
+          description: '太平天国运动爆发，英法联军火烧圆明园',
+          children: []
+        },
+        {
+          name: '清穆宗（载淳）',
+          reign: '同治',
+          years: '1861-1875',
+          description: '慈禧太后垂帘听政，洋务运动兴起',
+          children: []
+        },
+        {
+          name: '清德宗（载湉）',
+          reign: '光绪',
+          years: '1875-1908',
+          description: '甲午战争战败，戊戌变法失败，八国联军侵华',
+          children: []
+        },
+        {
+          name: '清宣统帝（溥仪）',
+          reign: '宣统',
+          years: '1909-1912',
+          description: '清朝末代皇帝，辛亥革命后退位',
+          children: []
+        }
+      ]
+    }
   },
   {
     id: 'republic-of-china',
@@ -1697,7 +3248,75 @@ const dynasties = [
         description: '梅兰芳等推动京剧艺术革新，走向国际舞台',
         figure: '梅兰芳'
       }
-    ]
+    ],
+    lineage: {
+      name: '中华民国',
+      isFounder: true,
+      reign: '1912-1949年',
+      years: '37年',
+      description: '孙中山建立中华民国，结束两千多年封建帝制，开启共和时代',
+      children: [
+        {
+          name: '孙中山',
+          isFounder: true,
+          reign: '',
+          years: '1912年',
+          description: '中华民国临时大总统，建立共和政体',
+          children: [
+            {
+              name: '袁世凯',
+              reign: '',
+              years: '1912-1916年',
+              description: '继任临时大总统，后复辟称帝',
+              children: []
+            }
+          ]
+        },
+        {
+          name: '黎元洪',
+          reign: '',
+          years: '1916-1917年',
+          description: '继任大总统',
+          children: []
+        },
+        {
+          name: '徐世昌',
+          reign: '',
+          years: '1918-1922年',
+          description: '北洋政府总统',
+          children: []
+        },
+        {
+          name: '曹锟',
+          reign: '',
+          years: '1923-1924年',
+          description: '直系军阀领导人',
+          children: []
+        },
+        {
+          name: '段祺瑞',
+          reign: '',
+          years: '1924-1926年',
+          description: '北洋政府实际执政者',
+          children: []
+        },
+        {
+          name: '蒋介石',
+          reign: '',
+          years: '1928-1948年',
+          description: '国民政府领导人，领导抗战',
+          children: [
+            {
+              name: '李宗仁',
+              reign: '',
+              years: '1948-1949年',
+              description: '继任总统',
+              children: []
+            }
+          ]
+        }
+      ]
+    }
   }
 ];
 

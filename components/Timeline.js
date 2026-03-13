@@ -88,20 +88,33 @@ const Timeline = () => {
   const totalYears = maxYear - minYear;
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#F5F5F0] via-[#FAFAF5] to-white relative overflow-hidden">
       {/* 水墨背景装饰 */}
-      <div className="ink-background"></div>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* 顶部装饰线 */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A] to-transparent opacity-60" />
 
       <div className="max-w-7xl mx-auto px-4 py-12 relative">
         {/* 标题区域 */}
         <div className="text-center mb-16 ink-animate-in">
-          <h1 className="text-5xl md:text-6xl ink-title mb-4" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
-            中国历史时间线
-          </h1>
-          <p className="text-xl text-gray-600 mb-4" style={{ letterSpacing: '0.2em' }}>
-            上下五千年，纵横九万里
-          </p>
-          <div className="ink-divider w-32 mx-auto mt-6"></div>
+          <div className="inline-block bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-sm px-8 py-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 font-chinese" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
+              中国历史时间线
+            </h1>
+            <p className="text-xl text-gray-600" style={{ letterSpacing: '0.2em', fontFamily: 'KaiTi, STKaiti, serif' }}>
+              上下五千年，纵横九万里
+            </p>
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent to-gray-300" />
+              <div className="w-2 h-2 rotate-45 bg-[#C41E3A]/20" />
+              <div className="w-16 h-px bg-gradient-to-l from-transparent to-gray-300" />
+            </div>
+          </div>
         </div>
 
         {/* 筛选和搜索区域 */}
@@ -116,7 +129,7 @@ const Timeline = () => {
         {/* 时间线主轴 */}
         <div className="relative mt-12">
           {/* 中央轴线 */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 opacity-40 hidden md:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#C41E3A]/40 via-[#C41E3A]/30 to-[#C41E3A]/20 opacity-60 hidden md:block"></div>
 
           {/* 朝代卡片 */}
           <div className="relative">
@@ -138,7 +151,7 @@ const Timeline = () => {
                 <div className="hidden md:flex items-center relative">
                   {/* 时间轴节点 - 统一放在中间 */}
                   <div
-                    className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-white shadow-lg"
+                    className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full border-4 border-white shadow-lg z-10"
                     style={{
                       backgroundColor: periodOptions.find(p => p.value === dynasty.period)?.color || '#8B4513',
                     }}
@@ -146,7 +159,7 @@ const Timeline = () => {
 
                   {index % 2 === 0 ? (
                     <>
-                      <div className="w-1/2 pr-12 flex justify-end relative">
+                      <div className="w-1/2 pr-16 flex justify-end relative">
                         <DynastyCard
                           dynasty={dynasty}
                           index={index}
@@ -155,13 +168,13 @@ const Timeline = () => {
                         />
                       </div>
                       <div className="w-0"></div>
-                      <div className="w-1/2 pl-12"></div>
+                      <div className="w-1/2 pl-16"></div>
                     </>
                   ) : (
                     <>
-                      <div className="w-1/2 pr-12"></div>
+                      <div className="w-1/2 pr-16"></div>
                       <div className="w-0"></div>
-                      <div className="w-1/2 pl-12 flex justify-start relative">
+                      <div className="w-1/2 pl-16 flex justify-start relative">
                         <DynastyCard
                           dynasty={dynasty}
                           index={index}
@@ -178,10 +191,14 @@ const Timeline = () => {
         </div>
 
         {/* 页脚 */}
-        <footer className="text-center mt-20 ink-divider mb-8"></footer>
-        <div className="text-center text-gray-600 ink-animate-in">
-          <p className="text-lg" style={{ letterSpacing: '0.1em' }}>中华文明 · 源远流长</p>
-        </div>
+        <footer className="py-8 text-center">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-gray-300" />
+            <div className="w-2 h-2 rotate-45 bg-[#C41E3A]/20" />
+            <div className="w-16 h-px bg-gradient-to-l from-transparent to-gray-300" />
+          </div>
+          <p className="text-gray-400 font-chinese text-sm">中华文明 · 源远流长</p>
+        </footer>
       </div>
     </div>
   );

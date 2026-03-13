@@ -56,11 +56,11 @@ export default function Home() {
         {/* 导航栏 - 粘性定位，滚动时透明 */}
         <nav className={navClassName}>
           <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>朝代纪</h1>
+            <h1 className="text-2xl font-bold text-white font-chinese">朝代纪</h1>
             <div className="flex gap-4">
               <Link
                 href="/quiz"
-                className="bg-white text-red-900 hover:bg-red-50 transition-all px-6 py-2 rounded-lg font-bold flex items-center gap-2 shadow-md hover:shadow-lg border-2 border-white"
+                className="bg-white/90 backdrop-blur-sm text-red-900 hover:bg-white transition-all px-6 py-2 rounded-xl font-bold flex items-center gap-2 shadow-md hover:shadow-lg border-2 border-white/50"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
@@ -80,7 +80,7 @@ export default function Home() {
         {mounted && showBackToTop && (
           <button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-red-800 to-red-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center border-2 border-white/20"
+            className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm text-[#C41E3A] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center border-2 border-[#C41E3A]/20"
             aria-label="回到顶部"
           >
             <svg
