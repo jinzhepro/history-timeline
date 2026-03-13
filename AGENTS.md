@@ -74,11 +74,8 @@ nextjs-app/
 ├── components/          # React 组件 (PascalCase 命名)
 │   ├── Breadcrumb.js    # 面包屑导航
 │   ├── DynastyCard.js   # 朝代卡片
-│   ├── DynastyDetail.js # 朝代详情
 │   ├── DynastyLineage.js# 朝代世系表 (ECharts)
 │   ├── DynastyMap.js    # 疆域地图 (ECharts)
-│   ├── FamilyTree.js    # 家族树
-│   ├── PersonCard.js    # 人物卡片
 │   ├── Quiz.js          # 测验组件
 │   ├── Timeline.js      # 时间线
 │   └── TimelineFilter.js# 时间线过滤器

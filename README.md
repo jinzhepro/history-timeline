@@ -18,15 +18,6 @@
   - 开国皇帝用红色高亮显示
   - 鼠标悬停查看皇帝详情（年号、在位时间、描述）
   - 支持缩放和拖拽平移
-- 🌐 **人物关系图谱** - ECharts 可视化展示历史人物关系网络
-  - 力导向图布局，节点可拖拽
-  - 支持缩放（0.3x - 3x）和漫游
-  - 点击节点查看人物详情
-  - 悬停显示人物简介
-- 👤 **人物详情卡片** - 完整的人物信息和社交关系展示
-  - 基本信息（姓名、字号、头衔、在位时间）
-  - 人物描述和历史贡献
-  - 社会关系网络（父子、兄弟、师徒、君臣等）
 
 ## 🛠️ 技术栈
 
@@ -60,27 +51,24 @@ npm run start
 ```
 nextjs-app/
 ├── components/           # React 组件
+│   ├── Breadcrumb.js    # 面包屑导航
 │   ├── DynastyCard.js   # 朝代卡片
-│   ├── DynastyDetail.js # 朝代详情
 │   ├── DynastyMap.js    # 朝代疆域地图 (ECharts)
-│   ├── DynastyLineage.js # 朝代世系表 (ECharts) 🆕
+│   ├── DynastyLineage.js # 朝代世系表 (ECharts)
 │   ├── Timeline.js      # 时间线主组件
 │   ├── TimelineFilter.js # 筛选组件
-│   ├── FamilyTree.js    # 人物关系图谱 🆕
-│   └── PersonCard.js    # 人物详情卡片 🆕
+│   └── Quiz.js          # 历史测验组件
 ├── data/
-│   └── dynasties.js     # 朝代和人物数据
+│   └── dynasties.js     # 朝代数据
 ├── pages/
 │   ├── index.js         # 首页
 │   ├── _app.js          # 应用入口
 │   ├── _document.js     # 文档结构
 │   ├── quiz.js          # 测验页面
-│   ├── dynasty/[id].js  # 朝代详情动态路由
-│   └── api/             # API 路由
+│   └── dynasty/[id].js  # 朝代详情动态路由
 ├── styles/
 │   └── globals.css      # 全局样式
-├── AGENTS.md            # 开发指南
-└── FEATURES.md          # 功能说明文档
+└── AGENTS.md            # 开发指南
 ```
 
 ## 🎯 使用方法
@@ -94,21 +82,13 @@ nextjs-app/
    - 重要历史事件
    - 文化成就
 
-### 使用朝代世系表 🆕
+### 使用朝代世系表
 1. 在朝代详情页面，朝代世系表默认展开
 2. **交互操作**:
    - 🖱️ **拖拽平移** - 调整视图位置
    - 🔍 **滚轮缩放** - 放大/缩小
    - 💬 **悬停** - 显示皇帝详情（年号、在位时间、描述）
    - 📂 **折叠/展开** - 点击节点可折叠或展开子节点
-
-### 使用人物关系图谱 🆕
-1. 在朝代详情页面，人物关系图谱默认展开
-2. **交互操作**:
-   - 🖱️ **拖拽节点** - 调整人物位置
-   - 🔍 **滚轮缩放** - 放大/缩小（限制：0.3x - 3x）
-   - 👆 **点击节点** - 查看人物详情
-   - 💬 **悬停** - 显示人物简介
 
 ### 筛选和搜索
 - 使用顶部的时期筛选器选择特定历史时期
@@ -124,12 +104,10 @@ nextjs-app/
 - ✅ 北宋、南宋、元朝
 - ✅ 明朝、清朝
 
-### 人物数据 (70+ 位)
-- 👑 **帝王系列**: 禹、秦始皇、汉武帝、唐太宗、康熙、乾隆等
-- 👨‍👩‍👦 **家族关系**: 周武王家族、曹操家族、康熙家族等
-- ⚔️ **名将系列**: 卫青、霍去病、关羽、张飞、周瑜等
-- 📚 **文人系列**: 孔子、老子、李白、杜甫、苏轼等
-- 💡 **政治家系列**: 周公旦、诸葛亮、王安石、李斯等
+### 历史数据
+- ✅ 完整的朝代世系表（按在位时间排序）
+- ✅ 详细的疆域地图（ECharts 可视化）
+- ✅ 重要历史事件和文化成就
 
 ## 🎨 设计特色
 
@@ -146,40 +124,14 @@ nextjs-app/
 
 ## 🔧 开发指南
 
-### 添加新人物
-在 `/data/dynasties.js` 的 `historicalFigures` 数组中添加:
+### 添加新朝代
+在 `/data/dynasties.js` 的 `dynasties` 数组中添加新朝代数据。
 
-```javascript
-{
-  id: 'unique-id',
-  name: '人物姓名',
-  formalName: '字号（可选）',
-  dynasty: '朝代 ID',
-  title: '头衔',
-  reign: '在位时间',
-  description: '人物描述',
-  relations: [
-    {
-      type: 'father',
-      target: '相关人物 ID',
-      label: '父亲'
-    }
-  ]
-}
-```
-
-### 修改图谱样式
-编辑 `/components/FamilyTree.js`:
-- 节点颜色：`itemStyle.color`
-- 节点大小：`symbolSize`
-- 关系线样式：`lineStyle`
-- 力导向布局：`force` 配置
-
-### 调试
-打开浏览器控制台查看 `[FamilyTree]` 日志:
-- 数据加载情况
-- 节点和关系创建
-- 图表初始化状态
+### 修改组件样式
+- **时间线**: 编辑 `/components/Timeline.js`
+- **朝代卡片**: 编辑 `/components/DynastyCard.js`
+- **疆域地图**: 编辑 `/components/DynastyMap.js`
+- **朝代世系表**: 编辑 `/components/DynastyLineage.js`
 
 ## 📖 资源链接
 
