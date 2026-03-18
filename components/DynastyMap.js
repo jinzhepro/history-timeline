@@ -170,33 +170,15 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
   const chartInstanceRef = useRef(null);
 
   const isLargeTerritory = LARGE_TERRITORY_DYNASTIES.includes(dynastyId);
+  const [viewState, setViewState] = useState(null);
 
   // 重置地图视角
   const handleReset = () => {
-    if (chartInstanceRef.current) {
-      const chartInstance = chartInstanceRef.current;
-      
-      // 获取当前配置
-      const currentOption = chartInstance.getOption();
-      const geoOption = currentOption.geo || {};
-      
-      // 重置 zoom 和 center
-      if (mapType === 'world' && isLargeTerritory) {
-        const worldConfig = WORLD_MAP_CONFIG[dynastyId] || { zoom: 1, center: [100, 35] };
-        chartInstance.setOption({
-          geo: [{
-            zoom: worldConfig.zoom,
-            center: worldConfig.center
-          }]
-        });
-      } else {
-        chartInstance.setOption({
-          geo: [{
-            zoom: territory?.zoom || 1.2,
-            center: territory?.center || [105, 36]
-          }]
-        });
-      }
+    if (mapType === 'world' && isLargeTerritory) {
+      const worldConfig = WORLD_MAP_CONFIG[dynastyId] || { zoom: 1, center: [100, 35] };
+      setViewState({ zoom: worldConfig.zoom, center: worldConfig.center });
+    } else {
+      setViewState({ zoom: territory?.zoom || 1.2, center: territory?.center || [105, 36] });
     }
   };
 
@@ -229,13 +211,15 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
     loadMap();
   }, []);
 
-  // 当朝代改变时，自动切换地图类型
+  // 当朝代改变时，自动切换地图类型并重置视角
   useEffect(() => {
     if (isLargeTerritory) {
       setMapType('world');
     } else {
       setMapType('china');
     }
+    // 重置视角状态
+    setViewState(null);
   }, [dynastyId, isLargeTerritory]);
 
   // 获取当前朝代的疆域省份
@@ -308,8 +292,8 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       geo: {
         map: 'china',
         roam: true,
-        zoom: territory?.zoom || 1.2,
-        center: territory?.center || [105, 36],
+        zoom: viewState?.zoom || territory?.zoom || 1.2,
+        center: viewState?.center || territory?.center || [105, 36],
         scaleLimit: {
           min: 0.5,
           max: 10
@@ -429,8 +413,8 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       geo: {
         map: 'world',
         roam: true,
-        zoom: worldConfig.zoom,
-        center: worldConfig.center,
+        zoom: viewState?.zoom || worldConfig.zoom,
+        center: viewState?.center || worldConfig.center,
         scaleLimit: {
           min: 0.5,
           max: 10
@@ -650,7 +634,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
               chartInstanceRef.current = e.getEchartsInstance();
             }
           }}
-          option={getOption}
+          option={getOption()}
           style={{ width: '100%', height: '100%' }}
           opts={{ renderer: 'canvas' }}
         />
