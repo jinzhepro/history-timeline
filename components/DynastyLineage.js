@@ -40,40 +40,7 @@ const parseYear = (years) => {
   return isBCE ? -year : year;
 };
 
-/**
- * 扁平化世系数据为数组
- * @param {Object} node - 世系节点
- * @returns {Array} 扁平化后的数组
- */
-const flattenLineage = (node) => {
-  const result = [];
-  const traverse = (n) => {
-    if (n.name && n.name !== node.name) {
-      result.push(n);
-    }
-    if (n.children && n.children.length > 0) {
-      n.children.forEach(traverse);
-    }
-  };
-  traverse(node);
-  return result;
-};
 
-/**
- * 排序并去重皇帝列表
- * @param {Array} emperors - 皇帝数组
- * @returns {Array} 排序后的数组
- */
-const sortEmperors = (emperors) => {
-  const seen = new Set();
-  return emperors
-    .filter(emp => {
-      if (seen.has(emp.name)) return false;
-      seen.add(emp.name);
-      return true;
-    })
-    .sort((a, b) => parseYear(a.years) - parseYear(b.years));
-};
 
 /**
  * 单个皇帝卡片组件
@@ -166,7 +133,7 @@ const EmperorCard = ({ node }) => {
  * @param {Object} dynasty - 朝代数据对象
  */
 const DynastyLineage = ({ dynasty }) => {
-  if (!dynasty || !dynasty.lineage) {
+  if (!dynasty || !dynasty.lineage || !Array.isArray(dynasty.lineage)) {
     return (
       <div className="ink-card" style={{ padding: '20px', textAlign: 'center' }}>
         <p style={{ color: '#666', fontFamily: "'KaiTi', 'STKaiti', 'SimSun', serif" }}>
@@ -176,8 +143,7 @@ const DynastyLineage = ({ dynasty }) => {
     );
   }
 
-  // 扁平化世系数据并排序
-  const emperors = sortEmperors(flattenLineage(dynasty.lineage));
+  const emperors = dynasty.lineage;
 
   const containerStyle = {
     padding: '20px',
@@ -248,15 +214,11 @@ const DynastyLineage = ({ dynasty }) => {
       
       <div style={dynastyInfoStyle}>
         <span style={{ fontSize: '14px', fontFamily: "'KaiTi', 'STKaiti', 'SimSun', serif" }}>
-          📜 {dynasty.lineage.years}
+          📜 {dynasty.lineage[0]?.years || `${dynasty.startYear > 0 ? dynasty.startYear : '前' + Math.abs(dynasty.startYear)}-${dynasty.endYear > 0 ? dynasty.endYear : '前' + Math.abs(dynasty.endYear)}`}
         </span>
         <span style={{ color: '#999' }}>|</span>
         <span style={{ fontSize: '14px', fontFamily: "'KaiTi', 'STKaiti', 'SimSun', serif" }}>
           共{emperors.length}位皇帝
-        </span>
-        <span style={{ color: '#999' }}>|</span>
-        <span style={{ fontSize: '14px', fontFamily: "'KaiTi', 'STKaiti', 'SimSun', serif" }}>
-          {dynasty.lineage.description}
         </span>
       </div>
 

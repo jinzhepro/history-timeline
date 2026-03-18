@@ -156,7 +156,7 @@ import styles from './Card.module.css';
   ```javascript
   /**
    * 朝代世系表组件 - 卡片式线性展示（按在位时间排序）
-   * 
+   *
    * @param {Object} dynasty - 朝代数据对象
    * @param {string} dynasty.name - 朝代名称
    * @param {Object} dynasty.lineage - 世系数据
@@ -305,3 +305,49 @@ chore: 构建/工具配置
 - `develop`: 开发分支
 - `feature/*`: 功能分支
 - `fix/*`: 修复分支
+
+## Other Rules
+
+### Cursor Rules
+No specific Cursor rules found in `.cursor/rules/` or `.cursorrules`.
+
+### Copilot Rules
+No specific Copilot rules found in `.github/copilot-instructions.md`.
+
+## 补充说明
+
+### 代码观察要点
+
+1. **组件模式**：所有组件均为函数组件，使用 Hooks 管理状态
+2. **样式组合**：Tailwind CSS 原子类 + 自定义 `ink-` 前缀 CSS 类
+3. **数据流**：静态数据位于 `/data/dynasties.js`，通过 props 传递
+4. **ECharts 集成**：使用 `echarts-for-react` 库，注意组件卸载时清理实例
+5. **响应式**：移动端单列，桌面端左右交替布局（使用 `md:` 断点）
+
+### 开发快速参考
+
+```bash
+# 启动开发服务器
+npm run dev
+
+# 生产构建并测试
+npm run build && npm run start
+
+# 代码检查（需先安装）
+npm install --save-dev eslint prettier eslint-config-next
+npm run lint
+npm run format
+```
+
+### 测试说明
+
+当前项目**暂未配置测试框架**。如需添加测试：
+
+1. 安装 Jest + React Testing Library
+2. 在 `package.json` 添加 test 脚本
+3. 测试文件命名：`*.test.js`
+4. 运行测试：`npm test -- --testPathPattern=组件名`
+
+---
+
+**最后更新**: 2026 年 3 月 18 日
