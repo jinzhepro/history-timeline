@@ -179,67 +179,6 @@ export default function DynastyDetailPage() {
               dynastyName={dynasty.name}
               dynastyId={dynasty.id}
             />
-            
-            {/* 疆域四至详情 */}
-            {dynasty.territory && dynasty.territory.borders && (
-              <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                <h3 className="text-lg font-bold mb-4 font-chinese text-gray-900">疆域四至</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {dynasty.territory.borders.east && (
-                    <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 rounded-xl border border-blue-200">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </div>
-                        <span className="text-blue-700 text-xs font-bold">东</span>
-                      </div>
-                      <p className="font-chinese text-gray-900 font-medium">{dynasty.territory.borders.east}</p>
-                    </div>
-                  )}
-                  {dynasty.territory.borders.west && (
-                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-xl border border-amber-200">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-amber-700 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </div>
-                        <span className="text-amber-700 text-xs font-bold">西</span>
-                      </div>
-                      <p className="font-chinese text-gray-900 font-medium">{dynasty.territory.borders.west}</p>
-                    </div>
-                  )}
-                  {dynasty.territory.borders.north && (
-                    <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-200">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-8 h-8 rounded-full bg-indigo-200 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-indigo-700 transform -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </div>
-                        <span className="text-indigo-700 text-xs font-bold">北</span>
-                      </div>
-                      <p className="font-chinese text-gray-900 font-medium">{dynasty.territory.borders.north}</p>
-                    </div>
-                  )}
-                  {dynasty.territory.borders.south && (
-                    <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-200">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-8 h-8 rounded-full bg-green-200 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-green-700 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </div>
-                        <span className="text-green-700 text-xs font-bold">南</span>
-                      </div>
-                      <p className="font-chinese text-gray-900 font-medium">{dynasty.territory.borders.south}</p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
           </div>
         );
 

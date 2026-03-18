@@ -3225,7 +3225,7 @@ const dynasties = [
       "borders": {
         "east": "日本海",
         "west": "天山",
-        "north": "北冰洋",
+        "north": "贝加尔湖",
         "south": "南海"
       }
     },
@@ -3239,6 +3239,16 @@ const dynasties = [
         "name": "元灭南宋",
         "description": "元朝灭南宋，统一全国",
         "year": 1279
+      },
+      {
+        "name": "行省制度确立",
+        "description": "元朝确立行省制度，设立中书省和十个行中书省，奠定中国行政区划基础",
+        "year": 1283
+      },
+      {
+        "name": "马可·波罗来华",
+        "description": "意大利旅行家马可·波罗到达元朝，受到忽必烈接见，促进中西文化交流",
+        "year": 1275
       },
       {
         "name": "红巾军起义",
@@ -3259,8 +3269,18 @@ const dynasties = [
       },
       {
         "name": "青花瓷",
-        "description": "元青花瓷达到很高艺术水平",
+        "description": "元青花瓷达到很高艺术水平，景德镇成为制瓷中心",
         "figure": null
+      },
+      {
+        "name": "赵孟頫书法",
+        "description": "赵孟頫创立赵体，是元代书法的代表人物，对后世影响深远",
+        "figure": "赵孟頫"
+      },
+      {
+        "name": "元大都建设",
+        "description": "元大都（今北京）的城市规划严谨，是当时世界上最宏伟的城市之一",
+        "figure": "刘秉忠"
       }
     ],
     "lineage": [
