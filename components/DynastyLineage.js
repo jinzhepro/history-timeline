@@ -128,7 +128,7 @@ const EmperorCard = ({ node }) => {
 };
 
 /**
- * 朝代世系表组件 - 卡片式线性展示（按在位时间排序）
+ * 朝代世系表组件 - 垂直列表展示（按在位时间排序）
  * 
  * @param {Object} dynasty - 朝代数据对象
  */
@@ -192,22 +192,6 @@ const DynastyLineage = ({ dynasty }) => {
     textAlign: 'center'
   };
 
-  // 时间轴连接线样式
-  const timelineContainerStyle = {
-    position: 'relative',
-    paddingLeft: '20px'
-  };
-
-  const lineStyle = {
-    position: 'absolute',
-    left: '0',
-    top: '0',
-    bottom: '0',
-    width: '2px',
-    backgroundColor: '#8B4513',
-    opacity: '0.3'
-  };
-
   return (
     <div className="ink-card" style={containerStyle}>
       <h2 style={titleStyle}>{dynasty.name}世系表</h2>
@@ -223,34 +207,16 @@ const DynastyLineage = ({ dynasty }) => {
       </div>
 
       <div style={lineageStyle}>
-        <div style={timelineContainerStyle}>
-          <div style={lineStyle} />
-          {emperors.map((emperor, index) => (
-            <div
-              key={index}
-              style={{
-                position: 'relative',
-                marginBottom: '16px',
-                paddingLeft: '20px'
-              }}
-            >
-              {/* 时间轴节点 */}
-              <div style={{
-                position: 'absolute',
-                left: '-20px',
-                top: '20px',
-                width: '12px',
-                height: '12px',
-                borderRadius: '50%',
-                backgroundColor: emperor.isFounder ? '#C41E3A' : '#8B4513',
-                border: '2px solid white',
-                boxShadow: '0 0 0 2px #8B4513',
-                zIndex: '1'
-              }} />
-              <EmperorCard node={emperor} />
-            </div>
-          ))}
-        </div>
+        {emperors.map((emperor, index) => (
+          <div
+            key={index}
+            style={{
+              marginBottom: '16px'
+            }}
+          >
+            <EmperorCard node={emperor} />
+          </div>
+        ))}
       </div>
 
       <div style={hintStyle}>
