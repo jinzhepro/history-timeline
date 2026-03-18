@@ -1,4 +1,5 @@
 import React from 'react';
+import { Scroll, Crown, Info } from 'lucide-react';
 
 /**
  * 格式化皇帝名称，确保包含庙号/谥号和本名
@@ -198,7 +199,8 @@ const DynastyLineage = ({ dynasty }) => {
       
       <div style={dynastyInfoStyle}>
         <span style={{ fontSize: '14px', fontFamily: "'KaiTi', 'STKaiti', 'SimSun', serif" }}>
-          📜 {dynasty.lineage[0]?.years || `${dynasty.startYear > 0 ? dynasty.startYear : '前' + Math.abs(dynasty.startYear)}-${dynasty.endYear > 0 ? dynasty.endYear : '前' + Math.abs(dynasty.endYear)}`}
+          <Scroll className="inline w-4 h-4 mr-1" />
+          {dynasty.lineage[0]?.years || `${dynasty.startYear > 0 ? dynasty.startYear : '前' + Math.abs(dynasty.startYear)}-${dynasty.endYear > 0 ? dynasty.endYear : '前' + Math.abs(dynasty.endYear)}`}
         </span>
         <span style={{ color: '#999' }}>|</span>
         <span style={{ fontSize: '14px', fontFamily: "'KaiTi', 'STKaiti', 'SimSun', serif" }}>
@@ -220,7 +222,8 @@ const DynastyLineage = ({ dynasty }) => {
       </div>
 
       <div style={hintStyle}>
-        💡 提示：红色标记为开国皇帝，世系表按在位时间顺序排列
+        <Info className="inline w-4 h-4 mr-1" />
+        提示：红色标记为开国皇帝，世系表按在位时间顺序排列
       </div>
     </div>
   );

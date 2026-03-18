@@ -7,6 +7,7 @@ import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Clipboard, Map, Trees, Scroll, Palette } from 'lucide-react';
 import dynasties from '../../data/dynasties';
 import DynastyMap from '../../components/DynastyMap';
 import DynastyLineage from '../../components/DynastyLineage';
@@ -42,11 +43,11 @@ const getPeriodName = (period) => {
 };
 
 const tabs = [
-  { id: 'overview', label: '概览', icon: '📋' },
-  { id: 'territory', label: '疆域', icon: '🗺️' },
-  { id: 'lineage', label: '世系表', icon: '🌳' },
-  { id: 'events', label: '历史事件', icon: '📜' },
-  { id: 'culture', label: '文化成就', icon: '🎨' }
+  { id: 'overview', label: '概览', icon: Clipboard },
+  { id: 'territory', label: '疆域', icon: Map },
+  { id: 'lineage', label: '世系表', icon: Trees },
+  { id: 'events', label: '历史事件', icon: Scroll },
+  { id: 'culture', label: '文化成就', icon: Palette }
 ];
 
 export default function DynastyDetailPage() {
@@ -341,7 +342,7 @@ export default function DynastyDetailPage() {
                         : 'text-gray-700 hover:bg-white/80 hover:shadow-md border border-transparent hover:border-gray-200/60'
                     }`}
                   >
-                    <span className="relative z-10">{tab.icon}</span>
+                    <tab.icon className="w-4 h-4 relative z-10" />
                     <span className="relative z-10">{tab.label}</span>
                   </button>
                 ))}

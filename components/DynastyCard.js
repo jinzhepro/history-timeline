@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 
 /**
  * 朝代卡片组件 - 水墨风格
@@ -96,9 +97,7 @@ const DynastyCard = ({ dynasty, isSelected, onClick, index, period }) => {
           <span className="w-1 h-4 bg-gradient-to-b from-[#C41E3A] to-[#C41E3A]/50 rounded-full"></span>
           点击查看详情
         </span>
-        <svg className="w-5 h-5 text-[#C41E3A] group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+        <ChevronRight className="w-5 h-5 text-[#C41E3A] group-hover:translate-x-1 transition-transform duration-300" />
       </div>
     </div>
   );

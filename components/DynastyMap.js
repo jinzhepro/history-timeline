@@ -19,6 +19,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
+import { AlertTriangle, Globe, MapPin, RotateCcw, Info } from 'lucide-react';
 
 /**
  * 各朝代疆域对应的省份列表
@@ -553,7 +554,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
     return (
       <div className="w-full h-96 flex items-center justify-center bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
         <div className="text-center">
-          <p className="text-gray-500 font-chinese text-lg mb-2">⚠️ {error}</p>
+          <p className="text-gray-500 font-chinese text-lg mb-2"><AlertTriangle className="inline w-5 h-5 mr-1" />{error}</p>
           <p className="text-gray-400 font-chinese text-sm">请刷新页面重试</p>
         </div>
       </div>
@@ -580,7 +581,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
         </h3>
         {isLargeTerritory && (
           <div className="mt-2 inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-chinese">
-            <span>🌍</span>
+            <Globe className="w-4 h-4" />
             <span>大疆域朝代</span>
           </div>
         )}
@@ -590,7 +591,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
       {isLargeTerritory && (
         <div className="mb-4 p-4 bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-lg">
           <p className="text-sm text-amber-900 font-chinese leading-relaxed">
-            <span className="font-bold">📍 疆域说明：</span>
+            <span className="font-bold"><MapPin className="inline w-4 h-4 mr-1" />疆域说明：</span>
             {DYNASTY_TERRITORY_NOTES[dynastyId]}
           </p>
           <p className="text-xs text-amber-700 font-chinese mt-2">
@@ -645,7 +646,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
           className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white/90 hover:bg-white text-gray-700 rounded-lg shadow-md border border-gray-200 transition-all hover:shadow-lg"
           title="重置视角"
         >
-          🔄
+          <RotateCcw className="w-5 h-5" />
         </button>
       </div>
 
@@ -673,7 +674,8 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
 
       {/* 操作提示 */}
       <p className="mt-3 text-center text-xs text-gray-500 font-chinese">
-        💡 提示：鼠标滚轮可缩放，拖拽可平移地图{isLargeTerritory && '，可切换中国地图/世界地图视图'}
+        <Info className="inline w-3 h-3 mr-1" />
+        提示：鼠标滚轮可缩放，拖拽可平移地图{isLargeTerritory && '，可切换中国地图/世界地图视图'}
       </p>
     </div>
   );

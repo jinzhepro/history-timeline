@@ -17,6 +17,7 @@
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
+import { Check, X, CheckCircle2 } from 'lucide-react';
 
 /**
  * 题型名称映射
@@ -102,7 +103,11 @@ const ProgressBar = ({ current, total }) => {
                   : 'bg-gray-200 text-gray-600'
               }`}
           >
-            {num < current ? '✓' : num}
+            {num < current ? (
+              <CheckCircle2 className="w-4 h-4" />
+            ) : (
+              num
+            )}
           </div>
         ))}
       </div>
@@ -299,13 +304,11 @@ const AnswerFeedback = ({ isCorrect, correctAnswer, userAnswer, explanation, dyn
       <div className="flex items-center mb-3">
         <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-3 ${isCorrect ? 'bg-[#00A862]' : 'bg-[#C41E3A]'
           }`}>
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {isCorrect ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            )}
-          </svg>
+          {isCorrect ? (
+            <Check className="w-6 h-6 text-white" />
+          ) : (
+            <X className="w-6 h-6 text-white" />
+          )}
         </div>
         <span className={`text-lg font-bold font-chinese ${isCorrect ? 'text-[#00A862]' : 'text-[#C41E3A]'
           }`}>
@@ -417,7 +420,11 @@ const QuizResult = ({ score, total, answers, questions, onRetry }) => {
                 </span>
                 <span className={`text-sm font-bold font-chinese ${isCorrect ? 'text-[#00A862]' : 'text-[#C41E3A]'
                   }`}>
-                  {isCorrect ? '✓' : '✗'}
+                  {isCorrect ? (
+                    <CheckCircle2 className="w-4 h-4 inline" />
+                  ) : (
+                    <X className="w-4 h-4 inline" />
+                  )}
                 </span>
               </div>
             );
