@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* 主题色 */
   --china-red: #C41E3A;
   --glazed-yellow: #FFD700;
   --qinghua-blue: #1E3A8A;
@@ -12,9 +13,15 @@
   --xuan-paper: #F5F5F0;
   --antique-bronze: #8B4513;
   --jade-green: #00A862;
+  
+  /* 水墨层次 */
   --water-light: rgba(0, 0, 0, 0.05);
   --water-medium: rgba(0, 0, 0, 0.1);
   --water-dark: rgba(0, 0, 0, 0.2);
+  --water-deep: rgba(0, 0, 0, 0.3);
+  
+  /* 宣纸纹理 */
+  --paper-texture: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
 }
 
 html,
@@ -40,14 +47,17 @@ body {
   margin: 0;
 }
 
-/* 水墨风格卡片 */
+/* 水墨风格卡片 - 增强版 */
 .ink-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 245, 240, 0.8) 100%);
-  border: 2px solid var(--ink-lighter);
-  border-radius: 8px;
+  background: 
+    var(--paper-texture),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 240, 0.85) 100%);
+  border: 1px solid rgba(85, 85, 85, 0.3);
+  border-radius: 12px;
   box-shadow: 
     0 4px 16px var(--water-medium),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    0 1px 3px var(--water-light),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -60,16 +70,34 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--ink-black) 0%, var(--ink-light) 50%, var(--ink-black) 100%);
-  opacity: 0.6;
+  background: linear-gradient(90deg, transparent, var(--ink-black), transparent);
+  opacity: 0.8;
+}
+
+.ink-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(196, 30, 58, 0.03) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .ink-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: 
-    0 8px 32px var(--water-dark),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  border-color: var(--ink-black);
+    0 12px 40px var(--water-deep),
+    0 6px 20px var(--water-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(44, 44, 44, 0.5);
+}
+
+.ink-card:hover::after {
+  opacity: 1;
 }
 
 /* 水墨标题 */

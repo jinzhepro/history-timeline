@@ -170,14 +170,11 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
   const chartInstanceRef = useRef(null);
 
   const isLargeTerritory = LARGE_TERRITORY_DYNASTIES.includes(dynastyId);
+  const [resetKey, setResetKey] = useState(0);
 
   // 重置地图视角
   const handleReset = () => {
-    if (chartInstanceRef.current) {
-      chartInstanceRef.current.dispatchAction({
-        type: 'restore'
-      });
-    }
+    setResetKey(prev => prev + 1);
   };
 
   useEffect(() => {
@@ -538,12 +535,12 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
   };
 
   // 根据地图类型获取配置
-  const getOption = () => {
+  const getOption = React.useMemo(() => {
     if (mapType === 'world' && isLargeTerritory) {
       return getWorldOption();
     }
     return getChinaOption();
-  };
+  }, [mapType, dynastyId, resetKey, territory]);
 
   if (error) {
     return (
@@ -630,7 +627,7 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
               chartInstanceRef.current = e.getEchartsInstance();
             }
           }}
-          option={getOption()}
+          option={getOption}
           style={{ width: '100%', height: '100%' }}
           opts={{ renderer: 'canvas' }}
         />

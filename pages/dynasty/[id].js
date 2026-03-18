@@ -101,28 +101,46 @@ export default function DynastyDetailPage() {
       case 'overview':
         return (
           <div className="space-y-6">
-            {/* 基本信息卡片 */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold mb-4 font-chinese text-gray-900">基本信息</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-xl border border-amber-200">
-                  <span className="text-amber-700 text-xs uppercase tracking-wider font-bold">开国君主</span>
-                  <p className="font-bold text-gray-900 text-xl mt-1 font-chinese">{dynasty.founder}</p>
+            {/* 基本信息卡片 - 增强版 */}
+            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-7 border border-gray-200/60 shadow-lg relative overflow-hidden">
+              {/* 顶部装饰 */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
+              
+              <h3 className="text-lg font-bold mb-6 font-chinese text-gray-900 flex items-center gap-3">
+                <span className="w-1 h-6 bg-gradient-to-b from-[#C41E3A] to-[#C41E3A]/60 rounded-full"></span>
+                基本信息
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="bg-gradient-to-br from-amber-50/90 to-orange-50/90 p-5 rounded-xl border border-amber-200/60 hover:border-amber-300 hover:shadow-md transition-all duration-300 backdrop-blur-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-1 h-4 bg-gradient-to-b from-amber-500 to-amber-300 rounded-full"></div>
+                    <span className="text-amber-700 text-xs uppercase tracking-wider font-bold">开国君主</span>
+                  </div>
+                  <p className="font-bold text-gray-900 text-xl mt-2 font-chinese pl-3">{dynasty.founder}</p>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-200">
-                  <span className="text-blue-700 text-xs uppercase tracking-wider font-bold">持续时间</span>
-                  <p className="font-bold text-gray-900 text-xl mt-1">
-                    <span className="text-2xl text-[#1E3A8A]">{duration}</span> 年
+                <div className="bg-gradient-to-br from-blue-50/90 to-indigo-50/90 p-5 rounded-xl border border-blue-200/60 hover:border-blue-300 hover:shadow-md transition-all duration-300 backdrop-blur-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-blue-300 rounded-full"></div>
+                    <span className="text-blue-700 text-xs uppercase tracking-wider font-bold">持续时间</span>
+                  </div>
+                  <p className="font-bold text-gray-900 text-xl mt-2 font-chinese pl-3">
+                    <span className="text-2xl text-[#1E3A8A] font-bold">{duration}</span> <span className="text-sm text-gray-600">年</span>
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-xl border border-green-200">
-                  <span className="text-green-700 text-xs uppercase tracking-wider font-bold">历史时期</span>
-                  <p className="font-bold text-gray-900 text-xl mt-1 font-chinese">{getPeriodName(dynasty.period)}</p>
+                <div className="bg-gradient-to-br from-green-50/90 to-emerald-50/90 p-5 rounded-xl border border-green-200/60 hover:border-green-300 hover:shadow-md transition-all duration-300 backdrop-blur-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-1 h-4 bg-gradient-to-b from-green-500 to-green-300 rounded-full"></div>
+                    <span className="text-green-700 text-xs uppercase tracking-wider font-bold">历史时期</span>
+                  </div>
+                  <p className="font-bold text-gray-900 text-xl mt-2 font-chinese pl-3">{getPeriodName(dynasty.period)}</p>
                 </div>
               </div>
-              <div className="mt-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
-                <span className="text-gray-600 text-xs uppercase tracking-wider font-bold">代表君主</span>
-                <p className="text-gray-800 mt-2 font-chinese font-medium">{dynasty.representativeRulers.join('、')}</p>
+              <div className="mt-5 p-5 bg-gradient-to-br from-gray-50/80 to-gray-100/80 rounded-xl border border-gray-200/60 backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-1 h-4 bg-gradient-to-b from-gray-400 to-gray-300 rounded-full"></div>
+                  <span className="text-gray-600 text-xs uppercase tracking-wider font-bold">代表君主</span>
+                </div>
+                <p className="text-gray-800 mt-2 font-chinese font-medium pl-3 leading-relaxed">{dynasty.representativeRulers.join('、')}</p>
               </div>
             </div>
 
@@ -306,29 +324,42 @@ export default function DynastyDetailPage() {
             />
           </div>
 
-          <div className="sticky top-20 z-40 mb-6">
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200 shadow-sm p-2">
-              <div className="flex overflow-x-auto scrollbar-hide gap-1">
+          {/* Tab 切换 - 增强版 */}
+          <div className="sticky top-20 z-40 mb-8">
+            <div className="bg-gradient-to-br from-white/90 to-[#F5F5F0]/80 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-lg p-2 relative overflow-hidden">
+              {/* 顶部装饰线 */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#C41E3A]/40 to-transparent" />
+              
+              <div className="flex overflow-x-auto scrollbar-hide gap-1 relative z-10">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex-shrink-0 flex items-center gap-2 px-4 py-3 rounded-xl font-chinese font-bold text-sm transition-all duration-300 whitespace-nowrap ${
+                    className={`flex-shrink-0 flex items-center gap-2 px-5 py-3 rounded-xl font-chinese font-bold text-sm transition-all duration-300 whitespace-nowrap relative overflow-hidden ${
                       activeTab === tab.id
-                        ? 'bg-[#C41E3A] text-white shadow-md'
-                        : 'text-gray-700 hover:bg-gray-100'
+                        ? 'bg-gradient-to-br from-[#C41E3A] to-[#C41E3A]/90 text-white shadow-lg ring-2 ring-[#C41E3A]/30 transform scale-105'
+                        : 'text-gray-700 hover:bg-white/80 hover:shadow-md border border-transparent hover:border-gray-200/60'
                     }`}
                   >
-                    <span>{tab.icon}</span>
-                    <span>{tab.label}</span>
+                    <span className="relative z-10">{tab.icon}</span>
+                    <span className="relative z-10">{tab.label}</span>
                   </button>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-sm p-6 min-h-[500px]">
-            {renderTabContent()}
+          {/* 内容区域 - 增强版 */}
+          <div className="bg-gradient-to-br from-white/95 to-[#F5F5F0]/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-xl p-8 min-h-[500px] relative overflow-hidden">
+            {/* 角落装饰 */}
+            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[#C41E3A]/15 rounded-tl-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-[#C41E3A]/15 rounded-tr-2xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#C41E3A]/15 rounded-bl-2xl pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[#C41E3A]/15 rounded-br-2xl pointer-events-none" />
+            
+            <div className="relative z-10">
+              {renderTabContent()}
+            </div>
           </div>
         </main>
 

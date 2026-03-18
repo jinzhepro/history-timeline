@@ -89,30 +89,42 @@ const Timeline = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F5F5F0] via-[#FAFAF5] to-white relative overflow-hidden">
-      {/* 水墨背景装饰 */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+      {/* 水墨背景装饰 - 增强质感 */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E")`,
         }}
       />
 
-      {/* 顶部装饰线 */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A] to-transparent opacity-60" />
+      {/* 顶部装饰线 - 增强 */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A] to-transparent opacity-80" />
+      
+      {/* 底部装饰线 */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 py-12 relative">
-        {/* 标题区域 */}
+        {/* 标题区域 - 增强版 */}
         <div className="text-center mb-16 ink-animate-in">
-          <div className="inline-block bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-sm px-8 py-6">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 font-chinese" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>
+          <div className="inline-block bg-gradient-to-br from-white/90 to-[#F5F5F0]/80 backdrop-blur-md rounded-3xl border border-gray-200/60 shadow-lg px-10 py-8 relative overflow-hidden">
+            {/* 卡片顶部装饰 */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A] to-transparent opacity-60" />
+            
+            {/* 角落装饰 */}
+            <div className="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-[#C41E3A]/20 rounded-tl-lg" />
+            <div className="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-[#C41E3A]/20 rounded-tr-lg" />
+            <div className="absolute bottom-3 left-3 w-8 h-8 border-b-2 border-l-2 border-[#C41E3A]/20 rounded-bl-lg" />
+            <div className="absolute bottom-3 right-3 w-8 h-8 border-b-2 border-r-2 border-[#C41E3A]/20 rounded-br-lg" />
+            
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 font-chinese relative z-10" style={{ fontFamily: 'KaiTi, STKaiti, serif', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
               中国历史时间线
             </h1>
-            <p className="text-xl text-gray-600" style={{ letterSpacing: '0.2em', fontFamily: 'KaiTi, STKaiti, serif' }}>
+            <p className="text-xl text-gray-600 relative z-10" style={{ letterSpacing: '0.3em', fontFamily: 'KaiTi, STKaiti, serif' }}>
               上下五千年，纵横九万里
             </p>
-            <div className="flex items-center justify-center gap-4 mt-6">
-              <div className="w-16 h-px bg-gradient-to-r from-transparent to-gray-300" />
-              <div className="w-2 h-2 rotate-45 bg-[#C41E3A]/20" />
-              <div className="w-16 h-px bg-gradient-to-l from-transparent to-gray-300" />
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <div className="w-20 h-px bg-gradient-to-r from-transparent to-gray-400" />
+              <div className="w-3 h-3 rotate-45 bg-gradient-to-br from-[#C41E3A] to-[#C41E3A]/60 shadow-md" />
+              <div className="w-20 h-px bg-gradient-to-l from-transparent to-gray-400" />
             </div>
           </div>
         </div>
@@ -126,10 +138,10 @@ const Timeline = () => {
           onSearchChange={setSearchQuery}
         />
 
-        {/* 时间线主轴 */}
+        {/* 时间线主轴 - 增强版 */}
         <div className="relative mt-12">
-          {/* 中央轴线 */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-[#C41E3A]/40 via-[#C41E3A]/30 to-[#C41E3A]/20 opacity-60 hidden md:block"></div>
+          {/* 中央轴线 - 增强发光效果 */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#C41E3A]/50 via-[#C41E3A]/40 to-[#C41E3A]/30 opacity-70 hidden md:block shadow-[0_0_12px_rgba(196,30,58,0.3)]"></div>
 
           {/* 朝代卡片 */}
           <div className="relative">
@@ -149,13 +161,16 @@ const Timeline = () => {
 
                 {/* 桌面端 - 左右交替显示 */}
                 <div className="hidden md:flex items-center relative">
-                  {/* 时间轴节点 - 统一放在中间 */}
+                  {/* 时间轴节点 - 增强发光效果 */}
                   <div
-                    className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full border-4 border-white shadow-lg z-10"
+                    className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center"
                     style={{
                       backgroundColor: periodOptions.find(p => p.value === dynasty.period)?.color || '#8B4513',
+                      boxShadow: '0 0 20px rgba(196, 30, 58, 0.4), inset 0 2px 4px rgba(255,255,255,0.5)',
                     }}
-                  ></div>
+                  >
+                    <div className="w-2 h-2 rounded-full bg-white/60"></div>
+                  </div>
 
                   {index % 2 === 0 ? (
                     <>
