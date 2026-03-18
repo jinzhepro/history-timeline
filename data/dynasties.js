@@ -81,13 +81,7 @@ const dynasties = [
       "zoom": 4,
       "area": 50,
       "description": "主要位于今河南西部、山西南部一带，以伊洛河流域为中心",
-      "capital": "阳城（今河南登封）",
-      "borders": {
-        "east": "河南东部",
-        "west": "陕西东部",
-        "north": "山西南部",
-        "south": "河南南部"
-      }
+      "capital": "阳城（今河南登封）"
     },
     "events": [
       {
@@ -263,12 +257,6 @@ const dynasties = [
       "area": 80,
       "description": "以河南为中心，扩展至河北、山东、山西、陕西等地，盘庚迁殷后稳定",
       "capital": "殷（今河南安阳）",
-      "borders": {
-        "east": "山东半岛",
-        "west": "陕西东部",
-        "north": "河北南部",
-        "south": "湖北北部"
-      }
     },
     "events": [
       {
@@ -464,12 +452,6 @@ const dynasties = [
       "area": 100,
       "description": "以关中平原为中心，通过分封制扩展至黄河中下游地区",
       "capital": "镐京（今陕西西安）",
-      "borders": {
-        "east": "山东半岛",
-        "west": "甘肃东部",
-        "north": "河北北部",
-        "south": "长江中游"
-      }
     },
     "events": [
       {
@@ -624,12 +606,6 @@ const dynasties = [
       "area": 150,
       "description": "周王室衰微，诸侯争霸，各诸侯国疆域此消彼长，文化上百家争鸣",
       "capital": "洛邑（今河南洛阳）",
-      "borders": {
-        "east": "齐鲁之地",
-        "west": "秦地",
-        "north": "燕赵",
-        "south": "楚越"
-      }
     },
     "events": [
       {
@@ -918,12 +894,6 @@ const dynasties = [
       "area": 340,
       "description": "中国历史上第一个统一的多民族国家，东到辽东，西到陇西，北抵长城，南达南海",
       "capital": "咸阳（今陕西咸阳）",
-      "borders": {
-        "east": "辽东",
-        "west": "陇西",
-        "north": "长城",
-        "south": "南海"
-      }
     },
     "events": [
       {
@@ -1054,12 +1024,6 @@ const dynasties = [
       "area": 609,
       "description": "汉武帝时期疆域达到极盛，开拓西域，北击匈奴，东并朝鲜，南拓交趾",
       "capital": "长安（今陕西西安）",
-      "borders": {
-        "east": "朝鲜半岛",
-        "west": "西域（今新疆）",
-        "north": "大漠",
-        "south": "交趾（今越南北部）"
-      }
     },
     "events": [
       {
@@ -1306,12 +1270,6 @@ const dynasties = [
       "area": 580,
       "description": "定都洛阳，疆域基本继承西汉，西域都护府继续存在，与罗马帝国并列为世界两大强国",
       "capital": "洛阳（今河南洛阳）",
-      "borders": {
-        "east": "朝鲜半岛",
-        "west": "西域",
-        "north": "大漠",
-        "south": "交趾"
-      }
     },
     "events": [
       {
@@ -1538,12 +1496,6 @@ const dynasties = [
       "area": 540,
       "description": "魏蜀吴三国鼎立，曹魏据中原，蜀汉据益州，东吴据江东",
       "capital": "洛阳（魏）、成都（蜀）、建业（吴）",
-      "borders": {
-        "east": "东海",
-        "west": "益州",
-        "north": "大漠",
-        "south": "交州"
-      }
     },
     "events": [
       {
@@ -1780,12 +1732,6 @@ const dynasties = [
       "area": 543,
       "description": "短暂统一全国，疆域继承三国，但八王之乱后迅速衰落",
       "capital": "洛阳（今河南洛阳）",
-      "borders": {
-        "east": "东海",
-        "west": "西域",
-        "north": "大漠",
-        "south": "交州"
-      }
     },
     "events": [
       {
@@ -1885,12 +1831,6 @@ const dynasties = [
       "area": 280,
       "description": "偏安江南，与北方十六国对峙，文化上玄学、书法、绘画达到高峰",
       "capital": "建康（今江苏南京）",
-      "borders": {
-        "east": "东海",
-        "west": "益州",
-        "north": "淮河",
-        "south": "交州"
-      }
     },
     "events": [
       {
@@ -2060,12 +2000,6 @@ const dynasties = [
       "area": 400,
       "description": "南北分裂，南朝据江南，北朝据中原，北魏孝文帝改革促进民族融合",
       "capital": "建康（南朝）、洛阳（北朝）",
-      "borders": {
-        "east": "东海",
-        "west": "西域",
-        "north": "大漠",
-        "south": "交州"
-      }
     },
     "events": [
       {
@@ -2190,12 +2124,6 @@ const dynasties = [
       "area": 470,
       "description": "结束近四百年分裂，重新统一全国，开凿大运河连接南北",
       "capital": "大兴（今陕西西安）",
-      "borders": {
-        "east": "东海",
-        "west": "西域",
-        "north": "大漠",
-        "south": "交州"
-      }
     },
     "events": [
       {
@@ -2276,12 +2204,6 @@ const dynasties = [
       "area": 1237,
       "description": "唐朝极盛时期疆域空前辽阔，东起朝鲜半岛，西达咸海，北包贝加尔湖，南至越南中部",
       "capital": "长安（今陕西西安）",
-      "borders": {
-        "east": "朝鲜半岛",
-        "west": "咸海",
-        "north": "贝加尔湖",
-        "south": "越南中部"
-      }
     },
     "events": [
       {
@@ -2616,12 +2538,6 @@ const dynasties = [
       "area": 200,
       "description": "政权更迭频繁，北方五代相继，南方十国并立，战乱不断",
       "capital": "开封、洛阳",
-      "borders": {
-        "east": "东海",
-        "west": "关中",
-        "north": "契丹",
-        "south": "南唐、吴越"
-      }
     },
     "events": [
       {
@@ -2842,12 +2758,6 @@ const dynasties = [
       "area": 280,
       "description": "结束五代十国分裂，与辽、西夏并立，经济文化高度繁荣",
       "capital": "开封（今河南开封）",
-      "borders": {
-        "east": "东海",
-        "west": "西夏",
-        "north": "辽国",
-        "south": "大理"
-      }
     },
     "events": [
       {
@@ -3067,12 +2977,6 @@ const dynasties = [
       "area": 200,
       "description": "偏安江南，与金朝对峙，经济重心南移完成，海上贸易繁荣",
       "capital": "临安（今浙江杭州）",
-      "borders": {
-        "east": "东海",
-        "west": "四川",
-        "north": "淮河",
-        "south": "南海"
-      }
     },
     "events": [
       {
@@ -3222,12 +3126,6 @@ const dynasties = [
       "area": 1372,
       "description": "中国历史上疆域最大的朝代，东起日本海，西至天山，北包贝加尔湖，南抵南海",
       "capital": "大都（今北京）",
-      "borders": {
-        "east": "日本海",
-        "west": "天山",
-        "north": "贝加尔湖",
-        "south": "南海"
-      }
     },
     "events": [
       {
@@ -3389,12 +3287,6 @@ const dynasties = [
       "area": 900,
       "description": "推翻元朝统治，疆域包括内地十八省及东北部分地区，郑和下西洋宣扬国威",
       "capital": "北京（明成祖后）、南京",
-      "borders": {
-        "east": "东海",
-        "west": "哈密",
-        "north": "长城",
-        "south": "南海"
-      }
     },
     "events": [
       {
@@ -3707,12 +3599,6 @@ const dynasties = [
       "area": 1316,
       "description": "中国历史上最后一个封建王朝，疆域辽阔，奠定了现代中国版图的基础",
       "capital": "北京",
-      "borders": {
-        "east": "太平洋",
-        "west": "帕米尔高原",
-        "north": "外兴安岭",
-        "south": "南海"
-      }
     },
     "events": [
       {
@@ -3968,12 +3854,6 @@ const dynasties = [
       "area": 1141,
       "description": "结束两千多年封建帝制，建立共和政体，经历军阀混战、抗日战争和国共内战",
       "capital": "南京（1927-1937, 1946-1949）、重庆（战时陪都）",
-      "borders": {
-        "east": "太平洋",
-        "west": "帕米尔高原",
-        "north": "蒙古",
-        "south": "南海"
-      }
     },
     "events": [
       {
