@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
 import dynasties from '../data/dynasties';
-import DynastyCard from './DynastyCard';
 import TimelineFilter from './TimelineFilter';
+
+// 懒加载 DynastyCard 组件，减少初始加载时间
+const DynastyCard = React.lazy(() => import('./DynastyCard'));
 
 /**
  * 时间线主组件 - 增强版
@@ -153,10 +155,18 @@ const Timeline = () => {
               >
                 {/* 移动端 - 单列显示 */}
                 <div className="md:hidden">
-                  <DynastyCard
-                    dynasty={dynasty}
-                    index={index}
-                  />
+                  <Suspense fallback={
+                    <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/60 animate-pulse">
+                      <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+                      <div className="h-4 bg-gray-100 rounded w-1/2 mb-3"></div>
+                      <div className="space-y-2">
+                        <div className="h-16 bg-gray-100 rounded"></div>
+                        <div className="h-16 bg-gray-100 rounded"></div>
+                      </div>
+                    </div>
+                  }>
+                    <DynastyCard dynasty={dynasty} index={index} />
+                  </Suspense>
                 </div>
 
                 {/* 桌面端 - 左右交替显示 */}
@@ -175,12 +185,23 @@ const Timeline = () => {
                   {index % 2 === 0 ? (
                     <>
                       <div className="w-1/2 pr-16 flex justify-end relative">
-                        <DynastyCard
-                          dynasty={dynasty}
-                          index={index}
-                          period={dynasty.period}
-                          position="left"
-                        />
+                        <Suspense fallback={
+                          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/60 animate-pulse w-full max-w-md">
+                            <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+                            <div className="h-4 bg-gray-100 rounded w-1/2 mb-3"></div>
+                            <div className="space-y-2">
+                              <div className="h-16 bg-gray-100 rounded"></div>
+                              <div className="h-16 bg-gray-100 rounded"></div>
+                            </div>
+                          </div>
+                        }>
+                          <DynastyCard
+                            dynasty={dynasty}
+                            index={index}
+                            period={dynasty.period}
+                            position="left"
+                          />
+                        </Suspense>
                       </div>
                       <div className="w-0"></div>
                       <div className="w-1/2 pl-16"></div>
@@ -190,12 +211,23 @@ const Timeline = () => {
                       <div className="w-1/2 pr-16"></div>
                       <div className="w-0"></div>
                       <div className="w-1/2 pl-16 flex justify-start relative">
-                        <DynastyCard
-                          dynasty={dynasty}
-                          index={index}
-                          period={dynasty.period}
-                          position="right"
-                        />
+                        <Suspense fallback={
+                          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/60 animate-pulse w-full max-w-md">
+                            <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+                            <div className="h-4 bg-gray-100 rounded w-1/2 mb-3"></div>
+                            <div className="space-y-2">
+                              <div className="h-16 bg-gray-100 rounded"></div>
+                              <div className="h-16 bg-gray-100 rounded"></div>
+                            </div>
+                          </div>
+                        }>
+                          <DynastyCard
+                            dynasty={dynasty}
+                            index={index}
+                            period={dynasty.period}
+                            position="right"
+                          />
+                        </Suspense>
                       </div>
                     </>
                   )}

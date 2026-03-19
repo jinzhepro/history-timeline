@@ -210,6 +210,14 @@ const DynastyMap = ({ territory, dynastyName, dynastyId }) => {
     };
 
     loadMap();
+
+    // 清理函数：组件卸载时销毁 ECharts 实例，防止内存泄漏
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.dispose();
+        chartInstanceRef.current = null;
+      }
+    };
   }, []);
 
   // 当朝代改变时，自动切换地图类型并重置视角
