@@ -35,6 +35,7 @@ npm install --save-dev jest @testing-library/react @testing-library/jest-dom jes
 npm run test     # 运行所有测试
 npm run test -- --testPathPattern=DynastyCard  # 单个测试文件
 npm run test -- --watch  # 监听模式
+npm run test -- --coverage  # 生成覆盖率报告
 ```
 
 ## Code Style Guidelines
@@ -73,10 +74,11 @@ import { formatDate } from '../utils/helpers';
 
 ### Formatting 规范
 - **缩进**: 2 个空格
-- **字符串**: 单引号 `'`
+- **字符串**: 双引号 `"` (JSX props) 或单引号 `'` (普通字符串)
 - **行尾逗号**: ES6 对象/数组添加
 - **行长度**: 最大 100 字符
 - **分号**: 必须使用
+- **括号**: 函数单行时可省略，多行时必须使用
 
 ### Naming 规范
 - **组件文件**: PascalCase (`DynastyCard.js`)
@@ -97,9 +99,11 @@ import { formatDate } from '../utils/helpers';
 - **自定义 CSS**: `globals.css` 定义水墨风格
 - **CSS 变量**:
   ```css
-  --china-red: #C41E3A;
-  --ink-black: #2C2C2C;
-  --xuan-paper: #F5F5F0;
+  --china-red: #B93A3A;      /* 朱红 */
+  --ink-black: #1A1A1A;       /* 墨色 */
+  --ink-gray: #4A4A4A;        /* 淡墨 */
+  --paper: #F9F8F4;           /* 宣纸白 */
+  --paper-dark: #F0EEE8;      /* 深宣纸 */
   ```
 - **响应式断点**: `sm: 640px`, `md: 768px`, `lg: 1024px`, `xl: 1280px`
 
@@ -107,6 +111,7 @@ import { formatDate } from '../utils/helpers';
 - **异步操作**: try-catch 处理
 - **空状态**: 条件渲染处理空数据
 - **边界情况**: Optional Chaining (`?.`) 和 Nullish Coalescing (`??`)
+- **类型安全**: 使用 JSDoc 注释提供类型提示
 
 ## 开发注意事项
 
@@ -133,6 +138,7 @@ import { formatDate } from '../utils/helpers';
 - **动态路由**: `[id].js` 处理动态参数
 - **数据获取**: `getStaticProps` / `getServerSideProps`
 - **懒加载**: `dynamic(() => import(...), { ssr: false })`
+- **Head 组件**: 使用 `next/head` 设置页面元数据
 
 ## Git 工作流
 
@@ -162,4 +168,4 @@ No specific Cursor rules found.
 No specific Copilot rules found.
 
 ---
-**最后更新**: 2026 年 3 月 19 日
+**最后更新**: 2026 年 3 月 20 日
