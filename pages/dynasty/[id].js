@@ -1,34 +1,20 @@
 /**
- * 朝代详情页面 - Tab 切换整体布局版
- * 展示单个朝代的完整信息
+ * 朝代详情页面 - 极简版
  */
-         
+
 import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Clipboard, Map, Trees, Scroll, Palette } from 'lucide-react';
 import dynasties from '../../data/dynasties';
-import DynastyMap from '../../components/DynastyMap';
 import DynastyLineage from '../../components/DynastyLineage';
 import Breadcrumb from '../../components/Breadcrumb';
 
 const formatYear = (year) => {
   if (year < 0) {
-    return `${Math.abs(year)}年（公元前）`;
+    return `公元前${Math.abs(year)}年`;
   }
-  return `${year}年（公元）`;
-};
-
-const getPeriodColor = (period) => {
-  const colors = {
-    'ancient': '#8B4513',
-    'classical': '#C41E3A',
-    'medieval': '#1E3A8A',
-    'late-imperial': '#00A862',
-    'modern': '#6B7280'
-  };
-  return colors[period] || '#8B4513';
+  return `公元${year}年`;
 };
 
 const getPeriodName = (period) => {
@@ -43,11 +29,10 @@ const getPeriodName = (period) => {
 };
 
 const tabs = [
-  { id: 'overview', label: '概览', icon: Clipboard },
-  { id: 'territory', label: '疆域', icon: Map },
-  { id: 'lineage', label: '世系表', icon: Trees },
-  { id: 'events', label: '历史事件', icon: Scroll },
-  { id: 'culture', label: '文化成就', icon: Palette }
+  { id: 'overview', label: '概览' },
+  { id: 'lineage', label: '世系表' },
+  { id: 'events', label: '历史事件' },
+  { id: 'culture', label: '文化成就' }
 ];
 
 export default function DynastyDetailPage() {
@@ -66,35 +51,17 @@ export default function DynastyDetailPage() {
   const hasPrevious = currentIndex > 0;
   const hasNext = currentIndex < dynasties.length - 1;
 
-  const handlePrevious = () => {
-    if (hasPrevious) {
-      router.push(`/dynasty/${dynasties[currentIndex - 1].id}`);
-    }
-  };
-
-  const handleNext = () => {
-    if (hasNext) {    
-      router.push(`/dynasty/${dynasties[currentIndex + 1].id}`);
-    } 
-  }; 
-
   if (!dynasty) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#F5F5F0] via-[#FAFAF5] to-white flex items-center justify-center">
+      <div className="min-h-screen bg-paper flex items-center justify-center">
         <div className="text-center">
-          <div className="relative">
-            <div className="animate-spin rounded-full h-16 w-16 border-2 border-[#C41E3A]/20 border-t-[#C41E3A] mx-auto mb-6"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[#C41E3A] text-2xl font-bold" style={{ fontFamily: 'KaiTi, STKaiti, serif' }}>史</span>
-            </div>
-          </div>
-          <p className="text-gray-600 font-chinese text-lg">正在载入历史...</p>
+          <div className="w-10 h-10 border-2 border-ink/20 border-t-ink rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray font-chinese">正在载入...</p>
         </div>
       </div>
     );
   }
 
-  const periodColor = getPeriodColor(dynasty.period);
   const duration = Math.abs(dynasty.endYear - dynasty.startYear);
 
   const renderTabContent = () => {
@@ -102,83 +69,28 @@ export default function DynastyDetailPage() {
       case 'overview':
         return (
           <div className="space-y-6">
-            {/* 基本信息卡片 - 增强版 */}
-            <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-7 border border-gray-200/60 shadow-lg relative overflow-hidden">
-              {/* 顶部装饰 */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
-              
-              <h3 className="text-lg font-bold mb-6 font-chinese text-gray-900 flex items-center gap-3">
-                <span className="w-1 h-6 bg-gradient-to-b from-[#C41E3A] to-[#C41E3A]/60 rounded-full"></span>
-                基本信息
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div className="bg-gradient-to-br from-amber-50/90 to-orange-50/90 p-5 rounded-xl border border-amber-200/60 hover:border-amber-300 hover:shadow-md transition-all duration-300 backdrop-blur-sm">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-1 h-4 bg-gradient-to-b from-amber-500 to-amber-300 rounded-full"></div>
-                    <span className="text-amber-700 text-xs uppercase tracking-wider font-bold">开国君主</span>
-                  </div>
-                  <p className="font-bold text-gray-900 text-xl mt-2 font-chinese pl-3">{dynasty.founder}</p>
+            {/* 基本信息 */}
+            <div className="border border-[rgba(0,0,0,0.12)] rounded p-6">
+              <h3 className="text-sm font-bold text-ink font-chinese mb-4 tracking-wider">基本信息</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="border border-[rgba(0,0,0,0.08)] rounded p-4">
+                  <span className="text-xs text-gray font-chinese">开国君主</span>
+                  <p className="text-lg text-ink font-chinese mt-1">{dynasty.founder}</p>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50/90 to-indigo-50/90 p-5 rounded-xl border border-blue-200/60 hover:border-blue-300 hover:shadow-md transition-all duration-300 backdrop-blur-sm">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-blue-300 rounded-full"></div>
-                    <span className="text-blue-700 text-xs uppercase tracking-wider font-bold">持续时间</span>
-                  </div>
-                  <p className="font-bold text-gray-900 text-xl mt-2 font-chinese pl-3">
-                    <span className="text-2xl text-[#1E3A8A] font-bold">{duration}</span> <span className="text-sm text-gray-600">年</span>
-                  </p>
+                <div className="border border-[rgba(0,0,0,0.08)] rounded p-4">
+                  <span className="text-xs text-gray font-chinese">持续时间</span>
+                  <p className="text-lg text-ink font-chinese mt-1">{duration} 年</p>
                 </div>
-                <div className="bg-gradient-to-br from-green-50/90 to-emerald-50/90 p-5 rounded-xl border border-green-200/60 hover:border-green-300 hover:shadow-md transition-all duration-300 backdrop-blur-sm">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-1 h-4 bg-gradient-to-b from-green-500 to-green-300 rounded-full"></div>
-                    <span className="text-green-700 text-xs uppercase tracking-wider font-bold">历史时期</span>
-                  </div>
-                  <p className="font-bold text-gray-900 text-xl mt-2 font-chinese pl-3">{getPeriodName(dynasty.period)}</p>
+                <div className="border border-[rgba(0,0,0,0.08)] rounded p-4">
+                  <span className="text-xs text-gray font-chinese">历史时期</span>
+                  <p className="text-lg text-ink font-chinese mt-1">{getPeriodName(dynasty.period)}</p>
                 </div>
               </div>
-              <div className="mt-5 p-5 bg-gradient-to-br from-gray-50/80 to-gray-100/80 rounded-xl border border-gray-200/60 backdrop-blur-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1 h-4 bg-gradient-to-b from-gray-400 to-gray-300 rounded-full"></div>
-                  <span className="text-gray-600 text-xs uppercase tracking-wider font-bold">代表君主</span>
-                </div>
-                <p className="text-gray-800 mt-2 font-chinese font-medium pl-3 leading-relaxed">{dynasty.representativeRulers.join('、')}</p>
+              <div className="mt-4 border border-[rgba(0,0,0,0.08)] rounded p-4">
+                <span className="text-xs text-gray font-chinese">代表君主</span>
+                <p className="text-ink font-chinese mt-1 leading-relaxed">{dynasty.representativeRulers.join('、')}</p>
               </div>
             </div>
-
-            {/* 疆域概览 - 简化版 */}
-            {dynasty.territory && (
-              <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                <h3 className="text-lg font-bold mb-4 font-chinese text-gray-900">疆域概况</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-3 rounded-lg border border-amber-200">
-                    <span className="text-amber-700 text-xs font-bold">都城</span>
-                    <p className="font-bold text-gray-900 text-sm mt-1 font-chinese truncate">{dynasty.territory.capital}</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-3 rounded-lg border border-blue-200">
-                    <span className="text-blue-700 text-xs font-bold">面积</span>
-                    <p className="font-bold text-gray-900 text-sm mt-1">
-                      <span className="text-lg text-[#1E3A8A]">{dynasty.territory.area}</span> 万 km²
-                    </p>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-3 rounded-lg border border-purple-200 col-span-2">
-                    <span className="text-purple-700 text-xs font-bold">疆域范围</span>
-                    <p className="text-gray-800 mt-1 text-sm font-chinese font-medium line-clamp-2">{dynasty.territory.description}</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        );
-
-      case 'territory':
-        return (
-          <div className="space-y-6">
-            {/* 疆域地图 */}
-            <DynastyMap
-              territory={dynasty.territory}
-              dynastyName={dynasty.name}
-              dynastyId={dynasty.id}
-            />
           </div>
         );
 
@@ -191,18 +103,16 @@ export default function DynastyDetailPage() {
             {dynasty.events.map((event, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md hover:border-[#C41E3A]/30 transition-all duration-300"
+                className="border border-[rgba(0,0,0,0.12)] rounded p-4 hover:border-ink/60 transition-colors"
               >
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-14 text-center">
-                    <div className="inline-flex flex-col items-center bg-[#C41E3A]/20 rounded-lg px-2 py-1 border border-[#C41E3A]/30">
-                      <span className="text-xs text-[#C41E3A] font-chinese font-bold">{event.year < 0 ? '公元前' : '公元'}</span>
-                      <span className="text-base font-bold text-[#C41E3A] font-chinese">{Math.abs(event.year)}</span>
-                    </div>
+                  <div className="flex-shrink-0 text-center">
+                    <span className="text-xs text-gray font-chinese block">{event.year < 0 ? '公元前' : '公元'}</span>
+                    <span className="text-lg font-bold text-ink font-chinese">{Math.abs(event.year)}</span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-gray-900 font-chinese mb-1 group-hover:text-[#C41E3A] transition-colors">{event.name}</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed font-chinese">{event.description}</p>
+                    <h3 className="font-bold text-ink font-chinese mb-1">{event.name}</h3>
+                    <p className="text-sm text-gray font-chinese leading-relaxed">{event.description}</p>
                   </div>
                 </div>
               </div>
@@ -216,15 +126,14 @@ export default function DynastyDetailPage() {
             {dynasty.culturalAchievements.map((achievement, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-xl p-5 border-l-4 border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
-                style={{ borderLeftColor: periodColor }}
+                className="border border-[rgba(0,0,0,0.12)] rounded p-4 hover:border-ink/60 transition-colors"
               >
-                <h3 className="font-bold text-base text-gray-900 font-chinese mb-2 group-hover:text-[#C41E3A] transition-colors">{achievement.name}</h3>
-                <p className="text-gray-700 text-sm leading-relaxed font-chinese mb-2">{achievement.description}</p>
+                <h3 className="font-bold text-ink font-chinese mb-2">{achievement.name}</h3>
+                <p className="text-sm text-gray font-chinese leading-relaxed mb-2">{achievement.description}</p>
                 {achievement.figure && (
-                  <div className="flex items-center gap-2 text-xs">
-                    <span className="text-gray-500 font-chinese">代表人物</span>
-                    <span className="text-[#C41E3A] font-bold font-chinese">{achievement.figure}</span>
+                  <div className="text-xs text-gray font-chinese">
+                    <span className="opacity-60">代表人物：</span>
+                    <span className="text-ink">{achievement.figure}</span>
                   </div>
                 )}
               </div>
@@ -241,20 +150,12 @@ export default function DynastyDetailPage() {
     <>
       <Head>
         <title>{dynasty.name} - 朝代纪</title>
-        <meta name="description" content={`了解${dynasty.name}的历史、疆域、人物和文化成就`} />
+        <meta name="description" content={`了解${dynasty.name}的历史、人物和文化成就`} />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-b from-[#F5F5F0] via-[#FAFAF5] to-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-          }}
-        />
-
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A] to-transparent opacity-60" />
-
-        <main className="max-w-6xl mx-auto px-4 py-8 relative">
-          {/* 面包屑导航 - 替代原 header */}
+      <div className="min-h-screen bg-paper">
+        <main className="max-w-5xl mx-auto px-6 py-8">
+          {/* 面包屑导航 */}
           <div className="mb-6">
             <Breadcrumb
               items={[
@@ -264,52 +165,64 @@ export default function DynastyDetailPage() {
             />
           </div>
 
-          {/* Tab 切换 - 增强版 */}
-          <div className="sticky top-20 z-40 mb-8">
-            <div className="bg-gradient-to-br from-white/90 to-[#F5F5F0]/80 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-lg p-2 relative overflow-hidden">
-              {/* 顶部装饰线 */}
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#C41E3A]/40 to-transparent" />
-              
-              <div className="flex overflow-x-auto scrollbar-hide gap-1 relative z-10">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`flex-shrink-0 flex items-center gap-2 px-5 py-3 rounded-xl font-chinese font-bold text-sm transition-all duration-300 whitespace-nowrap relative overflow-hidden ${
-                      activeTab === tab.id
-                        ? 'bg-gradient-to-br from-[#C41E3A] to-[#C41E3A]/90 text-white shadow-lg ring-2 ring-[#C41E3A]/30 transform scale-105'
-                        : 'text-gray-700 hover:bg-white/80 hover:shadow-md border border-transparent hover:border-gray-200/60'
-                    }`}
-                  >
-                    <tab.icon className="w-4 h-4 relative z-10" />
-                    <span className="relative z-10">{tab.label}</span>
-                  </button>
-                ))}
-              </div>
+          {/* 朝代标题 */}
+          <div className="mb-6 pb-6 border-b border-[rgba(0,0,0,0.08)]">
+            <h1 className="text-3xl font-bold text-ink font-chinese tracking-widest mb-2">{dynasty.name}</h1>
+            <p className="text-sm text-gray font-chinese">
+              {formatYear(dynasty.startYear)} - {formatYear(dynasty.endYear)}
+            </p>
+          </div>
+
+          {/* Tab 切换 */}
+          <div className="mb-6">
+            <div className="flex gap-1">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-5 py-2 text-sm font-chinese transition-all rounded ${
+                    activeTab === tab.id
+                      ? 'bg-[#1A1A1A] text-white'
+                      : 'text-[#1A1A1A] hover:bg-[rgba(0,0,0,0.06)]'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* 内容区域 - 增强版 */}
-          <div className="bg-gradient-to-br from-white/95 to-[#F5F5F0]/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-xl p-8 min-h-[500px] relative overflow-hidden">
-            {/* 角落装饰 */}
-            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[#C41E3A]/15 rounded-tl-2xl pointer-events-none" />
-            <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-[#C41E3A]/15 rounded-tr-2xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#C41E3A]/15 rounded-bl-2xl pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[#C41E3A]/15 rounded-br-2xl pointer-events-none" />
-            
-            <div className="relative z-10">
-              {renderTabContent()}
-            </div>
+          {/* 内容区域 */}
+          <div className="border border-[rgba(0,0,0,0.12)] rounded p-6 min-h-[400px]">
+            {renderTabContent()}
+          </div>
+
+          {/* 上下朝代导航 */}
+          <div className="mt-6 flex justify-between">
+            {hasPrevious ? (
+              <Link
+                href={`/dynasty/${dynasties[currentIndex - 1].id}`}
+                className="text-sm text-ink font-chinese hover:text-[#B93A3A] transition-colors"
+              >
+                ← {dynasties[currentIndex - 1].name}
+              </Link>
+            ) : (
+              <span></span>
+            )}
+            {hasNext ? (
+              <Link
+                href={`/dynasty/${dynasties[currentIndex + 1].id}`}
+                className="text-sm text-ink font-chinese hover:text-[#B93A3A] transition-colors"
+              >
+                {dynasties[currentIndex + 1].name} →
+              </Link>
+            ) : null}
           </div>
         </main>
 
-        <footer className="py-8 text-center">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-gray-300" />
-            <div className="w-2 h-2 rotate-45 bg-[#C41E3A]/20" />
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-gray-300" />
-          </div>
-          <p className="text-gray-400 font-chinese text-sm">中华文明 · 源远流长</p>
+        {/* 页脚 */}
+        <footer className="py-8 text-center border-t border-[rgba(0,0,0,0.08)]">
+          <p className="text-sm text-gray font-chinese">中华文明 · 源远流长</p>
         </footer>
       </div>
     </>

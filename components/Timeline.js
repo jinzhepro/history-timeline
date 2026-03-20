@@ -1,17 +1,12 @@
 import React, { useState, useMemo, Suspense } from 'react';
-import dynasties from '../data/dynasties';
 import TimelineFilter from './TimelineFilter';
+import dynasties from '../data/dynasties';
 
-// 懒加载 DynastyCard 组件，减少初始加载时间
+// 懒加载 DynastyCard 组件
 const DynastyCard = React.lazy(() => import('./DynastyCard'));
 
 /**
- * 时间线主组件 - 增强版
- * 功能：
- * - 时期筛选
- * - 搜索功能
- * - 点击跳转详情页面
- * - 时间轴节点和刻度
+ * 时间线主组件
  */
 const Timeline = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('all');
@@ -19,61 +14,45 @@ const Timeline = () => {
 
   // 时期选项
   const periodOptions = [
-    { value: 'all', label: '全部', color: 'var(--ink-black)' },
-    { value: 'ancient', label: '上古', color: '#8B4513' },
-  { value: 'classical', label: '中古', color: '#C41E3A' },
-  { value: 'medieval', label: '近古', color: '#1E3A8A' },
-  { value: 'late-imperial', label: '帝国晚期', color: '#00A862' },
-  { value: 'modern', label: '近代', color: '#6B7280' }
+    { value: 'all', label: '全部' },
+    { value: 'ancient', label: '上古' },
+    { value: 'classical', label: '中古' },
+    { value: 'medieval', label: '近古' },
+    { value: 'late-imperial', label: '帝国晚期' },
+    { value: 'modern', label: '近代' }
   ];
 
   /**
-   * 检查文本是否包含搜索关键词（模糊查询）
-   * @param {string} text - 要检查的文本
-   * @param {string} query - 搜索关键词
-   * @returns {boolean} 是否匹配
+   * 模糊匹配搜索
    */
   const fuzzyMatch = (text, query) => {
     if (!text || !query) return false;
-    const textLower = text.toLowerCase();
-    const queryLower = query.toLowerCase();
-    // 支持多关键词搜索，用空格分隔
-    const keywords = queryLower.split(/\s+/).filter(k => k.length > 0);
+    const keywords = query.toLowerCase().split(/\s+/).filter(k => k.length > 0);
     if (keywords.length === 0) return true;
-    // 所有关键词都必须在文本中出现
-    return keywords.every(keyword => textLower.includes(keyword));
+    return keywords.every(keyword => text.toLowerCase().includes(keyword));
   };
 
   // 过滤朝代
   const filteredDynasties = useMemo(() => {
     return dynasties.filter(dynasty => {
       const matchesPeriod = selectedPeriod === 'all' || dynasty.period === selectedPeriod;
-      
+
       if (searchQuery === '') {
         return matchesPeriod;
       }
 
-      // 搜索朝代名称
       if (fuzzyMatch(dynasty.name, searchQuery)) return matchesPeriod;
-      
-      // 搜索开国君主
       if (fuzzyMatch(dynasty.founder, searchQuery)) return matchesPeriod;
-      
-      // 搜索代表君主
       if (dynasty.representativeRulers.some(ruler => fuzzyMatch(ruler, searchQuery))) {
         return matchesPeriod;
       }
-      
-      // 搜索历史事件（名称和描述）
-      if (dynasty.events.some(event => 
+      if (dynasty.events.some(event =>
         fuzzyMatch(event.name, searchQuery) || fuzzyMatch(event.description, searchQuery)
       )) {
         return matchesPeriod;
       }
-      
-      // 搜索文化成就（名称、描述和代表人物）
-      if (dynasty.culturalAchievements.some(achievement => 
-        fuzzyMatch(achievement.name, searchQuery) || 
+      if (dynasty.culturalAchievements.some(achievement =>
+        fuzzyMatch(achievement.name, searchQuery) ||
         fuzzyMatch(achievement.description, searchQuery) ||
         fuzzyMatch(achievement.figure, searchQuery)
       )) {
@@ -84,54 +63,21 @@ const Timeline = () => {
     });
   }, [selectedPeriod, searchQuery]);
 
-  // 计算时间范围
-  const minYear = Math.min(...dynasties.map(d => d.startYear));
-  const maxYear = Math.max(...dynasties.map(d => d.endYear));
-  const totalYears = maxYear - minYear;
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F5F5F0] via-[#FAFAF5] to-white relative overflow-hidden">
-      {/* 水墨背景装饰 - 增强质感 */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E")`,
-        }}
-      />
-
-      {/* 顶部装饰线 - 增强 */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A] to-transparent opacity-80" />
-      
-      {/* 底部装饰线 */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 py-12 relative">
-        {/* 标题区域 - 增强版 */}
-        <div className="text-center mb-16 ink-animate-in">
-          <div className="inline-block bg-gradient-to-br from-white/90 to-[#F5F5F0]/80 backdrop-blur-md rounded-3xl border border-gray-200/60 shadow-lg px-10 py-8 relative overflow-hidden">
-            {/* 卡片顶部装饰 */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C41E3A] to-transparent opacity-60" />
-            
-            {/* 角落装饰 */}
-            <div className="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-[#C41E3A]/20 rounded-tl-lg" />
-            <div className="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-[#C41E3A]/20 rounded-tr-lg" />
-            <div className="absolute bottom-3 left-3 w-8 h-8 border-b-2 border-l-2 border-[#C41E3A]/20 rounded-bl-lg" />
-            <div className="absolute bottom-3 right-3 w-8 h-8 border-b-2 border-r-2 border-[#C41E3A]/20 rounded-br-lg" />
-            
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 font-chinese relative z-10" style={{ fontFamily: 'KaiTi, STKaiti, serif', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
-              中国历史时间线
-            </h1>
-            <p className="text-xl text-gray-600 relative z-10" style={{ letterSpacing: '0.3em', fontFamily: 'KaiTi, STKaiti, serif' }}>
-              上下五千年，纵横九万里
-            </p>
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <div className="w-20 h-px bg-gradient-to-r from-transparent to-gray-400" />
-              <div className="w-3 h-3 rotate-45 bg-gradient-to-br from-[#C41E3A] to-[#C41E3A]/60 shadow-md" />
-              <div className="w-20 h-px bg-gradient-to-l from-transparent to-gray-400" />
-            </div>
-          </div>
+    <div className="relative">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        {/* 标题 */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-ink font-chinese tracking-widest mb-3">
+            中国历史时间线
+          </h1>
+          <p className="text-gray font-chinese tracking-[0.3em] text-sm">
+            上下五千年，纵横九万里
+          </p>
+          <div className="w-12 h-px bg-ink mx-auto mt-6"></div>
         </div>
 
-        {/* 筛选和搜索区域 */}
+        {/* 筛选和搜索 */}
         <TimelineFilter
           periodOptions={periodOptions}
           selectedPeriod={selectedPeriod}
@@ -140,28 +86,26 @@ const Timeline = () => {
           onSearchChange={setSearchQuery}
         />
 
-        {/* 时间线主轴 - 增强版 */}
+        {/* 时间线主轴 */}
         <div className="relative mt-12">
-          {/* 中央轴线 - 增强发光效果 */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#C41E3A]/50 via-[#C41E3A]/40 to-[#C41E3A]/30 opacity-70 hidden md:block shadow-[0_0_12px_rgba(196,30,58,0.3)]"></div>
+          {/* 中央轴线 */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-[rgba(0,0,0,0.15)] hidden md:block"></div>
 
           {/* 朝代卡片 */}
           <div className="relative">
             {filteredDynasties.map((dynasty, index) => (
               <div
                 key={dynasty.id}
-                className="ink-animate-in mb-8"
-                style={{ animationDelay: `${Math.min(index * 0.05, 0.5)}s` }}
+                className="ink-animate mb-10"
               >
                 {/* 移动端 - 单列显示 */}
                 <div className="md:hidden">
                   <Suspense fallback={
-                    <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/60 animate-pulse">
-                      <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-                      <div className="h-4 bg-gray-100 rounded w-1/2 mb-3"></div>
+                    <div className="bg-paper rounded p-6 border border-[rgba(0,0,0,0.12)] animate-pulse">
+                      <div className="h-5 bg-[rgba(0,0,0,0.08)] rounded w-3/4 mb-3"></div>
+                      <div className="h-4 bg-[rgba(0,0,0,0.06)] rounded w-1/2 mb-3"></div>
                       <div className="space-y-2">
-                        <div className="h-16 bg-gray-100 rounded"></div>
-                        <div className="h-16 bg-gray-100 rounded"></div>
+                        <div className="h-12 bg-[rgba(0,0,0,0.06)] rounded"></div>
                       </div>
                     </div>
                   }>
@@ -171,36 +115,19 @@ const Timeline = () => {
 
                 {/* 桌面端 - 左右交替显示 */}
                 <div className="hidden md:flex items-center relative">
-                  {/* 时间轴节点 - 增强发光效果 */}
+                  {/* 时间轴节点 */}
                   <div
-                    className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center"
+                    className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-paper border-2 border-ink z-10"
                     style={{
-                      backgroundColor: periodOptions.find(p => p.value === dynasty.period)?.color || '#8B4513',
-                      boxShadow: '0 0 20px rgba(196, 30, 58, 0.4), inset 0 2px 4px rgba(255,255,255,0.5)',
+                      backgroundColor: getPeriodColor(dynasty.period),
                     }}
-                  >
-                    <div className="w-2 h-2 rounded-full bg-white/60"></div>
-                  </div>
+                  ></div>
 
                   {index % 2 === 0 ? (
                     <>
                       <div className="w-1/2 pr-16 flex justify-end relative">
-                        <Suspense fallback={
-                          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/60 animate-pulse w-full max-w-md">
-                            <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-                            <div className="h-4 bg-gray-100 rounded w-1/2 mb-3"></div>
-                            <div className="space-y-2">
-                              <div className="h-16 bg-gray-100 rounded"></div>
-                              <div className="h-16 bg-gray-100 rounded"></div>
-                            </div>
-                          </div>
-                        }>
-                          <DynastyCard
-                            dynasty={dynasty}
-                            index={index}
-                            period={dynasty.period}
-                            position="left"
-                          />
+                        <Suspense fallback={<SkeletonCard />}>
+                          <DynastyCard dynasty={dynasty} index={index} period={dynasty.period} />
                         </Suspense>
                       </div>
                       <div className="w-0"></div>
@@ -211,22 +138,8 @@ const Timeline = () => {
                       <div className="w-1/2 pr-16"></div>
                       <div className="w-0"></div>
                       <div className="w-1/2 pl-16 flex justify-start relative">
-                        <Suspense fallback={
-                          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/60 animate-pulse w-full max-w-md">
-                            <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-                            <div className="h-4 bg-gray-100 rounded w-1/2 mb-3"></div>
-                            <div className="space-y-2">
-                              <div className="h-16 bg-gray-100 rounded"></div>
-                              <div className="h-16 bg-gray-100 rounded"></div>
-                            </div>
-                          </div>
-                        }>
-                          <DynastyCard
-                            dynasty={dynasty}
-                            index={index}
-                            period={dynasty.period}
-                            position="right"
-                          />
+                        <Suspense fallback={<SkeletonCard />}>
+                          <DynastyCard dynasty={dynasty} index={index} period={dynasty.period} />
                         </Suspense>
                       </div>
                     </>
@@ -237,18 +150,42 @@ const Timeline = () => {
           </div>
         </div>
 
-        {/* 页脚 */}
-        <footer className="py-8 text-center">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-gray-300" />
-            <div className="w-2 h-2 rotate-45 bg-[#C41E3A]/20" />
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-gray-300" />
+        {/* 无结果提示 */}
+        {filteredDynasties.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-gray font-chinese">暂无匹配的朝代</p>
           </div>
-          <p className="text-gray-400 font-chinese text-sm">中华文明 · 源远流长</p>
-        </footer>
+        )}
       </div>
     </div>
   );
 };
+
+/**
+ * 获取时期颜色
+ */
+const getPeriodColor = (period) => {
+  const colors = {
+    'ancient': '#8B6F47',
+    'classical': '#B93A3A',
+    'medieval': '#4A6FA5',
+    'late-imperial': '#2D7A3E',
+    'modern': '#6B7280'
+  };
+  return colors[period] || '#1A1A1A';
+};
+
+/**
+ * 骨架屏卡片
+ */
+const SkeletonCard = () => (
+  <div className="bg-paper rounded p-6 border border-[rgba(0,0,0,0.12)] w-full max-w-md animate-pulse">
+    <div className="h-5 bg-[rgba(0,0,0,0.08)] rounded w-3/4 mb-3"></div>
+    <div className="h-4 bg-[rgba(0,0,0,0.06)] rounded w-1/2 mb-4"></div>
+    <div className="space-y-2">
+      <div className="h-12 bg-[rgba(0,0,0,0.06)] rounded"></div>
+    </div>
+  </div>
+);
 
 export default Timeline;
