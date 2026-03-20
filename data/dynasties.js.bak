@@ -1,4 +1,63 @@
-// 朝代数据 - 自动生成
+/**
+ * 中国历史朝代数据
+ * 包含从夏朝到清朝的所有主要朝代信息
+ * 代表君主格式：谥号（本名）
+ * 
+ * ===========================================
+ * 数据来源与参考文献
+ * ===========================================
+ * 1. 朝代年代框架
+ *    - 夏商周断代工程报告（2000 年）
+ *    - 《中国历代纪年表》（中华书局）
+ *    - 《中国历史纪年表》（方诗铭编，上海辞书出版社）
+ * 
+ * 2. 帝王世系
+ *    - 《史记》（司马迁）
+ *    - 《汉书》（班固）
+ *    - 《后汉书》（范晔）
+ *    - 《三国志》（陈寿）
+ *    - 《晋书》（房玄龄等）
+ *    - 《宋书》《南齐书》《梁书》《陈书》
+ *    - 《魏书》《北齐书》《周书》《隋书》
+ *    - 《旧唐书》《新唐书》
+ *    - 《旧五代史》《新五代史》
+ *    - 《宋史》《辽史》《金史》
+ *    - 《元史》（宋濂等）
+ *    - 《明史》（张廷玉等）
+ *    - 《清史稿》（赵尔巽等）
+ * 
+ * 3. 历史事件
+ *    - 《资治通鉴》（司马光）
+ *    - 《中国通史》（范文澜）
+ *    - 《国史大纲》（钱穆）
+ * 
+ * 4. 文化成就
+ *    - 《中国科学技术史》（李约瑟）
+ *    - 《中国文学史》（游国恩等）
+ *    - 《中国艺术史》（迈克尔·苏立文）
+ * 
+ * ===========================================
+ * 学术免责声明
+ * ===========================================
+ * 本数据文件旨在提供科普教育用途的中国历史朝代信息，
+ * 数据基于主流历史学界共识整理而成。
+ * 
+ * 请注意：
+ * 1. 夏商周年代为推定年份，学术界存在不同观点
+ *    - 夏朝（前 2070-前 1600）：采用夏商周断代工程推定年份，但夏朝存在性仍有争议
+ *    - 商朝（前 1600-前 1046）：起始年有前 1558 年等不同说法
+ *    - 西周（前 1046-前 771）：武王伐纣年份有前 1046/1045/1027 年等多种说法
+ * 2. 部分历史事件的年份可能存在争议
+ * 3. 帝王世系为简化版本，未包含所有在位时间极短的君主
+ * 4. 疆域描述为大致范围，古代边界本身不精确
+ * 
+ * 本数据不适用于学术研究，如需严谨历史研究，
+ * 请参考上述原始文献及专业学术著作。
+ * 
+ * 数据最后更新：2026 年 3 月
+ * ===========================================
+ */
+
 const dynasties = [
   {
     "id": "xia",
@@ -28,20 +87,17 @@ const dynasties = [
       {
         "name": "夏朝建立",
         "description": "禹建立夏朝，标志着中国历史上第一个王朝的诞生，开启了\"家天下\"的时代",
-        "year": -2070,
-        "period": "禹"
+        "year": -2070
       },
       {
         "name": "启继位",
         "description": "禹之子启继位，确立了世袭制，结束了禅让制",
-        "year": -2040,
-        "period": "禹"
+        "year": -2040
       },
       {
         "name": "少康中兴",
         "description": "少康复国，恢复夏朝统治，使夏朝走向强盛",
-        "year": -1980,
-        "period": "太康"
+        "year": -1980
       }
     ],
     "culturalAchievements": [
@@ -85,7 +141,7 @@ const dynasties = [
         "loser": "寒浞"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "禹",
         "reign": "",
@@ -280,38 +336,33 @@ const dynasties = [
       "zoom": 4,
       "area": 80,
       "description": "以河南为中心，扩展至河北、山东、山西、陕西等地，盘庚迁殷后稳定",
-      "capital": "殷（今河南安阳）"
+      "capital": "殷（今河南安阳）",
     },
     "events": [
       {
         "name": "商汤灭夏",
         "description": "商汤推翻夏桀的统治，建立商朝",
-        "year": -1600,
-        "period": "汤"
+        "year": -1600
       },
       {
         "name": "伊尹辅政",
         "description": "商初贤相伊尹辅佐太甲，使商朝政治清明",
-        "year": -1560,
-        "period": "太甲"
+        "year": -1560
       },
       {
         "name": "盘庚迁殷",
         "description": "盘庚将都城迁至殷（今河南安阳），商朝从此稳定发展",
-        "year": -1300,
-        "period": "盘庚"
+        "year": -1300
       },
       {
         "name": "武丁中兴",
         "description": "武丁时期商朝达到鼎盛，国力强盛，疆域扩大",
-        "year": -1250,
-        "period": "武丁"
+        "year": -1250
       },
       {
         "name": "妇好出征",
         "description": "武丁王后妇好率军征讨周边方国，是中国历史上第一位女将军",
-        "year": -1200,
-        "period": "武丁"
+        "year": -1200
       }
     ],
     "culturalAchievements": [
@@ -360,7 +411,7 @@ const dynasties = [
         "loser": "商纣王"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "汤",
         "reign": "",
@@ -685,38 +736,33 @@ const dynasties = [
       "zoom": 4,
       "area": 100,
       "description": "以关中平原为中心，通过分封制扩展至黄河中下游地区",
-      "capital": "镐京（今陕西西安）"
+      "capital": "镐京（今陕西西安）",
     },
     "events": [
       {
         "name": "牧野之战",
         "description": "周武王伐纣，在牧野之战中击败商军，商朝灭亡",
-        "year": -1046,
-        "period": "周武王（姬发）"
+        "year": -1046
       },
       {
         "name": "分封制确立",
         "description": "周公旦辅政，确立分封制，巩固周朝统治",
-        "year": -1040,
-        "period": "周成王（姬诵）"
+        "year": -1040
       },
       {
         "name": "成康之治",
         "description": "周成王、周康王时期，天下安定，刑罚不用四十余年",
-        "year": -1020,
-        "period": "周康王（姬钊）"
+        "year": -1020
       },
       {
         "name": "国人暴动",
         "description": "前 841 年发生国人暴动，周厉王被逐，是中国历史有确切纪年的开始",
-        "year": -841,
-        "period": "周厉王（姬胡）"
+        "year": -841
       },
       {
         "name": "烽火戏诸侯",
         "description": "周幽王为博褒姒一笑，烽火戏诸侯，导致西周灭亡",
-        "year": -771,
-        "period": "周幽王（姬宫湦）"
+        "year": -771
       }
     ],
     "culturalAchievements": [
@@ -764,7 +810,7 @@ const dynasties = [
         "loser": "商纣王"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "周武王（姬发）",
         "reign": "",
@@ -909,74 +955,63 @@ const dynasties = [
       "zoom": 4,
       "area": 150,
       "description": "周王室衰微，诸侯争霸，列国疆域此消彼长，文化上百家争鸣",
-      "capital": "洛邑（今河南洛阳）"
+      "capital": "洛邑（今河南洛阳）",
     },
     "events": [
       {
         "name": "平王东迁",
         "description": "周平王将都城东迁至洛邑（今洛阳），东周开始",
-        "year": -770,
-        "period": "周平王（姬宜臼）"
+        "year": -770
       },
       {
         "name": "齐桓公称霸",
         "description": "齐桓公任用管仲改革，成为春秋首霸，提出\"尊王攘夷\"",
-        "year": -685,
-        "period": "周庄王（姬佗）"
+        "year": -685
       },
       {
         "name": "城濮之战",
         "description": "晋楚城濮之战，晋文公取胜，成为春秋五霸之一",
-        "year": -632,
-        "period": "周襄王（姬郑）"
+        "year": -632
       },
       {
         "name": "孔子创立儒家",
         "description": "孔子创立儒家学派，对中国文化产生深远影响",
-        "year": -551,
-        "period": "周灵王（姬泄心）"
+        "year": -551
       },
       {
         "name": "李悝变法",
         "description": "李悝在魏国实行变法，开战国变法之先河，使魏国成为战国初期霸主",
-        "year": -400,
-        "period": "周安王（姬骄）"
+        "year": -400
       },
       {
         "name": "吴起变法",
         "description": "吴起在楚国实行变法，使楚国国力增强",
-        "year": -389,
-        "period": "周安王（姬骄）"
+        "year": -389
       },
       {
         "name": "桂陵之战",
         "description": "齐国孙膑围魏救赵，在桂陵大败魏军",
-        "year": -354,
-        "period": "周显王（姬扁）"
+        "year": -354
       },
       {
         "name": "马陵之战",
         "description": "齐国孙膑在马陵大败魏军，魏国由盛转衰",
-        "year": -341,
-        "period": "周显王（姬扁）"
+        "year": -341
       },
       {
         "name": "商鞅变法",
         "description": "商鞅在秦国实行变法，使秦国迅速强大",
-        "year": -356,
-        "period": "周显王（姬扁）"
+        "year": -356
       },
       {
         "name": "长平之战",
         "description": "秦将白起大败赵军，为秦统一六国奠定基础",
-        "year": -260,
-        "period": "周赧王（姬延）"
+        "year": -260
       },
       {
         "name": "秦灭六国",
         "description": "秦始皇先后灭掉韩、赵、魏、楚、燕、齐六国，统一中国",
-        "year": -221,
-        "period": "东周（春秋战国）"
+        "year": -221
       }
     ],
     "culturalAchievements": [
@@ -1016,7 +1051,7 @@ const dynasties = [
         "figure": null
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "周平王（姬宜臼）",
         "reign": "",
@@ -1288,44 +1323,38 @@ const dynasties = [
       "zoom": 4,
       "area": 340,
       "description": "中国历史上第一个统一的多民族国家，东到辽东，西到陇西，北抵长城，南达南海",
-      "capital": "咸阳（今陕西咸阳）"
+      "capital": "咸阳（今陕西咸阳）",
     },
     "events": [
       {
         "name": "秦朝建立",
         "description": "秦始皇统一六国，建立中国历史上第一个中央集权的封建王朝",
-        "year": -221,
-        "period": "秦始皇（嬴政）"
+        "year": -221
       },
       {
         "name": "统一文字度量衡",
         "description": "秦始皇统一文字、货币、度量衡，促进了经济文化交流",
-        "year": -220,
-        "period": "秦始皇（嬴政）"
+        "year": -220
       },
       {
         "name": "修筑长城",
         "description": "连接和修缮战国长城，形成万里长城",
-        "year": -214,
-        "period": "秦始皇（嬴政）"
+        "year": -214
       },
       {
         "name": "焚书坑儒",
         "description": "秦始皇焚烧百家书籍，活埋儒生，加强思想控制",
-        "year": -213,
-        "period": "秦始皇（嬴政）"
+        "year": -213
       },
       {
         "name": "陈胜吴广起义",
         "description": "陈胜吴广在大泽乡起义，揭开秦末农民战争序幕",
-        "year": -209,
-        "period": "秦二世（嬴胡亥）"
+        "year": -209
       },
       {
         "name": "巨鹿之战",
         "description": "项羽在巨鹿之战中大败秦军，摧毁秦朝主力",
-        "year": -207,
-        "period": "秦二世（嬴胡亥）"
+        "year": -207
       }
     ],
     "culturalAchievements": [
@@ -1424,80 +1453,68 @@ const dynasties = [
       "zoom": 4,
       "area": 609,
       "description": "汉武帝时期疆域达到极盛，东并朝鲜设汉四郡，南拓交趾、海南，西通西域设西域都护府，北击匈奴",
-      "capital": "长安（今陕西西安）"
+      "capital": "长安（今陕西西安）",
     },
     "events": [
       {
         "name": "西汉建立",
         "description": "刘邦建立汉朝，定都长安",
-        "year": -202,
-        "period": "汉高祖（刘邦）"
+        "year": -202
       },
       {
         "name": "白登之围",
         "description": "刘邦被匈奴围困于白登山，后采用陈平计策脱险",
-        "year": -200,
-        "period": "汉高祖（刘邦）"
+        "year": -200
       },
       {
         "name": "文景之治",
         "description": "汉文帝、汉景帝时期，轻徭薄赋，与民休息，社会经济恢复发展",
-        "year": -180,
-        "period": "后少帝（刘弘）"
+        "year": -180
       },
       {
         "name": "七国之乱",
         "description": "吴王刘濞等七国诸侯发动叛乱，被周亚夫平定",
-        "year": -154,
-        "period": "汉景帝（刘启）"
+        "year": -154
       },
       {
         "name": "汉武帝北击匈奴",
         "description": "汉武帝派卫青、霍去病北击匈奴，解除北方威胁",
-        "year": -127,
-        "period": "汉武帝（刘彻）"
+        "year": -127
       },
       {
         "name": "张骞通西域",
         "description": "张骞两次出使西域，开辟丝绸之路",
-        "year": -138,
-        "period": "汉武帝（刘彻）"
+        "year": -138
       },
       {
         "name": "昭君出塞",
         "description": "王昭君出塞和亲，促进汉匈和平",
-        "year": -54,
-        "period": "汉宣帝（刘询）"
+        "year": -54
       },
       {
         "name": "巫蛊之祸",
         "description": "汉武帝晚年发生巫蛊之祸，太子刘据被迫自杀",
-        "year": -91,
-        "period": "汉武帝（刘彻）"
+        "year": -91
       },
       {
         "name": "盐铁会议",
         "description": "汉昭帝召开盐铁会议，讨论盐铁官营政策，贤良文学与桑弘羊辩论",
-        "year": -81,
-        "period": "汉昭帝（刘弗陵）"
+        "year": -81
       },
       {
         "name": "昭宣中兴",
         "description": "汉昭帝、汉宣帝时期，霍光辅政，政治清明，经济恢复，史称\"昭宣中兴\"",
-        "year": -74,
-        "period": "汉昭帝（刘弗陵）"
+        "year": -74
       },
       {
         "name": "昭君出塞",
         "description": "王昭君出塞和亲，促进汉匈和平",
-        "year": -54,
-        "period": "汉宣帝（刘询）"
+        "year": -54
       },
       {
         "name": "王莽篡汉",
         "description": "王莽篡夺西汉政权，建立新朝",
-        "year": 9,
-        "period": "西汉"
+        "year": 9
       }
     ],
     "culturalAchievements": [
@@ -1537,7 +1554,7 @@ const dynasties = [
         "figure": null
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "汉高祖（刘邦）",
         "reign": "",
@@ -1714,32 +1731,27 @@ const dynasties = [
       {
         "name": "王莽篡汉",
         "description": "王莽废孺子婴，自立为帝，建立新朝，西汉灭亡",
-        "year": 9,
-        "period": "王莽"
+        "year": 9
       },
       {
         "name": "王莽改制",
         "description": "王莽推行复古改革，包括土地国有（王田制）、货币改革、官制改革等",
-        "year": 9,
-        "period": "王莽"
+        "year": 9
       },
       {
         "name": "绿林赤眉起义",
         "description": "王莽改制失败，天下大乱，绿林军、赤眉军起义爆发",
-        "year": 17,
-        "period": "王莽"
+        "year": 17
       },
       {
         "name": "昆阳之战",
         "description": "刘秀以少胜多，在昆阳大败王莽主力，奠定东汉建立基础",
-        "year": 23,
-        "period": "王莽"
+        "year": 23
       },
       {
         "name": "新朝灭亡",
         "description": "绿林军攻入长安，王莽被杀，新朝灭亡",
-        "year": 23,
-        "period": "王莽"
+        "year": 23
       }
     ],
     "culturalAchievements": [
@@ -1794,74 +1806,63 @@ const dynasties = [
       "zoom": 4,
       "area": 580,
       "description": "定都洛阳，疆域基本继承西汉，西域都护府三绝三通，南方开发加速",
-      "capital": "洛阳（今河南洛阳）"
+      "capital": "洛阳（今河南洛阳）",
     },
     "events": [
       {
         "name": "东汉建立",
         "description": "刘秀建立东汉，定都洛阳",
-        "year": 25,
-        "period": "汉光武帝（刘秀）"
+        "year": 25
       },
       {
         "name": "光武中兴",
         "description": "汉光武帝励精图治，使东汉国力恢复",
-        "year": 40,
-        "period": "汉光武帝（刘秀）"
+        "year": 40
       },
       {
         "name": "度田",
         "description": "汉光武帝下令清查全国土地和户口，加强中央集权",
-        "year": 40,
-        "period": "汉光武帝（刘秀）"
+        "year": 40
       },
       {
         "name": "明章之治",
         "description": "汉明帝、汉章帝时期，政治清明，经济繁荣，史称\"明章之治\"",
-        "year": 70,
-        "period": "汉明帝（刘庄）"
+        "year": 70
       },
       {
         "name": "班超经营西域",
         "description": "班超出使西域，恢复汉朝对西域的统治",
-        "year": 73,
-        "period": "汉明帝（刘庄）"
+        "year": 73
       },
       {
         "name": "白虎观会议",
         "description": "汉章帝召集白虎观会议，统一儒家经义",
-        "year": 79,
-        "period": "汉章帝（刘炟）"
+        "year": 79
       },
       {
         "name": "永元之隆",
         "description": "汉和帝时期，东汉国力达到鼎盛，史称\"永元之隆\"",
-        "year": 89,
-        "period": "汉和帝（刘肇）"
+        "year": 89
       },
       {
         "name": "蔡伦改进造纸术",
         "description": "蔡伦改进造纸术，对人类文明发展产生深远影响",
-        "year": 105,
-        "period": "汉和帝（刘肇）"
+        "year": 105
       },
       {
         "name": "党锢之祸",
         "description": "宦官迫害士人，禁锢党人，东汉政治日益腐败",
-        "year": 166,
-        "period": "汉桓帝（刘志）"
+        "year": 166
       },
       {
         "name": "黄巾起义",
         "description": "张角领导黄巾起义，动摇了东汉统治基础",
-        "year": 184,
-        "period": "汉灵帝（刘宏）"
+        "year": 184
       },
       {
         "name": "董卓之乱",
         "description": "董卓进京专权，各地诸侯起兵讨伐，东汉名存实亡",
-        "year": 189,
-        "period": "汉灵帝（刘宏）"
+        "year": 189
       }
     ],
     "culturalAchievements": [
@@ -1901,7 +1902,7 @@ const dynasties = [
         "figure": "张仲景"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "汉光武帝（刘秀）",
         "reign": "",
@@ -2066,50 +2067,43 @@ const dynasties = [
       "zoom": 4,
       "area": 540,
       "description": "魏蜀吴三国鼎立，曹魏据中原，蜀汉据益州，东吴据江东",
-      "capital": "洛阳（魏）、成都（蜀）、建业（吴）"
+      "capital": "洛阳（魏）、成都（蜀）、建业（吴）",
     },
     "events": [
       {
         "name": "官渡之战",
         "description": "曹操在官渡之战中以少胜多，击败袁绍，奠定统一北方的基础",
-        "year": 200,
-        "period": "三国"
+        "year": 200
       },
       {
         "name": "三顾茅庐",
         "description": "刘备三顾茅庐请诸葛亮出山，成为君臣知遇的佳话",
-        "year": 207,
-        "period": "三国"
+        "year": 207
       },
       {
         "name": "赤壁之战",
         "description": "孙刘联军在赤壁大败曹操，奠定三国鼎立基础",
-        "year": 208,
-        "period": "三国"
+        "year": 208
       },
       {
         "name": "夷陵之战",
         "description": "陆逊在夷陵之战中大败刘备，三国鼎立局面最终形成",
-        "year": 221,
-        "period": "魏文帝（曹丕）"
+        "year": 221
       },
       {
         "name": "曹丕代汉",
         "description": "曹丕逼迫汉献帝禅让，建立魏国，东汉灭亡",
-        "year": 220,
-        "period": "魏文帝（曹丕）"
+        "year": 220
       },
       {
         "name": "诸葛亮北伐",
         "description": "诸葛亮六出祁山北伐曹魏，病逝五丈原",
-        "year": 228,
-        "period": "魏明帝（曹叡）"
+        "year": 228
       },
       {
         "name": "西晋统一",
         "description": "西晋灭吴，结束三国分裂局面",
-        "year": 280,
-        "period": "吴末帝（孙皓）"
+        "year": 280
       }
     ],
     "culturalAchievements": [
@@ -2180,7 +2174,7 @@ const dynasties = [
         "loser": "蜀汉"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "魏文帝（曹丕）",
         "reign": "",
@@ -2324,26 +2318,23 @@ const dynasties = [
       "zoom": 4,
       "area": 543,
       "description": "短暂统一全国，疆域东至东海，西达葱岭，北抵燕然山，南到交州",
-      "capital": "洛阳（今河南洛阳）"
+      "capital": "洛阳（今河南洛阳）",
     },
     "events": [
       {
         "name": "西晋建立",
         "description": "司马炎逼迫魏元帝禅让，建立晋朝",
-        "year": 265,
-        "period": "晋武帝（司马炎）"
+        "year": 265
       },
       {
         "name": "西晋统一全国",
         "description": "西晋灭吴，统一全国",
-        "year": 280,
-        "period": "晋武帝（司马炎）"
+        "year": 280
       },
       {
         "name": "八王之乱",
         "description": "西晋皇室内部争夺政权的内乱，导致西晋衰落",
-        "year": 291,
-        "period": "晋惠帝（司马衷）"
+        "year": 291
       }
     ],
     "culturalAchievements": [
@@ -2363,7 +2354,7 @@ const dynasties = [
         "figure": "钟繇"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "晋武帝（司马炎）",
         "reign": "",
@@ -2426,26 +2417,23 @@ const dynasties = [
       "zoom": 4,
       "area": 280,
       "description": "偏安江南，据长江流域及以南地区，与北方五胡十六国对峙",
-      "capital": "建康（今江苏南京）"
+      "capital": "建康（今江苏南京）",
     },
     "events": [
       {
         "name": "东晋建立",
         "description": "司马睿在建康（今南京）建立东晋",
-        "year": 317,
-        "period": "晋元帝（司马睿）"
+        "year": 317
       },
       {
         "name": "淝水之战",
         "description": "东晋在淝水之战中以少胜多，击败前秦",
-        "year": 383,
-        "period": "晋孝武帝（司马曜）"
+        "year": 383
       },
       {
         "name": "刘裕代晋",
         "description": "刘裕逼迫晋恭帝禅让，建立刘宋",
-        "year": 420,
-        "period": "晋恭帝（司马德文）"
+        "year": 420
       }
     ],
     "culturalAchievements": [
@@ -2465,7 +2453,7 @@ const dynasties = [
         "figure": "陶渊明"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "晋元帝（司马睿）",
         "reign": "",
@@ -2598,26 +2586,23 @@ const dynasties = [
       "zoom": 4,
       "area": 400,
       "description": "南北分裂对峙，南朝据长江流域及以南，北朝据黄河流域及北方，民族大融合时期",
-      "capital": "建康（南朝）、洛阳（北朝）"
+      "capital": "建康（南朝）、洛阳（北朝）",
     },
     "events": [
       {
         "name": "刘宋建立",
         "description": "刘裕建立刘宋，南朝开始",
-        "year": 420,
-        "period": "宋武帝（刘裕）"
+        "year": 420
       },
       {
         "name": "北魏孝文帝改革",
         "description": "北魏孝文帝推行汉化改革，促进民族融合",
-        "year": 490,
-        "period": "北魏孝文帝（元宏）"
+        "year": 490
       },
       {
         "name": "隋灭陈",
         "description": "隋朝灭陈，结束南北朝分裂局面",
-        "year": 589,
-        "period": "陈后主（陈叔宝）"
+        "year": 589
       }
     ],
     "culturalAchievements": [
@@ -2637,7 +2622,7 @@ const dynasties = [
         "figure": "祖冲之"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "宋武帝（刘裕）",
         "reign": "",
@@ -2850,26 +2835,23 @@ const dynasties = [
       "zoom": 4,
       "area": 470,
       "description": "结束近四百年分裂，重新统一全国，东至东海，西达今甘肃，北至河套，南抵越南中部",
-      "capital": "大兴（今陕西西安）"
+      "capital": "大兴（今陕西西安）",
     },
     "events": [
       {
         "name": "隋朝建立",
         "description": "杨坚逼迫北周静帝禅让，建立隋朝",
-        "year": 581,
-        "period": "隋文帝（杨坚）"
+        "year": 581
       },
       {
         "name": "隋灭陈统一全国",
         "description": "隋朝灭陈，结束近四百年的分裂局面",
-        "year": 589,
-        "period": "隋文帝（杨坚）"
+        "year": 589
       },
       {
         "name": "开凿大运河",
         "description": "隋炀帝开凿大运河，连接南北",
-        "year": 605,
-        "period": "隋炀帝（杨广）"
+        "year": 605
       }
     ],
     "culturalAchievements": [
@@ -2889,7 +2871,7 @@ const dynasties = [
         "figure": "李春"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "隋文帝（杨坚）",
         "reign": "",
@@ -2934,74 +2916,63 @@ const dynasties = [
       "zoom": 4,
       "area": 1237,
       "description": "唐朝极盛时期疆域空前辽阔，东起朝鲜半岛，西达咸海，北包贝加尔湖，南至越南中部",
-      "capital": "长安（今陕西西安）"
+      "capital": "长安（今陕西西安）",
     },
     "events": [
       {
         "name": "唐朝建立",
         "description": "李渊建立唐朝，定都长安",
-        "year": 618,
-        "period": "唐高祖（李渊）"
+        "year": 618
       },
       {
         "name": "玄武门之变",
         "description": "李世民在玄武门发动政变，杀死太子李建成，后即位为唐太宗",
-        "year": 626,
-        "period": "唐高祖（李渊）"
+        "year": 626
       },
       {
         "name": "贞观之治",
         "description": "唐太宗励精图治，开创贞观盛世",
-        "year": 627,
-        "period": "唐太宗（李世民）"
+        "year": 627
       },
       {
         "name": "永徽之治",
         "description": "唐高宗延续太宗政策，开创\"永徽之治\"，唐朝版图达到最大",
-        "year": 650,
-        "period": "唐高宗（李治）"
+        "year": 650
       },
       {
         "name": "武则天称帝",
         "description": "武则天称帝，建立周朝，是中国历史上唯一的女皇帝",
-        "year": 690,
-        "period": "唐睿宗（李旦）"
+        "year": 690
       },
       {
         "name": "开元盛世",
         "description": "唐玄宗开元年间，唐朝达到鼎盛",
-        "year": 713,
-        "period": "唐玄宗（李隆基）"
+        "year": 713
       },
       {
         "name": "安史之乱",
         "description": "安禄山、史思明发动叛乱，唐朝由盛转衰",
-        "year": 755,
-        "period": "唐玄宗（李隆基）"
+        "year": 755
       },
       {
         "name": "甘露之变",
         "description": "唐文宗时期试图诛杀宦官失败，宦官专权加剧",
-        "year": 835,
-        "period": "唐文宗（李昂）"
+        "year": 835
       },
       {
         "name": "会昌灭佛",
         "description": "唐武宗下令灭佛，拆毁寺院，强制僧尼还俗",
-        "year": 845,
-        "period": "唐武宗（李炎）"
+        "year": 845
       },
       {
         "name": "大中之治",
         "description": "唐宣宗时期，政治清明，经济恢复，史称\"大中之治\"",
-        "year": 846,
-        "period": "唐武宗（李炎）"
+        "year": 846
       },
       {
         "name": "黄巢起义",
         "description": "黄巢领导农民起义，攻入长安，唐朝统治崩溃",
-        "year": 875,
-        "period": "唐僖宗（李儇）"
+        "year": 875
       }
     ],
     "culturalAchievements": [
@@ -3081,7 +3052,7 @@ const dynasties = [
         "loser": "唐朝"
       }
     ],
-    "lineage": [
+            "lineage": [
       {
         "name": "唐高祖（李渊）",
         "reign": "武德",
@@ -3317,62 +3288,53 @@ const dynasties = [
       "zoom": 4,
       "area": 200,
       "description": "政权更迭频繁，北方五代据中原，南方十国分裂割据，战乱不断",
-      "capital": "开封、洛阳"
+      "capital": "开封、洛阳",
     },
     "events": [
       {
         "name": "后梁建立",
         "description": "朱温灭唐，建立后梁，五代开始",
-        "year": 907,
-        "period": "后梁太祖（朱温）"
+        "year": 907
       },
       {
         "name": "前蜀建立",
         "description": "王建在成都建立前蜀",
-        "year": 907,
-        "period": "后梁太祖（朱温）"
+        "year": 907
       },
       {
         "name": "吴越建国",
         "description": "钱镠建立吴越，定都杭州，保境安民",
-        "year": 907,
-        "period": "后梁太祖（朱温）"
+        "year": 907
       },
       {
         "name": "南唐建立",
         "description": "李昪代吴建立南唐，定都金陵",
-        "year": 937,
-        "period": "后晋高祖（石敬瑭）"
+        "year": 937
       },
       {
         "name": "周世宗改革",
         "description": "后周世宗柴荣改革，为北宋统一奠定基础",
-        "year": 955,
-        "period": "后周世宗（柴荣）"
+        "year": 955
       },
       {
         "name": "北汉建立",
         "description": "刘崇在太原建立北汉，是十国中唯一的北方政权",
-        "year": 951,
-        "period": "后周太祖（郭威）"
+        "year": 951
       },
       {
         "name": "陈桥兵变",
         "description": "赵匡胤发动陈桥兵变，建立宋朝",
-        "year": 960,
-        "period": "后周恭帝（柴宗训）"
+        "year": 960
       },
       {
         "name": "南唐灭亡",
         "description": "宋军攻破金陵，南唐后主李煜投降",
-        "year": 975,
-        "period": "南唐后主（李煜）"
+        "year": 975
       },
       {
         "name": "吴越纳土归宋",
         "description": "吴越王钱俶献地归宋，和平统一",
-        "year": 978,
-        "period": "吴越忠懿王（钱俶）"
+        "year": 978
       }
     ],
     "culturalAchievements": [
@@ -3392,7 +3354,7 @@ const dynasties = [
         "figure": "赵崇祚"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "后梁太祖（朱温）",
         "reign": "",
@@ -3769,50 +3731,43 @@ const dynasties = [
       "zoom": 4,
       "area": 280,
       "description": "结束五代十国分裂，与辽、西夏、金并立，经济文化高度繁荣",
-      "capital": "开封（今河南开封）"
+      "capital": "开封（今河南开封）",
     },
     "events": [
       {
         "name": "北宋建立",
         "description": "赵匡胤建立宋朝，定都开封",
-        "year": 960,
-        "period": "宋太祖（赵匡胤）"
+        "year": 960
       },
       {
         "name": "杯酒释兵权",
         "description": "宋太祖通过酒宴解除将领兵权，加强中央集权",
-        "year": 961,
-        "period": "宋太祖（赵匡胤）"
+        "year": 961
       },
       {
         "name": "澶渊之盟",
         "description": "北宋与辽国订立澶渊之盟，维持百年和平",
-        "year": 1005,
-        "period": "宋真宗（赵恒）"
+        "year": 1005
       },
       {
         "name": "庆历新政",
         "description": "范仲淹推行庆历新政，试图改革吏治",
-        "year": 1043,
-        "period": "宋仁宗（赵祯）"
+        "year": 1043
       },
       {
         "name": "王安石变法",
         "description": "王安石在宋神宗支持下实行变法",
-        "year": 1069,
-        "period": "宋神宗（赵顼）"
+        "year": 1069
       },
       {
         "name": "元祐更化",
         "description": "宋哲宗年幼即位，太皇太后高氏垂帘听政，司马光等废除新法",
-        "year": 1085,
-        "period": "宋神宗（赵顼）"
+        "year": 1085
       },
       {
         "name": "靖康之变",
         "description": "金军攻破开封，俘虏徽、钦二帝，北宋灭亡",
-        "year": 1127,
-        "period": "宋钦宗（赵桓）"
+        "year": 1127
       }
     ],
     "culturalAchievements": [
@@ -3897,7 +3852,7 @@ const dynasties = [
         "loser": "北宋"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "宋太祖（赵匡胤）",
         "reign": "",
@@ -4010,26 +3965,23 @@ const dynasties = [
       "zoom": 5,
       "area": 200,
       "description": "偏安江南，与金朝、蒙古对峙，秦岭淮河一线为界，经济重心南移完成，海上贸易繁荣",
-      "capital": "临安（今浙江杭州）"
+      "capital": "临安（今浙江杭州）",
     },
     "events": [
       {
         "name": "南宋建立",
         "description": "赵构在临安（今杭州）建立南宋",
-        "year": 1127,
-        "period": "宋高宗（赵构）"
+        "year": 1127
       },
       {
         "name": "岳飞抗金",
         "description": "岳飞率军抗金，收复大片失地",
-        "year": 1140,
-        "period": "宋高宗（赵构）"
+        "year": 1140
       },
       {
         "name": "崖山海战",
         "description": "南宋在崖山海战中失败，南宋灭亡",
-        "year": 1279,
-        "period": "宋末帝（赵昺）"
+        "year": 1279
       }
     ],
     "culturalAchievements": [
@@ -4049,7 +4001,7 @@ const dynasties = [
         "figure": null
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "宋高宗（赵构）",
         "reign": "",
@@ -4162,38 +4114,33 @@ const dynasties = [
       "zoom": 3,
       "area": 1372,
       "description": "中国历史上疆域最大的朝代之一，东起日本海，西抵天山，北包贝加尔湖，南至南海，设行省管理全国",
-      "capital": "大都（今北京）"
+      "capital": "大都（今北京）",
     },
     "events": [
       {
         "name": "元朝建立",
         "description": "忽必烈建立元朝，定都大都（今北京）",
-        "year": 1271,
-        "period": "元世祖（忽必烈）"
+        "year": 1271
       },
       {
         "name": "元灭南宋",
         "description": "元朝灭南宋，统一全国",
-        "year": 1279,
-        "period": "元世祖（忽必烈）"
+        "year": 1279
       },
       {
         "name": "行省制度确立",
         "description": "元朝确立行省制度，设立中书省和十个行中书省，奠定中国行政区划基础",
-        "year": 1283,
-        "period": "元世祖（忽必烈）"
+        "year": 1283
       },
       {
         "name": "马可·波罗来华",
         "description": "意大利旅行家马可·波罗到达元朝，受到忽必烈接见，促进中西文化交流",
-        "year": 1275,
-        "period": "元世祖（忽必烈）"
+        "year": 1275
       },
       {
         "name": "红巾军起义",
         "description": "红巾军起义爆发，动摇元朝统治",
-        "year": 1351,
-        "period": "元顺帝（妥懽帖睦尔）"
+        "year": 1351
       }
     ],
     "culturalAchievements": [
@@ -4223,7 +4170,7 @@ const dynasties = [
         "figure": "刘秉忠"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "元世祖（忽必烈）",
         "reign": "中统、至元",
@@ -4358,56 +4305,48 @@ const dynasties = [
       "zoom": 4,
       "area": 650,
       "description": "推翻元朝统治，疆域包括内地两京十三省，东北设奴儿干都司，西北设哈密卫，永乐年间疆域最广",
-      "capital": "南京→北京（永乐十九年后）"
+      "capital": "南京→北京（永乐十九年后）",
     },
     "events": [
       {
         "name": "明朝建立",
         "description": "朱元璋建立明朝，定都南京",
-        "year": 1368,
-        "period": "明太祖（朱元璋）"
+        "year": 1368
       },
       {
         "name": "靖难之役",
         "description": "朱棣发动靖难之役，夺取皇位",
-        "year": 1399,
-        "period": "明惠宗（朱允炆）"
+        "year": 1399
       },
       {
         "name": "郑和下西洋",
         "description": "郑和七次下西洋，促进中外交流",
-        "year": 1405,
-        "period": "明成祖（朱棣）"
+        "year": 1405
       },
       {
         "name": "土木堡之变",
         "description": "明英宗被瓦剌俘虏，明朝由盛转衰",
-        "year": 1449,
-        "period": "明英宗（朱祁镇）"
+        "year": 1449
       },
       {
         "name": "北京保卫战",
         "description": "于谦领导北京保卫战，击退瓦剌，挽救明朝",
-        "year": 1449,
-        "period": "明英宗（朱祁镇）"
+        "year": 1449
       },
       {
         "name": "戚继光抗倭",
         "description": "戚继光率领戚家军抗击倭寇，保卫东南沿海",
-        "year": 1560,
-        "period": "明世宗（朱厚熜）"
+        "year": 1560
       },
       {
         "name": "张居正改革",
         "description": "张居正推行一条鞭法等改革，使明朝中兴",
-        "year": 1572,
-        "period": "明穆宗（朱载坖）"
+        "year": 1572
       },
       {
         "name": "李自成起义",
         "description": "李自成领导农民起义，攻占北京，明朝灭亡",
-        "year": 1644,
-        "period": "明思宗（朱由检）"
+        "year": 1644
       }
     ],
     "culturalAchievements": [
@@ -4508,7 +4447,7 @@ const dynasties = [
         "loser": "明朝"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "明太祖（朱元璋）",
         "reign": "洪武",
@@ -4693,104 +4632,88 @@ const dynasties = [
       "zoom": 3,
       "area": 1316,
       "description": "奠定了现代中国版图的基础，极盛时东起太平洋，西抵葱岭，北至外兴安岭，南包南海诸岛",
-      "capital": "北京"
+      "capital": "北京",
     },
     "events": [
       {
         "name": "清军入关",
         "description": "清军入关，建立全国性政权",
-        "year": 1644,
-        "period": "清世祖（福临）"
+        "year": 1644
       },
       {
         "name": "康熙擒鳌拜",
         "description": "康熙帝智擒权臣鳌拜，开始亲政",
-        "year": 1669,
-        "period": "清圣祖（玄烨）"
+        "year": 1669
       },
       {
         "name": "三藩之乱",
         "description": "吴三桂等发动三藩之乱，被康熙平定",
-        "year": 1673,
-        "period": "清圣祖（玄烨）"
+        "year": 1673
       },
       {
         "name": "收复台湾",
         "description": "施琅率军收复台湾，郑克塽投降",
-        "year": 1683,
-        "period": "清圣祖（玄烨）"
+        "year": 1683
       },
       {
         "name": "尼布楚条约",
         "description": "清朝与俄国签订《尼布楚条约》，划定东北边界",
-        "year": 1689,
-        "period": "清圣祖（玄烨）"
+        "year": 1689
       },
       {
         "name": "康乾盛世",
         "description": "康熙、雍正、乾隆三朝，清朝达到鼎盛",
-        "year": 1661,
-        "period": "清世祖（福临）"
+        "year": 1661
       },
       {
         "name": "文字狱",
         "description": "清朝大兴文字狱，禁锢思想",
-        "year": 1750,
-        "period": "清高宗（弘历）"
+        "year": 1750
       },
       {
         "name": "鸦片战争",
         "description": "英国发动鸦片战争，中国开始沦为半殖民地半封建社会",
-        "year": 1840,
-        "period": "清宣宗（旻宁）"
+        "year": 1840
       },
       {
         "name": "太平天国运动",
         "description": "洪秀全领导太平天国运动，动摇清朝统治",
-        "year": 1851,
-        "period": "清文宗（奕詝）"
+        "year": 1851
       },
       {
         "name": "洋务运动",
         "description": "曾国藩、李鸿章等推动洋务运动，学习西方技术",
-        "year": 1861,
-        "period": "清文宗（奕詝）"
+        "year": 1861
       },
       {
         "name": "第二次鸦片战争",
         "description": "英法联军攻入北京，火烧圆明园，签订《天津条约》《北京条约》",
-        "year": 1860,
-        "period": "清文宗（奕詝）"
+        "year": 1860
       },
       {
         "name": "甲午战争",
         "description": "中日甲午战争，清朝战败，签订《马关条约》",
-        "year": 1894,
-        "period": "清德宗（载湉）"
+        "year": 1894
       },
       {
         "name": "戊戌变法",
         "description": "康有为、梁启超等推动戊戌变法，试图挽救民族危机",
-        "year": 1898,
-        "period": "清德宗（载湉）"
+        "year": 1898
       },
       {
         "name": "义和团运动",
         "description": "义和团运动爆发，八国联军侵华",
-        "year": 1900,
-        "period": "清德宗（载湉）"
+        "year": 1900
       },
       {
         "name": "清末新政",
         "description": "清政府推行新政，废除科举，编练新军，试图挽救统治",
-        "year": 1901,
-        "period": "清德宗（载湉）"
+        "year": 1901
       },
       {
         "name": "辛亥革命",
         "description": "辛亥革命爆发，清朝灭亡",
-        "year": 1911,
-        "period": "清宣统帝（溥仪）"
+        "year": 1911
       }
     ],
     "culturalAchievements": [
@@ -4840,7 +4763,7 @@ const dynasties = [
         "figure": "郑板桥"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "清太祖（努尔哈赤）",
         "reign": "天命",
@@ -4984,116 +4907,98 @@ const dynasties = [
       "zoom": 4,
       "area": 1141,
       "description": "结束两千多年封建帝制，建立共和政体，经历军阀混战、抗日战争和国共内战",
-      "capital": "南京（1927-1937, 1946-1949）、重庆（战时陪都）"
+      "capital": "南京（1927-1937, 1946-1949）、重庆（战时陪都）",
     },
     "events": [
       {
         "name": "中华民国成立",
         "description": "孙中山就任临时大总统，中华民国正式成立，结束了两千多年的封建帝制",
-        "year": 1912,
-        "period": "孙中山"
+        "year": 1912
       },
       {
         "name": "清帝退位",
         "description": "清宣统帝溥仪颁布退位诏书，清朝正式灭亡",
-        "year": 1912,
-        "period": "孙中山"
+        "year": 1912
       },
       {
         "name": "二次革命",
         "description": "孙中山发动二次革命，反对袁世凯独裁统治",
-        "year": 1913,
-        "period": "袁世凯"
+        "year": 1913
       },
       {
         "name": "袁世凯称帝",
         "description": "袁世凯复辟帝制，改国号为\"中华帝国\"",
-        "year": 1915,
-        "period": "袁世凯"
+        "year": 1915
       },
       {
         "name": "护国运动",
         "description": "蔡锷等发动护国运动，反对袁世凯称帝",
-        "year": 1915,
-        "period": "袁世凯"
+        "year": 1915
       },
       {
         "name": "五四运动",
         "description": "北京学生发起五四运动，标志着中国新民主主义革命的开端",
-        "year": 1919,
-        "period": "徐世昌"
+        "year": 1919
       },
       {
         "name": "中国共产党成立",
         "description": "中国共产党第一次全国代表大会在上海召开",
-        "year": 1921,
-        "period": "徐世昌"
+        "year": 1921
       },
       {
         "name": "黄埔军校创办",
         "description": "孙中山创办黄埔军校，培养革命军事人才",
-        "year": 1924,
-        "period": "曹锟"
+        "year": 1924
       },
       {
         "name": "北伐战争",
         "description": "国民革命军出师北伐，统一中国",
-        "year": 1926,
-        "period": "段祺瑞"
+        "year": 1926
       },
       {
         "name": "南京国民政府成立",
         "description": "蒋介石建立南京国民政府",
-        "year": 1927,
-        "period": "中华民国"
+        "year": 1927
       },
       {
         "name": "九一八事变",
         "description": "日本发动九一八事变，侵占中国东北",
-        "year": 1931,
-        "period": "蒋介石"
+        "year": 1931
       },
       {
         "name": "长征",
         "description": "中国工农红军进行二万五千里长征",
-        "year": 1934,
-        "period": "蒋介石"
+        "year": 1934
       },
       {
         "name": "西安事变",
         "description": "张学良、杨虎城发动西安事变，促成国共合作抗日",
-        "year": 1936,
-        "period": "蒋介石"
+        "year": 1936
       },
       {
         "name": "七七事变",
         "description": "卢沟桥事变爆发，中国全面抗日战争开始",
-        "year": 1937,
-        "period": "蒋介石"
+        "year": 1937
       },
       {
         "name": "南京大屠杀",
         "description": "日军攻占南京，进行惨绝人寰的大屠杀",
-        "year": 1937,
-        "period": "蒋介石"
+        "year": 1937
       },
       {
         "name": "抗战胜利",
         "description": "日本宣布无条件投降，中国抗日战争取得伟大胜利",
-        "year": 1945,
-        "period": "蒋介石"
+        "year": 1945
       },
       {
         "name": "国共内战",
         "description": "国共两党爆发全面内战",
-        "year": 1946,
-        "period": "蒋介石"
+        "year": 1946
       },
       {
         "name": "中华人民共和国成立",
         "description": "毛泽东在天安门宣布中华人民共和国成立，中华民国政府迁往台湾",
-        "year": 1949,
-        "period": "李宗仁"
+        "year": 1949
       }
     ],
     "culturalAchievements": [
@@ -5128,7 +5033,7 @@ const dynasties = [
         "figure": "梅兰芳"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "孙中山",
         "reign": "",
@@ -5232,6 +5137,5 @@ const dynasties = [
       }
     ]
   }
-];
-
+]
 export default dynasties;

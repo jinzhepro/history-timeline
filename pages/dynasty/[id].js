@@ -111,7 +111,14 @@ export default function DynastyDetailPage() {
                     <span className="text-lg font-bold text-ink font-chinese">{Math.abs(event.year)}</span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-ink font-chinese mb-1">{event.name}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-bold text-ink font-chinese">{event.name}</h3>
+                      {event.period && (
+                        <span className="flex-shrink-0 text-xs text-[#B93A3A] font-chinese px-2 py-0.5 bg-[rgba(185,58,58,0.06)] rounded">
+                          {event.period}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-gray font-chinese leading-relaxed">{event.description}</p>
                   </div>
                 </div>
