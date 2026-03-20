@@ -81,4 +81,22 @@ useEffect(() => {
 4. **ECharts Import**: Use `echarts-for-react` wrapper for React components
 5. **Responsive**: Mobile uses single-column, desktop uses alternating left/right timeline
 
+## Additional Patterns
+
+**Dynamic Routes**: `pages/dynasty/[id].js` handles dynasty detail pages using Next.js dynamic routing.
+
+**Quiz Component**: `/components/Quiz.js` provides interactive history quizzes with multiple question types (multiple choice, fill-in-blank, sorting).
+
+**CSS Utility Classes** (defined in globals.css):
+- `.ink-card`, `.ink-title`, `.ink-button` - Core UI components
+- `.ink-detail-panel`, `.ink-list-item`, `.ink-divider` - Content layout
+- `.quiz-option-btn`, `.quiz-progress-bar` - Quiz UI elements
+- `.family-tree-container`, `.person-card` - ECharts visualization containers
+
+**Next.js Config**:
+- `compiler.removeConsole` strips console.log in production
+- `images.remotePatterns` allows external images from geo.datav.aliyun.com
+
+**Data Notes**: Historical dates in `dynasties.js` include academic disclaimers - Xia/Shang/Zhou dates are scholarly estimates.
+
 For detailed coding standards and conventions, see AGENTS.md.
