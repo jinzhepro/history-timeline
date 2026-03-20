@@ -2054,10 +2054,10 @@ const dynasties = [
     "founder": "魏文帝（曹丕）",
     "representativeRulers": [
       "魏文帝（曹丕）",
+      "魏明帝（曹叡）",
       "蜀汉昭烈帝（刘备）",
       "吴大帝（孙权）",
-      "诸葛亮（孔明）",
-      "司马懿"
+      "吴末帝（孙皓）"
     ],
     "territory": {
       "center": [
@@ -3275,7 +3275,10 @@ const dynasties = [
     "representativeRulers": [
       "后梁太祖（朱温）",
       "后唐庄宗（李存勖）",
-      "后周世宗（柴荣）"
+      "后周世宗（柴荣）",
+      "南唐烈祖（李昪）",
+      "南唐后主（李煜）",
+      "吴越武肃王（钱镠）"
     ],
     "territory": {
       "center": [
@@ -3294,14 +3297,44 @@ const dynasties = [
         "year": 907
       },
       {
-        "name": "陈桥兵变",
-        "description": "赵匡胤发动陈桥兵变，建立宋朝",
-        "year": 960
+        "name": "前蜀建立",
+        "description": "王建在成都建立前蜀",
+        "year": 907
+      },
+      {
+        "name": "吴越建国",
+        "description": "钱镠建立吴越，定都杭州，保境安民",
+        "year": 907
+      },
+      {
+        "name": "南唐建立",
+        "description": "李昪代吴建立南唐，定都金陵",
+        "year": 937
       },
       {
         "name": "周世宗改革",
         "description": "后周世宗柴荣改革，为北宋统一奠定基础",
         "year": 955
+      },
+      {
+        "name": "北汉建立",
+        "description": "刘崇在太原建立北汉，是十国中唯一的北方政权",
+        "year": 951
+      },
+      {
+        "name": "陈桥兵变",
+        "description": "赵匡胤发动陈桥兵变，建立宋朝",
+        "year": 960
+      },
+      {
+        "name": "南唐灭亡",
+        "description": "宋军攻破金陵，南唐后主李煜投降",
+        "year": 975
+      },
+      {
+        "name": "吴越纳土归宋",
+        "description": "吴越王钱俶献地归宋，和平统一",
+        "year": 978
       }
     ],
     "culturalAchievements": [
@@ -3454,6 +3487,226 @@ const dynasties = [
         "predecessor": "后周世宗（柴荣）",
         "successor": null,
         "note": "五代十国政权更迭频繁，此处为简化版，仅列各朝开创者和末代君主"
+      },
+      {
+        "name": "前蜀高祖（王建）",
+        "reign": "",
+        "years": "907-918 年",
+        "description": "前蜀开国皇帝，建立前蜀，定都成都",
+        "isFounder": true,
+        "order": 13,
+        "regime": "前蜀",
+        "predecessor": null,
+        "successor": "前蜀后主（王衍）"
+      },
+      {
+        "name": "前蜀后主（王衍）",
+        "reign": "",
+        "years": "918-925 年",
+        "description": "前蜀末代皇帝，被后唐灭亡",
+        "isFounder": false,
+        "order": 14,
+        "regime": "前蜀",
+        "predecessor": "前蜀高祖（王建）",
+        "successor": null
+      },
+      {
+        "name": "后蜀高祖（孟知祥）",
+        "reign": "",
+        "years": "934 年",
+        "description": "后蜀开国皇帝，建立后蜀",
+        "isFounder": true,
+        "order": 15,
+        "regime": "后蜀",
+        "predecessor": null,
+        "successor": "后蜀后主（孟昶）"
+      },
+      {
+        "name": "后蜀后主（孟昶）",
+        "reign": "",
+        "years": "934-965 年",
+        "description": "后蜀末代皇帝，被北宋灭亡",
+        "isFounder": false,
+        "order": 16,
+        "regime": "后蜀",
+        "predecessor": "后蜀高祖（孟知祥）",
+        "successor": null
+      },
+      {
+        "name": "南吴太祖（杨行密）",
+        "reign": "",
+        "years": "892-905 年",
+        "description": "南吴奠基者，被追尊为太祖",
+        "isFounder": true,
+        "order": 17,
+        "regime": "南吴",
+        "predecessor": null,
+        "successor": "南吴烈祖（杨渥）"
+      },
+      {
+        "name": "南吴睿帝（杨溥）",
+        "reign": "",
+        "years": "920-937 年",
+        "description": "南吴末代皇帝，禅位于南唐",
+        "isFounder": false,
+        "order": 18,
+        "regime": "南吴",
+        "predecessor": "南吴高祖（杨隆演）",
+        "successor": null
+      },
+      {
+        "name": "南唐烈祖（李昪）",
+        "reign": "",
+        "years": "937-943 年",
+        "description": "南唐开国皇帝，建立南唐，定都金陵",
+        "isFounder": true,
+        "order": 19,
+        "regime": "南唐",
+        "predecessor": null,
+        "successor": "南唐元宗（李璟）"
+      },
+      {
+        "name": "南唐后主（李煜）",
+        "reign": "",
+        "years": "961-975 年",
+        "description": "南唐末代皇帝，著名词人，被北宋灭亡",
+        "isFounder": false,
+        "order": 20,
+        "regime": "南唐",
+        "predecessor": "南唐元宗（李璟）",
+        "successor": null
+      },
+      {
+        "name": "吴越武肃王（钱镠）",
+        "reign": "",
+        "years": "907-932 年",
+        "description": "吴越开国君主，保境安民，发展经济",
+        "isFounder": true,
+        "order": 21,
+        "regime": "吴越",
+        "predecessor": null,
+        "successor": "吴越文穆王（钱元瓘）"
+      },
+      {
+        "name": "吴越忠懿王（钱俶）",
+        "reign": "",
+        "years": "948-978 年",
+        "description": "吴越末代君主，纳土归宋",
+        "isFounder": false,
+        "order": 22,
+        "regime": "吴越",
+        "predecessor": "吴越忠逊王（钱倧）",
+        "successor": null
+      },
+      {
+        "name": "闽太祖（王审知）",
+        "reign": "",
+        "years": "893-925 年",
+        "description": "闽国奠基者，被追尊为太祖",
+        "isFounder": true,
+        "order": 23,
+        "regime": "闽",
+        "predecessor": null,
+        "successor": "闽嗣主（王延翰）"
+      },
+      {
+        "name": "闽天德帝（王延政）",
+        "reign": "",
+        "years": "943-945 年",
+        "description": "闽国末代皇帝，被南唐灭亡",
+        "isFounder": false,
+        "order": 24,
+        "regime": "闽",
+        "predecessor": "闽景宗（王曦）",
+        "successor": null
+      },
+      {
+        "name": "南汉高祖（刘龑）",
+        "reign": "",
+        "years": "917-942 年",
+        "description": "南汉开国皇帝，建立南汉，定都广州",
+        "isFounder": true,
+        "order": 25,
+        "regime": "南汉",
+        "predecessor": null,
+        "successor": "南汉殇帝（刘玢）"
+      },
+      {
+        "name": "南汉后主（刘鋹）",
+        "reign": "",
+        "years": "958-971 年",
+        "description": "南汉末代皇帝，被北宋灭亡",
+        "isFounder": false,
+        "order": 26,
+        "regime": "南汉",
+        "predecessor": "南汉中宗（刘晟）",
+        "successor": null
+      },
+      {
+        "name": "南平武信王（高季兴）",
+        "reign": "",
+        "years": "907-928 年",
+        "description": "南平（荆南）开国君主",
+        "isFounder": true,
+        "order": 27,
+        "regime": "南平",
+        "predecessor": null,
+        "successor": "南平文献王（高从诲）"
+      },
+      {
+        "name": "南平贞懿王（高保融）",
+        "reign": "",
+        "years": "948-960 年",
+        "description": "南平末代君主，死后南平内乱",
+        "isFounder": false,
+        "order": 28,
+        "regime": "南平",
+        "predecessor": "南平贞安王（高保勗）",
+        "successor": null
+      },
+      {
+        "name": "楚武穆王（马殷）",
+        "reign": "",
+        "years": "896-930 年",
+        "description": "马楚开国君主，建立楚国，定都长沙",
+        "isFounder": true,
+        "order": 29,
+        "regime": "马楚",
+        "predecessor": null,
+        "successor": "楚衡阳王（马希声）"
+      },
+      {
+        "name": "楚废王（马希崇）",
+        "reign": "",
+        "years": "951 年",
+        "description": "马楚末代君主，被南唐灭亡",
+        "isFounder": false,
+        "order": 30,
+        "regime": "马楚",
+        "predecessor": "楚恭孝王（马希萼）",
+        "successor": null
+      },
+      {
+        "name": "北汉世祖（刘崇）",
+        "reign": "",
+        "years": "951-954 年",
+        "description": "北汉开国皇帝，建立北汉，定都太原",
+        "isFounder": true,
+        "order": 31,
+        "regime": "北汉",
+        "predecessor": null,
+        "successor": "北汉睿宗（刘钧）"
+      },
+      {
+        "name": "北汉英武帝（刘继元）",
+        "reign": "",
+        "years": "968-979 年",
+        "description": "北汉末代皇帝，被北宋灭亡",
+        "isFounder": false,
+        "order": 32,
+        "regime": "北汉",
+        "predecessor": "北汉少主（刘继恩）",
+        "successor": null
       }
     ]
   },
