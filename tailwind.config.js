@@ -7,10 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'china-red': '#C41E3A',
+        'china-red': '#B93A3A',
+        'ink': '#1A1A1A',
+        'ink-black': '#1A1A1A',
+        'ink-gray': '#4A4A4A',
+        'paper': '#F9F8F4',
+        'paper-dark': '#F0EEE8',
         'glazed-yellow': '#FFD700',
         'qinghua-blue': '#1E3A8A',
-        'ink-black': '#2C2C2C',
         'xuan-paper': '#F5F5F0',
         'antique-bronze': '#8B4513',
         'jade-green': '#00A862',

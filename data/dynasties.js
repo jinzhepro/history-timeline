@@ -964,6 +964,11 @@ const dynasties = [
         "year": -770
       },
       {
+        "name": "齐桓公称霸",
+        "description": "齐桓公任用管仲改革，成为春秋首霸，提出\"尊王攘夷\"",
+        "year": -685
+      },
+      {
         "name": "城濮之战",
         "description": "晋楚城濮之战，晋文公取胜，成为春秋五霸之一",
         "year": -632
@@ -972,6 +977,26 @@ const dynasties = [
         "name": "孔子创立儒家",
         "description": "孔子创立儒家学派，对中国文化产生深远影响",
         "year": -551
+      },
+      {
+        "name": "李悝变法",
+        "description": "李悝在魏国实行变法，开战国变法之先河，使魏国成为战国初期霸主",
+        "year": -400
+      },
+      {
+        "name": "吴起变法",
+        "description": "吴起在楚国实行变法，使楚国国力增强",
+        "year": -389
+      },
+      {
+        "name": "桂陵之战",
+        "description": "齐国孙膑围魏救赵，在桂陵大败魏军",
+        "year": -354
+      },
+      {
+        "name": "马陵之战",
+        "description": "齐国孙膑在马陵大败魏军，魏国由盛转衰",
+        "year": -341
       },
       {
         "name": "商鞅变法",
@@ -1472,6 +1497,21 @@ const dynasties = [
         "year": -91
       },
       {
+        "name": "盐铁会议",
+        "description": "汉昭帝召开盐铁会议，讨论盐铁官营政策，贤良文学与桑弘羊辩论",
+        "year": -81
+      },
+      {
+        "name": "昭宣中兴",
+        "description": "汉昭帝、汉宣帝时期，霍光辅政，政治清明，经济恢复，史称\"昭宣中兴\"",
+        "year": -74
+      },
+      {
+        "name": "昭君出塞",
+        "description": "王昭君出塞和亲，促进汉匈和平",
+        "year": -54
+      },
+      {
         "name": "王莽篡汉",
         "description": "王莽篡夺西汉政权，建立新朝",
         "year": 9
@@ -1668,6 +1708,83 @@ const dynasties = [
     ]
   },
   {
+    "id": "xin",
+    "name": "新朝",
+    "startYear": 9,
+    "endYear": 23,
+    "period": "classical",
+    "founder": "王莽",
+    "representativeRulers": [
+      "王莽"
+    ],
+    "territory": {
+      "center": [
+        108.9,
+        34.3
+      ],
+      "zoom": 4,
+      "area": 600,
+      "description": "基本继承西汉疆域，但后期因战乱导致实际控制区域缩小",
+      "capital": "长安（今陕西西安）"
+    },
+    "events": [
+      {
+        "name": "王莽篡汉",
+        "description": "王莽废孺子婴，自立为帝，建立新朝，西汉灭亡",
+        "year": 9
+      },
+      {
+        "name": "王莽改制",
+        "description": "王莽推行复古改革，包括土地国有（王田制）、货币改革、官制改革等",
+        "year": 9
+      },
+      {
+        "name": "绿林赤眉起义",
+        "description": "王莽改制失败，天下大乱，绿林军、赤眉军起义爆发",
+        "year": 17
+      },
+      {
+        "name": "昆阳之战",
+        "description": "刘秀以少胜多，在昆阳大败王莽主力，奠定东汉建立基础",
+        "year": 23
+      },
+      {
+        "name": "新朝灭亡",
+        "description": "绿林军攻入长安，王莽被杀，新朝灭亡",
+        "year": 23
+      }
+    ],
+    "culturalAchievements": [
+      {
+        "name": "王莽改制",
+        "description": "推行土地国有、禁止奴隶买卖等改革，虽失败但具有超前思想",
+        "figure": "王莽"
+      },
+      {
+        "name": "新莽卡尺",
+        "description": "据传王莽时期发明了早期卡尺，被认为是现代游标卡尺的雏形",
+        "figure": null
+      },
+      {
+        "name": "货币改革",
+        "description": "推行复杂的货币制度改革，包括金、银、龟、贝、钱、布六种货币",
+        "figure": "王莽"
+      }
+    ],
+    "lineage": [
+      {
+        "name": "王莽",
+        "reign": "始建国、天凤、地皇",
+        "years": "9-23",
+        "description": "新朝开国皇帝，原为西汉外戚，通过禅让建立新朝，推行复古改革失败",
+        "isFounder": true,
+        "order": 1,
+        "predecessor": null,
+        "successor": null
+      }
+    ]
+  },
+  {
     "id": "eastern-han",
     "name": "东汉",
     "startYear": 25,
@@ -1703,6 +1820,16 @@ const dynasties = [
         "year": 40
       },
       {
+        "name": "度田",
+        "description": "汉光武帝下令清查全国土地和户口，加强中央集权",
+        "year": 40
+      },
+      {
+        "name": "明章之治",
+        "description": "汉明帝、汉章帝时期，政治清明，经济繁荣，史称\"明章之治\"",
+        "year": 70
+      },
+      {
         "name": "班超经营西域",
         "description": "班超出使西域，恢复汉朝对西域的统治",
         "year": 73
@@ -1711,6 +1838,11 @@ const dynasties = [
         "name": "白虎观会议",
         "description": "汉章帝召集白虎观会议，统一儒家经义",
         "year": 79
+      },
+      {
+        "name": "永元之隆",
+        "description": "汉和帝时期，东汉国力达到鼎盛，史称\"永元之隆\"",
+        "year": 89
       },
       {
         "name": "蔡伦改进造纸术",
@@ -2772,6 +2904,7 @@ const dynasties = [
     "representativeRulers": [
       "唐高祖（李渊）",
       "唐太宗（李世民）",
+      "唐高宗（李治）",
       "武则天（武曌）",
       "唐玄宗（李隆基）"
     ],
@@ -2802,6 +2935,11 @@ const dynasties = [
         "year": 627
       },
       {
+        "name": "永徽之治",
+        "description": "唐高宗延续太宗政策，开创\"永徽之治\"，唐朝版图达到最大",
+        "year": 650
+      },
+      {
         "name": "武则天称帝",
         "description": "武则天称帝，建立周朝，是中国历史上唯一的女皇帝",
         "year": 690
@@ -2820,6 +2958,16 @@ const dynasties = [
         "name": "甘露之变",
         "description": "唐文宗时期试图诛杀宦官失败，宦官专权加剧",
         "year": 835
+      },
+      {
+        "name": "会昌灭佛",
+        "description": "唐武宗下令灭佛，拆毁寺院，强制僧尼还俗",
+        "year": 845
+      },
+      {
+        "name": "大中之治",
+        "description": "唐宣宗时期，政治清明，经济恢复，史称\"大中之治\"",
+        "year": 846
       },
       {
         "name": "黄巢起义",
@@ -3357,6 +3505,11 @@ const dynasties = [
         "name": "王安石变法",
         "description": "王安石在宋神宗支持下实行变法",
         "year": 1069
+      },
+      {
+        "name": "元祐更化",
+        "description": "宋哲宗年幼即位，太皇太后高氏垂帘听政，司马光等废除新法",
+        "year": 1085
       },
       {
         "name": "靖康之变",
@@ -4280,6 +4433,11 @@ const dynasties = [
         "year": 1861
       },
       {
+        "name": "第二次鸦片战争",
+        "description": "英法联军攻入北京，火烧圆明园，签订《天津条约》《北京条约》",
+        "year": 1860
+      },
+      {
         "name": "甲午战争",
         "description": "中日甲午战争，清朝战败，签订《马关条约》",
         "year": 1894
@@ -4293,6 +4451,11 @@ const dynasties = [
         "name": "义和团运动",
         "description": "义和团运动爆发，八国联军侵华",
         "year": 1900
+      },
+      {
+        "name": "清末新政",
+        "description": "清政府推行新政，废除科举，编练新军，试图挽救统治",
+        "year": 1901
       },
       {
         "name": "辛亥革命",
