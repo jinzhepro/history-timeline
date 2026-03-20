@@ -30,7 +30,10 @@ npm run test -- --testPathPattern=DynastyCard  # Single test file
 
 ```
 ├── components/        # React components (PascalCase filenames)
-├── components/quiz/   # Quiz subcomponents
+│   ├── Timeline.js    # Main timeline with lazy-loaded DynastyCard
+│   ├── DynastyCard.js # Dynasty info card
+│   ├── Quiz.js        # History quiz component
+│   └── quiz/          # Quiz subcomponents
 ├── data/              # Static data (dynasties.js - 4800+ lines)
 ├── pages/             # Next.js file-based routing
 │   ├── api/           # API routes
@@ -120,6 +123,9 @@ Primary: `'KaiTi', 'STKaiti', 'SimSun', serif` — use `font-chinese` Tailwind c
 
 ## Key Patterns
 
+### Component Lazy Loading
+Timeline.js uses `React.lazy()` + `Suspense` for DynastyCard to reduce initial bundle size.
+
 ### ECharts Usage
 Always dispose on unmount to prevent memory leaks:
 ```js
@@ -144,6 +150,16 @@ Dynasty detail pages use `pages/dynasty/[id].js` with `getStaticPaths`/`getStati
 - Use optional chaining (`?.`) and nullish coalescing (`??`)
 - Conditional rendering for empty states
 - try-catch for async operations
+
+## Important Notes
+
+1. **Path Alias**: `@/` maps to root directory (configured in jsconfig.json)
+2. **No TypeScript**: Project uses JavaScript only
+3. **No lint/test setup**: ESLint/Prettier/Jest not configured by default
+4. **ECharts Import**: Use `echarts-for-react` wrapper for React components
+5. **Responsive**: Mobile uses single-column, desktop uses alternating left/right timeline
+6. **Next.js Config**: `compiler.removeConsole` strips console.log in production
+7. **Data Notes**: Historical dates in `dynasties.js` include academic disclaimers - Xia/Shang/Zhou dates are scholarly estimates
 
 ## Git Conventions
 
