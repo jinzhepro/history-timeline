@@ -135,14 +135,15 @@ export default function DynastyDetailPage() {
                 key={index}
                 className="border border-[rgba(0,0,0,0.12)] rounded p-4 hover:border-ink/60 transition-colors"
               >
-                <h3 className="font-bold text-ink font-chinese mb-2">{achievement.name}</h3>
-                <p className="text-sm text-gray font-chinese leading-relaxed mb-2">{achievement.description}</p>
-                {achievement.figure && (
-                  <div className="text-xs text-gray font-chinese">
-                    <span className="opacity-60">代表人物：</span>
-                    <span className="text-ink">{achievement.figure}</span>
-                  </div>
-                )}
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="font-bold text-ink font-chinese">{achievement.name}</h3>
+                  {achievement.figure && (
+                    <span className="flex-shrink-0 text-xs text-[#B93A3A] font-chinese px-2 py-0.5 bg-[rgba(185,58,58,0.06)] rounded">
+                      {achievement.figure}
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-gray font-chinese leading-relaxed">{achievement.description}</p>
               </div>
             ))}
           </div>

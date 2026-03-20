@@ -48,17 +48,17 @@ const dynasties = [
       {
         "name": "青铜器制造",
         "description": "开始制造青铜器，标志着中国进入青铜时代",
-        "figure": null
+        "figure": "夏朝工匠"
       },
       {
         "name": "历法制定",
         "description": "制定《夏小正》，是中国最早的历法之一",
-        "figure": null
+        "figure": "夏朝历官"
       },
       {
         "name": "城墙建筑",
         "description": "开始建造城墙和宫殿，二里头遗址展现了早期国家形态",
-        "figure": null
+        "figure": "鲧、禹"
       }
     ],
     "battles": [
@@ -318,22 +318,22 @@ const dynasties = [
       {
         "name": "甲骨文",
         "description": "创造甲骨文，是中国已知最早的系统文字",
-        "figure": null
+        "figure": "商朝贞人"
       },
       {
         "name": "青铜器工艺",
         "description": "青铜器制造技术达到高峰，代表作品有司母戊鼎、四羊方尊等",
-        "figure": null
+        "figure": "商朝工匠"
       },
       {
         "name": "占卜文化",
         "description": "发展了系统的占卜文化，甲骨卜辞记录了当时的政治、军事、祭祀等活动",
-        "figure": null
+        "figure": "商朝贞人"
       },
       {
         "name": "《周易》起源",
         "description": "《周易》的起源，是中国最重要的哲学经典之一",
-        "figure": null
+        "figure": "周文王（姬昌）"
       }
     ],
     "battles": [
@@ -728,7 +728,7 @@ const dynasties = [
       {
         "name": "金文",
         "description": "青铜器铭文（金文）大量出现，记录了重要历史事件",
-        "figure": null
+        "figure": "西周史官"
       },
       {
         "name": "宗法制度",
@@ -743,7 +743,7 @@ const dynasties = [
       {
         "name": "井田制",
         "description": "实行井田制，是中国古代重要的土地制度",
-        "figure": null
+        "figure": "周公（姬旦）"
       },
       {
         "name": "《诗经》",
@@ -1013,7 +1013,7 @@ const dynasties = [
       {
         "name": "编钟音乐",
         "description": "曾侯乙编钟等青铜乐器，展现古代音乐文化高度",
-        "figure": null
+        "figure": "曾侯乙"
       }
     ],
     "lineage": [
@@ -1347,12 +1347,12 @@ const dynasties = [
       {
         "name": "秦直道",
         "description": "修建秦直道，是中国古代重要军事交通要道",
-        "figure": null
+        "figure": "秦始皇（嬴政）"
       },
       {
         "name": "灵渠",
         "description": "开凿灵渠，连接长江和珠江水系",
-        "figure": null
+        "figure": "史禄"
       }
     ],
     "battles": [
@@ -1534,7 +1534,7 @@ const dynasties = [
       {
         "name": "汉乐府",
         "description": "设立乐府机构，收集民间诗歌，形成汉乐府诗",
-        "figure": null
+        "figure": "汉武帝（刘彻）"
       }
     ],
     "lineage": [
@@ -1751,7 +1751,7 @@ const dynasties = [
       {
         "name": "新莽卡尺",
         "description": "据传王莽时期发明了早期卡尺，被认为是现代游标卡尺的雏形",
-        "figure": null
+        "figure": "王莽"
       },
       {
         "name": "货币改革",
@@ -1878,7 +1878,7 @@ const dynasties = [
       {
         "name": "佛教传入",
         "description": "佛教通过丝绸之路传入中国",
-        "figure": null
+        "figure": "汉明帝（刘庄）"
       },
       {
         "name": "《说文解字》",
@@ -1893,7 +1893,7 @@ const dynasties = [
       {
         "name": "《古诗十九首》",
         "description": "东汉末年文人五言诗代表作，标志五言诗成熟",
-        "figure": null
+        "figure": "东汉文人"
       },
       {
         "name": "《伤寒杂病论》",
@@ -2624,7 +2624,7 @@ const dynasties = [
       {
         "name": "龙门石窟",
         "description": "开凿龙门石窟，是中国佛教艺术宝库",
-        "figure": null
+        "figure": "北魏孝文帝（元宏）"
       },
       {
         "name": "《文心雕龙》",
@@ -3013,7 +3013,7 @@ const dynasties = [
       {
         "name": "雕版印刷术",
         "description": "雕版印刷术在唐朝发明，促进了文化传播",
-        "figure": null
+        "figure": "唐代工匠"
       },
       {
         "name": "玄奘西行",
@@ -3023,7 +3023,7 @@ const dynasties = [
       {
         "name": "敦煌艺术",
         "description": "敦煌莫高窟艺术达到高峰，是世界艺术宝库",
-        "figure": null
+        "figure": "敦煌画师"
       },
       {
         "name": "唐传奇",
@@ -3384,7 +3384,7 @@ const dynasties = [
       {
         "name": "雕版印刷",
         "description": "雕版印刷术进一步发展",
-        "figure": null
+        "figure": "五代工匠"
       },
       {
         "name": "《花间集》",
@@ -3824,12 +3824,12 @@ const dynasties = [
       {
         "name": "指南针应用",
         "description": "指南针开始应用于航海",
-        "figure": null
+        "figure": "北宋航海家"
       },
       {
         "name": "火药武器",
         "description": "火药开始用于军事，发明突火枪等武器",
-        "figure": null
+        "figure": "北宋军事家"
       },
       {
         "name": "《资治通鉴》",
@@ -3859,7 +3859,7 @@ const dynasties = [
       {
         "name": "四大书院",
         "description": "应天、岳麓、白鹿洞、嵩阳四大书院兴盛，理学传播",
-        "figure": null
+        "figure": "朱熹、张栻"
       }
     ],
     "battles": [
@@ -4046,7 +4046,7 @@ const dynasties = [
       {
         "name": "火药武器",
         "description": "火药开始用于军事，出现突火枪等武器",
-        "figure": null
+        "figure": "南宋军事家"
       }
     ],
     "lineage": [
@@ -4210,7 +4210,7 @@ const dynasties = [
       {
         "name": "青花瓷",
         "description": "元青花瓷达到很高艺术水平，景德镇成为制瓷中心",
-        "figure": null
+        "figure": "景德镇工匠"
       },
       {
         "name": "赵孟頫书法",
@@ -4449,7 +4449,7 @@ const dynasties = [
       {
         "name": "景泰蓝工艺",
         "description": "景泰蓝工艺达到高峰，成为明代特色工艺品",
-        "figure": null
+        "figure": "明景泰年间工匠"
       },
       {
         "name": "吴门四家",
@@ -4807,7 +4807,7 @@ const dynasties = [
       {
         "name": "京剧形成",
         "description": "京剧在北京形成，成为中国国粹",
-        "figure": null
+        "figure": "程长庚、谭鑫培"
       },
       {
         "name": "《儒林外史》",
@@ -4827,7 +4827,7 @@ const dynasties = [
       {
         "name": "圆明园",
         "description": "修建圆明园，被誉为\"万园之园\"",
-        "figure": null
+        "figure": "雷金玉"
       },
       {
         "name": "《桃花扇》",
