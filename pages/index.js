@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Timeline from "@/components/Timeline";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 /**
@@ -31,14 +30,8 @@ export default function Home() {
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-paper/95 backdrop-blur border-b border-[rgba(0,0,0,0.08)]' : 'bg-paper'
         }`}>
-          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="max-w-6xl mx-auto px-6 py-4">
             <h1 className="text-xl font-bold text-ink font-chinese tracking-widest">朝代纪</h1>
-            <Link
-              href="/quiz"
-              className="text-sm font-chinese px-5 py-2 border border-ink rounded text-ink hover:bg-ink hover:text-white transition-colors"
-            >
-              历史知识测验
-            </Link>
           </div>
         </nav>
 
