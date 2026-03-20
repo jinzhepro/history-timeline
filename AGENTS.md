@@ -1,171 +1,166 @@
 # AGENTS.md
 
-## 项目概述
+## Project Overview
 
-**中华历史长河（朝代纪）** - 展示中国从夏朝到清朝完整历史朝代信息的交互式时间线应用，采用水墨风格设计。
+**朝代纪 (Chaodaiji)** — Interactive timeline showcasing Chinese dynasties from Xia to Republic of China, with ink-wash (水墨) aesthetic.
 
-### 技术栈
-- **框架**: Next.js 16 (Pages Router)
-- **UI 库**: React 19
-- **样式**: Tailwind CSS 3
-- **图表**: ECharts 6 + echarts-for-react
-- **包管理**: npm
-- **语言**: JavaScript (ES6+)
+### Tech Stack
+- **Framework**: Next.js 16 (Pages Router)
+- **UI**: React 19, Tailwind CSS 3
+- **Charts**: ECharts 6 + echarts-for-react
+- **Icons**: lucide-react
+- **Language**: JavaScript (ES6+), no TypeScript
 
-## Build / Test / Lint Commands
+## Commands
 
-### 开发
 ```bash
-npm run dev      # 启动开发服务器 (http://localhost:3000)
-npm run build    # 生产构建
-npm run start    # 启动生产服务器
+npm run dev      # Dev server (http://localhost:3000)
+npm run build    # Production build
+npm run start    # Production server
 ```
 
-### 代码质量 (需先安装)
-```bash
-npm install --save-dev eslint prettier eslint-config-next
-npm run lint     # eslint . --ext .js,.jsx
-npm run format   # prettier --write "**/*.js"
-```
-
-### 测试 (需先安装)
+No lint, test, or format scripts are configured. To add testing:
 ```bash
 npm install --save-dev jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom
-# package.json 添加："test": "jest"
-npm run test     # 运行所有测试
-npm run test -- --testPathPattern=DynastyCard  # 单个测试文件
-npm run test -- --watch  # 监听模式
-npm run test -- --coverage  # 生成覆盖率报告
+# Then add "test": "jest" to package.json scripts
+npm run test -- --testPathPattern=DynastyCard  # Single test file
 ```
 
-## Code Style Guidelines
+## Project Structure
 
-### 项目结构
 ```
-nextjs-app/
-├── components/          # React 组件 (PascalCase)
-├── data/                # 静态数据
-├── pages/               # Next.js 页面路由
-├── styles/              # 全局样式
-└── utils/               # 工具函数
+├── components/        # React components (PascalCase filenames)
+├── components/quiz/   # Quiz subcomponents
+├── data/              # Static data (dynasties.js - 4800+ lines)
+├── pages/             # Next.js file-based routing
+│   ├── api/           # API routes
+│   └── dynasty/       # Dynamic route: [id].js
+├── styles/            # globals.css with ink-wash theme
+├── utils/             # Utility functions (quizGenerator.js)
+└── test/              # Test directory (currently empty)
 ```
 
-### Imports 规范
-- **使用 ES Module**，禁止 CommonJS require()
-- **路径别名**: 优先使用 `@/` (配置于 jsconfig.json)
-- **分组顺序** (组间空一行):
-  1. React/Next 核心库
-  2. 第三方库
-  3. 内部模块 (`@/...`)
-  4. 相对路径
+## Code Style
 
-```javascript
-import React, { useState } from 'react';
-import Head from "next/head";
-import Link from "next/link";
+### Imports
+- Use ES modules (`import`), never CommonJS (`require`)
+- Path alias `@/` maps to project root (configured in `jsconfig.json`)
+- Group order (blank line between groups):
+  1. React/Next core
+  2. Third-party libs
+  3. Internal `@/` imports
+  4. Relative imports
 
-import { Chart } from 'echarts';
+```js
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import Timeline from "@/components/Timeline";
+import Timeline from '@/components/Timeline';
 import dynasties from '@/data/dynasties';
-
-import { formatDate } from '../utils/helpers';
 ```
 
-### Formatting 规范
-- **缩进**: 2 个空格
-- **字符串**: 双引号 `"` (JSX props) 或单引号 `'` (普通字符串)
-- **行尾逗号**: ES6 对象/数组添加
-- **行长度**: 最大 100 字符
-- **分号**: 必须使用
-- **括号**: 函数单行时可省略，多行时必须使用
+### Formatting
+- 2-space indentation
+- Single quotes for JS strings, double quotes for JSX attributes
+- Trailing commas in objects/arrays
+- Semicolons required
+- Max line length: ~100 chars (soft)
 
-### Naming 规范
-- **组件文件**: PascalCase (`DynastyCard.js`)
-- **组件函数**: PascalCase (`function DynastyCard() {}`)
-- **函数/变量**: camelCase (`handleClick`, `filteredDynasties`)
-- **常量**: `UPPER_SNAKE_CASE` (`MAX_COUNT`)
-- **CSS 类名**: kebab-case + `ink-` 前缀 (`.ink-card`)
+### Naming
+- **Component files**: PascalCase (`DynastyCard.js`)
+- **Components**: PascalCase functions with arrow syntax
+- **Utilities**: camelCase (`formatYear`, `generateQuiz`)
+- **Constants**: UPPER_SNAKE_CASE
+- **CSS classes**: Tailwind utilities + custom `ink-` prefixed classes
 
-### 组件规范
-- **函数组件 + Hooks**，禁止 class 组件
-- **JSDoc 注释**: 组件顶部需包含功能说明
-- **Props 解构**: 直接在函数参数中解构
-- **无障碍访问**: 支持 ARIA、键盘导航
-- **导出**: `export default` 默认导出
+### Components
+- Function components with hooks only, no class components
+- JSDoc comment at top describing purpose
+- Props destructured in function parameters
+- Default export at bottom: `export default ComponentName;`
 
-### 样式规范
-- **Tailwind CSS**: 布局和原子类
-- **自定义 CSS**: `globals.css` 定义水墨风格
-- **CSS 变量**:
-  ```css
-  --china-red: #B93A3A;      /* 朱红 */
-  --ink-black: #1A1A1A;       /* 墨色 */
-  --ink-gray: #4A4A4A;        /* 淡墨 */
-  --paper: #F9F8F4;           /* 宣纸白 */
-  --paper-dark: #F0EEE8;      /* 深宣纸 */
-  ```
-- **响应式断点**: `sm: 640px`, `md: 768px`, `lg: 1024px`, `xl: 1280px`
+```js
+import React from 'react';
 
-### 错误处理
-- **异步操作**: try-catch 处理
-- **空状态**: 条件渲染处理空数据
-- **边界情况**: Optional Chaining (`?.`) 和 Nullish Coalescing (`??`)
-- **类型安全**: 使用 JSDoc 注释提供类型提示
+/**
+ * 朝代卡片组件 - 极简水墨风格
+ */
+const DynastyCard = ({ dynasty, index }) => {
+  // ...
+};
 
-## 开发注意事项
-
-### ECharts 使用
-- **用途**: 疆域地图、朝代世系表
-- **内存管理**: 组件卸载时销毁实例
-  ```javascript
-  useEffect(() => {
-    return () => chartInstance.current?.dispose();
-  }, []);
-  ```
-- **响应式**: 监听窗口大小变化，调用 `resize()`
-
-### 数据管理
-- **静态数据**: `/data/dynasties.js`
-- **性能优化**: 使用 `useMemo`, `useCallback`
-
-### 水墨风格
-- **配色**: 遵守 globals.css 主题色
-- **字体**: 优先楷体 (`KaiTi`, `STKaiti`)
-
-### Next.js Pages Router
-- **文件路由**: `pages/` 目录即路由
-- **动态路由**: `[id].js` 处理动态参数
-- **数据获取**: `getStaticProps` / `getServerSideProps`
-- **懒加载**: `dynamic(() => import(...), { ssr: false })`
-- **Head 组件**: 使用 `next/head` 设置页面元数据
-
-## Git 工作流
-
-### 提交信息规范
-```
-feat: 新功能
-fix: 修复 bug
-docs: 文档更新
-style: 代码格式
-refactor: 重构
-test: 添加测试
-chore: 构建/工具配置
+export default DynastyCard;
 ```
 
-### 分支策略
-- `main`: 生产分支
-- `develop`: 开发分支
-- `feature/*`: 功能分支
-- `fix/*`: 修复分支
+## Styling
 
-## Other Rules
+### Tailwind Custom Colors (tailwind.config.js)
+```js
+'china-red': '#B93A3A'    // 朱红
+'ink': '#1A1A1A'          // 墨色
+'ink-black': '#1A1A1A'
+'ink-gray': '#4A4A4A'
+'paper': '#F9F8F4'        // 宣纸白
+'paper-dark': '#F0EEE8'
+```
 
-### Cursor Rules
-No specific Cursor rules found.
+### CSS Variables (globals.css)
+Same colors available as CSS vars: `--china-red`, `--ink-black`, `--paper`, etc.
 
-### Copilot Rules
-No specific Copilot rules found.
+### Font
+Primary: `'KaiTi', 'STKaiti', 'SimSun', serif` — use `font-chinese` Tailwind class.
 
----
-**最后更新**: 2026 年 3 月 20 日
+### Custom CSS Classes (globals.css)
+- `.ink-card` — card with hover border effect
+- `.ink-button`, `.ink-button-primary` — styled buttons
+- `.ink-badge`, `.ink-badge-red` — small labels
+- `.ink-input` — form inputs
+- `.quiz-option-btn` — quiz answer buttons
+
+## Key Patterns
+
+### ECharts Usage
+Always dispose on unmount to prevent memory leaks:
+```js
+const chartRef = useRef(null);
+useEffect(() => {
+  return () => chartRef.current?.getEchartsInstance()?.dispose();
+}, []);
+```
+
+### Data Source
+All dynasty data lives in `/data/dynasties.js` (4800+ lines). Structure per dynasty:
+```js
+{ id, name, startYear, endYear, period, founder,
+  representativeRulers, territory, events,
+  culturalAchievements, battles, lineage }
+```
+
+### Dynamic Routes
+Dynasty detail pages use `pages/dynasty/[id].js` with `getStaticPaths`/`getStaticProps`.
+
+### Error Handling
+- Use optional chaining (`?.`) and nullish coalescing (`??`)
+- Conditional rendering for empty states
+- try-catch for async operations
+
+## Git Conventions
+
+```
+feat: new feature
+fix: bug fix
+docs: documentation
+style: formatting
+refactor: code restructuring
+test: adding tests
+chore: build/tooling config
+```
+
+## Notes for Agents
+
+- No Cursor rules (`.cursorrules`) or Copilot instructions found
+- Project uses Pages Router, not App Router
+- Chinese language UI — preserve Chinese text in components
+- Ink-wash aesthetic is core — use muted colors, avoid bright/modern styles
+- Data file is large; search carefully when modifying dynasty data
