@@ -1,5 +1,6 @@
-import React, { useState, useMemo, Suspense } from 'react';
+import React, { useState, useMemo, Suspense, useRef, useCallback } from 'react';
 import TimelineFilter from './TimelineFilter';
+import TimelineOverview from './TimelineOverview';
 import dynasties from '../data/dynasties';
 
 // 懒加载 DynastyCard 组件
@@ -11,6 +12,7 @@ const DynastyCard = React.lazy(() => import('./DynastyCard'));
 const Timeline = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const dynastyRefs = useRef({});
 
   // 时期选项
   const periodOptions = [
@@ -31,6 +33,24 @@ const Timeline = () => {
     if (keywords.length === 0) return true;
     return keywords.every(keyword => text.toLowerCase().includes(keyword));
   };
+
+  /**
+   * 滚动到指定朝代卡片
+   */
+  const scrollToDynasty = useCallback((dynasty, index) => {
+    const element = dynastyRefs.current[dynasty.id];
+    if (element) {
+      // 计算滚动位置，考虑导航栏高度
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
 
   // 过滤朝代
   const filteredDynasties = useMemo(() => {
@@ -65,6 +85,12 @@ const Timeline = () => {
 
   return (
     <div className="relative">
+      {/* 朝代概览导航 */}
+      <TimelineOverview 
+        dynasties={filteredDynasties} 
+        onDynastyClick={scrollToDynasty} 
+      />
+      
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* 标题 */}
         <div className="text-center mb-12">
@@ -97,6 +123,7 @@ const Timeline = () => {
               <div
                 key={dynasty.id}
                 className="ink-animate mb-10"
+                ref={el => dynastyRefs.current[dynasty.id] = el}
               >
                 {/* 移动端 - 单列显示 */}
                 <div className="md:hidden">
