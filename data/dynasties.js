@@ -141,7 +141,7 @@ const dynasties = [
         "loser": "寒浞"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "禹",
         "reign": "",
@@ -150,52 +150,52 @@ const dynasties = [
         "isFounder": true,
         "order": 1,
         "predecessor": null,
-        "successor": "夏启（启）"
+        "successor": "启"
       },
       {
-        "name": "夏启（启）",
+        "name": "启",
         "reign": "",
-        "years": "约前2040-前1990",
+        "years": "约前 2020-前 1990",
         "description": "禹之子，确立世袭制，结束了禅让制",
         "isFounder": false,
         "order": 2,
         "predecessor": "禹",
-        "successor": "少康"
+        "successor": "太康"
       },
       {
         "name": "太康",
         "reign": "",
-        "years": "约前1990-前1950",
+        "years": "约前 1990-前 1960",
         "description": "启之子，沉迷打猎，失国于有穷氏",
         "isFounder": false,
         "order": 3,
-        "predecessor": "夏启（启）",
+        "predecessor": "启",
         "successor": "仲康"
       },
       {
         "name": "仲康",
         "reign": "",
-        "years": "约前1950-前1940",
+        "years": "约前 1960-前 1950",
         "description": "太康之弟，短暂在位",
         "isFounder": false,
         "order": 4,
-        "predecessor": "夏启（启）",
+        "predecessor": "太康",
         "successor": "相"
       },
       {
         "name": "相",
         "reign": "",
-        "years": "约前1940-前1910",
+        "years": "约前 1950-前 1920",
         "description": "仲康之子，被寒浞杀害",
         "isFounder": false,
         "order": 5,
-        "predecessor": "夏启（启）",
+        "predecessor": "仲康",
         "successor": "少康"
       },
       {
         "name": "少康",
         "reign": "",
-        "years": "约前 1910-前 1870",
+        "years": "约前 1920-前 1890",
         "description": "相之遗腹子，中兴夏朝，恢复统治",
         "isFounder": false,
         "order": 6,
@@ -205,7 +205,7 @@ const dynasties = [
       {
         "name": "杼",
         "reign": "",
-        "years": "约前 1870-前 1840",
+        "years": "约前 1890-前 1880",
         "description": "少康之子，继续发展夏朝",
         "isFounder": false,
         "order": 7,
@@ -213,23 +213,103 @@ const dynasties = [
         "successor": "槐"
       },
       {
-        "name": "杼",
+        "name": "槐",
         "reign": "",
-        "years": "约前1870-前1840",
-        "description": "少康之子，继续发展夏朝",
-        "isFounder": false,
-        "order": 7,
-        "predecessor": "少康",
-        "successor": "桀（履癸）"
-      },
-      {
-        "name": "桀（履癸）",
-        "reign": "",
-        "years": "约前1650-前1600",
-        "description": "夏朝末代君主，暴虐无道，被商汤灭亡",
+        "years": "约前 1880-前 1870",
+        "description": "杼之子，夏朝继续发展",
         "isFounder": false,
         "order": 8,
-        "predecessor": "夏朝",
+        "predecessor": "杼",
+        "successor": "芒"
+      },
+      {
+        "name": "芒",
+        "reign": "",
+        "years": "约前 1870-前 1850",
+        "description": "槐之子，沉溺享乐",
+        "isFounder": false,
+        "order": 9,
+        "predecessor": "槐",
+        "successor": "泄"
+      },
+      {
+        "name": "泄",
+        "reign": "",
+        "years": "约前 1850-前 1840",
+        "description": "芒之子",
+        "isFounder": false,
+        "order": 10,
+        "predecessor": "芒",
+        "successor": "不降"
+      },
+      {
+        "name": "不降",
+        "reign": "",
+        "years": "约前 1840-前 1820",
+        "description": "泄之子，在位久长",
+        "isFounder": false,
+        "order": 11,
+        "predecessor": "泄",
+        "successor": "扃"
+      },
+      {
+        "name": "扃",
+        "reign": "",
+        "years": "约前 1820-前 1810",
+        "description": "不降之弟",
+        "isFounder": false,
+        "order": 12,
+        "predecessor": "不降",
+        "successor": "廑"
+      },
+      {
+        "name": "廑",
+        "reign": "",
+        "years": "约前 1810-前 1800",
+        "description": "扃之子",
+        "isFounder": false,
+        "order": 13,
+        "predecessor": "扃",
+        "successor": "孔甲"
+      },
+      {
+        "name": "孔甲",
+        "reign": "",
+        "years": "约前 1800-前 1780",
+        "description": "不降之子，迷信鬼神",
+        "isFounder": false,
+        "order": 14,
+        "predecessor": "廑",
+        "successor": "皋"
+      },
+      {
+        "name": "皋",
+        "reign": "",
+        "years": "约前 1780-前 1770",
+        "description": "孔甲之子",
+        "isFounder": false,
+        "order": 15,
+        "predecessor": "孔甲",
+        "successor": "发"
+      },
+      {
+        "name": "发",
+        "reign": "",
+        "years": "约前 1770-前 1760",
+        "description": "皋之子",
+        "isFounder": false,
+        "order": 16,
+        "predecessor": "皋",
+        "successor": "桀"
+      },
+      {
+        "name": "桀",
+        "reign": "",
+        "years": "约前 1760-前 1600",
+        "description": "发之子，夏朝末代君主，暴虐无道，被商汤灭亡",
+        "isFounder": false,
+        "order": 17,
+        "predecessor": "发",
         "successor": null
       }
     ]
@@ -265,6 +345,11 @@ const dynasties = [
         "year": -1600
       },
       {
+        "name": "伊尹辅政",
+        "description": "商初贤相伊尹辅佐太甲，使商朝政治清明",
+        "year": -1560
+      },
+      {
         "name": "盘庚迁殷",
         "description": "盘庚将都城迁至殷（今河南安阳），商朝从此稳定发展",
         "year": -1300
@@ -273,6 +358,11 @@ const dynasties = [
         "name": "武丁中兴",
         "description": "武丁时期商朝达到鼎盛，国力强盛，疆域扩大",
         "year": -1250
+      },
+      {
+        "name": "妇好出征",
+        "description": "武丁王后妇好率军征讨周边方国，是中国历史上第一位女将军",
+        "year": -1200
       }
     ],
     "culturalAchievements": [
@@ -289,6 +379,11 @@ const dynasties = [
       {
         "name": "占卜文化",
         "description": "发展了系统的占卜文化，甲骨卜辞记录了当时的政治、军事、祭祀等活动",
+        "figure": null
+      },
+      {
+        "name": "《周易》起源",
+        "description": "《周易》的起源，是中国最重要的哲学经典之一",
         "figure": null
       }
     ],
@@ -316,9 +411,9 @@ const dynasties = [
         "loser": "商纣王"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
-        "name": "商汤（汤）",
+        "name": "汤",
         "reign": "",
         "years": "约前 1600-前 1580",
         "description": "商朝开国君主，灭夏建商",
@@ -331,10 +426,10 @@ const dynasties = [
         "name": "外丙",
         "reign": "",
         "years": "约前 1580-前 1575",
-        "description": "商汤之子，短暂在位",
+        "description": "汤之子，短暂在位",
         "isFounder": false,
         "order": 2,
-        "predecessor": "商汤（汤）",
+        "predecessor": "汤",
         "successor": "仲壬"
       },
       {
@@ -351,80 +446,270 @@ const dynasties = [
         "name": "太甲",
         "reign": "",
         "years": "约前 1570-前 1540",
-        "description": "商汤之孙，伊尹辅政，商朝稳定发展",
+        "description": "汤之孙，伊尹辅政，商朝稳定发展",
         "isFounder": false,
         "order": 4,
         "predecessor": "仲壬",
         "successor": "沃丁"
       },
       {
-        "name": "盘庚",
+        "name": "沃丁",
         "reign": "",
-        "years": "约前1300-前1270",
-        "description": "迁都于殷，商朝从此稳定发展",
+        "years": "约前 1540-前 1520",
+        "description": "太甲之子",
         "isFounder": false,
         "order": 5,
-        "predecessor": "商朝",
-        "successor": "武丁"
+        "predecessor": "太甲",
+        "successor": "太庚"
+      },
+      {
+        "name": "太庚",
+        "reign": "",
+        "years": "约前 1520-前 1500",
+        "description": "太甲之子",
+        "isFounder": false,
+        "order": 6,
+        "predecessor": "沃丁",
+        "successor": "小甲"
+      },
+      {
+        "name": "小甲",
+        "reign": "",
+        "years": "约前 1500-前 1480",
+        "description": "太庚之子",
+        "isFounder": false,
+        "order": 7,
+        "predecessor": "太庚",
+        "successor": "雍己"
+      },
+      {
+        "name": "雍己",
+        "reign": "",
+        "years": "约前 1480-前 1460",
+        "description": "太庚之子，商朝开始衰落",
+        "isFounder": false,
+        "order": 8,
+        "predecessor": "小甲",
+        "successor": "太戊"
+      },
+      {
+        "name": "太戊",
+        "reign": "",
+        "years": "约前 1460-前 1420",
+        "description": "雍己之弟，伊陟辅政，商朝中兴",
+        "isFounder": false,
+        "order": 9,
+        "predecessor": "雍己",
+        "successor": "仲丁"
+      },
+      {
+        "name": "仲丁",
+        "reign": "",
+        "years": "约前 1420-前 1410",
+        "description": "太戊之子，迁都于隞",
+        "isFounder": false,
+        "order": 10,
+        "predecessor": "太戊",
+        "successor": "外壬"
+      },
+      {
+        "name": "外壬",
+        "reign": "",
+        "years": "约前 1410-前 1400",
+        "description": "太戊之子",
+        "isFounder": false,
+        "order": 11,
+        "predecessor": "仲丁",
+        "successor": "河亶甲"
+      },
+      {
+        "name": "河亶甲",
+        "reign": "",
+        "years": "约前 1400-前 1390",
+        "description": "太戊之子，迁都于相",
+        "isFounder": false,
+        "order": 12,
+        "predecessor": "外壬",
+        "successor": "祖乙"
+      },
+      {
+        "name": "祖乙",
+        "reign": "",
+        "years": "约前 1390-前 1370",
+        "description": "河亶甲之子，迁都于邢，商朝中兴",
+        "isFounder": false,
+        "order": 13,
+        "predecessor": "河亶甲",
+        "successor": "祖辛"
+      },
+      {
+        "name": "祖辛",
+        "reign": "",
+        "years": "约前 1370-前 1360",
+        "description": "祖乙之子",
+        "isFounder": false,
+        "order": 14,
+        "predecessor": "祖乙",
+        "successor": "沃甲"
+      },
+      {
+        "name": "沃甲",
+        "reign": "",
+        "years": "约前 1360-前 1350",
+        "description": "祖乙之子",
+        "isFounder": false,
+        "order": 15,
+        "predecessor": "祖辛",
+        "successor": "祖丁"
+      },
+      {
+        "name": "祖丁",
+        "reign": "",
+        "years": "约前 1350-前 1340",
+        "description": "祖辛之子",
+        "isFounder": false,
+        "order": 16,
+        "predecessor": "沃甲",
+        "successor": "南庚"
+      },
+      {
+        "name": "南庚",
+        "reign": "",
+        "years": "约前 1340-前 1330",
+        "description": "沃甲之子，迁都于奄",
+        "isFounder": false,
+        "order": 17,
+        "predecessor": "祖丁",
+        "successor": "阳甲"
+      },
+      {
+        "name": "阳甲",
+        "reign": "",
+        "years": "约前 1330-前 1320",
+        "description": "祖丁之子，商朝继续衰落",
+        "isFounder": false,
+        "order": 18,
+        "predecessor": "南庚",
+        "successor": "盘庚"
+      },
+      {
+        "name": "盘庚",
+        "reign": "",
+        "years": "约前 1320-前 1300",
+        "description": "祖丁之子，迁都于殷，商朝中兴",
+        "isFounder": false,
+        "order": 19,
+        "predecessor": "阳甲",
+        "successor": "小辛"
       },
       {
         "name": "小辛",
         "reign": "",
-        "years": "约前1270-前1250",
-        "description": "盘庚之弟，商朝继续发展",
+        "years": "约前 1300-前 1280",
+        "description": "祖丁之子",
         "isFounder": false,
-        "order": 6,
+        "order": 20,
         "predecessor": "盘庚",
         "successor": "小乙"
       },
       {
         "name": "小乙",
         "reign": "",
-        "years": "约前1250-前1230",
-        "description": "商朝君主，武丁之父",
+        "years": "约前 1280-前 1260",
+        "description": "祖丁之子，武丁之父",
         "isFounder": false,
-        "order": 7,
-        "predecessor": "盘庚",
+        "order": 21,
+        "predecessor": "小辛",
         "successor": "武丁"
       },
       {
         "name": "武丁",
         "reign": "",
-        "years": "约前1230-前1180",
-        "description": "商朝鼎盛时期，开创武丁中兴",
+        "years": "约前 1260-前 1190",
+        "description": "小乙之子，商朝鼎盛，开创武丁中兴",
         "isFounder": false,
-        "order": 8,
-        "predecessor": "商朝",
-        "successor": "纣（帝辛）"
+        "order": 22,
+        "predecessor": "小乙",
+        "successor": "祖庚"
       },
       {
         "name": "祖庚",
         "reign": "",
-        "years": "约前1180-前1160",
+        "years": "约前 1190-前 1180",
         "description": "武丁之子",
         "isFounder": false,
-        "order": 9,
+        "order": 23,
         "predecessor": "武丁",
         "successor": "祖甲"
       },
       {
         "name": "祖甲",
         "reign": "",
-        "years": "约前1160-前1140",
-        "description": "武丁之子，商朝继续发展",
+        "years": "约前 1180-前 1160",
+        "description": "武丁之子",
         "isFounder": false,
-        "order": 10,
-        "predecessor": "武丁",
-        "successor": "纣（帝辛）"
+        "order": 24,
+        "predecessor": "祖庚",
+        "successor": "廪辛"
       },
       {
-        "name": "纣（帝辛）",
+        "name": "廪辛",
         "reign": "",
-        "years": "约前1075-前1046",
-        "description": "商朝末代君主，暴虐无道，被周武王灭亡",
+        "years": "约前 1160-前 1150",
+        "description": "武丁之子",
         "isFounder": false,
-        "order": 11,
-        "predecessor": "商朝",
+        "order": 25,
+        "predecessor": "祖甲",
+        "successor": "庚丁"
+      },
+      {
+        "name": "庚丁",
+        "reign": "",
+        "years": "约前 1150-前 1140",
+        "description": "武丁之子",
+        "isFounder": false,
+        "order": 26,
+        "predecessor": "廪辛",
+        "successor": "武乙"
+      },
+      {
+        "name": "武乙",
+        "reign": "",
+        "years": "约前 1140-前 1110",
+        "description": "庚丁之子，迷信占卜",
+        "isFounder": false,
+        "order": 27,
+        "predecessor": "庚丁",
+        "successor": "文丁"
+      },
+      {
+        "name": "文丁",
+        "reign": "",
+        "years": "约前 1110-前 1100",
+        "description": "武乙之子",
+        "isFounder": false,
+        "order": 28,
+        "predecessor": "武乙",
+        "successor": "帝乙"
+      },
+      {
+        "name": "帝乙",
+        "reign": "",
+        "years": "约前 1100-前 1075",
+        "description": "文丁之子，商朝开始衰落",
+        "isFounder": false,
+        "order": 29,
+        "predecessor": "文丁",
+        "successor": "帝辛"
+      },
+      {
+        "name": "帝辛",
+        "reign": "",
+        "years": "约前 1075-前 1046",
+        "description": "帝乙之子，商朝末代君主，暴虐无道，被周武王灭亡",
+        "isFounder": false,
+        "order": 30,
+        "predecessor": "帝乙",
         "successor": null
       }
     ]
@@ -468,6 +753,16 @@ const dynasties = [
         "name": "成康之治",
         "description": "周成王、周康王时期，天下安定，刑罚不用四十余年",
         "year": -1020
+      },
+      {
+        "name": "国人暴动",
+        "description": "前 841 年发生国人暴动，周厉王被逐，是中国历史有确切纪年的开始",
+        "year": -841
+      },
+      {
+        "name": "烽火戏诸侯",
+        "description": "周幽王为博褒姒一笑，烽火戏诸侯，导致西周灭亡",
+        "year": -771
       }
     ],
     "culturalAchievements": [
@@ -485,6 +780,21 @@ const dynasties = [
         "name": "宗法制度",
         "description": "确立以嫡长子继承制为核心的宗法制度",
         "figure": "周公旦（姬旦）"
+      },
+      {
+        "name": "《周易》",
+        "description": "周文王演周易，是中国最重要的哲学经典",
+        "figure": "周文王（姬昌）"
+      },
+      {
+        "name": "井田制",
+        "description": "实行井田制，是中国古代重要的土地制度",
+        "figure": null
+      },
+      {
+        "name": "《诗经》",
+        "description": "中国最早的诗歌总集，收录西周至春秋诗歌 305 篇",
+        "figure": "孔子（孔丘）整理"
       }
     ],
     "battles": [
@@ -500,7 +810,7 @@ const dynasties = [
         "loser": "商纣王"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "周武王（姬发）",
         "reign": "",
@@ -514,7 +824,7 @@ const dynasties = [
       {
         "name": "周成王（姬诵）",
         "reign": "",
-        "years": "前1042-前1021",
+        "years": "前 1042-前 1021",
         "description": "周武王之子，周公旦辅政，开创成康之治",
         "isFounder": false,
         "order": 2,
@@ -524,51 +834,91 @@ const dynasties = [
       {
         "name": "周康王（姬钊）",
         "reign": "",
-        "years": "前1020-前996",
+        "years": "前 1020-前 996",
         "description": "周成王之子，继续成康之治",
         "isFounder": false,
         "order": 3,
         "predecessor": "周成王（姬诵）",
+        "successor": "周昭王（姬瑕）"
+      },
+      {
+        "name": "周昭王（姬瑕）",
+        "reign": "",
+        "years": "前 995-前 977",
+        "description": "周康王之子，南征荆楚，溺死于汉水",
+        "isFounder": false,
+        "order": 4,
+        "predecessor": "周康王（姬钊）",
         "successor": "周穆王（姬满）"
       },
       {
         "name": "周穆王（姬满）",
         "reign": "",
-        "years": "前976-前922",
+        "years": "前 976-前 922",
         "description": "西周中期君主，周游天下，记载于《穆天子传》",
         "isFounder": false,
-        "order": 4,
-        "predecessor": "西周",
-        "successor": "周厉王（姬胡）"
+        "order": 5,
+        "predecessor": "周昭王（姬瑕）",
+        "successor": "周共王（姬繄扈）"
       },
       {
         "name": "周共王（姬繄扈）",
         "reign": "",
-        "years": "前922-前900",
+        "years": "前 922-前 900",
         "description": "周穆王之子",
         "isFounder": false,
-        "order": 5,
+        "order": 6,
         "predecessor": "周穆王（姬满）",
+        "successor": "周懿王（姬囏）"
+      },
+      {
+        "name": "周懿王（姬囏）",
+        "reign": "",
+        "years": "前 900-前 892",
+        "description": "周共王之子",
+        "isFounder": false,
+        "order": 7,
+        "predecessor": "周共王（姬繄扈）",
+        "successor": "周孝王（姬辟方）"
+      },
+      {
+        "name": "周孝王（姬辟方）",
+        "reign": "",
+        "years": "前 892-前 886",
+        "description": "周穆王之子，周共王之弟",
+        "isFounder": false,
+        "order": 8,
+        "predecessor": "周懿王（姬囏）",
+        "successor": "周夷王（姬燮）"
+      },
+      {
+        "name": "周夷王（姬燮）",
+        "reign": "",
+        "years": "前 886-前 878",
+        "description": "周懿王之子",
+        "isFounder": false,
+        "order": 9,
+        "predecessor": "周孝王（姬辟方）",
         "successor": "周厉王（姬胡）"
       },
       {
         "name": "周厉王（姬胡）",
         "reign": "",
-        "years": "前877-前841",
-        "description": "暴虐无道，引发国人暴动，被流放",
+        "years": "前 877-前 841",
+        "description": "周夷王之子，暴虐无道，引发国人暴动，被流放",
         "isFounder": false,
-        "order": 6,
-        "predecessor": "西周",
+        "order": 10,
+        "predecessor": "周夷王（姬燮）",
         "successor": "周宣王（姬静）"
       },
       {
         "name": "周宣王（姬静）",
         "reign": "",
-        "years": "前828-前782",
+        "years": "前 828-前 782",
         "description": "周厉王之子，中兴西周",
         "isFounder": false,
-        "order": 7,
-        "predecessor": "西周",
+        "order": 11,
+        "predecessor": "周厉王（姬胡）",
         "successor": "周幽王（姬宫湦）"
       },
       {
@@ -577,8 +927,8 @@ const dynasties = [
         "years": "前 781-前 771",
         "description": "西周末代君主，宠爱褒姒，废嫡立庶，导致申侯联合犬戎攻破镐京",
         "isFounder": false,
-        "order": 8,
-        "predecessor": "西周",
+        "order": 12,
+        "predecessor": "周宣王（姬静）",
         "successor": null
       }
     ]
@@ -604,7 +954,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 150,
-      "description": "周王室衰微，诸侯争霸，各诸侯国疆域此消彼长，文化上百家争鸣",
+      "description": "周王室衰微，诸侯争霸，列国疆域此消彼长，文化上百家争鸣",
       "capital": "洛邑（今河南洛阳）",
     },
     "events": [
@@ -612,6 +962,11 @@ const dynasties = [
         "name": "平王东迁",
         "description": "周平王将都城东迁至洛邑（今洛阳），东周开始",
         "year": -770
+      },
+      {
+        "name": "城濮之战",
+        "description": "晋楚城濮之战，晋文公取胜，成为春秋五霸之一",
+        "year": -632
       },
       {
         "name": "孔子创立儒家",
@@ -656,16 +1011,26 @@ const dynasties = [
         "figure": "老子（李耳）"
       },
       {
+        "name": "《论语》",
+        "description": "记录孔子及其弟子言行的语录体著作，儒家经典",
+        "figure": "孔子（孔丘）及其弟子"
+      },
+      {
         "name": "都江堰水利工程",
         "description": "李冰父子修建都江堰，是世界上最古老的水利工程之一",
         "figure": "李冰"
+      },
+      {
+        "name": "编钟音乐",
+        "description": "曾侯乙编钟等青铜乐器，展现古代音乐文化高度",
+        "figure": null
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "周平王（姬宜臼）",
         "reign": "",
-        "years": "前770-前720年",
+        "years": "前 770-前 720",
         "description": "东周开国君主，迁都洛邑",
         "isFounder": true,
         "order": 1,
@@ -675,7 +1040,7 @@ const dynasties = [
       {
         "name": "周桓王（姬林）",
         "reign": "",
-        "years": "前719-前697年",
+        "years": "前 719-前 697",
         "description": "周平王之孙",
         "isFounder": false,
         "order": 2,
@@ -685,47 +1050,47 @@ const dynasties = [
       {
         "name": "周庄王（姬佗）",
         "reign": "",
-        "years": "前696-前682年",
+        "years": "前 696-前 682",
         "description": "周桓王之子",
         "isFounder": false,
         "order": 3,
-        "predecessor": "周平王（姬宜臼）",
+        "predecessor": "周桓王（姬林）",
         "successor": "周釐王（姬胡齐）"
       },
       {
         "name": "周釐王（姬胡齐）",
         "reign": "",
-        "years": "前681-前677年",
+        "years": "前 681-前 677",
         "description": "周庄王之子",
         "isFounder": false,
         "order": 4,
-        "predecessor": "周平王（姬宜臼）",
+        "predecessor": "周庄王（姬佗）",
         "successor": "周惠王（姬阆）"
       },
       {
         "name": "周惠王（姬阆）",
         "reign": "",
-        "years": "前676-前652年",
+        "years": "前 676-前 652",
         "description": "周釐王之子",
         "isFounder": false,
         "order": 5,
-        "predecessor": "周平王（姬宜臼）",
+        "predecessor": "周釐王（姬胡齐）",
         "successor": "周襄王（姬郑）"
       },
       {
         "name": "周襄王（姬郑）",
         "reign": "",
-        "years": "前651-前619年",
+        "years": "前 651-前 619",
         "description": "周惠王之子",
         "isFounder": false,
         "order": 6,
-        "predecessor": "东周（春秋战国）",
-        "successor": "周简王（姬夷）"
+        "predecessor": "周惠王（姬阆）",
+        "successor": "周顷王（姬壬臣）"
       },
       {
         "name": "周顷王（姬壬臣）",
         "reign": "",
-        "years": "前618-前613年",
+        "years": "前 618-前 613",
         "description": "周襄王之子",
         "isFounder": false,
         "order": 7,
@@ -735,37 +1100,37 @@ const dynasties = [
       {
         "name": "周匡王（姬班）",
         "reign": "",
-        "years": "前612-前607年",
+        "years": "前 612-前 607",
         "description": "周顷王之子",
         "isFounder": false,
         "order": 8,
-        "predecessor": "周襄王（姬郑）",
+        "predecessor": "周顷王（姬壬臣）",
         "successor": "周定王（姬瑜）"
       },
       {
         "name": "周定王（姬瑜）",
         "reign": "",
-        "years": "前606-前586年",
+        "years": "前 606-前 586",
         "description": "周匡王之弟",
         "isFounder": false,
         "order": 9,
-        "predecessor": "周襄王（姬郑）",
+        "predecessor": "周匡王（姬班）",
         "successor": "周简王（姬夷）"
       },
       {
         "name": "周简王（姬夷）",
         "reign": "",
-        "years": "前585-前572年",
+        "years": "前 585-前 572",
         "description": "周定王之子",
         "isFounder": false,
         "order": 10,
-        "predecessor": "东周（春秋战国）",
-        "successor": "周敬王（姬匄）"
+        "predecessor": "周定王（姬瑜）",
+        "successor": "周灵王（姬泄心）"
       },
       {
         "name": "周灵王（姬泄心）",
         "reign": "",
-        "years": "前571-前545年",
+        "years": "前 571-前 545",
         "description": "周简王之子",
         "isFounder": false,
         "order": 11,
@@ -775,100 +1140,140 @@ const dynasties = [
       {
         "name": "周景王（姬贵）",
         "reign": "",
-        "years": "前544-前520年",
+        "years": "前 544-前 520",
         "description": "周灵王之子",
         "isFounder": false,
         "order": 12,
         "predecessor": "周灵王（姬泄心）",
+        "successor": "周悼王（姬猛）"
+      },
+      {
+        "name": "周悼王（姬猛）",
+        "reign": "",
+        "years": "前 520",
+        "description": "周景王之子，在位不久去世",
+        "isFounder": false,
+        "order": 13,
+        "predecessor": "周景王（姬贵）",
         "successor": "周敬王（姬匄）"
       },
       {
         "name": "周敬王（姬匄）",
         "reign": "",
-        "years": "前519-前476年",
+        "years": "前 519-前 476",
         "description": "周景王之子，王子朝之乱后即位",
         "isFounder": false,
-        "order": 13,
-        "predecessor": "东周（春秋战国）",
-        "successor": "周威烈王（姬午）"
+        "order": 14,
+        "predecessor": "周悼王（姬猛）",
+        "successor": "周元王（姬仁）"
       },
       {
         "name": "周元王（姬仁）",
         "reign": "",
-        "years": "前475-前469年",
+        "years": "前 475-前 469",
         "description": "周敬王之子",
         "isFounder": false,
-        "order": 14,
+        "order": 15,
         "predecessor": "周敬王（姬匄）",
         "successor": "周贞定王（姬介）"
       },
       {
         "name": "周贞定王（姬介）",
         "reign": "",
-        "years": "前468-前441年",
+        "years": "前 468-前 441",
         "description": "周元王之子",
         "isFounder": false,
-        "order": 15,
-        "predecessor": "周敬王（姬匄）",
+        "order": 16,
+        "predecessor": "周元王（姬仁）",
+        "successor": "周哀王（姬去疾）"
+      },
+      {
+        "name": "周哀王（姬去疾）",
+        "reign": "",
+        "years": "前 441",
+        "description": "周贞定王之子，在位不久被杀",
+        "isFounder": false,
+        "order": 17,
+        "predecessor": "周贞定王（姬介）",
+        "successor": "周思王（姬叔）"
+      },
+      {
+        "name": "周思王（姬叔）",
+        "reign": "",
+        "years": "前 441",
+        "description": "周贞定王之子，在位不久被杀",
+        "isFounder": false,
+        "order": 18,
+        "predecessor": "周哀王（姬去疾）",
+        "successor": "周考王（姬嵬）"
+      },
+      {
+        "name": "周考王（姬嵬）",
+        "reign": "",
+        "years": "前 440-前 426",
+        "description": "周贞定王之子",
+        "isFounder": false,
+        "order": 19,
+        "predecessor": "周思王（姬叔）",
         "successor": "周威烈王（姬午）"
       },
       {
         "name": "周威烈王（姬午）",
         "reign": "",
-        "years": "前425-前402年",
-        "description": "战国时期周王室",
+        "years": "前 425-前 402",
+        "description": "战国时期周王室，封三家为诸侯",
         "isFounder": false,
-        "order": 16,
-        "predecessor": "东周（春秋战国）",
-        "successor": "周慎靓王（姬定）"
+        "order": 20,
+        "predecessor": "周考王（姬嵬）",
+        "successor": "周安王（姬骄）"
       },
       {
         "name": "周安王（姬骄）",
         "reign": "",
-        "years": "前401-前376年",
+        "years": "前 401-前 376",
         "description": "周威烈王之子",
         "isFounder": false,
-        "order": 17,
+        "order": 21,
         "predecessor": "周威烈王（姬午）",
         "successor": "周烈王（姬喜）"
       },
       {
         "name": "周烈王（姬喜）",
         "reign": "",
-        "years": "前375-前369年",
+        "years": "前 375-前 369",
         "description": "周安王之子",
         "isFounder": false,
-        "order": 18,
-        "predecessor": "周威烈王（姬午）",
+        "order": 22,
+        "predecessor": "周安王（姬骄）",
         "successor": "周显王（姬扁）"
       },
       {
         "name": "周显王（姬扁）",
         "reign": "",
-        "years": "前368-前321年",
+        "years": "前 368-前 321",
         "description": "周烈王之弟",
         "isFounder": false,
-        "order": 19,
-        "predecessor": "周威烈王（姬午）",
+        "order": 23,
+        "predecessor": "周烈王（姬喜）",
         "successor": "周慎靓王（姬定）"
       },
       {
         "name": "周慎靓王（姬定）",
         "reign": "",
-        "years": "前320-前315年",
+        "years": "前 320-前 315",
         "description": "周显王之子",
         "isFounder": false,
-        "order": 20,
-        "predecessor": "东周（春秋战国）",
+        "order": 24,
+        "predecessor": "周显王（姬扁）",
         "successor": "周赧王（姬延）"
       },
       {
         "name": "周赧王（姬延）",
         "reign": "",
-        "years": "前314-前256年",
+        "years": "前 314-前 256",
         "description": "周慎靓王之子，东周末代君主",
         "isFounder": false,
-        "order": 21,
+        "order": 25,
         "predecessor": "周慎靓王（姬定）",
         "successor": null
       }
@@ -1022,7 +1427,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 609,
-      "description": "汉武帝时期疆域达到极盛，开拓西域，北击匈奴，东并朝鲜，南拓交趾",
+      "description": "汉武帝时期疆域达到极盛，东并朝鲜设汉四郡，南拓交趾、海南，西通西域设西域都护府，北击匈奴",
       "capital": "长安（今陕西西安）",
     },
     "events": [
@@ -1055,6 +1460,11 @@ const dynasties = [
         "name": "张骞通西域",
         "description": "张骞两次出使西域，开辟丝绸之路",
         "year": -138
+      },
+      {
+        "name": "昭君出塞",
+        "description": "王昭君出塞和亲，促进汉匈和平",
+        "year": -54
       },
       {
         "name": "巫蛊之祸",
@@ -1092,13 +1502,23 @@ const dynasties = [
         "name": "太初历",
         "description": "汉武帝时期制定太初历，是中国第一部比较完整的历法",
         "figure": "司马迁、公孙卿"
+      },
+      {
+        "name": "《淮南子》",
+        "description": "淮南王刘安主持编纂，是西汉重要的哲学著作",
+        "figure": "刘安"
+      },
+      {
+        "name": "汉乐府",
+        "description": "设立乐府机构，收集民间诗歌，形成汉乐府诗",
+        "figure": null
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "汉高祖（刘邦）",
         "reign": "",
-        "years": "前202-前195",
+        "years": "前 202-前 195",
         "description": "西汉开国皇帝，建立汉朝",
         "isFounder": true,
         "order": 1,
@@ -1113,7 +1533,7 @@ const dynasties = [
         "isFounder": false,
         "order": 2,
         "predecessor": "汉高祖（刘邦）",
-        "successor": "汉文帝（刘恒）"
+        "successor": "前少帝（刘恭）"
       },
       {
         "name": "前少帝（刘恭）",
@@ -1132,34 +1552,34 @@ const dynasties = [
         "description": "汉惠帝之子，吕后死后被废",
         "isFounder": false,
         "order": 4,
-        "predecessor": "汉惠帝（刘盈）",
+        "predecessor": "前少帝（刘恭）",
         "successor": "汉文帝（刘恒）"
       },
       {
         "name": "汉文帝（刘恒）",
         "reign": "",
-        "years": "前180-前157",
-        "description": "开创文景之治，轻徭薄赋",
+        "years": "前 180-前 157",
+        "description": "汉高祖之子，开创文景之治，轻徭薄赋",
         "isFounder": false,
         "order": 5,
-        "predecessor": "汉高祖（刘邦）",
-        "successor": "汉武帝（刘彻）"
+        "predecessor": "后少帝（刘弘）",
+        "successor": "汉景帝（刘启）"
       },
       {
         "name": "汉景帝（刘启）",
         "reign": "",
-        "years": "前157-前141",
-        "description": "继续文景之治，平定七国之乱",
+        "years": "前 157-前 141",
+        "description": "汉文帝之子，继续文景之治，平定七国之乱",
         "isFounder": false,
         "order": 6,
         "predecessor": "汉文帝（刘恒）",
-        "successor": "汉昭帝（刘弗陵）"
+        "successor": "汉武帝（刘彻）"
       },
       {
         "name": "汉武帝（刘彻）",
         "reign": "",
-        "years": "前141-前87",
-        "description": "开创汉武盛世，北击匈奴，开辟丝绸之路",
+        "years": "前 141-前 87",
+        "description": "汉景帝之子，开创汉武盛世，北击匈奴，开辟丝绸之路",
         "isFounder": false,
         "order": 7,
         "predecessor": "汉景帝（刘启）",
@@ -1169,7 +1589,7 @@ const dynasties = [
         "name": "汉昭帝（刘弗陵）",
         "reign": "",
         "years": "前 87-前 74",
-        "description": "霍光辅政",
+        "description": "汉武帝之子，霍光辅政",
         "isFounder": false,
         "order": 8,
         "predecessor": "汉武帝（刘彻）",
@@ -1182,24 +1602,24 @@ const dynasties = [
         "description": "汉武帝之孙，在位仅 27 天，被霍光废黜",
         "isFounder": false,
         "order": 9,
-        "predecessor": "汉武帝（刘彻）",
+        "predecessor": "汉昭帝（刘弗陵）",
         "successor": "汉宣帝（刘询）"
       },
       {
         "name": "汉宣帝（刘询）",
         "reign": "",
-        "years": "前74-前49",
-        "description": "开创孝宣之治，西汉达到鼎盛",
+        "years": "前 74-前 49",
+        "description": "汉武帝曾孙，开创孝宣之治，西汉达到鼎盛",
         "isFounder": false,
         "order": 10,
-        "predecessor": "汉武帝（刘彻）",
+        "predecessor": "汉废帝（刘贺）",
         "successor": "汉元帝（刘奭）"
       },
       {
         "name": "汉元帝（刘奭）",
         "reign": "",
         "years": "前 48-前 33",
-        "description": "西汉中期君主",
+        "description": "汉宣帝之子，西汉中期君主",
         "isFounder": false,
         "order": 11,
         "predecessor": "汉宣帝（刘询）",
@@ -1209,7 +1629,7 @@ const dynasties = [
         "name": "汉成帝（刘骜）",
         "reign": "",
         "years": "前 33-前 7",
-        "description": "西汉后期君主，外戚专权",
+        "description": "汉元帝之子，外戚专权",
         "isFounder": false,
         "order": 12,
         "predecessor": "汉元帝（刘奭）",
@@ -1219,7 +1639,7 @@ const dynasties = [
         "name": "汉哀帝（刘欣）",
         "reign": "",
         "years": "前 7-前 1",
-        "description": "西汉末期君主",
+        "description": "汉元帝之孙，西汉末期君主",
         "isFounder": false,
         "order": 13,
         "predecessor": "汉成帝（刘骜）",
@@ -1229,7 +1649,7 @@ const dynasties = [
         "name": "汉平帝（刘衎）",
         "reign": "",
         "years": "1-5 年",
-        "description": "王莽专权",
+        "description": "汉元帝之孙，王莽专权",
         "isFounder": false,
         "order": 14,
         "predecessor": "汉哀帝（刘欣）",
@@ -1239,7 +1659,7 @@ const dynasties = [
         "name": "孺子婴（刘婴）",
         "reign": "",
         "years": "6-8 年",
-        "description": "王莽摄政，西汉灭亡",
+        "description": "汉宣帝玄孙，王莽摄政，西汉灭亡",
         "isFounder": false,
         "order": 15,
         "predecessor": "汉平帝（刘衎）",
@@ -1268,7 +1688,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 580,
-      "description": "定都洛阳，疆域基本继承西汉，西域都护府继续存在，与罗马帝国并列为世界两大强国",
+      "description": "定都洛阳，疆域基本继承西汉，西域都护府三绝三通，南方开发加速",
       "capital": "洛阳（今河南洛阳）",
     },
     "events": [
@@ -1286,6 +1706,16 @@ const dynasties = [
         "name": "班超经营西域",
         "description": "班超出使西域，恢复汉朝对西域的统治",
         "year": 73
+      },
+      {
+        "name": "白虎观会议",
+        "description": "汉章帝召集白虎观会议，统一儒家经义",
+        "year": 79
+      },
+      {
+        "name": "蔡伦改进造纸术",
+        "description": "蔡伦改进造纸术，对人类文明发展产生深远影响",
+        "year": 105
       },
       {
         "name": "党锢之祸",
@@ -1328,9 +1758,19 @@ const dynasties = [
         "name": "浑天仪",
         "description": "张衡发明浑天仪和地动仪，是世界最早的地震仪器",
         "figure": "张衡"
+      },
+      {
+        "name": "《古诗十九首》",
+        "description": "东汉末年文人五言诗代表作，标志五言诗成熟",
+        "figure": null
+      },
+      {
+        "name": "《伤寒杂病论》",
+        "description": "张仲景著，确立中医辨证论治原则",
+        "figure": "张仲景"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "汉光武帝（刘秀）",
         "reign": "",
@@ -1344,18 +1784,18 @@ const dynasties = [
       {
         "name": "汉明帝（刘庄）",
         "reign": "",
-        "years": "57-75年",
-        "description": "明章之治，东汉继续发展",
+        "years": "57-75 年",
+        "description": "汉光武帝之子，明章之治",
         "isFounder": false,
         "order": 2,
         "predecessor": "汉光武帝（刘秀）",
-        "successor": "汉和帝（刘肇）"
+        "successor": "汉章帝（刘炟）"
       },
       {
         "name": "汉章帝（刘炟）",
         "reign": "",
-        "years": "75-88年",
-        "description": "明章之治达到顶峰",
+        "years": "75-88 年",
+        "description": "汉明帝之子，明章之治达到顶峰",
         "isFounder": false,
         "order": 3,
         "predecessor": "汉明帝（刘庄）",
@@ -1364,8 +1804,8 @@ const dynasties = [
       {
         "name": "汉和帝（刘肇）",
         "reign": "",
-        "years": "88-105年",
-        "description": "永元之隆，东汉鼎盛时期",
+        "years": "88-105 年",
+        "description": "汉章帝之子，永元之隆，东汉鼎盛时期",
         "isFounder": false,
         "order": 4,
         "predecessor": "汉章帝（刘炟）",
@@ -1375,7 +1815,7 @@ const dynasties = [
         "name": "汉殇帝（刘隆）",
         "reign": "",
         "years": "105-106 年",
-        "description": "在位仅 1 年，幼年即位",
+        "description": "汉和帝之子，在位仅 1 年，幼年即位",
         "isFounder": false,
         "order": 5,
         "predecessor": "汉和帝（刘肇）",
@@ -1385,41 +1825,31 @@ const dynasties = [
         "name": "汉安帝（刘祜）",
         "reign": "",
         "years": "106-125 年",
-        "description": "东汉中期君主",
+        "description": "汉章帝之孙，东汉中期君主",
         "isFounder": false,
         "order": 6,
         "predecessor": "汉殇帝（刘隆）",
-        "successor": "汉顺帝（刘保）"
+        "successor": "汉少帝（刘懿）"
       },
       {
-        "name": "汉顺帝（刘保）",
+        "name": "汉少帝（刘懿）",
         "reign": "",
-        "years": "125-144 年",
-        "description": "东汉后期君主",
+        "years": "125 年",
+        "description": "汉章帝之孙，在位数月去世",
         "isFounder": false,
         "order": 7,
         "predecessor": "汉安帝（刘祜）",
-        "successor": "汉冲帝（刘炳）"
-      },
-      {
-        "name": "汉安帝（刘祜）",
-        "reign": "",
-        "years": "106-125年",
-        "description": "东汉中期君主",
-        "isFounder": false,
-        "order": 6,
-        "predecessor": "东汉",
         "successor": "汉顺帝（刘保）"
       },
       {
         "name": "汉顺帝（刘保）",
         "reign": "",
         "years": "125-144 年",
-        "description": "东汉后期君主",
+        "description": "汉安帝之子，东汉后期君主",
         "isFounder": false,
-        "order": 7,
-        "predecessor": "东汉",
-        "successor": "汉质帝（刘缵）"
+        "order": 8,
+        "predecessor": "汉少帝（刘懿）",
+        "successor": "汉冲帝（刘炳）"
       },
       {
         "name": "汉冲帝（刘炳）",
@@ -1427,7 +1857,7 @@ const dynasties = [
         "years": "144-145 年",
         "description": "汉顺帝之子，即位时年仅 2 岁，在位不到半年",
         "isFounder": false,
-        "order": 8,
+        "order": 9,
         "predecessor": "汉顺帝（刘保）",
         "successor": "汉质帝（刘缵）"
       },
@@ -1437,7 +1867,7 @@ const dynasties = [
         "years": "145-146 年",
         "description": "汉章帝曾孙，被梁冀毒死",
         "isFounder": false,
-        "order": 9,
+        "order": 10,
         "predecessor": "汉冲帝（刘炳）",
         "successor": "汉桓帝（刘志）"
       },
@@ -1445,9 +1875,9 @@ const dynasties = [
         "name": "汉桓帝（刘志）",
         "reign": "",
         "years": "146-168 年",
-        "description": "党锢之祸发生",
+        "description": "汉章帝曾孙，党锢之祸发生",
         "isFounder": false,
-        "order": 10,
+        "order": 11,
         "predecessor": "汉质帝（刘缵）",
         "successor": "汉灵帝（刘宏）"
       },
@@ -1455,20 +1885,30 @@ const dynasties = [
         "name": "汉灵帝（刘宏）",
         "reign": "",
         "years": "168-189 年",
-        "description": "黄巾起义爆发",
+        "description": "汉章帝玄孙，黄巾起义爆发",
         "isFounder": false,
-        "order": 11,
+        "order": 12,
         "predecessor": "汉桓帝（刘志）",
+        "successor": "汉少帝（刘辩）"
+      },
+      {
+        "name": "汉少帝（刘辩）",
+        "reign": "",
+        "years": "189 年",
+        "description": "汉灵帝之子，被董卓废黜",
+        "isFounder": false,
+        "order": 13,
+        "predecessor": "汉灵帝（刘宏）",
         "successor": "汉献帝（刘协）"
       },
       {
         "name": "汉献帝（刘协）",
         "reign": "",
         "years": "189-220 年",
-        "description": "东汉末代君主，被曹丕废黜，东汉灭亡",
+        "description": "汉灵帝之子，东汉末代君主，被曹丕废黜，东汉灭亡",
         "isFounder": false,
-        "order": 12,
-        "predecessor": "汉灵帝（刘宏）",
+        "order": 14,
+        "predecessor": "汉少帝（刘辩）",
         "successor": null
       }
     ]
@@ -1504,6 +1944,11 @@ const dynasties = [
         "year": 200
       },
       {
+        "name": "三顾茅庐",
+        "description": "刘备三顾茅庐请诸葛亮出山，成为君臣知遇的佳话",
+        "year": 207
+      },
+      {
         "name": "赤壁之战",
         "description": "孙刘联军在赤壁大败曹操，奠定三国鼎立基础",
         "year": 208
@@ -1519,6 +1964,11 @@ const dynasties = [
         "year": 220
       },
       {
+        "name": "诸葛亮北伐",
+        "description": "诸葛亮六出祁山北伐曹魏，病逝五丈原",
+        "year": 228
+      },
+      {
         "name": "西晋统一",
         "description": "西晋灭吴，结束三国分裂局面",
         "year": 280
@@ -1527,8 +1977,8 @@ const dynasties = [
     "culturalAchievements": [
       {
         "name": "建安文学",
-        "description": "曹操、曹丕、曹植父子开创建安文学",
-        "figure": "曹操、曹丕、曹植"
+        "description": "曹操、曹丕、曹植父子开创建安文学，建安七子并世",
+        "figure": "曹操、曹丕、曹植、建安七子"
       },
       {
         "name": "《出师表》",
@@ -1539,6 +1989,11 @@ const dynasties = [
         "name": "九品中正制",
         "description": "曹丕采纳陈群建议，实行九品中正制",
         "figure": "陈群"
+      },
+      {
+        "name": "《典论·论文》",
+        "description": "曹丕著《典论·论文》，是中国最早的文学批评专论",
+        "figure": "曹丕"
       }
     ],
     "battles": [
@@ -1587,7 +2042,7 @@ const dynasties = [
         "loser": "蜀汉"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "魏文帝（曹丕）",
         "reign": "",
@@ -1603,7 +2058,7 @@ const dynasties = [
         "name": "魏明帝（曹叡）",
         "reign": "",
         "years": "226-239 年",
-        "description": "曹丕之子，诸葛亮北伐的主要对手",
+        "description": "魏文帝之子，诸葛亮北伐的主要对手",
         "isFounder": false,
         "order": 2,
         "regime": "曹魏",
@@ -1614,7 +2069,7 @@ const dynasties = [
         "name": "魏齐王（曹芳）",
         "reign": "",
         "years": "239-254 年",
-        "description": "曹叡养子，司马懿专权",
+        "description": "魏明帝养子，司马懿专权",
         "isFounder": false,
         "order": 3,
         "regime": "曹魏",
@@ -1625,7 +2080,7 @@ const dynasties = [
         "name": "魏高贵乡公（曹髦）",
         "reign": "",
         "years": "254-260 年",
-        "description": "反抗司马昭失败被杀",
+        "description": "魏文帝之孙，反抗司马昭失败被杀",
         "isFounder": false,
         "order": 4,
         "regime": "曹魏",
@@ -1636,7 +2091,7 @@ const dynasties = [
         "name": "魏元帝（曹奂）",
         "reign": "",
         "years": "260-265 年",
-        "description": "曹魏末代皇帝，被司马炎废黜",
+        "description": "魏武帝曹操之孙，曹魏末代皇帝，被司马炎废黜",
         "isFounder": false,
         "order": 5,
         "regime": "曹魏",
@@ -1702,7 +2157,7 @@ const dynasties = [
         "name": "吴末帝（孙皓）",
         "reign": "",
         "years": "264-280 年",
-        "description": "东吴末代皇帝，被西晋灭亡",
+        "description": "孙权之孙，东吴末代皇帝，被西晋灭亡",
         "isFounder": false,
         "order": 11,
         "regime": "东吴",
@@ -1730,7 +2185,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 543,
-      "description": "短暂统一全国，疆域继承三国，但八王之乱后迅速衰落",
+      "description": "短暂统一全国，疆域东至东海，西达葱岭，北抵燕然山，南到交州",
       "capital": "洛阳（今河南洛阳）",
     },
     "events": [
@@ -1767,7 +2222,7 @@ const dynasties = [
         "figure": "钟繇"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "晋武帝（司马炎）",
         "reign": "",
@@ -1781,7 +2236,7 @@ const dynasties = [
       {
         "name": "晋惠帝（司马衷）",
         "reign": "",
-        "years": "290-307年",
+        "years": "290-307 年",
         "description": "晋武帝之子，八王之乱时期",
         "isFounder": false,
         "order": 2,
@@ -1791,21 +2246,21 @@ const dynasties = [
       {
         "name": "晋怀帝（司马炽）",
         "reign": "",
-        "years": "307-313年",
+        "years": "307-313 年",
         "description": "晋武帝之子，被刘聪俘虏",
         "isFounder": false,
         "order": 3,
-        "predecessor": "晋武帝（司马炎）",
+        "predecessor": "晋惠帝（司马衷）",
         "successor": "晋愍帝（司马邺）"
       },
       {
         "name": "晋愍帝（司马邺）",
         "reign": "",
-        "years": "313-316年",
-        "description": "西晋末代皇帝，被刘聪俘虏，西晋灭亡",
+        "years": "313-316 年",
+        "description": "晋武帝之孙，西晋末代皇帝，被刘聪俘虏，西晋灭亡",
         "isFounder": false,
         "order": 4,
-        "predecessor": "晋武帝（司马炎）",
+        "predecessor": "晋怀帝（司马炽）",
         "successor": null
       }
     ]
@@ -1829,7 +2284,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 280,
-      "description": "偏安江南，与北方十六国对峙，文化上玄学、书法、绘画达到高峰",
+      "description": "偏安江南，据长江流域及以南地区，与北方五胡十六国对峙",
       "capital": "建康（今江苏南京）",
     },
     "events": [
@@ -1866,7 +2321,7 @@ const dynasties = [
         "figure": "陶渊明"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "晋元帝（司马睿）",
         "reign": "",
@@ -1880,7 +2335,7 @@ const dynasties = [
       {
         "name": "晋明帝（司马绍）",
         "reign": "",
-        "years": "322-325年",
+        "years": "322-325 年",
         "description": "晋元帝之子",
         "isFounder": false,
         "order": 2,
@@ -1890,7 +2345,7 @@ const dynasties = [
       {
         "name": "晋成帝（司马衍）",
         "reign": "",
-        "years": "325-342年",
+        "years": "325-342 年",
         "description": "晋明帝之子",
         "isFounder": false,
         "order": 3,
@@ -1900,57 +2355,57 @@ const dynasties = [
       {
         "name": "晋康帝（司马岳）",
         "reign": "",
-        "years": "342-344年",
-        "description": "晋成帝之弟",
+        "years": "342-344 年",
+        "description": "晋明帝之子，晋成帝之弟",
         "isFounder": false,
         "order": 4,
-        "predecessor": "晋明帝（司马绍）",
+        "predecessor": "晋成帝（司马衍）",
         "successor": "晋穆帝（司马聃）"
       },
       {
         "name": "晋穆帝（司马聃）",
         "reign": "",
-        "years": "344-361年",
-        "description": "晋康帝之子",
+        "years": "344-361 年",
+        "description": "晋成帝之子",
         "isFounder": false,
         "order": 5,
-        "predecessor": "晋明帝（司马绍）",
+        "predecessor": "晋康帝（司马岳）",
         "successor": "晋哀帝（司马丕）"
       },
       {
         "name": "晋哀帝（司马丕）",
         "reign": "",
-        "years": "361-365年",
+        "years": "361-365 年",
         "description": "晋成帝之子",
         "isFounder": false,
         "order": 6,
-        "predecessor": "东晋",
+        "predecessor": "晋穆帝（司马聃）",
         "successor": "晋废帝（司马奕）"
       },
       {
         "name": "晋废帝（司马奕）",
         "reign": "",
-        "years": "365-371年",
-        "description": "晋哀帝之弟",
+        "years": "365-371 年",
+        "description": "晋成帝之子，晋哀帝之弟",
         "isFounder": false,
         "order": 7,
-        "predecessor": "东晋",
+        "predecessor": "晋哀帝（司马丕）",
         "successor": "晋简文帝（司马昱）"
       },
       {
         "name": "晋简文帝（司马昱）",
         "reign": "",
-        "years": "371-372年",
+        "years": "371-372 年",
         "description": "晋元帝之子",
         "isFounder": false,
         "order": 8,
-        "predecessor": "东晋",
-        "successor": "晋安帝（司马德宗）"
+        "predecessor": "晋废帝（司马奕）",
+        "successor": "晋孝武帝（司马曜）"
       },
       {
         "name": "晋孝武帝（司马曜）",
         "reign": "",
-        "years": "372-396年",
+        "years": "372-396 年",
         "description": "晋简文帝之子，淝水之战时期",
         "isFounder": false,
         "order": 9,
@@ -1960,7 +2415,7 @@ const dynasties = [
       {
         "name": "晋安帝（司马德宗）",
         "reign": "",
-        "years": "396-418年",
+        "years": "396-418 年",
         "description": "晋孝武帝之子",
         "isFounder": false,
         "order": 10,
@@ -1970,11 +2425,11 @@ const dynasties = [
       {
         "name": "晋恭帝（司马德文）",
         "reign": "",
-        "years": "418-420年",
-        "description": "晋安帝之弟，东晋末代皇帝",
+        "years": "418-420 年",
+        "description": "晋孝武帝之子，东晋末代皇帝",
         "isFounder": false,
         "order": 11,
-        "predecessor": "晋孝武帝（司马曜）",
+        "predecessor": "晋安帝（司马德宗）",
         "successor": null
       }
     ]
@@ -1998,7 +2453,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 400,
-      "description": "南北分裂，南朝据江南，北朝据中原，北魏孝文帝改革促进民族融合",
+      "description": "南北分裂对峙，南朝据长江流域及以南，北朝据黄河流域及北方，民族大融合时期",
       "capital": "建康（南朝）、洛阳（北朝）",
     },
     "events": [
@@ -2035,7 +2490,7 @@ const dynasties = [
         "figure": "祖冲之"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "宋武帝（刘裕）",
         "reign": "",
@@ -2051,12 +2506,46 @@ const dynasties = [
         "name": "宋文帝（刘义隆）",
         "reign": "",
         "years": "424-453 年",
-        "description": "开创元嘉之治，南朝宋鼎盛时期",
+        "description": "宋武帝之子，开创元嘉之治",
         "isFounder": false,
         "order": 2,
         "regime": "南朝宋",
-        "predecessor": "宋武帝（刘裕）",
+        "predecessor": "宋少帝（刘义符）",
         "successor": "宋孝武帝（刘骏）"
+      },
+      {
+        "name": "宋孝武帝（刘骏）",
+        "reign": "",
+        "years": "453-464 年",
+        "description": "宋文帝之子",
+        "isFounder": false,
+        "order": 3,
+        "regime": "南朝宋",
+        "predecessor": "宋文帝（刘义隆）",
+        "successor": "宋前废帝（刘子业）"
+      },
+      {
+        "name": "宋明帝（刘彧）",
+        "reign": "",
+        "years": "465-472 年",
+        "description": "宋文帝之子",
+        "isFounder": false,
+        "order": 4,
+        "regime": "南朝宋",
+        "predecessor": "宋前废帝（刘子业）",
+        "successor": "宋后废帝（刘昱）"
+      },
+      {
+        "name": "宋顺帝（刘准）",
+        "reign": "",
+        "years": "477-479 年",
+        "description": "宋明帝之子，南朝宋末代皇帝",
+        "isFounder": false,
+        "order": 5,
+        "regime": "南朝宋",
+        "predecessor": "宋后废帝（刘昱）",
+        "successor": null,
+        "note": "南朝宋共 10 帝，此处为简化版"
       },
       {
         "name": "北魏道武帝（拓跋珪）",
@@ -2064,10 +2553,21 @@ const dynasties = [
         "years": "386-409 年",
         "description": "北魏开国皇帝，建立北魏",
         "isFounder": true,
-        "order": 3,
+        "order": 6,
         "regime": "北魏",
         "predecessor": null,
         "successor": "北魏明元帝（拓跋嗣）"
+      },
+      {
+        "name": "北魏太武帝（拓跋焘）",
+        "reign": "",
+        "years": "423-452 年",
+        "description": "北魏第三位皇帝，统一北方",
+        "isFounder": false,
+        "order": 7,
+        "regime": "北魏",
+        "predecessor": "北魏明元帝（拓跋嗣）",
+        "successor": "北魏文成帝（拓跋濬）"
       },
       {
         "name": "北魏孝文帝（元宏）",
@@ -2075,10 +2575,33 @@ const dynasties = [
         "years": "471-499 年",
         "description": "推行汉化改革，促进民族融合，迁都洛阳",
         "isFounder": false,
-        "order": 4,
+        "order": 8,
         "regime": "北魏",
         "predecessor": "北魏献文帝（拓跋弘）",
         "successor": "北魏宣武帝（元恪）"
+      },
+      {
+        "name": "北魏宣武帝（元恪）",
+        "reign": "",
+        "years": "499-515 年",
+        "description": "北魏孝文帝之子",
+        "isFounder": false,
+        "order": 9,
+        "regime": "北魏",
+        "predecessor": "北魏孝文帝（元宏）",
+        "successor": "北魏孝明帝（元诩）"
+      },
+      {
+        "name": "北魏孝武帝（元修）",
+        "reign": "",
+        "years": "532-534 年",
+        "description": "北魏末代皇帝，北魏分裂为东魏西魏",
+        "isFounder": false,
+        "order": 10,
+        "regime": "北魏",
+        "predecessor": "北魏节闵帝（元恭）",
+        "successor": null,
+        "note": "北魏共 17 帝，此处为简化版"
       },
       {
         "name": "梁武帝（萧衍）",
@@ -2086,10 +2609,33 @@ const dynasties = [
         "years": "502-549 年",
         "description": "南朝梁开国皇帝，在位时间最长，晚年爆发侯景之乱",
         "isFounder": true,
-        "order": 5,
+        "order": 11,
         "regime": "南朝梁",
         "predecessor": null,
         "successor": "梁简文帝（萧纲）"
+      },
+      {
+        "name": "梁元帝（萧绎）",
+        "reign": "",
+        "years": "552-554 年",
+        "description": "梁武帝之子",
+        "isFounder": false,
+        "order": 12,
+        "regime": "南朝梁",
+        "predecessor": "梁简文帝（萧纲）",
+        "successor": "梁敬帝（萧方智）"
+      },
+      {
+        "name": "梁敬帝（萧方智）",
+        "reign": "",
+        "years": "555-557 年",
+        "description": "南朝梁末代皇帝",
+        "isFounder": false,
+        "order": 13,
+        "regime": "南朝梁",
+        "predecessor": "梁元帝（萧绎）",
+        "successor": null,
+        "note": "南朝梁共 6 帝，此处为简化版"
       },
       {
         "name": "陈武帝（陈霸先）",
@@ -2097,10 +2643,44 @@ const dynasties = [
         "years": "557-559 年",
         "description": "南朝陈开国皇帝，建立陈朝",
         "isFounder": true,
-        "order": 6,
+        "order": 14,
         "regime": "南朝陈",
         "predecessor": null,
         "successor": "陈文帝（陈蒨）"
+      },
+      {
+        "name": "陈文帝（陈蒨）",
+        "reign": "",
+        "years": "559-566 年",
+        "description": "陈武帝之侄，南朝陈第二位皇帝",
+        "isFounder": false,
+        "order": 15,
+        "regime": "南朝陈",
+        "predecessor": "陈武帝（陈霸先）",
+        "successor": "陈废帝（陈伯宗）"
+      },
+      {
+        "name": "陈宣帝（陈顼）",
+        "reign": "",
+        "years": "569-582 年",
+        "description": "陈文帝之弟",
+        "isFounder": false,
+        "order": 16,
+        "regime": "南朝陈",
+        "predecessor": "陈废帝（陈伯宗）",
+        "successor": "陈后主（陈叔宝）"
+      },
+      {
+        "name": "陈后主（陈叔宝）",
+        "reign": "",
+        "years": "582-589 年",
+        "description": "陈宣帝之子，南朝陈末代皇帝，被隋朝灭亡",
+        "isFounder": false,
+        "order": 17,
+        "regime": "南朝陈",
+        "predecessor": "陈宣帝（陈顼）",
+        "successor": null,
+        "note": "南朝陈共 5 帝，此处为简化版"
       }
     ]
   },
@@ -2122,7 +2702,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 470,
-      "description": "结束近四百年分裂，重新统一全国，开凿大运河连接南北",
+      "description": "结束近四百年分裂，重新统一全国，东至东海，西达今甘肃，北至河套，南抵越南中部",
       "capital": "大兴（今陕西西安）",
     },
     "events": [
@@ -2159,7 +2739,7 @@ const dynasties = [
         "figure": "李春"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "隋文帝（杨坚）",
         "reign": "",
@@ -2173,7 +2753,7 @@ const dynasties = [
       {
         "name": "隋炀帝（杨广）",
         "reign": "",
-        "years": "604-618年",
+        "years": "604-618 年",
         "description": "隋文帝之子，开凿大运河，隋朝灭亡",
         "isFounder": false,
         "order": 2,
@@ -2237,6 +2817,11 @@ const dynasties = [
         "year": 755
       },
       {
+        "name": "甘露之变",
+        "description": "唐文宗时期试图诛杀宦官失败，宦官专权加剧",
+        "year": 835
+      },
+      {
         "name": "黄巢起义",
         "description": "黄巢领导农民起义，攻入长安，唐朝统治崩溃",
         "year": 875
@@ -2269,14 +2854,19 @@ const dynasties = [
         "figure": "元稹、白行简等"
       },
       {
-        "name": "楷书四大家",
-        "description": "颜真卿、柳公权等书法家创立颜体、柳体，影响深远",
-        "figure": "颜真卿、柳公权、欧阳询、赵孟頫"
+        "name": "吴道子绘画",
+        "description": "吴道子被誉为\"画圣\"，开创人物画新风格",
+        "figure": "吴道子"
       },
       {
         "name": "《千金方》",
         "description": "孙思邈著《千金方》，是中国最早的临床医学百科全书",
         "figure": "孙思邈"
+      },
+      {
+        "name": "《茶经》",
+        "description": "陆羽著《茶经》，是世界上第一部茶学专著",
+        "figure": "陆羽"
       }
     ],
     "battles": [
@@ -2314,7 +2904,7 @@ const dynasties = [
         "loser": "唐朝"
       }
     ],
-    "lineage": [
+            "lineage": [
       {
         "name": "唐高祖（李渊）",
         "reign": "武德",
@@ -2333,7 +2923,7 @@ const dynasties = [
         "isFounder": false,
         "order": 2,
         "predecessor": "唐高祖（李渊）",
-        "successor": "唐中宗（李显）"
+        "successor": "唐高宗（李治）"
       },
       {
         "name": "唐高宗（李治）",
@@ -2346,14 +2936,24 @@ const dynasties = [
         "successor": "唐中宗（李显）"
       },
       {
-        "name": "唐睿宗（李旦）",
-        "reign": "文明、景云等",
-        "years": "684-690, 710-712",
-        "description": "武则天之子，两度在位",
+        "name": "唐中宗（李显）",
+        "reign": "嗣圣、神龙",
+        "years": "684, 705-710",
+        "description": "唐高宗之子，两度在位，开创神龙革命",
         "isFounder": false,
         "order": 4,
         "predecessor": "唐高宗（李治）",
-        "successor": "武则天（武曌）"
+        "successor": "唐睿宗（李旦）"
+      },
+      {
+        "name": "唐睿宗（李旦）",
+        "reign": "文明、景云等",
+        "years": "684-690, 710-712",
+        "description": "唐高宗之子，武则天之子，两度在位",
+        "isFounder": false,
+        "order": 5,
+        "predecessor": "唐中宗（李显）",
+        "successor": "唐玄宗（李隆基）"
       },
       {
         "name": "武则天（武曌）",
@@ -2361,9 +2961,9 @@ const dynasties = [
         "years": "690-705",
         "description": "中国历史上唯一的女皇帝，建立武周",
         "isFounder": false,
-        "order": 5,
+        "order": 6,
         "predecessor": "唐睿宗（李旦）",
-        "successor": "唐玄宗（李隆基）"
+        "successor": "唐中宗（李显）"
       },
       {
         "name": "唐玄宗（李隆基）",
@@ -2371,7 +2971,7 @@ const dynasties = [
         "years": "712-756",
         "description": "开创开元盛世，唐朝达到鼎盛，晚年发生安史之乱",
         "isFounder": false,
-        "order": 6,
+        "order": 7,
         "predecessor": "唐睿宗（李旦）",
         "successor": "唐肃宗（李亨）"
       },
@@ -2381,7 +2981,7 @@ const dynasties = [
         "years": "756-762",
         "description": "在安史之乱中即位，平定叛乱",
         "isFounder": false,
-        "order": 7,
+        "order": 8,
         "predecessor": "唐玄宗（李隆基）",
         "successor": "唐代宗（李豫）"
       },
@@ -2391,7 +2991,7 @@ const dynasties = [
         "years": "762-779",
         "description": "继续平定叛乱，恢复统治",
         "isFounder": false,
-        "order": 8,
+        "order": 9,
         "predecessor": "唐肃宗（李亨）",
         "successor": "唐德宗（李适）"
       },
@@ -2401,7 +3001,7 @@ const dynasties = [
         "years": "779-805",
         "description": "唐代宗之子，实行两税法",
         "isFounder": false,
-        "order": 9,
+        "order": 10,
         "predecessor": "唐代宗（李豫）",
         "successor": "唐顺宗（李诵）"
       },
@@ -2411,9 +3011,9 @@ const dynasties = [
         "years": "805",
         "description": "唐德宗之子，在位仅 8 个月，永贞革新",
         "isFounder": false,
-        "order": 10,
+        "order": 11,
         "predecessor": "唐德宗（李适）",
-        "successor": "唐穆宗（李恒）"
+        "successor": "唐宪宗（李纯）"
       },
       {
         "name": "唐宪宗（李纯）",
@@ -2421,9 +3021,9 @@ const dynasties = [
         "years": "805-820",
         "description": "唐顺宗之子，元和中兴，削弱藩镇势力",
         "isFounder": false,
-        "order": 11,
+        "order": 12,
         "predecessor": "唐顺宗（李诵）",
-        "successor": "唐懿宗（李漼）"
+        "successor": "唐穆宗（李恒）"
       },
       {
         "name": "唐穆宗（李恒）",
@@ -2431,9 +3031,9 @@ const dynasties = [
         "years": "820-824",
         "description": "唐宪宗之子，藩镇势力复起",
         "isFounder": false,
-        "order": 12,
+        "order": 13,
         "predecessor": "唐宪宗（李纯）",
-        "successor": "唐宣宗（李忱）"
+        "successor": "唐敬宗（李湛）"
       },
       {
         "name": "唐敬宗（李湛）",
@@ -2441,7 +3041,7 @@ const dynasties = [
         "years": "824-826",
         "description": "唐穆宗之子，沉迷游乐，被宦官杀害",
         "isFounder": false,
-        "order": 13,
+        "order": 14,
         "predecessor": "唐穆宗（李恒）",
         "successor": "唐文宗（李昂）"
       },
@@ -2451,8 +3051,8 @@ const dynasties = [
         "years": "826-840",
         "description": "唐穆宗之子，甘露之变失败，宦官专权",
         "isFounder": false,
-        "order": 14,
-        "predecessor": "唐穆宗（李恒）",
+        "order": 15,
+        "predecessor": "唐敬宗（李湛）",
         "successor": "唐武宗（李炎）"
       },
       {
@@ -2461,8 +3061,8 @@ const dynasties = [
         "years": "840-846",
         "description": "唐穆宗之子，会昌灭佛",
         "isFounder": false,
-        "order": 15,
-        "predecessor": "唐穆宗（李恒）",
+        "order": 16,
+        "predecessor": "唐文宗（李昂）",
         "successor": "唐宣宗（李忱）"
       },
       {
@@ -2471,9 +3071,9 @@ const dynasties = [
         "years": "846-859",
         "description": "唐宪宗之子，大中之治，被称为\"小太宗\"",
         "isFounder": false,
-        "order": 16,
-        "predecessor": "唐宪宗（李纯）",
-        "successor": "唐僖宗（李儇）"
+        "order": 17,
+        "predecessor": "唐武宗（李炎）",
+        "successor": "唐懿宗（李漼）"
       },
       {
         "name": "唐懿宗（李漼）",
@@ -2481,7 +3081,7 @@ const dynasties = [
         "years": "859-873",
         "description": "唐宣宗之子，唐朝开始衰落",
         "isFounder": false,
-        "order": 17,
+        "order": 18,
         "predecessor": "唐宣宗（李忱）",
         "successor": "唐僖宗（李儇）"
       },
@@ -2491,7 +3091,7 @@ const dynasties = [
         "years": "873-888",
         "description": "唐懿宗之子，黄巢起义爆发",
         "isFounder": false,
-        "order": 18,
+        "order": 19,
         "predecessor": "唐懿宗（李漼）",
         "successor": "唐昭宗（李晔）"
       },
@@ -2501,7 +3101,7 @@ const dynasties = [
         "years": "888-904",
         "description": "唐朝末期皇帝，无力挽救唐朝衰亡",
         "isFounder": false,
-        "order": 19,
+        "order": 20,
         "predecessor": "唐僖宗（李儇）",
         "successor": "唐哀帝（李柷）"
       },
@@ -2511,7 +3111,7 @@ const dynasties = [
         "years": "904-907",
         "description": "唐朝末代皇帝，被朱温废黜",
         "isFounder": false,
-        "order": 20,
+        "order": 21,
         "predecessor": "唐昭宗（李晔）",
         "successor": null
       }
@@ -2536,7 +3136,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 200,
-      "description": "政权更迭频繁，北方五代相继，南方十国并立，战乱不断",
+      "description": "政权更迭频繁，北方五代据中原，南方十国分裂割据，战乱不断",
       "capital": "开封、洛阳",
     },
     "events": [
@@ -2573,7 +3173,7 @@ const dynasties = [
         "figure": "赵崇祚"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "后梁太祖（朱温）",
         "reign": "",
@@ -2581,158 +3181,131 @@ const dynasties = [
         "description": "五代十国开国皇帝，建立后梁",
         "isFounder": true,
         "order": 1,
+        "regime": "后梁",
         "predecessor": null,
         "successor": "后梁末帝（朱友贞）"
       },
       {
-        "name": "后梁",
-        "reign": "907-923年",
-        "years": "16年",
-        "description": "朱温建立，五代之首",
-        "isFounder": true,
-        "order": 2,
-        "predecessor": "后梁太祖（朱温）",
-        "successor": "后唐"
-      },
-      {
         "name": "后梁末帝（朱友贞）",
         "reign": "",
-        "years": "913-923年",
-        "description": "后梁末代皇帝",
+        "years": "913-923 年",
+        "description": "后梁末代皇帝，被后唐灭亡",
         "isFounder": false,
-        "order": 3,
-        "predecessor": "后梁",
-        "successor": "后唐"
-      },
-      {
-        "name": "后唐",
-        "reign": "923-936年",
-        "years": "13年",
-        "description": "李存勖建立，灭后梁",
-        "isFounder": false,
-        "order": 4,
-        "predecessor": "五代十国",
-        "successor": "后晋"
+        "order": 2,
+        "regime": "后梁",
+        "predecessor": "后梁太祖（朱温）",
+        "successor": null
       },
       {
         "name": "后唐庄宗（李存勖）",
         "reign": "",
-        "years": "923-926年",
-        "description": "后唐开国皇帝",
-        "isFounder": false,
-        "order": 5,
-        "predecessor": "后唐",
+        "years": "923-926 年",
+        "description": "后唐开国皇帝，灭后梁",
+        "isFounder": true,
+        "order": 3,
+        "regime": "后唐",
+        "predecessor": null,
         "successor": "后唐明宗（李嗣源）"
       },
       {
         "name": "后唐明宗（李嗣源）",
         "reign": "",
-        "years": "926-933年",
-        "description": "后唐中期君主",
+        "years": "926-933 年",
+        "description": "后唐第二位皇帝，李克用养子",
         "isFounder": false,
-        "order": 6,
-        "predecessor": "后唐",
-        "successor": "后晋"
+        "order": 4,
+        "regime": "后唐",
+        "predecessor": "后唐庄宗（李存勖）",
+        "successor": "后唐末帝（李从珂）"
       },
       {
-        "name": "后晋",
-        "reign": "936-947年",
-        "years": "11年",
-        "description": "石敬瑭建立，割让燕云十六州",
+        "name": "后唐末帝（李从珂）",
+        "reign": "",
+        "years": "934-936 年",
+        "description": "后唐末代皇帝，被后晋灭亡",
         "isFounder": false,
-        "order": 7,
-        "predecessor": "五代十国",
-        "successor": "后汉"
+        "order": 5,
+        "regime": "后唐",
+        "predecessor": "后唐闵帝（李从厚）",
+        "successor": null
       },
       {
         "name": "后晋高祖（石敬瑭）",
         "reign": "",
-        "years": "936-942年",
-        "description": "后晋开国皇帝",
-        "isFounder": false,
-        "order": 8,
-        "predecessor": "后晋",
+        "years": "936-942 年",
+        "description": "后晋开国皇帝，割让燕云十六州",
+        "isFounder": true,
+        "order": 6,
+        "regime": "后晋",
+        "predecessor": null,
         "successor": "后晋出帝（石重贵）"
       },
       {
         "name": "后晋出帝（石重贵）",
         "reign": "",
-        "years": "942-947年",
-        "description": "后晋末代皇帝",
+        "years": "942-947 年",
+        "description": "后晋末代皇帝，被辽国俘虏",
         "isFounder": false,
-        "order": 9,
-        "predecessor": "后晋",
-        "successor": "后汉"
-      },
-      {
-        "name": "后汉",
-        "reign": "947-950年",
-        "years": "3年",
-        "description": "刘知远建立，统治时间短暂",
-        "isFounder": false,
-        "order": 10,
-        "predecessor": "五代十国",
-        "successor": "后周"
+        "order": 7,
+        "regime": "后晋",
+        "predecessor": "后晋高祖（石敬瑭）",
+        "successor": null
       },
       {
         "name": "后汉高祖（刘知远）",
         "reign": "",
-        "years": "947-948年",
-        "description": "后汉开国皇帝",
-        "isFounder": false,
-        "order": 11,
-        "predecessor": "后汉",
+        "years": "947-948 年",
+        "description": "后晋开国皇帝，统治时间短暂",
+        "isFounder": true,
+        "order": 8,
+        "regime": "后汉",
+        "predecessor": null,
         "successor": "后汉隐帝（刘承祐）"
       },
       {
         "name": "后汉隐帝（刘承祐）",
         "reign": "",
-        "years": "948-950年",
+        "years": "948-950 年",
         "description": "后汉末代皇帝",
         "isFounder": false,
-        "order": 12,
-        "predecessor": "后汉",
-        "successor": "后周"
-      },
-      {
-        "name": "后周",
-        "reign": "951-960年",
-        "years": "9年",
-        "description": "郭威建立，为北宋统一奠定基础",
-        "isFounder": false,
-        "order": 13,
-        "predecessor": "五代十国",
-        "successor": "后周太祖（郭威）"
+        "order": 9,
+        "regime": "后汉",
+        "predecessor": "后汉高祖（刘知远）",
+        "successor": null
       },
       {
         "name": "后周太祖（郭威）",
         "reign": "",
-        "years": "951-954年",
-        "description": "后周开国皇帝",
-        "isFounder": false,
-        "order": 14,
-        "predecessor": "后周",
+        "years": "951-954 年",
+        "description": "后周开国皇帝，为北宋统一奠定基础",
+        "isFounder": true,
+        "order": 10,
+        "regime": "后周",
+        "predecessor": null,
         "successor": "后周世宗（柴荣）"
       },
       {
         "name": "后周世宗（柴荣）",
         "reign": "",
-        "years": "954-959年",
-        "description": "后周中期君主，改革图强",
+        "years": "954-959 年",
+        "description": "后周第二位皇帝，改革图强",
         "isFounder": false,
-        "order": 15,
-        "predecessor": "后周",
+        "order": 11,
+        "regime": "后周",
+        "predecessor": "后周太祖（郭威）",
         "successor": "后周恭帝（柴宗训）"
       },
       {
         "name": "后周恭帝（柴宗训）",
         "reign": "",
-        "years": "959-960年",
-        "description": "后周末代皇帝，陈桥兵变",
+        "years": "959-960 年",
+        "description": "后周末代皇帝，陈桥兵变后退位",
         "isFounder": false,
-        "order": 16,
-        "predecessor": "后周",
-        "successor": null
+        "order": 12,
+        "regime": "后周",
+        "predecessor": "后周世宗（柴荣）",
+        "successor": null,
+        "note": "五代十国政权更迭频繁，此处为简化版，仅列各朝开创者和末代君主"
       }
     ]
   },
@@ -2756,7 +3329,7 @@ const dynasties = [
       ],
       "zoom": 4,
       "area": 280,
-      "description": "结束五代十国分裂，与辽、西夏并立，经济文化高度繁荣",
+      "description": "结束五代十国分裂，与辽、西夏、金并立，经济文化高度繁荣",
       "capital": "开封（今河南开封）",
     },
     "events": [
@@ -2826,6 +3399,16 @@ const dynasties = [
         "name": "《清明上河图》",
         "description": "张择端绘《清明上河图》，展现北宋繁华景象",
         "figure": "张择端"
+      },
+      {
+        "name": "《梦溪笔谈》",
+        "description": "沈括著《梦溪笔谈》，是中国古代科技百科全书",
+        "figure": "沈括"
+      },
+      {
+        "name": "四大书院",
+        "description": "应天、岳麓、白鹿洞、嵩阳四大书院兴盛，理学传播",
+        "figure": null
       }
     ],
     "battles": [
@@ -2863,7 +3446,7 @@ const dynasties = [
         "loser": "北宋"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "宋太祖（赵匡胤）",
         "reign": "",
@@ -2877,18 +3460,18 @@ const dynasties = [
       {
         "name": "宋太宗（赵光义）",
         "reign": "",
-        "years": "976-997年",
-        "description": "赵匡胤之弟，继续统一事业",
+        "years": "976-997 年",
+        "description": "宋太祖之弟，继续统一事业",
         "isFounder": false,
         "order": 2,
         "predecessor": "宋太祖（赵匡胤）",
-        "successor": "宋仁宗（赵祯）"
+        "successor": "宋真宗（赵恒）"
       },
       {
         "name": "宋真宗（赵恒）",
         "reign": "",
-        "years": "997-1022年",
-        "description": "签订澶渊之盟",
+        "years": "997-1022 年",
+        "description": "宋太宗之子，签订澶渊之盟",
         "isFounder": false,
         "order": 3,
         "predecessor": "宋太宗（赵光义）",
@@ -2897,8 +3480,8 @@ const dynasties = [
       {
         "name": "宋仁宗（赵祯）",
         "reign": "",
-        "years": "1022-1063年",
-        "description": "庆历新政，北宋鼎盛时期",
+        "years": "1022-1063 年",
+        "description": "宋真宗之子，庆历新政，北宋鼎盛时期",
         "isFounder": false,
         "order": 4,
         "predecessor": "宋真宗（赵恒）",
@@ -2907,27 +3490,27 @@ const dynasties = [
       {
         "name": "宋英宗（赵曙）",
         "reign": "",
-        "years": "1063-1067年",
-        "description": "宋仁宗之侄",
+        "years": "1063-1067 年",
+        "description": "宋太宗曾孙，宋仁宗之侄",
         "isFounder": false,
         "order": 5,
-        "predecessor": "北宋",
+        "predecessor": "宋仁宗（赵祯）",
         "successor": "宋神宗（赵顼）"
       },
       {
         "name": "宋神宗（赵顼）",
         "reign": "",
-        "years": "1067-1085年",
-        "description": "王安石变法",
+        "years": "1067-1085 年",
+        "description": "宋英宗之子，王安石变法",
         "isFounder": false,
         "order": 6,
-        "predecessor": "北宋",
-        "successor": "宋徽宗（赵佶）"
+        "predecessor": "宋英宗（赵曙）",
+        "successor": "宋哲宗（赵煦）"
       },
       {
         "name": "宋哲宗（赵煦）",
         "reign": "",
-        "years": "1085-1100年",
+        "years": "1085-1100 年",
         "description": "宋神宗之子",
         "isFounder": false,
         "order": 7,
@@ -2937,18 +3520,18 @@ const dynasties = [
       {
         "name": "宋徽宗（赵佶）",
         "reign": "",
-        "years": "1100-1125年",
-        "description": "艺术成就高，但政治腐败",
+        "years": "1100-1125 年",
+        "description": "宋神宗之子，艺术成就高，但政治腐败",
         "isFounder": false,
         "order": 8,
-        "predecessor": "北宋",
+        "predecessor": "宋哲宗（赵煦）",
         "successor": "宋钦宗（赵桓）"
       },
       {
         "name": "宋钦宗（赵桓）",
         "reign": "",
-        "years": "1125-1127年",
-        "description": "北宋末代皇帝，靖康之变被俘",
+        "years": "1125-1127 年",
+        "description": "宋徽宗之子，北宋末代皇帝，靖康之变被俘",
         "isFounder": false,
         "order": 9,
         "predecessor": "宋徽宗（赵佶）",
@@ -2975,7 +3558,7 @@ const dynasties = [
       ],
       "zoom": 5,
       "area": 200,
-      "description": "偏安江南，与金朝对峙，经济重心南移完成，海上贸易繁荣",
+      "description": "偏安江南，与金朝、蒙古对峙，秦岭淮河一线为界，经济重心南移完成，海上贸易繁荣",
       "capital": "临安（今浙江杭州）",
     },
     "events": [
@@ -3012,7 +3595,7 @@ const dynasties = [
         "figure": null
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "宋高宗（赵构）",
         "reign": "",
@@ -3026,8 +3609,8 @@ const dynasties = [
       {
         "name": "宋孝宗（赵昚）",
         "reign": "",
-        "years": "1162-1189年",
-        "description": "南宋中期君主，隆兴北伐",
+        "years": "1162-1189 年",
+        "description": "宋太祖七世孙，南宋中期君主，隆兴北伐",
         "isFounder": false,
         "order": 2,
         "predecessor": "宋高宗（赵构）",
@@ -3036,8 +3619,8 @@ const dynasties = [
       {
         "name": "宋光宗（赵惇）",
         "reign": "",
-        "years": "1189-1194年",
-        "description": "南宋后期君主",
+        "years": "1189-1194 年",
+        "description": "宋孝宗之子，南宋后期君主",
         "isFounder": false,
         "order": 3,
         "predecessor": "宋孝宗（赵昚）",
@@ -3046,61 +3629,61 @@ const dynasties = [
       {
         "name": "宋宁宗（赵扩）",
         "reign": "",
-        "years": "1194-1224年",
-        "description": "南宋君主",
+        "years": "1194-1224 年",
+        "description": "宋光宗之子，南宋君主",
         "isFounder": false,
         "order": 4,
-        "predecessor": "宋孝宗（赵昚）",
+        "predecessor": "宋光宗（赵惇）",
         "successor": "宋理宗（赵昀）"
       },
       {
         "name": "宋理宗（赵昀）",
         "reign": "",
-        "years": "1224-1264年",
-        "description": "南宋后期君主",
+        "years": "1224-1264 年",
+        "description": "宋太祖十世孙，南宋后期君主",
         "isFounder": false,
         "order": 5,
-        "predecessor": "南宋",
+        "predecessor": "宋宁宗（赵扩）",
         "successor": "宋度宗（赵禥）"
       },
       {
         "name": "宋度宗（赵禥）",
         "reign": "",
-        "years": "1264-1274年",
-        "description": "南宋末期君主",
+        "years": "1264-1274 年",
+        "description": "宋理宗之侄，南宋末期君主",
         "isFounder": false,
         "order": 6,
-        "predecessor": "南宋",
+        "predecessor": "宋理宗（赵昀）",
         "successor": "宋恭帝（赵㬎）"
       },
       {
         "name": "宋恭帝（赵㬎）",
         "reign": "",
-        "years": "1274-1276年",
-        "description": "南宋幼主，被元军俘虏",
+        "years": "1274-1276 年",
+        "description": "宋度宗之子，南宋幼主，被元军俘虏",
         "isFounder": false,
         "order": 7,
-        "predecessor": "南宋",
+        "predecessor": "宋度宗（赵禥）",
         "successor": "宋端宗（赵昰）"
       },
       {
         "name": "宋端宗（赵昰）",
         "reign": "",
-        "years": "1276-1278年",
-        "description": "南宋流亡皇帝",
+        "years": "1276-1278 年",
+        "description": "宋度宗之子，南宋流亡皇帝",
         "isFounder": false,
         "order": 8,
-        "predecessor": "南宋",
+        "predecessor": "宋恭帝（赵㬎）",
         "successor": "宋末帝（赵昺）"
       },
       {
         "name": "宋末帝（赵昺）",
         "reign": "",
-        "years": "1278-1279年",
-        "description": "南宋末代皇帝，崖山海战失败，南宋灭亡",
+        "years": "1278-1279 年",
+        "description": "宋度宗之子，南宋末代皇帝，崖山海战失败，南宋灭亡",
         "isFounder": false,
         "order": 9,
-        "predecessor": "南宋",
+        "predecessor": "宋端宗（赵昰）",
         "successor": null
       }
     ]
@@ -3124,7 +3707,7 @@ const dynasties = [
       ],
       "zoom": 3,
       "area": 1372,
-      "description": "中国历史上疆域最大的朝代，东起日本海，西至天山，北包贝加尔湖，南抵南海",
+      "description": "中国历史上疆域最大的朝代之一，东起日本海，西抵天山，北包贝加尔湖，南至南海，设行省管理全国",
       "capital": "大都（今北京）",
     },
     "events": [
@@ -3181,11 +3764,11 @@ const dynasties = [
         "figure": "刘秉忠"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "元世祖（忽必烈）",
-        "reign": "",
-        "years": "1271-1294 年",
+        "reign": "中统、至元",
+        "years": "1260-1294 年",
         "description": "元朝开国皇帝，建立元朝，统一全国",
         "isFounder": true,
         "order": 1,
@@ -3194,9 +3777,9 @@ const dynasties = [
       },
       {
         "name": "元成宗（铁穆耳）",
-        "reign": "",
-        "years": "1294-1307年",
-        "description": "忽必烈之孙",
+        "reign": "元贞、大德",
+        "years": "1294-1307 年",
+        "description": "元世祖之孙，元朝第二位皇帝",
         "isFounder": false,
         "order": 2,
         "predecessor": "元世祖（忽必烈）",
@@ -3204,62 +3787,92 @@ const dynasties = [
       },
       {
         "name": "元武宗（海山）",
-        "reign": "",
-        "years": "1307-1311年",
-        "description": "元成宗之侄",
+        "reign": "至大",
+        "years": "1307-1311 年",
+        "description": "元世祖曾孙，元成宗之侄",
         "isFounder": false,
         "order": 3,
-        "predecessor": "元世祖（忽必烈）",
+        "predecessor": "元成宗（铁穆耳）",
         "successor": "元仁宗（爱育黎拔力八达）"
       },
       {
         "name": "元仁宗（爱育黎拔力八达）",
-        "reign": "",
-        "years": "1311-1320年",
-        "description": "元武宗之弟",
+        "reign": "皇庆、延祐",
+        "years": "1311-1320 年",
+        "description": "元武宗之弟，恢复科举",
         "isFounder": false,
         "order": 4,
-        "predecessor": "元世祖（忽必烈）",
+        "predecessor": "元武宗（海山）",
         "successor": "元英宗（硕德八剌）"
       },
       {
         "name": "元英宗（硕德八剌）",
-        "reign": "",
-        "years": "1320-1323年",
-        "description": "元仁宗之子",
+        "reign": "至治",
+        "years": "1320-1323 年",
+        "description": "元仁宗之子，推行新政，被刺杀",
         "isFounder": false,
         "order": 5,
-        "predecessor": "元朝",
+        "predecessor": "元仁宗（爱育黎拔力八达）",
         "successor": "元泰定帝（也孙铁木儿）"
       },
       {
         "name": "元泰定帝（也孙铁木儿）",
-        "reign": "",
-        "years": "1323-1328年",
-        "description": "元朝中期君主",
+        "reign": "泰定、致和",
+        "years": "1323-1328 年",
+        "description": "元世祖曾孙，元朝中期君主",
         "isFounder": false,
         "order": 6,
-        "predecessor": "元朝",
+        "predecessor": "元英宗（硕德八剌）",
+        "successor": "天顺帝（阿速吉八）"
+      },
+      {
+        "name": "天顺帝（阿速吉八）",
+        "reign": "天顺",
+        "years": "1328 年",
+        "description": "元泰定帝之子，在位仅一月",
+        "isFounder": false,
+        "order": 7,
+        "predecessor": "元泰定帝（也孙铁木儿）",
         "successor": "元文宗（图帖睦尔）"
       },
       {
         "name": "元文宗（图帖睦尔）",
-        "reign": "",
-        "years": "1328-1332年",
-        "description": "元朝后期君主",
+        "reign": "天历、至顺",
+        "years": "1328-1332 年",
+        "description": "元世祖曾孙，元朝后期君主",
         "isFounder": false,
-        "order": 7,
-        "predecessor": "元朝",
+        "order": 8,
+        "predecessor": "天顺帝（阿速吉八）",
+        "successor": "元明宗（和世琜）"
+      },
+      {
+        "name": "元明宗（和世琜）",
+        "reign": "天顺",
+        "years": "1329 年",
+        "description": "元武宗长子，在位仅八月被毒死",
+        "isFounder": false,
+        "order": 9,
+        "predecessor": "元文宗（图帖睦尔）",
+        "successor": "元文宗（图帖睦尔）"
+      },
+      {
+        "name": "元宁宗（懿璘质班）",
+        "reign": "至顺",
+        "years": "1332 年",
+        "description": "元明宗次子，在位仅 53 天去世",
+        "isFounder": false,
+        "order": 10,
+        "predecessor": "元文宗（图帖睦尔）",
         "successor": "元顺帝（妥懽帖睦尔）"
       },
       {
         "name": "元顺帝（妥懽帖睦尔）",
-        "reign": "",
-        "years": "1333-1368年",
-        "description": "元朝末代皇帝，红巾军起义后退位",
+        "reign": "元统、至正等",
+        "years": "1333-1368 年",
+        "description": "元明宗长子，元朝末代皇帝，红巾军起义后退位",
         "isFounder": false,
-        "order": 8,
-        "predecessor": "元朝",
+        "order": 11,
+        "predecessor": "元宁宗（懿璘质班）",
         "successor": null
       }
     ]
@@ -3284,9 +3897,9 @@ const dynasties = [
         39.9
       ],
       "zoom": 4,
-      "area": 900,
-      "description": "推翻元朝统治，疆域包括内地十八省及东北部分地区，郑和下西洋宣扬国威",
-      "capital": "北京（明成祖后）、南京",
+      "area": 650,
+      "description": "推翻元朝统治，疆域包括内地两京十三省，东北设奴儿干都司，西北设哈密卫，永乐年间疆域最广",
+      "capital": "南京→北京（永乐十九年后）",
     },
     "events": [
       {
@@ -3307,6 +3920,11 @@ const dynasties = [
       {
         "name": "土木堡之变",
         "description": "明英宗被瓦剌俘虏，明朝由盛转衰",
+        "year": 1449
+      },
+      {
+        "name": "北京保卫战",
+        "description": "于谦领导北京保卫战，击退瓦剌，挽救明朝",
         "year": 1449
       },
       {
@@ -3365,6 +3983,16 @@ const dynasties = [
         "name": "景泰蓝工艺",
         "description": "景泰蓝工艺达到高峰，成为明代特色工艺品",
         "figure": null
+      },
+      {
+        "name": "吴门四家",
+        "description": "沈周、文徵明、唐寅、仇英四位画家，代表明代绘画成就",
+        "figure": "沈周、文徵明、唐寅、仇英"
+      },
+      {
+        "name": "《金瓶梅》",
+        "description": "兰陵笑笑生著《金瓶梅》，是中国第一部文人独立创作的长篇小说",
+        "figure": "兰陵笑笑生"
       }
     ],
     "battles": [
@@ -3413,7 +4041,7 @@ const dynasties = [
         "loser": "明朝"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "明太祖（朱元璋）",
         "reign": "洪武",
@@ -3428,7 +4056,7 @@ const dynasties = [
         "name": "明惠宗（朱允炆）",
         "reign": "建文",
         "years": "1398-1402",
-        "description": "朱元璋之孙，在靖难之役中被朱棣推翻",
+        "description": "明太祖之孙，在靖难之役中被朱棣推翻",
         "isFounder": false,
         "order": 2,
         "predecessor": "明太祖（朱元璋）",
@@ -3438,7 +4066,7 @@ const dynasties = [
         "name": "明成祖（朱棣）",
         "reign": "永乐",
         "years": "1402-1424",
-        "description": "发动靖难之役夺取皇位，迁都北京，郑和下西洋",
+        "description": "明太祖第四子，发动靖难之役夺取皇位，迁都北京，郑和下西洋",
         "isFounder": false,
         "order": 3,
         "predecessor": "明惠宗（朱允炆）",
@@ -3448,7 +4076,7 @@ const dynasties = [
         "name": "明仁宗（朱高炽）",
         "reign": "洪熙",
         "years": "1424-1425",
-        "description": "在位时间短，但仁政爱民",
+        "description": "明成祖长子，在位时间短，但仁政爱民",
         "isFounder": false,
         "order": 4,
         "predecessor": "明成祖（朱棣）",
@@ -3458,7 +4086,7 @@ const dynasties = [
         "name": "明宣宗（朱瞻基）",
         "reign": "宣德",
         "years": "1425-1435",
-        "description": "仁宣之治，明朝达到鼎盛",
+        "description": "明仁宗长子，仁宣之治，明朝达到鼎盛",
         "isFounder": false,
         "order": 5,
         "predecessor": "明仁宗（朱高炽）",
@@ -3468,7 +4096,7 @@ const dynasties = [
         "name": "明英宗（朱祁镇）",
         "reign": "正统、天顺",
         "years": "1435-1449, 1457-1464",
-        "description": "土木堡之变被俘，后复辟",
+        "description": "明宣宗长子，土木堡之变被俘，后复辟",
         "isFounder": false,
         "order": 6,
         "predecessor": "明宣宗（朱瞻基）",
@@ -3478,7 +4106,7 @@ const dynasties = [
         "name": "明代宗（朱祁钰）",
         "reign": "景泰",
         "years": "1449-1457",
-        "description": "土木堡之变后即位，领导北京保卫战",
+        "description": "明宣宗次子，土木堡之变后即位，领导北京保卫战",
         "isFounder": false,
         "order": 7,
         "predecessor": "明英宗（朱祁镇）",
@@ -3488,7 +4116,7 @@ const dynasties = [
         "name": "明宪宗（朱见深）",
         "reign": "成化",
         "years": "1464-1487",
-        "description": "成化年间，社会相对稳定",
+        "description": "明英宗长子，成化年间，社会相对稳定",
         "isFounder": false,
         "order": 8,
         "predecessor": "明代宗（朱祁钰）",
@@ -3498,7 +4126,7 @@ const dynasties = [
         "name": "明孝宗（朱祐樘）",
         "reign": "弘治",
         "years": "1487-1505",
-        "description": "弘治中兴，励精图治",
+        "description": "明宪宗第三子，弘治中兴，励精图治",
         "isFounder": false,
         "order": 9,
         "predecessor": "明宪宗（朱见深）",
@@ -3508,7 +4136,7 @@ const dynasties = [
         "name": "明武宗（朱厚照）",
         "reign": "正德",
         "years": "1505-1521",
-        "description": "性格叛逆，喜欢游乐",
+        "description": "明孝宗长子，性格叛逆，喜欢游乐",
         "isFounder": false,
         "order": 10,
         "predecessor": "明孝宗（朱祐樘）",
@@ -3518,7 +4146,7 @@ const dynasties = [
         "name": "明世宗（朱厚熜）",
         "reign": "嘉靖",
         "years": "1521-1567",
-        "description": "在位时间长，前期励精图治，后期沉迷道教",
+        "description": "明宪宗之孙，在位时间长，前期励精图治，后期沉迷道教",
         "isFounder": false,
         "order": 11,
         "predecessor": "明武宗（朱厚照）",
@@ -3528,7 +4156,7 @@ const dynasties = [
         "name": "明穆宗（朱载坖）",
         "reign": "隆庆",
         "years": "1567-1572",
-        "description": "隆庆开关，开放海禁",
+        "description": "明世宗第三子，隆庆开关，开放海禁",
         "isFounder": false,
         "order": 12,
         "predecessor": "明世宗（朱厚熜）",
@@ -3538,7 +4166,7 @@ const dynasties = [
         "name": "明神宗（朱翊钧）",
         "reign": "万历",
         "years": "1572-1620",
-        "description": "明朝在位时间最长的皇帝，万历中兴，后期怠政",
+        "description": "明穆宗第三子，明朝在位时间最长的皇帝，万历中兴，后期怠政",
         "isFounder": false,
         "order": 13,
         "predecessor": "明穆宗（朱载坖）",
@@ -3548,7 +4176,7 @@ const dynasties = [
         "name": "明光宗（朱常洛）",
         "reign": "泰昌",
         "years": "1620",
-        "description": "在位仅一个月，红丸案",
+        "description": "明神宗长子，在位仅一个月，红丸案",
         "isFounder": false,
         "order": 14,
         "predecessor": "明神宗（朱翊钧）",
@@ -3558,7 +4186,7 @@ const dynasties = [
         "name": "明熹宗（朱由校）",
         "reign": "天启",
         "years": "1620-1627",
-        "description": "沉迷木工，魏忠贤专权",
+        "description": "明光宗长子，沉迷木工，魏忠贤专权",
         "isFounder": false,
         "order": 15,
         "predecessor": "明光宗（朱常洛）",
@@ -3568,7 +4196,7 @@ const dynasties = [
         "name": "明思宗（朱由检）",
         "reign": "崇祯",
         "years": "1627-1644",
-        "description": "明朝末代皇帝，勤政但无力挽救明朝灭亡",
+        "description": "明光宗第五子，明朝末代皇帝，勤政但无力挽救明朝灭亡",
         "isFounder": false,
         "order": 16,
         "predecessor": "明熹宗（朱由校）",
@@ -3597,7 +4225,7 @@ const dynasties = [
       ],
       "zoom": 3,
       "area": 1316,
-      "description": "中国历史上最后一个封建王朝，疆域辽阔，奠定了现代中国版图的基础",
+      "description": "奠定了现代中国版图的基础，极盛时东起太平洋，西抵葱岭，北至外兴安岭，南包南海诸岛",
       "capital": "北京",
     },
     "events": [
@@ -3615,6 +4243,16 @@ const dynasties = [
         "name": "三藩之乱",
         "description": "吴三桂等发动三藩之乱，被康熙平定",
         "year": 1673
+      },
+      {
+        "name": "收复台湾",
+        "description": "施琅率军收复台湾，郑克塽投降",
+        "year": 1683
+      },
+      {
+        "name": "尼布楚条约",
+        "description": "清朝与俄国签订《尼布楚条约》，划定东北边界",
+        "year": 1689
       },
       {
         "name": "康乾盛世",
@@ -3697,9 +4335,19 @@ const dynasties = [
         "name": "圆明园",
         "description": "修建圆明园，被誉为\"万园之园\"",
         "figure": null
+      },
+      {
+        "name": "《桃花扇》",
+        "description": "孔尚任著《桃花扇》，是清代传奇代表作",
+        "figure": "孔尚任"
+      },
+      {
+        "name": "郑板桥书画",
+        "description": "郑板桥擅画兰竹，书法自成一体，为扬州八怪之一",
+        "figure": "郑板桥"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "清太祖（努尔哈赤）",
         "reign": "天命",
@@ -3714,7 +4362,7 @@ const dynasties = [
         "name": "清太宗（皇太极）",
         "reign": "天聪、崇德",
         "years": "1626-1643",
-        "description": "改国号为清，奠定入关基础",
+        "description": "清太祖第八子，改国号为清，奠定入关基础",
         "isFounder": false,
         "order": 2,
         "predecessor": "清太祖（努尔哈赤）",
@@ -3724,7 +4372,7 @@ const dynasties = [
         "name": "清世祖（福临）",
         "reign": "顺治",
         "years": "1643-1661",
-        "description": "清军入关，建立全国性政权",
+        "description": "清太宗第九子，清军入关，建立全国性政权",
         "isFounder": false,
         "order": 3,
         "predecessor": "清太宗（皇太极）",
@@ -3734,7 +4382,7 @@ const dynasties = [
         "name": "清圣祖（玄烨）",
         "reign": "康熙",
         "years": "1661-1722",
-        "description": "在位 61 年，开创康乾盛世，平定三藩，收复台湾",
+        "description": "清世祖第三子，在位 61 年，开创康乾盛世，平定三藩，收复台湾",
         "isFounder": false,
         "order": 4,
         "predecessor": "清世祖（福临）",
@@ -3744,27 +4392,17 @@ const dynasties = [
         "name": "清世宗（胤禛）",
         "reign": "雍正",
         "years": "1722-1735",
-        "description": "勤政爱民，改革税制，为乾隆盛世奠定基础",
+        "description": "清圣祖第四子，勤政爱民，改革税制，为乾隆盛世奠定基础",
         "isFounder": false,
         "order": 5,
         "predecessor": "清圣祖（玄烨）",
         "successor": "清高宗（弘历）"
       },
       {
-        "name": "清世宗（胤禛）",
-        "reign": "雍正",
-        "years": "1722-1735",
-        "description": "勤政爱民，改革税制，为乾隆盛世奠定基础",
-        "isFounder": false,
-        "order": 5,
-        "predecessor": "清圣祖（玄烨）",
-        "successor": "清仁宗（颙琰）"
-      },
-      {
         "name": "清高宗（弘历）",
         "reign": "乾隆",
         "years": "1735-1796",
-        "description": "在位60年，清朝达到鼎盛，后期开始衰落",
+        "description": "清世宗第四子，在位 60 年，清朝达到鼎盛，后期开始衰落",
         "isFounder": false,
         "order": 6,
         "predecessor": "清世宗（胤禛）",
@@ -3774,7 +4412,7 @@ const dynasties = [
         "name": "清仁宗（颙琰）",
         "reign": "嘉庆",
         "years": "1796-1820",
-        "description": "亲政后惩治和珅，但白莲教起义爆发",
+        "description": "清高宗第十五子，亲政后惩治和珅，但白莲教起义爆发",
         "isFounder": false,
         "order": 7,
         "predecessor": "清高宗（弘历）",
@@ -3784,7 +4422,7 @@ const dynasties = [
         "name": "清宣宗（旻宁）",
         "reign": "道光",
         "years": "1820-1850",
-        "description": "鸦片战争爆发，中国开始沦为半殖民地半封建社会",
+        "description": "清仁宗长子，鸦片战争爆发，中国开始沦为半殖民地半封建社会",
         "isFounder": false,
         "order": 8,
         "predecessor": "清仁宗（颙琰）",
@@ -3794,7 +4432,7 @@ const dynasties = [
         "name": "清文宗（奕詝）",
         "reign": "咸丰",
         "years": "1850-1861",
-        "description": "太平天国运动爆发，英法联军火烧圆明园",
+        "description": "清宣宗第四子，太平天国运动爆发，英法联军火烧圆明园",
         "isFounder": false,
         "order": 9,
         "predecessor": "清宣宗（旻宁）",
@@ -3804,7 +4442,7 @@ const dynasties = [
         "name": "清穆宗（载淳）",
         "reign": "同治",
         "years": "1861-1875",
-        "description": "慈禧太后垂帘听政，洋务运动兴起",
+        "description": "清文宗长子，慈禧太后垂帘听政，洋务运动兴起",
         "isFounder": false,
         "order": 10,
         "predecessor": "清文宗（奕詝）",
@@ -3814,7 +4452,7 @@ const dynasties = [
         "name": "清德宗（载湉）",
         "reign": "光绪",
         "years": "1875-1908",
-        "description": "甲午战争战败，戊戌变法失败，八国联军侵华",
+        "description": "清宣宗第七子之子，甲午战争战败，戊戌变法失败，八国联军侵华",
         "isFounder": false,
         "order": 11,
         "predecessor": "清穆宗（载淳）",
@@ -3824,7 +4462,7 @@ const dynasties = [
         "name": "清宣统帝（溥仪）",
         "reign": "宣统",
         "years": "1909-1912",
-        "description": "清朝末代皇帝，辛亥革命后退位",
+        "description": "清德宗之侄，清朝末代皇帝，辛亥革命后退位",
         "isFounder": false,
         "order": 12,
         "predecessor": "清德宗（载湉）",
@@ -3979,12 +4617,12 @@ const dynasties = [
         "figure": "梅兰芳"
       }
     ],
-    "lineage": [
+        "lineage": [
       {
         "name": "孙中山",
         "reign": "",
-        "years": "1912-1912",
-        "description": "中华民国开国君主",
+        "years": "1912",
+        "description": "中华民国开国君主，就任临时大总统",
         "isFounder": true,
         "order": 1,
         "predecessor": null,
@@ -3993,7 +4631,7 @@ const dynasties = [
       {
         "name": "袁世凯",
         "reign": "",
-        "years": "1912-1916年",
+        "years": "1912-1916 年",
         "description": "继任临时大总统，后复辟称帝",
         "isFounder": false,
         "order": 2,
@@ -4003,62 +4641,83 @@ const dynasties = [
       {
         "name": "黎元洪",
         "reign": "",
-        "years": "1916-1917年",
+        "years": "1916-1917 年",
         "description": "继任大总统",
         "isFounder": false,
         "order": 3,
-        "predecessor": "中华民国",
+        "predecessor": "袁世凯",
+        "successor": "冯国璋"
+      },
+      {
+        "name": "冯国璋",
+        "reign": "",
+        "years": "1917-1918 年",
+        "description": "代理大总统",
+        "isFounder": false,
+        "order": 4,
+        "predecessor": "黎元洪",
         "successor": "徐世昌"
       },
       {
         "name": "徐世昌",
         "reign": "",
-        "years": "1918-1922年",
+        "years": "1918-1922 年",
         "description": "北洋政府总统",
         "isFounder": false,
-        "order": 4,
-        "predecessor": "中华民国",
+        "order": 5,
+        "predecessor": "冯国璋",
+        "successor": "黎元洪"
+      },
+      {
+        "name": "黎元洪（复任）",
+        "reign": "",
+        "years": "1922-1923 年",
+        "description": "复任大总统",
+        "isFounder": false,
+        "order": 6,
+        "predecessor": "徐世昌",
         "successor": "曹锟"
       },
       {
         "name": "曹锟",
         "reign": "",
-        "years": "1923-1924年",
-        "description": "直系军阀领导人",
+        "years": "1923-1924 年",
+        "description": "直系军阀领导人，贿选总统",
         "isFounder": false,
-        "order": 5,
-        "predecessor": "中华民国",
+        "order": 7,
+        "predecessor": "黎元洪（复任）",
         "successor": "段祺瑞"
       },
       {
         "name": "段祺瑞",
         "reign": "",
-        "years": "1924-1926年",
-        "description": "北洋政府实际执政者",
+        "years": "1924-1926 年",
+        "description": "北洋政府实际执政者，临时执政",
         "isFounder": false,
-        "order": 6,
-        "predecessor": "中华民国",
+        "order": 8,
+        "predecessor": "曹锟",
         "successor": "蒋介石"
       },
       {
         "name": "蒋介石",
         "reign": "",
-        "years": "1928-1948年",
+        "years": "1928-1948 年",
         "description": "国民政府领导人，领导抗战",
         "isFounder": false,
-        "order": 7,
-        "predecessor": "中华民国",
+        "order": 9,
+        "predecessor": "段祺瑞",
         "successor": "李宗仁"
       },
       {
         "name": "李宗仁",
         "reign": "",
-        "years": "1948-1949年",
+        "years": "1948-1949 年",
         "description": "继任总统",
         "isFounder": false,
-        "order": 8,
+        "order": 10,
         "predecessor": "蒋介石",
-        "successor": null
+        "successor": null,
+        "note": "中华民国时期北洋政府更迭频繁，此处为简化版"
       }
     ]
   }
