@@ -10,23 +10,7 @@ import dynasties from '../../data/dynasties';
 import DynastyLineage from '../../components/DynastyLineage';
 import Breadcrumb from '../../components/Breadcrumb';
 
-const formatYear = (year) => {
-  if (year < 0) {
-    return `公元前${Math.abs(year)}年`;
-  }
-  return `公元${year}年`;
-};
-
-const getPeriodName = (period) => {
-  const names = {
-    'ancient': '上古',
-    'classical': '中古',
-    'medieval': '近古',
-    'late-imperial': '帝国晚期',
-    'modern': '近代'
-  };
-  return names[period] || period;
-};
+import { formatYear, getPeriodName } from '../../utils/dateFormat';
 
 const tabs = [
   { id: 'overview', label: '概览' },

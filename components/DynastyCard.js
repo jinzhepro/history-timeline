@@ -1,27 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { formatYear, getPeriodColor } from '@/utils/dateFormat';
+
 /**
  * 朝代卡片组件 - 极简水墨风格
  */
 const DynastyCard = ({ dynasty, index, period }) => {
-  const formatYear = (year) => {
-    if (year < 0) {
-      return `公元前${Math.abs(year)}年`;
-    }
-    return `公元${year}年`;
-  };
-
-  // 时期颜色映射
-  const periodColors = {
-    'ancient': '#8B6F47',
-    'classical': '#B93A3A',
-    'medieval': '#4A6FA5',
-    'late-imperial': '#2D7A3E',
-    'modern': '#6B7280'
-  };
-
-  const periodColor = periodColors[dynasty.period] || '#1A1A1A';
+  const periodColor = getPeriodColor(dynasty.period);
 
   return (
     <Link

@@ -3,6 +3,8 @@ import TimelineFilter from './TimelineFilter';
 import TimelineOverview from './TimelineOverview';
 import dynasties from '../data/dynasties';
 
+import { getPeriodColor } from '@/utils/dateFormat';
+
 // 懒加载 DynastyCard 组件
 const DynastyCard = React.lazy(() => import('./DynastyCard'));
 
@@ -186,20 +188,6 @@ const Timeline = () => {
       </div>
     </div>
   );
-};
-
-/**
- * 获取时期颜色
- */
-const getPeriodColor = (period) => {
-  const colors = {
-    'ancient': '#8B6F47',
-    'classical': '#B93A3A',
-    'medieval': '#4A6FA5',
-    'late-imperial': '#2D7A3E',
-    'modern': '#6B7280'
-  };
-  return colors[period] || '#1A1A1A';
 };
 
 /**
