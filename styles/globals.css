@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  /* 主题色 - 克制的中式配色 */
+  /* 主题色 - 克制的中式配色（提高对比度） */
   --china-red: #B93A3A;      /* 更沉稳的朱红 */
-  --ink-black: #1A1A1A;       /* 墨色 */
-  --ink-gray: #4A4A4A;        /* 淡墨 */
-  --paper: #F9F8F4;           /* 宣纸白 */
-  --paper-dark: #F0EEE8;      /* 深宣纸 */
+  --ink-black: #0D0D0D;       /* 深墨色 - 提高对比度 */
+  --ink-gray: #3D3D3D;        /* 深灰 - 提高可读性 */
+  --paper: #F5F3EF;           /* 宣纸白 - 稍深 */
+  --paper-dark: #EBE9E4;      /* 深宣纸 */
 }
 
 html,

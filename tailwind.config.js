@@ -8,11 +8,11 @@ module.exports = {
     extend: {
       colors: {
         'china-red': '#B93A3A',
-        'ink': '#1A1A1A',
-        'ink-black': '#1A1A1A',
-        'ink-gray': '#4A4A4A',
-        'paper': '#F9F8F4',
-        'paper-dark': '#F0EEE8',
+        'ink': '#0D0D0D',
+        'ink-black': '#0D0D0D',
+        'ink-gray': '#3D3D3D',
+        'paper': '#F5F3EF',
+        'paper-dark': '#EBE9E4',
         'glazed-yellow': '#FFD700',
         'qinghua-blue': '#1E3A8A',
         'xuan-paper': '#F5F5F0',
